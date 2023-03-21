@@ -1,4 +1,4 @@
-package Escena_Inicial;
+package java;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 
-public class Escena1 extends JFrame {
+public class escena1 extends JFrame {
 
 	private JPanel contentPane;
 
@@ -22,7 +22,7 @@ public class Escena1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Escena1 frame = new Escena1();
+					escena1 frame = new escena1();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +34,7 @@ public class Escena1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Escena1() {
+	public escena1() {
 		setBackground(new Color(0, 0, 0));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
