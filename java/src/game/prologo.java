@@ -1,67 +1,37 @@
-package game;
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
-import java.awt.Font;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
 
-public class prologo extends JFrame {
+public class App extends JPanel {
+    
+    private Image background;
 
-	private JPanel contentPane;
+    public App() {
+        background = new ImageIcon("fondo.jpg").getImage(); // Cambia "fondo.jpg" por el nombre de tu imagen de fondo
+        setBackground(Color.BLACK); // Establece el color de fondo en negro
+    }
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					prologo frame = new prologo();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
 
-	/**
-	 * Create the frame.
-	 */
-	public prologo() {
-		setBackground(new Color(0, 0, 0));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1920, 1080);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        g.drawImage(background, 0, 0, getWidth(), getHeight(), this);
 
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblCartelInicial = new JLabel("Welcome to the OtterCamp");
-		lblCartelInicial.setBounds(658, 56, 617, 63);
-		lblCartelInicial.setForeground(Color.YELLOW);
-		lblCartelInicial.setBackground(Color.BLUE);
-		lblCartelInicial.setBackground(new Color(0,0,0,128));//opacidad del 50%
-		lblCartelInicial.setOpaque(true); 
-		lblCartelInicial.setFont(new Font("Comic Sans MS", Font.PLAIN, 45));
-		lblCartelInicial.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblCartelInicial);
-		
-		JButton btnInicio = new JButton("Jugar");
-		btnInicio.setBounds(1142, 697, 133, 53);
-		contentPane.add(btnInicio);
-		
-		JLabel lblFondo = new JLabel("");
-		lblFondo.setBounds(0, 0, 1920, 1080);
-		lblFondo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblFondo.setIcon(new ImageIcon("assets\\images\\fondo1.jpg"));
-		contentPane.add(lblFondo);
-		lblCartelInicial.setLabelFor(lblFondo);
-	}
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Arial", Font.PLAIN, 24));
+        g.drawString("La noche era oscura y silenciosa.", 50, 150);
+        g.drawString("Solo el sonido de las ramas moviéndose con el viento se podía escuchar.", 50, 190);
+        g.drawString("El bosque estaba envuelto en una bruma espesa y misteriosa.", 50, 230);
+        g.drawString("Pero algo estaba ahí, algo que no debía estar...", 50, 270);
+    }
+
+    public static void main(String[] args) {
+        JFrame windows = new JFrame("Introducción");
+        windows.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        windows.setExtendedState(Frame.MAXIMIZED_BOTH); // Maximiza la ventana al tamaño de la pantalla
+        windows.setResizable(true);
+        windows.setMinimumSize(new Dimension(800, 600));
+        windows.getContentPane().add(new App());
+        windows.setLocationRelativeTo(null);
+        windows.setVisible(true);
+    }
 }
