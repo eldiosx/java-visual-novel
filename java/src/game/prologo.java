@@ -1,6 +1,5 @@
-package java;
+package game;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -11,7 +10,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 
-public class escena1 extends JFrame {
+public class prologo extends JFrame {
 
 	private JPanel contentPane;
 
@@ -22,7 +21,7 @@ public class escena1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					escena1 frame = new escena1();
+					prologo frame = new prologo();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +33,7 @@ public class escena1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public escena1() {
+	public prologo() {
 		setBackground(new Color(0, 0, 0));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
