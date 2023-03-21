@@ -61,7 +61,7 @@ public class Escena1 extends JFrame {
 		JLabel lblFondo = new JLabel("");
 		lblFondo.setBounds(0, 0, 1920, 1080);
 		lblFondo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblFondo.setIcon(new ImageIcon("C:\\Users\\darkn\\OneDrive\\Escritorio\\Imagenes Trabajo BBDD y Programacion\\fondo1.jpg"));
+		lblFondo.setIcon(new ImageIcon("assets\\images\\fondo1.jpg"));
 		contentPane.add(lblFondo);
 		lblCartelInicial.setLabelFor(lblFondo);
 	}
