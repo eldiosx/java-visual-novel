@@ -8,6 +8,6 @@
 
 ## Proyecto en grupo MEDAC-1DAM
 
-Aida...
-Adrian...
+Aida Fernandez
+Adrian Marquez
 Daniel Delgado Jiménez
