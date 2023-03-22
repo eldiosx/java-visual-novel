@@ -1,11 +1,12 @@
+package game;
 import javax.swing.*;
 import java.awt.*;
 
-public class App extends JPanel {
+public class prologo extends JPanel {
     
     private Image background;
 
-    public App() {
+    public prologo() {
         background = new ImageIcon("fondo.jpg").getImage(); // Cambia "fondo.jpg" por el nombre de tu imagen de fondo
         setBackground(Color.BLACK); // Establece el color de fondo en negro
     }
@@ -29,7 +30,7 @@ public class App extends JPanel {
         windows.setExtendedState(Frame.MAXIMIZED_BOTH); // Maximiza la ventana al tamaño de la pantalla
         windows.setResizable(true);
         windows.setMinimumSize(new Dimension(800, 600));
-        windows.getContentPane().add(new App());
+        windows.getContentPane().add(new prologo());
         windows.setLocationRelativeTo(null);
         windows.setVisible(true);
     }
