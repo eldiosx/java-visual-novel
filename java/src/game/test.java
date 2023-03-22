@@ -2,11 +2,11 @@ package game;
 import javax.swing.*;
 import java.awt.*;
 
-public class prologo extends JPanel {
+public class test extends JPanel {
     
     private Image background;
 
-    public prologo() {
+    public test() {
         background = new ImageIcon("fondo.jpg").getImage(); // Cambia "fondo.jpg" por el nombre de tu imagen de fondo
         setBackground(Color.BLACK); // Establece el color de fondo en negro
     }
@@ -30,7 +30,7 @@ public class prologo extends JPanel {
         windows.setExtendedState(Frame.MAXIMIZED_BOTH); // Maximiza la ventana al tamaño de la pantalla
         windows.setResizable(true);
         windows.setMinimumSize(new Dimension(800, 600));
-        windows.getContentPane().add(new prologo());
+        windows.getContentPane().add(new test());
         windows.setLocationRelativeTo(null);
         windows.setVisible(true);
     }
