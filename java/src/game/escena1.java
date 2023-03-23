@@ -26,6 +26,7 @@ public class escena1 extends JFrame {
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
+					//esto es un texto de prueba
 				}
 			}
 		});
