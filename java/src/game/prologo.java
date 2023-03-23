@@ -15,6 +15,7 @@ public class App extends JPanel {
         super.paintComponent(g);
 
         g.drawImage(background, 0, 0, getWidth(), getHeight(), this);
+
         g.setColor(Color.WHITE);
         g.setFont(new Font("Arial", Font.PLAIN, 24));
         g.drawString("La noche era oscura y silenciosa.", 50, 150);
