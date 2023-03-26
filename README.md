@@ -8,10 +8,10 @@
 
 ## Proyecto en grupo MEDAC-1DAM
 
-Aida Fernandez
-Adrian Marquez
-Daniel Delgado Jiménez
-Nicolas Cano de Celis
+Aida Fernandez<br>
+Adrian Marquez<br>
+Daniel Delgado Jiménez<br>
+Nicolas Cano de Celis<br>
 
 Tu “videojuego” favorito de serie B es una demo para el desarrollo de un videojuego enmarcado en la ambientación de los slasher de terror americanos, sobre todo de la década de los ‘90 y los 2000, que pretende seguir la estela de películas como “Proyecto de las brujas de Blair” o la saga “Silent Hill”.
 <h3>Introducción al proyecto</h3>
