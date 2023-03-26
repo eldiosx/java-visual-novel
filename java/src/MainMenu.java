@@ -68,7 +68,7 @@ public class MainMenu extends JFrame {
                 Dimension size = comp.getSize();
                 titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width / 20));
                 // Escalar las imágenes en función del tamaño de la ventana
-                settingsButton.setIcon(scaleImage(settingsImage.getImage(), size.width / 4, size.width / 8));
+                settingsButton.setIcon(scaleImage(settingsImage.getImage(), size.width / 3, size.width / 8)); //Sera un pelin mas ancho que el de START
                 startButton.setIcon(scaleImage(startImage.getImage(), size.width / 4, size.width / 8));
             }
         });
