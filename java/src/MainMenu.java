@@ -68,19 +68,15 @@ public class MainMenu extends JFrame {
         // Configurar el fondo de pantalla
         backgroundImage = new ImageIcon("../assets/images/fondo1.jpg");
 
-        // Cargar la música de fondo (errores varios)
-        /*
-         * try {
-         * AudioInputStream audioIn = AudioSystem
-         * .getAudioInputStream(getClass().getResource(
-         * "../assets/audio/GiratinaRemix.wav"));
-         * bgMusic = AudioSystem.getClip();
-         * bgMusic.open(audioIn);
-         * } catch (UnsupportedAudioFileException | IOException |
-         * LineUnavailableException e) {
-         * e.printStackTrace();
-         * }
-         */
+        // Cargar la música de fondo (Cambiar el soporte para .ogg)
+        try {
+            bgMusic = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File("../assets/audio/GiratinaRemix.wav"));
+            bgMusic.open(inputStream);
+            bgMusic.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (LineUnavailableException | UnsupportedAudioFileException | IOException e) {
+            e.printStackTrace();
+        }
 
         // Hacer responsive la ventana
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -113,16 +109,6 @@ public class MainMenu extends JFrame {
                 dispose();
             }
         });
-
-        // Cargar la música de fondo
-        try {
-            bgMusic = AudioSystem.getClip();
-            AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File("../assets/audio/radioHorror.ogg"));
-            bgMusic.open(inputStream);
-            bgMusic.loop(Clip.LOOP_CONTINUOUSLY);
-        } catch (LineUnavailableException | UnsupportedAudioFileException | IOException e) {
-            e.printStackTrace();
-        }
 
         // Agregar un ActionListener al botón "settings" para que abra la ventana de
         // ajustes
