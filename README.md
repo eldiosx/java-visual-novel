@@ -8,7 +8,7 @@
 
 ## Proyecto en grupo MEDAC-1DAM
 
-<p style="color:Red;">Adrian Marquez</p>
+Adrian Marquez<br>
 Aida Fernandez<br>
 Daniel Delgado Jiménez<br>
 Nicolas Cano de Celis<br>
