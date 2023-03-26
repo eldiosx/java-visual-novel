@@ -1,11 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class test extends JPanel {
+public class Test extends JPanel {
 
     private Image background;
 
-    public test() {
+    public Test() {
         background = new ImageIcon("fondo.jpg").getImage(); // Cambia "fondo.jpg" por el nombre de tu imagen de fondo
         setBackground(Color.BLACK); // Establece el color de fondo en negro
     }
@@ -30,7 +30,7 @@ public class test extends JPanel {
         windows.setExtendedState(Frame.MAXIMIZED_BOTH); // Maximiza la ventana al tamaño de la pantalla
         windows.setResizable(true);
         windows.setMinimumSize(new Dimension(800, 600));
-        windows.getContentPane().add(new test());
+        windows.getContentPane().add(new Test());
         windows.setLocationRelativeTo(null);
         windows.setVisible(true);
     }

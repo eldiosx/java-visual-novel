@@ -1,17 +1,11 @@
-package game;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class escena1 extends JFrame {
+public class Escena1 extends JFrame {
 
     private JPanel contentPane;
 
@@ -22,7 +16,7 @@ public class escena1 extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    escena1 frame = new escena1();
+                    Escena1 frame = new Escena1();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -35,7 +29,7 @@ public class escena1 extends JFrame {
     /**
      * Create the frame.
      */
-    public escena1() {
+    public Escena1() {
         setBackground(new Color(0, 0, 0));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1920, 1080);
