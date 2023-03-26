@@ -4,6 +4,8 @@ import java.awt.*;
 public class Test extends JPanel {
 
     private Image background;
+    private JButton button1;
+    private JPanel panel1;
 
     public Test() {
         background = new ImageIcon("fondo.jpg").getImage(); // Cambia "fondo.jpg" por el nombre de tu imagen de fondo
