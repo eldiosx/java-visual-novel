@@ -6,13 +6,14 @@
 
 </div>
 
-## Proyecto en grupo MEDAC-1DAM
+## Proyecto en grupo MEDAC-1DAM Integrantes:
 
 Adrian Marquez<br>
 Aida Fernandez<br>
 Daniel Delgado Jiménez<br>
 Nicolas Cano de Celis<br>
 
+<h3>Lore</h3>
 Tu “videojuego” favorito de serie B es una demo para el desarrollo de un videojuego <b>Novela Grafica hecha con Java</b> enmarcado en la ambientación de los slasher de terror americanos, sobre todo de la década de los ‘90 y los 2000, que pretende seguir la estela de películas como “Proyecto de las brujas de Blair” o la saga “Silent Hill”.
 <h3>Introducción al proyecto</h3>
 Se trata de un proyecto que pretende ofrecer al jugador una experiencia narrativa como la que ofrecen otros videojuegos como “Detroit Become Human”, pero con un toque de humor. Lleno de clichés, pretende ofrecer al jugador una experiencia en primera persona de una película de terror de serie B. Consta de una  alta rejugabilidad debido a la gran cantidad de toma de decisiones y posibles trágicos finales. 
