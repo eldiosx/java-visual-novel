@@ -1,9 +1,8 @@
-package game;
 import javax.swing.*;
 import java.awt.*;
 
 public class test extends JPanel {
-    
+
     private Image background;
 
     public test() {
