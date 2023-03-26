@@ -1,8 +1,14 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.event.*;
+import javax.sound.sampled.*;
 import javax.swing.*;
 import javax.swing.border.*;
+import java.io.IOException;
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+//import javax.imageio.ImageIO;
 
 public class MainMenu extends JFrame {
     private JLabel titleLabel;
@@ -11,6 +17,7 @@ public class MainMenu extends JFrame {
     private ImageIcon backgroundImage;
     private ImageIcon settingsImage;
     private ImageIcon startImage;
+    private Clip bgMusic;
 
     public MainMenu() {
         // Configurar la ventana
@@ -61,6 +68,20 @@ public class MainMenu extends JFrame {
         // Configurar el fondo de pantalla
         backgroundImage = new ImageIcon("../assets/images/fondo1.jpg");
 
+        // Cargar la música de fondo (errores varios)
+        /*
+         * try {
+         * AudioInputStream audioIn = AudioSystem
+         * .getAudioInputStream(getClass().getResource(
+         * "../assets/audio/GiratinaRemix.wav"));
+         * bgMusic = AudioSystem.getClip();
+         * bgMusic.open(audioIn);
+         * } catch (UnsupportedAudioFileException | IOException |
+         * LineUnavailableException e) {
+         * e.printStackTrace();
+         * }
+         */
+
         // Hacer responsive la ventana
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
@@ -68,7 +89,13 @@ public class MainMenu extends JFrame {
                 Dimension size = comp.getSize();
                 titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width / 20));
                 // Escalar las imágenes en función del tamaño de la ventana
-                settingsButton.setIcon(scaleImage(settingsImage.getImage(), size.width / 3, size.width / 8)); //Sera un pelin mas ancho que el de START
+                settingsButton.setIcon(scaleImage(settingsImage.getImage(), size.width / 3, size.width / 8)); // Sera un
+                                                                                                              // pelin
+                                                                                                              // mas
+                                                                                                              // ancho
+                                                                                                              // que el
+                                                                                                              // de
+                                                                                                              // START
                 startButton.setIcon(scaleImage(startImage.getImage(), size.width / 4, size.width / 8));
             }
         });
@@ -87,6 +114,26 @@ public class MainMenu extends JFrame {
             }
         });
 
+        // Cargar la música de fondo
+        try {
+            bgMusic = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File("../assets/audio/radioHorror.ogg"));
+            bgMusic.open(inputStream);
+            bgMusic.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (LineUnavailableException | UnsupportedAudioFileException | IOException e) {
+            e.printStackTrace();
+        }
+
+        // Agregar un ActionListener al botón "settings" para que abra la ventana de
+        // ajustes
+        settingsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Abrir la ventana de ajustes
+                SettingsWindow settingsWindow = new SettingsWindow();
+                // settingsWindow.setVisible(true);
+            }
+        });
     }
 
     // Método para escalar la imagen
