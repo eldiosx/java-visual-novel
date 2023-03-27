@@ -26,7 +26,7 @@ public class SettingsWindow extends JFrame {
         contentPanel.setBackground(Color.GRAY); // Establecer el color de fondo
         setContentPane(contentPanel);
 
-        // Configurar los textos
+        // config textos
         titleLabel = new JLabel("Titulo");
         titleLabel.setFont(new Font("Sans Serif", Font.BOLD, 48));
         subtitleLabel = new JLabel("Subtítulo");
@@ -39,7 +39,7 @@ public class SettingsWindow extends JFrame {
         textPanel.add(titleLabel);
         textPanel.add(subtitleLabel);
         textPanel.add(descriptionLabel);
-        contentPanel.add(textPanel, BorderLayout.CENTER);
+        contentPanel.add(textPanel, BorderLayout.NORTH);
 
         // Hacer responsive los textos
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -54,9 +54,10 @@ public class SettingsWindow extends JFrame {
         menuButton.setContentAreaFilled(false); // Eliminar borde
         menuButton.setBorderPainted(false);
         JPanel buttonPanel = new JPanel(new GridLayout(1, 1, 0, 0));
+        buttonPanel.setBorder(new EmptyBorder(100, 200, 60, 200));
         buttonPanel.setOpaque(false); // Establecer como no opaco para que se muestre el fondo de la ventana
         buttonPanel.add(menuButton);
-        contentPanel.add(buttonPanel, BorderLayout.CENTER);
+        contentPanel.add(buttonPanel, BorderLayout.SOUTH);
 
         // Abrir los settings
         menuButton.addActionListener(new ActionListener() {
