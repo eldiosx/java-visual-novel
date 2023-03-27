@@ -11,8 +11,8 @@
 
 ## Proyecto en grupo MEDAC-1DAM Integrantes:
 
-Adrian Marquez<br>
-Aida Fernandez<br>
+Adrian Márquez Ruiz<br>
+Aida Fernández Hormigo<br>
 Daniel Delgado Jiménez<br>
 Nicolas Cano de Celis<br>
 
