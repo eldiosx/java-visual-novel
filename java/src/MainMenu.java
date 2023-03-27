@@ -1,23 +1,26 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.event.*;
-import javax.sound.sampled.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import java.io.IOException;
 import java.io.File;
+import javax.sound.sampled.*;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 //import javax.imageio.ImageIO;
 
 public class MainMenu extends JFrame {
+    private Clip bgMusic;
+    private ImageIcon backgroundImage;
     private JLabel titleLabel;
     private JButton startButton;
-    private ImageIcon backgroundImage;
+    private ImageIcon startImage;
     private JButton settingsButton;
     private ImageIcon settingsImage;
-    private ImageIcon startImage;
-    private Clip bgMusic;
+    private JButton exitButton;
+    private ImageIcon exitImage;
+
 
     public MainMenu() {
         // Configurar la ventana
@@ -40,38 +43,52 @@ public class MainMenu extends JFrame {
         setContentPane(contentPanel);
         // Titulo, me falta la sombrita o cambiar por una imagen
         titleLabel = new JLabel("Tu videojuego favorito de serie B");
+        titleLabel.setBorder(new EmptyBorder(10, 0, 10, 0));
         titleLabel.setForeground(Color.gray);
         titleLabel.setFont(new Font("Sans Serif", Font.BOLD, 48));
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
         contentPanel.add(titleLabel, BorderLayout.NORTH);
 
         // Configurar los botones
-        settingsImage = new ImageIcon("../assets/icons/setting.png");
-        settingsButton = new JButton();
-        settingsButton.setIcon(settingsImage);
-        settingsButton.setOpaque(false); // Eliminar fondo
-        settingsButton.setContentAreaFilled(false); // Eliminar borde
-        settingsButton.setBorderPainted(false);
+        //Start
         startImage = new ImageIcon("../assets/icons/start.png");
         startButton = new JButton();
         startButton.setIcon(startImage);
-        startButton.setOpaque(false);
+        startButton.setOpaque(false); // Eliminar fondo
         startButton.setContentAreaFilled(false); // Eliminar fondo
         startButton.setBorderPainted(false); // Eliminar borde
-        JPanel buttonPanel = new JPanel(new GridLayout(2, 1, 0, 0));
-        buttonPanel.setBorder(new EmptyBorder(200, 200, 50, 200));
+        //Setting
+        settingsImage = new ImageIcon("../assets/icons/setting.png");
+        settingsButton = new JButton();
+        settingsButton.setIcon(settingsImage);
+        settingsButton.setOpaque(false);
+        settingsButton.setContentAreaFilled(false);
+        settingsButton.setBorderPainted(false);
+        //Exit
+        exitImage = new ImageIcon("../assets/icons/exit.png");
+        exitButton = new JButton();
+        exitButton.setIcon(exitImage);
+        exitButton.setOpaque(false);
+        exitButton.setContentAreaFilled(false);
+        exitButton.setBorderPainted(false);
+        //Panel
+        JPanel buttonPanel = new JPanel(new GridLayout(3, 1, 0, 0));
+        buttonPanel.setBorder(new EmptyBorder(200, 200, 60, 200));
         buttonPanel.setOpaque(false); // Establecer como no opaco para que se muestre el fondo de la ventana
         buttonPanel.add(startButton);
         buttonPanel.add(settingsButton);
+        buttonPanel.add(exitButton);
         contentPanel.add(buttonPanel, BorderLayout.CENTER);
 
         // Configurar el fondo de pantalla
-        backgroundImage = new ImageIcon("../assets/images/fondo1.jpg");
+        backgroundImage = new ImageIcon("../assets/images/background.jpg");
 
+        //SONIDO (En un futuro creare una clase aparte con todos los sonidos aparte)
         // Cargar la música de fondo (Cambiar el soporte para .ogg)
         try {
             bgMusic = AudioSystem.getClip();
-            AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File("../assets/audio/GiratinaRemix.wav"));
+            AudioInputStream inputStream = AudioSystem
+                    .getAudioInputStream(new File("../assets/audio/GiratinaRemix.wav"));
             bgMusic.open(inputStream);
             bgMusic.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (LineUnavailableException | UnsupportedAudioFileException | IOException e) {
@@ -85,8 +102,9 @@ public class MainMenu extends JFrame {
                 Dimension size = comp.getSize();
                 titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width / 20));
                 // Escalar las imágenes en función del tamaño de la ventana dividiendo
-                settingsButton.setIcon(scaleImage(settingsImage.getImage(), size.width / 3, size.width / 8));
-                startButton.setIcon(scaleImage(startImage.getImage(), size.width / 4, size.width / 8));
+                startButton.setIcon(scaleImage(startImage.getImage(), size.width / 6, size.width / 12));
+                settingsButton.setIcon(scaleImage(settingsImage.getImage(), size.width / 4, size.width / 10));
+                exitButton.setIcon(scaleImage(exitImage.getImage(), size.width / 6, size.width / 12));
             }
         });
 
@@ -112,6 +130,11 @@ public class MainMenu extends JFrame {
                 settingsWindow.setVisible(true);
                 dispose();
             }
+        });
+        // Salir
+        exitButton.addActionListener(e -> {
+            dispose();
+            System.exit(0);
         });
     }
 

@@ -17,6 +17,7 @@ public class Template extends JFrame {
 
         // Configurar el diseño del contenido
         JPanel contentPanel = new JPanel(new BorderLayout());
+        contentPanel.setBackground(Color.BLACK); // Establecer el color de fondo (cuidado)
         setContentPane(contentPanel);
 
         // Configurar los textos

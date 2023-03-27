@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.*;
 
 public class SettingsWindow extends JFrame {
     private JLabel titleLabel;
@@ -23,6 +23,7 @@ public class SettingsWindow extends JFrame {
 
         // Configurar el diseño del contenido
         JPanel contentPanel = new JPanel(new BorderLayout());
+        contentPanel.setBackground(Color.GRAY); // Establecer el color de fondo
         setContentPane(contentPanel);
 
         // Configurar los textos
@@ -45,26 +46,14 @@ public class SettingsWindow extends JFrame {
         subtitleLabel.setHorizontalAlignment(JLabel.CENTER);
         descriptionLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        // Hacer responsive la ventana
-        addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentResized(java.awt.event.ComponentEvent evt) {
-                Component comp = (Component) evt.getSource();
-                Dimension size = comp.getSize();
-                titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width / 16));
-                subtitleLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width / 32));
-                descriptionLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width / 48));
-            }
-        });
-
         // Configurar los botones
-        menuImage = new ImageIcon("../assets/icons/setting.png");
+        menuImage = new ImageIcon("../assets/icons/back.png");
         menuButton = new JButton();
         menuButton.setIcon(menuImage);
         menuButton.setOpaque(false); // Eliminar fondo
         menuButton.setContentAreaFilled(false); // Eliminar borde
         menuButton.setBorderPainted(false);
-        JPanel buttonPanel = new JPanel(new GridLayout(2, 1, 0, 0));
-        buttonPanel.setBorder(new EmptyBorder(200, 200, 50, 200));
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 1, 0, 0));
         buttonPanel.setOpaque(false); // Establecer como no opaco para que se muestre el fondo de la ventana
         buttonPanel.add(menuButton);
         contentPanel.add(buttonPanel, BorderLayout.CENTER);
@@ -84,6 +73,9 @@ public class SettingsWindow extends JFrame {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 Component comp = (Component) evt.getSource();
                 Dimension size = comp.getSize();
+                titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width / 16));
+                subtitleLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width / 32));
+                descriptionLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width / 48));
                 titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width / 20));
                 // Escalar las imágenes en función del tamaño de la ventana dividiendo
                 menuButton.setIcon(scaleImage(menuImage.getImage(), size.width / 3, size.width / 8));
