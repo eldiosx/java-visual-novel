@@ -11,7 +11,7 @@ public class IntroScene extends JFrame {
         setTitle("Título de la Novela Gráfica");
         setMinimumSize(new Dimension(800, 600));
         setExtendedState(Frame.MAXIMIZED_BOTH); // Maximiza la ventana al tamaño de la pantalla
-        //setSize(800, 600); // Tamaño inicial
+        // setSize(800, 600); // Tamaño inicial
         setResizable(true); // Permitir redimensionamiento
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -44,9 +44,9 @@ public class IntroScene extends JFrame {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 Component comp = (Component) evt.getSource();
                 Dimension size = comp.getSize();
-                titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width/16));
-                subtitleLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width/32));
-                descriptionLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width/48));
+                titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width / 16));
+                subtitleLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width / 32));
+                descriptionLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width / 48));
             }
         });
     }

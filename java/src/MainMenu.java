@@ -96,8 +96,7 @@ public class MainMenu extends JFrame {
             }
         });
 
-        // Agregar un ActionListener al botón "start" para que lleve a la escena
-        // "IntroScene"
+        // Comenzar el juego (Boton Start)
 
         startButton.addActionListener(new ActionListener() {
             @Override
@@ -110,14 +109,14 @@ public class MainMenu extends JFrame {
             }
         });
 
-        // Agregar un ActionListener al botón "settings" para que abra la ventana de
-        // ajustes
+        // Abrir los settings
         settingsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Abrir la ventana de ajustes
                 SettingsWindow settingsWindow = new SettingsWindow();
-                // settingsWindow.setVisible(true);
+                settingsWindow.setVisible(true);
+                dispose();
             }
         });
     }

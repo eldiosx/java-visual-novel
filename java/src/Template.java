@@ -8,8 +8,10 @@ public class Template extends JFrame {
 
     public Template() {
         // Configurar la ventana
-        setTitle("Título de la Novela Gráfica");
-        setSize(800, 600); // Tamaño inicial
+        setTitle("Título de la ventanah");
+        setMinimumSize(new Dimension(800, 600));
+        setExtendedState(Frame.MAXIMIZED_BOTH); // Maximiza la ventana al tamaño de la pantalla
+        // setSize(800, 600); // Tamaño inicial
         setResizable(true); // Permitir redimensionamiento
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -18,7 +20,7 @@ public class Template extends JFrame {
         setContentPane(contentPanel);
 
         // Configurar los textos
-        titleLabel = new JLabel("Título de la Escena");
+        titleLabel = new JLabel("Titulo");
         titleLabel.setFont(new Font("Sans Serif", Font.BOLD, 48));
         subtitleLabel = new JLabel("Subtítulo");
         subtitleLabel.setFont(new Font("Sans Serif", Font.PLAIN, 24));
@@ -42,9 +44,9 @@ public class Template extends JFrame {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 Component comp = (Component) evt.getSource();
                 Dimension size = comp.getSize();
-                titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width/16));
-                subtitleLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width/32));
-                descriptionLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width/48));
+                titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width / 16));
+                subtitleLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width / 32));
+                descriptionLabel.setFont(new Font("Sans Serif", Font.PLAIN, size.width / 48));
             }
         });
     }
