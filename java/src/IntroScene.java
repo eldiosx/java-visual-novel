@@ -8,7 +8,7 @@ public class IntroScene extends JFrame {
 
     public IntroScene() {
         // Configurar la ventana
-        setTitle("Título de la Novela Gráfica");
+        setTitle("Tu videojuego favorito de serie B");
         setMinimumSize(new Dimension(800, 600));
         setExtendedState(Frame.MAXIMIZED_BOTH); // Maximiza la ventana al tamaño de la pantalla
         // setSize(800, 600); // Tamaño inicial

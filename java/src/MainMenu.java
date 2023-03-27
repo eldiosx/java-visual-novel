@@ -12,9 +12,9 @@ import javax.sound.sampled.Clip;
 
 public class MainMenu extends JFrame {
     private JLabel titleLabel;
-    private JButton settingsButton;
     private JButton startButton;
     private ImageIcon backgroundImage;
+    private JButton settingsButton;
     private ImageIcon settingsImage;
     private ImageIcon startImage;
     private Clip bgMusic;
@@ -84,14 +84,8 @@ public class MainMenu extends JFrame {
                 Component comp = (Component) evt.getSource();
                 Dimension size = comp.getSize();
                 titleLabel.setFont(new Font("Sans Serif", Font.BOLD, size.width / 20));
-                // Escalar las imágenes en función del tamaño de la ventana
-                settingsButton.setIcon(scaleImage(settingsImage.getImage(), size.width / 3, size.width / 8)); // Sera un
-                                                                                                              // pelin
-                                                                                                              // mas
-                                                                                                              // ancho
-                                                                                                              // que el
-                                                                                                              // de
-                                                                                                              // START
+                // Escalar las imágenes en función del tamaño de la ventana dividiendo
+                settingsButton.setIcon(scaleImage(settingsImage.getImage(), size.width / 3, size.width / 8));
                 startButton.setIcon(scaleImage(startImage.getImage(), size.width / 4, size.width / 8));
             }
         });
@@ -121,7 +115,7 @@ public class MainMenu extends JFrame {
         });
     }
 
-    // Método para escalar la imagen
+    // Método para escalar la imagen (scaleImage)
     private ImageIcon scaleImage(Image image, int width, int height) {
         BufferedImage resizedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = resizedImage.createGraphics();
