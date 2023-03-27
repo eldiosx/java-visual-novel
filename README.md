@@ -10,7 +10,7 @@
 </div>
 
 # Proyecto en grupo MEDAC-1DAM
-## Integrantes:
+<h2>Integrantes:</h2>
 
 Adrian Márquez Ruiz<br>
 Aida Fernández Hormigo<br>
