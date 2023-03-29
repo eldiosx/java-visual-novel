@@ -43,7 +43,7 @@ public class Inicio extends JFrame {
         lblCartelInicial.setBounds(658, 56, 617, 63);
         lblCartelInicial.setForeground(Color.YELLOW);
         lblCartelInicial.setBackground(Color.BLUE);
-        lblCartelInicial.setBackground(new Color(0,0,0,128));//opacidad del 50%
+        lblCartelInicial.setBackground(new Color(0, 0, 0, 128));// opacidad del 50%
         lblCartelInicial.setOpaque(true);
         lblCartelInicial.setFont(new Font("Comic Sans MS", Font.PLAIN, 45));
         lblCartelInicial.setHorizontalAlignment(SwingConstants.CENTER);

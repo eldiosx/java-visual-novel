@@ -83,6 +83,7 @@ public class SettingsWindow extends JFrame {
             }
         });
     }
+
     // Método para escalar la imagen
     private ImageIcon scaleImage(Image image, int width, int height) {
         BufferedImage resizedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
@@ -91,6 +92,7 @@ public class SettingsWindow extends JFrame {
         g2d.dispose();
         return new ImageIcon(resizedImage);
     }
+
     public static void main(String[] args) {
         SettingsWindow SettingsWindow = new SettingsWindow();
         SettingsWindow.setVisible(true);

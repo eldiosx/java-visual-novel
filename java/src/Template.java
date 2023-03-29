@@ -8,7 +8,7 @@ public class Template extends JFrame {
 
     public Template() {
         // Configurar la ventana
-        setTitle("Tu videojuego favorito de serie B"); //Título de la ventanah
+        setTitle("Tu videojuego favorito de serie B"); // Título de la ventanah
         setMinimumSize(new Dimension(800, 600));
         setExtendedState(Frame.MAXIMIZED_BOTH); // Maximiza la ventana al tamaño de la pantalla
         // setSize(800, 600); // Tamaño inicial

@@ -21,7 +21,6 @@ public class MainMenu extends JFrame {
     private JButton exitButton;
     private ImageIcon exitImage;
 
-
     public MainMenu() {
         // Configurar la ventana
         setTitle("Tu videojuego favorito de serie B");
@@ -50,28 +49,28 @@ public class MainMenu extends JFrame {
         contentPanel.add(titleLabel, BorderLayout.NORTH);
 
         // Configurar los botones
-        //Start
+        // Start
         startImage = new ImageIcon("../assets/icons/start.png");
         startButton = new JButton();
         startButton.setIcon(startImage);
         startButton.setOpaque(false); // Eliminar fondo
         startButton.setContentAreaFilled(false); // Eliminar fondo
         startButton.setBorderPainted(false); // Eliminar borde
-        //Setting
+        // Setting
         settingsImage = new ImageIcon("../assets/icons/setting.png");
         settingsButton = new JButton();
         settingsButton.setIcon(settingsImage);
         settingsButton.setOpaque(false);
         settingsButton.setContentAreaFilled(false);
         settingsButton.setBorderPainted(false);
-        //Exit
+        // Exit
         exitImage = new ImageIcon("../assets/icons/exit.png");
         exitButton = new JButton();
         exitButton.setIcon(exitImage);
         exitButton.setOpaque(false);
         exitButton.setContentAreaFilled(false);
         exitButton.setBorderPainted(false);
-        //Panel
+        // Panel
         JPanel buttonPanel = new JPanel(new GridLayout(3, 1, 0, 0));
         buttonPanel.setBorder(new EmptyBorder(200, 200, 60, 200));
         buttonPanel.setOpaque(false); // Establecer como no opaco para que se muestre el fondo de la ventana
@@ -83,7 +82,7 @@ public class MainMenu extends JFrame {
         // Configurar el fondo de pantalla
         backgroundImage = new ImageIcon("../assets/images/background.jpg");
 
-        //SONIDO (En un futuro creare una clase aparte con todos los sonidos aparte)
+        // SONIDO (En un futuro creare una clase aparte con todos los sonidos aparte)
         // Cargar la música de fondo (Cambiar el soporte para .ogg)
         try {
             bgMusic = AudioSystem.getClip();
