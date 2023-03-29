@@ -1,3 +1,5 @@
+![example workflow](https://badge-size.herokuapp.com/eldiosx/novelasGraficaJava/{branch}/{filename})
+
 <h1 align="center">Tu “videojuego” favorito de serie B</h1>
 
 <div align="center">
