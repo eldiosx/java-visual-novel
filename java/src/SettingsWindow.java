@@ -27,11 +27,11 @@ public class SettingsWindow extends JFrame {
         setContentPane(contentPanel);
 
         // config textos
-        titleLabel = new JLabel("Titulo");
+        titleLabel = new JLabel("Ajustes");
         titleLabel.setFont(new Font("Sans Serif", Font.BOLD, 48));
-        subtitleLabel = new JLabel("Subtítulo");
+        subtitleLabel = new JLabel("Modificar pene>");
         subtitleLabel.setFont(new Font("Sans Serif", Font.PLAIN, 24));
-        descriptionLabel = new JLabel("<html>Descripción de la escena<br>en varias líneas.</html>");
+        descriptionLabel = new JLabel("<html>MOdificar en barra<br> pene.</html>");
         descriptionLabel.setFont(new Font("Sans Serif", Font.PLAIN, 18));
 
         // Agregar los textos al contenido
