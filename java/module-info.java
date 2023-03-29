@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author root
+ *
+ */
+module java {
+}
