@@ -1,8 +1,3 @@
-
-
-[![size](https://badge-size.herokuapp.com/{eldiosx}/{novelaGraficaJava}/{main}/)]
-
-
 <h1 align="center">Tu “videojuego” favorito de serie B</h1>
 
 <div align="center">
@@ -11,6 +6,7 @@
 [![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Gimp](https://img.shields.io/badge/gimp-5C5543?style=for-the-badge&logo=gimp&logoColor=white)](https://www.gimp.org/)
 [![Audacity](https://img.shields.io/badge/Audacity-0000CC?style=for-the-badge&logo=audacity&logoColor=white)](https://www.audacityteam.org/)
+[![size](https://badge-size.herokuapp.com/{eldiosx}/{novelaGraficaJava}/{main}/)]
 
 </div>
 
