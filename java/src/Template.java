@@ -2,7 +2,8 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Template extends JFrame {
-    private JLabel titleLabel;
+    private static final long serialVersionUID = 1L;
+	private JLabel titleLabel;
     private JLabel subtitleLabel;
     private JLabel descriptionLabel;
 

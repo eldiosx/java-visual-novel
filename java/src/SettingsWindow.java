@@ -6,7 +6,8 @@ import javax.swing.*;
 import javax.swing.border.*;
 
 public class SettingsWindow extends JFrame {
-    private JLabel titleLabel;
+    private static final long serialVersionUID = 1L;
+	private JLabel titleLabel;
     private JLabel subtitleLabel;
     private JLabel descriptionLabel;
     private JButton menuButton;

@@ -11,7 +11,8 @@ import javax.sound.sampled.Clip;
 //import javax.imageio.ImageIO;
 
 public class MainMenu extends JFrame {
-    private Clip bgMusic;
+    private static final long serialVersionUID = 1L;
+	private Clip bgMusic;
     private ImageIcon backgroundImage;
     private JLabel titleLabel;
     private JButton startButton;
@@ -32,7 +33,9 @@ public class MainMenu extends JFrame {
 
         // Configurar el diseño del contenido
         JPanel contentPanel = new JPanel(new BorderLayout()) {
-            @Override
+            private static final long serialVersionUID = 1L;
+
+			@Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 g.drawImage(backgroundImage.getImage(), 0, 0, getWidth(), getHeight(), null);
