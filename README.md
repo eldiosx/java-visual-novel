@@ -1,5 +1,5 @@
 
-[![size](https://badge-size.herokuapp.com/eldiosx/novelasGraficaJava/main)]
+[![size](https://badge-size.herokuapp.com/eldiosx/novelasGraficaJava/main/java)]
 
 <h1 align="center">Tu “videojuego” favorito de serie B</h1>
 
