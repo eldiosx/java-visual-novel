@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author deck
- *
- */
-module java {
-}

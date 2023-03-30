@@ -1,3 +1,5 @@
+/**
+package application;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -9,9 +11,7 @@ public class Home extends JFrame {
     private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-    /**
-     * Launch the application.
-     */
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -26,9 +26,6 @@ public class Home extends JFrame {
         });
     }
 
-    /**
-     * Create the frame.
-     */
     public Home() {
         setBackground(new Color(0, 0, 0));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,3 +58,4 @@ public class Home extends JFrame {
         lblCartelInicial.setLabelFor(lblFondo);
     }
 }
+**/
