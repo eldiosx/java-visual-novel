@@ -6,5 +6,17 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.osgi_3.18.300.v20230220-1352.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.osgi_3.18.300.v20230220-1352.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.core.commands_3.10.400.v20230220-0932.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.core.commands_3.10.400.v20230220-0932.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.equinox.common_3.17.100.v20230202-1341.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.equinox.common_3.17.100.v20230202-1341.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.equinox.registry_3.11.200.v20220817-1601.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.equinox.registry_3.11.200.v20220817-1601.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.core.runtime_3.26.100.v20221021-0005.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.core.runtime_3.26.100.v20221021-0005.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.text_3.12.300.v20220921-1010.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.text_3.12.300.v20220921-1010.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.swt.gtk.linux.x86_64_3.123.0.v20230220-1431.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.swt.gtk.linux.x86_64_3.123.0.v20230220-1431.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.jface_3.29.0.v20230214-1401.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.jface_3.29.0.v20230214-1401.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.jface.text_3.23.0.v20230123-1047.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.jface.text_3.23.0.v20230123-1047.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.ui.workbench_3.128.0.v20230220-1021.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.ui.workbench_3.128.0.v20230220-1021.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/com.ibm.icu_72.1.0.jar" sourcepath="/root/.p2/pool/plugins/com.ibm.icu_72.1.0.jar"/>
+	<classpathentry kind="lib" path="/root/.p2/pool/plugins/org.eclipse.ui.forms_3.11.600.v20230220-0932.jar" sourcepath="/root/.p2/pool/plugins/org.eclipse.ui.forms_3.11.600.v20230220-0932.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
