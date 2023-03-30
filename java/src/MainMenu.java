@@ -118,7 +118,7 @@ public class MainMenu extends JFrame {
                 // Cargar la escena IntroScene
                 IntroScene introScene = new IntroScene();
                 introScene.setVisible(true);
-                // Cerrar la ventana actual
+            	// Cerrar la ventana actual
                 dispose();
             }
         });
@@ -152,5 +152,7 @@ public class MainMenu extends JFrame {
     public static void main(String[] args) {
         MainMenu mainMenu = new MainMenu();
         mainMenu.setVisible(true);
+        
     }
+    
 }
