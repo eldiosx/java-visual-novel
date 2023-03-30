@@ -20,9 +20,12 @@ public class MainMenu extends Application {
 
     private static final int BUTTON_WIDTH = FONT_SIZE * 10;
     private static final int BUTTON_HEIGHT = FONT_SIZE * 2;
+    
 
     @Override
     public void start(Stage primaryStage) {
+    	
+    	
 
         // Cargar las imágenes
         Image backgroundImage = new Image(BACKGROUND_URL);
