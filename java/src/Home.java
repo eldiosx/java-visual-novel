@@ -1,11 +1,10 @@
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class Inicio extends JFrame {
+public class Home extends JFrame {
 
     private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -17,7 +16,7 @@ public class Inicio extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Inicio frame = new Inicio();
+                    Home frame = new Home();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -30,7 +29,7 @@ public class Inicio extends JFrame {
     /**
      * Create the frame.
      */
-    public Inicio() {
+    public Home() {
         setBackground(new Color(0, 0, 0));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1920, 1080);
