@@ -22,12 +22,12 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-//import javafx.scene.media.MediaView;
-//import javafx.util.Duration;
+import application.EjemploEscena;
+import javafx.scene.media.MediaView;
+import javafx.util.Duration;
 
 
 public class MainMenu extends Application {
-
     private static final String BACKGROUND_URL = new File("assets/images/horror.gif").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/images/horror.gif";
     private static final String NEW_GAME_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
     private static final String LOAD_GAME_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
@@ -54,8 +54,11 @@ public class MainMenu extends Application {
         Button newGameButton = new Button();
         newGameButton.setGraphic(new ImageView(newGameButtonImage));
         newGameButton.setOnAction(event -> {
-            // Lógica para iniciar una nueva partida
+//            EjemploEscena escenaEjemplo = new EjemploEscena();
+//            Scene scene = new Scene(escenaEjemplo, Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight());
+//            primaryStage.setScene(scene);
         });
+
 
         Button loadGameButton = new Button();
         loadGameButton.setGraphic(new ImageView(loadGameButtonImage));
