@@ -28,11 +28,11 @@ import javafx.scene.media.MediaPlayer;
 
 public class MainMenu extends Application {
 
-    private static final String BACKGROUND_URL = new File("../assets/images/horror.gif").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/images/horror.gif";
-    private static final String NEW_GAME_BUTTON_URL = new File("../assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String LOAD_GAME_BUTTON_URL = new File("../assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String SETTINGS_BUTTON_URL = new File("../assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String EXIT_BUTTON_URL = new File("../assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String BACKGROUND_URL = new File("assets/images/horror.gif").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/images/horror.gif";
+    private static final String NEW_GAME_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String LOAD_GAME_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String SETTINGS_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String EXIT_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
 
     private static final int BUTTON_SIZE = 100;
 
@@ -40,7 +40,7 @@ public class MainMenu extends Application {
     public void start(Stage primaryStage) {
     	
         // Crear instancia de Media
-    	Media media = new Media(new File("../assets/audio/GiratinaRemix.wav").toURI().toString());
+    	Media media = new Media(new File("assets/audio/GiratinaRemix.wav").toURI().toString());
     	MediaPlayer mediaPlayer = new MediaPlayer(media);
     	mediaPlayer.play();
         
@@ -184,7 +184,7 @@ public class MainMenu extends Application {
 //cositas
 		// Evento para cuando el ratón entra en el ImageView
 		newGameButtonImageView.setOnMouseEntered(event -> {
-		    Image newImage = new Image(new File("../assets/icons/starti.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
+		    Image newImage = new Image(new File("assets/icons/starti.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
 		    newGameButtonImageView.setImage(newImage);
 		});
 
