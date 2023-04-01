@@ -1,1 +1,3 @@
 /bin/
+#para que no se jodan las rutas
+.classpath
