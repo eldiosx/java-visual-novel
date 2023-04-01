@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -19,20 +20,30 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+//import javafx.scene.media.MediaView;
+//import javafx.util.Duration;
+
 
 public class MainMenu extends Application {
 
-    private static final String BACKGROUND_URL = "file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/images/horror.gif";
-    private static final String NEW_GAME_BUTTON_URL = "file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String LOAD_GAME_BUTTON_URL = "file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String SETTINGS_BUTTON_URL = "file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String EXIT_BUTTON_URL = "file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String BACKGROUND_URL = new File("../assets/images/horror.gif").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/images/horror.gif";
+    private static final String NEW_GAME_BUTTON_URL = new File("../assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String LOAD_GAME_BUTTON_URL = new File("../assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String SETTINGS_BUTTON_URL = new File("../assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String EXIT_BUTTON_URL = new File("../assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
 
     private static final int BUTTON_SIZE = 100;
 
     @Override
     public void start(Stage primaryStage) {
-
+    	
+        // Crear instancia de Media
+    	Media media = new Media(new File("../assets/audio/GiratinaRemix.wav").toURI().toString());
+    	MediaPlayer mediaPlayer = new MediaPlayer(media);
+    	mediaPlayer.play();
+        
         // Cargar las imágenes
         Image newGameButtonImage = new Image(NEW_GAME_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
         Image loadGameButtonImage = new Image(LOAD_GAME_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
@@ -173,7 +184,7 @@ public class MainMenu extends Application {
 //cositas
 		// Evento para cuando el ratón entra en el ImageView
 		newGameButtonImageView.setOnMouseEntered(event -> {
-		    Image newImage = new Image("file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/starti.png", BUTTON_SIZE, BUTTON_SIZE, true, true);
+		    Image newImage = new Image(new File("../assets/icons/starti.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
 		    newGameButtonImageView.setImage(newImage);
 		});
 
