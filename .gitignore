@@ -1,2 +1,4 @@
 /.metadata/
 /java/.classpath
+#ignorasion
+java/.classpath
