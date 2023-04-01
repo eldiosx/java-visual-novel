@@ -148,8 +148,8 @@ public class MainMenu extends Application {
 		root.setTop(titleLabel);
 		BorderPane.setAlignment(titleLabel, Pos.CENTER);
 		// Escalar los botones
-		double buttonWidth = screenWidth / 1; //6
-		double buttonHeight = screenHeight / 8;
+		//double buttonWidth = screenWidth / 1; //6
+		//double buttonHeight = screenHeight / 8;
 
 //		newGameButton.setPrefSize(buttonWidth, buttonHeight);
 //		loadGameButton.setPrefSize(buttonWidth, buttonHeight);
