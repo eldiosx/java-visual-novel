@@ -24,29 +24,43 @@ import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
-import application.NewGameClass;
+import javafx.concurrent.Task;
+
+//import application.NewGameClass;
 //import javafx.scene.media.MediaView;
 //import javafx.util.Duration;
 
 
 public class MainMenu extends Application {
+	ClassLoader classLoader = getClass().getClassLoader();
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double fontSize = screenWidth * 0.05; // 5% del ancho de la pantalla
-    private static final String BACKGROUND_URL = new File("assets/images/horror.gif").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/images/horror.gif";
-    private static final String NEW_GAME_BUTTON_URL = new File("assets/icons/off/NewGameButton.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String LOAD_GAME_BUTTON_URL = new File("assets/icons/off/LoadButton.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String SETTINGS_BUTTON_URL = new File("assets/icons/off/SettingsButton.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String EXIT_BUTTON_URL = new File("assets/icons/off/QuitButton.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-
     private static final int BUTTON_SIZE = 100;
+    private MediaPlayer mediaPlayer;
+    private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
+    private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/horror.gif";
+    private static final String NEW_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/NewGameButton.png";
+    private static final String LOAD_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/LoadButton.png";
+    private static final String SETTINGS_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/SettingsButton.png";
+    private static final String EXIT_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/QuitButton.png";
+
 
     @Override
     public void start(Stage primaryStage) {
     	
-        // Crear instancia de Media
-    	Media media = new Media(new File("assets/audio/GiratinaRemix.wav").toURI().toString());
-    	MediaPlayer mediaPlayer = new MediaPlayer(media);
-    	mediaPlayer.play();
+        // Crear instancia de Media y hacer que la musica sea asincrona
+    	Task<Void> loadMusicTask = new Task<Void>() {
+    	    @Override
+    	    protected Void call() throws Exception {
+    	        Media media = new Media(new File(RESOURCES_PATH + "/audio/GiratinaRemix.wav").toURI().toString());
+    	        mediaPlayer = new MediaPlayer(media);
+    	        return null;
+    	    }
+    	};
+    	new Thread(loadMusicTask).start();
+    	loadMusicTask.setOnSucceeded(event -> {
+    	    mediaPlayer.play();
+    	});
         
         // Cargar las imágenes
         Image newGameButtonImage = new Image(NEW_GAME_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
