@@ -29,10 +29,10 @@ import javafx.util.Duration;
 
 public class MainMenu extends Application {
     private static final String BACKGROUND_URL = new File("assets/images/horror.gif").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/images/horror.gif";
-    private static final String NEW_GAME_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String LOAD_GAME_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String SETTINGS_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
-    private static final String EXIT_BUTTON_URL = new File("assets/icons/startx.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String NEW_GAME_BUTTON_URL = new File("assets/icons/off/NewGameButton.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String LOAD_GAME_BUTTON_URL = new File("assets/icons/off/LoadButton.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String SETTINGS_BUTTON_URL = new File("assets/icons/off/SettingsButton.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
+    private static final String EXIT_BUTTON_URL = new File("assets/icons/off/QuitButton.png").toURI().toString();//"file:///home/deck/Documents/GitHub/novelaGraficaJava/assets/icons/startx.png";
 
     private static final int BUTTON_SIZE = 100;
 
@@ -185,17 +185,36 @@ public class MainMenu extends Application {
 		primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
 		primaryStage.show();
 //cositas
-		// Evento para cuando el ratón entra en el ImageView
+		// Evento para cuando el ratón entra en el ImageView & Evento para cuando el ratón sale del ImageView
 		newGameButtonImageView.setOnMouseEntered(event -> {
-		    Image newImage = new Image(new File("assets/icons/starti.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
+		    Image newImage = new Image(new File("assets/icons/on/NewGameButton.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
 		    newGameButtonImageView.setImage(newImage);
 		});
-
-		// Evento para cuando el ratón sale del ImageView
 		newGameButtonImageView.setOnMouseExited(event -> {
 		    newGameButtonImageView.setImage(newGameButtonImage);
 		});
-	}
+	    loadGameButtonImageView.setOnMouseEntered(event -> {
+		    Image newImage = new Image(new File("assets/icons/on/LoadButton.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
+		    loadGameButtonImageView.setImage(newImage);
+		});
+	    loadGameButtonImageView.setOnMouseExited(event -> {
+			loadGameButtonImageView.setImage(loadGameButtonImage);
+		});
+	    settingsButtonImageView.setOnMouseEntered(event -> {
+		    Image newImage = new Image(new File("assets/icons/on/SettingsButton.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
+		    settingsButtonImageView.setImage(newImage);
+		});
+	    settingsButtonImageView.setOnMouseExited(event -> {
+	    	settingsButtonImageView.setImage(settingsButtonImage);
+		});
+	    exitButtonImageView.setOnMouseEntered(event -> {
+		    Image newImage = new Image(new File("assets/icons/on/QuitButton.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
+		    exitButtonImageView.setImage(newImage);
+		});
+	    exitButtonImageView.setOnMouseExited(event -> {
+	    	exitButtonImageView.setImage(exitButtonImage);
+		});
+}
 
 	public static void main(String[] args) {
 		launch(args);
