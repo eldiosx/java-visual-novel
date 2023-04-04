@@ -1,4 +1,6 @@
 /.metadata/
 #ignorasion
 java/.classpath
+java/.idea
+java/java.iml
 
