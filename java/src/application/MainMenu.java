@@ -25,6 +25,11 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.concurrent.Task;
+import javafx.stage.Popup;
+import javafx.scene.Group;
+import javafx.scene.control.ComboBox;
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
 
 //import application.NewGameClass;
 //import javafx.scene.media.MediaView;
@@ -37,6 +42,7 @@ public class MainMenu extends Application {
 	double fontSize = screenWidth * 0.05; // 5% del ancho de la pantalla
     private static final int BUTTON_SIZE = 100;
     private MediaPlayer mediaPlayer;
+    
     private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
     private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/horror.gif";
     private static final String NEW_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/NewGameButton.png";
@@ -61,24 +67,14 @@ public class MainMenu extends Application {
     	loadMusicTask.setOnSucceeded(event -> {
     	    mediaPlayer.play();
     	});
-        
+    	
         // Cargar las imágenes
         Image newGameButtonImage = new Image(NEW_GAME_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
         Image loadGameButtonImage = new Image(LOAD_GAME_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
         Image settingsButtonImage = new Image(SETTINGS_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
         Image exitButtonImage = new Image(EXIT_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
-
-        // Crear la ventana de ajustes
-        Stage settingsWindow = new Stage();
-        settingsWindow.setTitle("Ajustes");
-        Slider soundSlider = new Slider();
-        Button deleteButton = new Button("Borrar datos");
-        VBox settingsBox = new VBox(10, soundSlider, deleteButton);
-        settingsBox.setPadding(new Insets(10));
-        Scene ajustesScene = new Scene(settingsBox, 300, 200);
-        settingsWindow.setScene(ajustesScene);
         
-     // Crear los contenedores de los botones
+        // Crear los contenedores de los botones
         HBox topButtonsBox = new HBox();
         topButtonsBox.setAlignment(Pos.CENTER);
         topButtonsBox.setSpacing(20);
@@ -96,7 +92,52 @@ public class MainMenu extends Application {
         loadGameButtonImageView.setPreserveRatio(true);
         loadGameButtonImageView.setFitHeight(80);
         loadGameButtonImageView.setOnMouseClicked(event -> {
-            // Lógica para cargar una partida guardada
+        	//Bloquear que pueda abrir ventanas infinitas
+        	loadGameButtonImageView.setDisable(true);
+            Popup loadPopup = new Popup();
+            // Crear un botón para cerrar la ventana de load
+            Button closeButton = new Button("X");
+            //closeButton.setOnAction(e -> loadGameButtonImageView.setDisable(false));
+            closeButton.setOnAction(e -> loadPopup.hide());
+            //Reactivar el boton de load
+            loadPopup.setOnHidden(e -> loadGameButtonImageView.setDisable(false));
+            
+
+            // Crear una nueva escena para la ventana de load
+            VBox loadLayout = new VBox();
+            loadLayout.setOpacity(0.65); // configurar la opacidad a 0.75
+            loadLayout.setStyle("-fx-background-color: #111111;"); // configurar el color de fondo
+            loadLayout.setPrefHeight(500);
+            loadLayout.setPrefWidth(500);
+            
+            Label label = new Label(" Cargar partida ");
+            label.setStyle("-fx-font-size: 50px; -fx-text-fill: white;");
+            Label slotLabel = new Label("Slot 1: ");
+            Button slot1Button = new Button("0/00/0000 - Capitulo 0");
+            slotLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+            HBox saveData = new HBox(slotLabel, slot1Button);
+            // Agregar los controles a la escena de load
+            HBox header = new HBox(closeButton, label);
+            header.setStyle("-fx-background-color: #111111; -fx-padding: 20px;");
+            header.setPrefHeight(50);
+            header.setSpacing(5);
+            loadLayout.getChildren().addAll(header, saveData);
+            Scene loadScene = new Scene(loadLayout, 400, 400);
+            //Group root
+            Group root = new Group();
+            root.getChildren().add(loadScene.getRoot());
+            //decoracion y sombreado a la popup
+            DropShadow dropShadow = new DropShadow();
+            dropShadow.setColor(Color.BLACK);
+            dropShadow.setRadius(55);
+            root.setEffect(dropShadow);
+            // Agregar el objeto Group a la ventana emergente
+            loadPopup.getContent().add(root);
+            
+            
+            
+            // Mostrar la ventana emergente en la posición del botón
+            loadPopup.show(primaryStage);
         });
         topButtonsBox.getChildren().add(loadGameButtonImageView);
 
@@ -109,7 +150,59 @@ public class MainMenu extends Application {
         settingsButtonImageView.setPreserveRatio(true);
         settingsButtonImageView.setFitHeight(80);
         settingsButtonImageView.setOnMouseClicked(event -> {
-        	settingsWindow.show();
+        	//Bloquear que pueda abrir ventanas infinitas
+        	settingsButtonImageView.setDisable(true);
+            Popup settingsPopup = new Popup();
+            
+            // Crear un botón para cerrar la ventana de settings
+            Button closeButton = new Button("X");
+            closeButton.setOnAction(e -> settingsPopup.hide());
+          //Reactivar el boton de settings
+            settingsPopup.setOnHidden(e -> settingsButtonImageView.setDisable(false));
+
+            // Crear una nueva escena para la ventana de settings
+            VBox settingsLayout = new VBox();
+            settingsLayout.setOpacity(0.65); // configurar la opacidad a 0.75
+            settingsLayout.setStyle("-fx-background-color: #111111;"); // configurar el color de fondo
+            settingsLayout.setPrefHeight(500);
+            settingsLayout.setPrefWidth(500);
+            Label label = new Label(" Settings ");
+            label.setStyle("-fx-font-size: 50px; -fx-text-fill: white;");
+            Label musicLabel = new Label("Música:");
+            musicLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+            Slider musicSlider = new Slider(0, 100, 50);
+            Label soundLabel = new Label("Sonido:");
+            soundLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+            Slider soundSlider = new Slider(0, 100, 50);
+            Label languageLabel = new Label("Idioma (Textos):");
+            //COnfiguraciones del idioma mediante listas:
+            languageLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+            ObservableList<String> listLanguage = FXCollections.observableArrayList("Español", "Inglés", "Francés");
+            ComboBox<String> languageBox = new ComboBox<>(listLanguage);
+            Label voiceLabel = new Label("Idioma (Voces):");
+            voiceLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+            ObservableList<String> listVoice = FXCollections.observableArrayList("Español");
+            ComboBox<String> languageVoiceBox = new ComboBox<>(listVoice);
+
+            // Agregar los controles a la escena de settings
+            HBox header = new HBox(closeButton, label);
+            header.setStyle("-fx-background-color: #111111; -fx-padding: 20px;");
+            header.setPrefHeight(50);
+            header.setSpacing(5);
+            settingsLayout.getChildren().addAll(header, musicLabel, musicSlider, soundLabel, soundSlider, languageLabel, languageBox, voiceLabel, languageVoiceBox);
+            Scene settingsScene = new Scene(settingsLayout, 400, 400);
+            // Root group con toditoo
+            Group root = new Group();
+            root.getChildren().add(settingsScene.getRoot());
+            //decoracion y sombreado a la popup
+            DropShadow dropShadow = new DropShadow();
+            dropShadow.setColor(Color.BLACK);
+            dropShadow.setRadius(55);
+            root.setEffect(dropShadow);
+            // Agregar el objeto Group a la ventana emergente
+            settingsPopup.getContent().add(root);
+            // Mostrar la ventana emergente en la posición del botón
+            settingsPopup.show(primaryStage);
         });
         bottomButtonsBox.getChildren().add(settingsButtonImageView);
 
