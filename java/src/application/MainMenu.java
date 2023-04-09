@@ -30,8 +30,7 @@ import javafx.scene.Group;
 import javafx.scene.control.ComboBox;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
-
-//import application.NewGameClass;
+import application.SoundBox;
 //import javafx.scene.media.MediaView;
 //import javafx.util.Duration;
 
@@ -41,8 +40,7 @@ public class MainMenu extends Application {
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double fontSize = screenWidth * 0.05; // 5% del ancho de la pantalla
     private static final int BUTTON_SIZE = 100;
-    private MediaPlayer mediaPlayer;
-    
+    private MediaPlayer backgroundPlayer;
     private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
     private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/horror.gif";
     private static final String NEW_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/NewGameButton.png";
@@ -54,18 +52,19 @@ public class MainMenu extends Application {
     @Override
     public void start(Stage primaryStage) {
     	
-        // Crear instancia de Media y hacer que la musica sea asincrona
+        // CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea "asincrona"
+    	
     	Task<Void> loadMusicTask = new Task<Void>() {
     	    @Override
     	    protected Void call() throws Exception {
-    	        Media media = new Media(new File(RESOURCES_PATH + "/audio/GiratinaRemix.wav").toURI().toString());
-    	        mediaPlayer = new MediaPlayer(media);
+    	        Media background = new Media(new File(RESOURCES_PATH + "/audio/BayuBayushkiBayu-RussianLullaby.mp3").toURI().toString());
+    	        backgroundPlayer = new MediaPlayer(background);
     	        return null;
     	    }
     	};
     	new Thread(loadMusicTask).start();
     	loadMusicTask.setOnSucceeded(event -> {
-    	    mediaPlayer.play();
+    		backgroundPlayer.play();
     	});
     	
         // Cargar las imágenes
@@ -84,6 +83,7 @@ public class MainMenu extends Application {
         newGameButtonImageView.setPreserveRatio(true);
         newGameButtonImageView.setFitHeight(80);
         newGameButtonImageView.setOnMouseClicked(event -> {
+		    SoundBox.playSound(RESOURCES_PATH + "/audio/5-fs.wav");
             // Lógica para iniciar una nueva partida
         });
         topButtonsBox.getChildren().add(newGameButtonImageView);
@@ -92,6 +92,7 @@ public class MainMenu extends Application {
         loadGameButtonImageView.setPreserveRatio(true);
         loadGameButtonImageView.setFitHeight(80);
         loadGameButtonImageView.setOnMouseClicked(event -> {
+		    SoundBox.playSound(RESOURCES_PATH + "/audio/5-fs.wav");
         	//Bloquear que pueda abrir ventanas infinitas
         	loadGameButtonImageView.setDisable(true);
             Popup loadPopup = new Popup();
@@ -112,16 +113,27 @@ public class MainMenu extends Application {
             
             Label label = new Label(" Cargar partida ");
             label.setStyle("-fx-font-size: 50px; -fx-text-fill: white;");
-            Label slotLabel = new Label("Slot 1: ");
+            Label slot1Label = new Label("Slot 1: ");
             Button slot1Button = new Button("0/00/0000 - Capitulo 0");
-            slotLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
-            HBox saveData = new HBox(slotLabel, slot1Button);
+            slot1Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+            Label slot2Label = new Label("Slot 2: ");
+            Button slot2Button = new Button("Empty save...");
+            slot2Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+            Label slot3Label = new Label("Slot 3: ");
+            Button slot3Button = new Button("Empty save...");
+            slot3Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+            HBox saveData1 = new HBox(slot1Label, slot1Button);
+            saveData1.setStyle("-fx-padding: 20px;");
+            HBox saveData2 = new HBox(slot2Label, slot2Button);
+            saveData2.setStyle("-fx-padding: 20px;");
+            HBox saveData3 = new HBox(slot3Label, slot3Button);
+            saveData3.setStyle("-fx-padding: 20px;");
             // Agregar los controles a la escena de load
             HBox header = new HBox(closeButton, label);
             header.setStyle("-fx-background-color: #111111; -fx-padding: 20px;");
             header.setPrefHeight(50);
             header.setSpacing(5);
-            loadLayout.getChildren().addAll(header, saveData);
+            loadLayout.getChildren().addAll(header, saveData1, saveData2, saveData3);
             Scene loadScene = new Scene(loadLayout, 400, 400);
             //Group root
             Group root = new Group();
@@ -150,6 +162,7 @@ public class MainMenu extends Application {
         settingsButtonImageView.setPreserveRatio(true);
         settingsButtonImageView.setFitHeight(80);
         settingsButtonImageView.setOnMouseClicked(event -> {
+		    SoundBox.playSound(RESOURCES_PATH + "/audio/5-fs.wav");
         	//Bloquear que pueda abrir ventanas infinitas
         	settingsButtonImageView.setDisable(true);
             Popup settingsPopup = new Popup();
@@ -163,7 +176,7 @@ public class MainMenu extends Application {
             // Crear una nueva escena para la ventana de settings
             VBox settingsLayout = new VBox();
             settingsLayout.setOpacity(0.65); // configurar la opacidad a 0.75
-            settingsLayout.setStyle("-fx-background-color: #111111;"); // configurar el color de fondo
+            settingsLayout.setStyle("-fx-background-color: #111111; -fx-padding: 20px;"); // configurar el color de fondo
             settingsLayout.setPrefHeight(500);
             settingsLayout.setPrefWidth(500);
             Label label = new Label(" Settings ");
@@ -210,6 +223,7 @@ public class MainMenu extends Application {
         exitButtonImageView.setPreserveRatio(true);
         exitButtonImageView.setFitHeight(80);
         exitButtonImageView.setOnMouseClicked(event -> {
+		    SoundBox.playSound(RESOURCES_PATH + "/audio/5-fs.wav");
             // Lógica para cerrar la aplicación
             primaryStage.close();
         });
@@ -265,6 +279,7 @@ public class MainMenu extends Application {
 		newGameButtonImageView.setOnMouseEntered(event -> {
 		    Image newImage = new Image(new File("assets/icons/on/NewGameButton.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
 		    newGameButtonImageView.setImage(newImage);
+		    SoundBox.playSound(RESOURCES_PATH + "/audio/5-d.wav");
 		});
 		newGameButtonImageView.setOnMouseExited(event -> {
 		    newGameButtonImageView.setImage(newGameButtonImage);
@@ -272,6 +287,7 @@ public class MainMenu extends Application {
 	    loadGameButtonImageView.setOnMouseEntered(event -> {
 		    Image newImage = new Image(new File("assets/icons/on/LoadButton.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
 		    loadGameButtonImageView.setImage(newImage);
+		    SoundBox.playSound(RESOURCES_PATH + "/audio/5-d.wav");
 		});
 	    loadGameButtonImageView.setOnMouseExited(event -> {
 			loadGameButtonImageView.setImage(loadGameButtonImage);
@@ -279,6 +295,7 @@ public class MainMenu extends Application {
 	    settingsButtonImageView.setOnMouseEntered(event -> {
 		    Image newImage = new Image(new File("assets/icons/on/SettingsButton.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
 		    settingsButtonImageView.setImage(newImage);
+		    SoundBox.playSound(RESOURCES_PATH + "/audio/5-d.wav");
 		});
 	    settingsButtonImageView.setOnMouseExited(event -> {
 	    	settingsButtonImageView.setImage(settingsButtonImage);
@@ -286,6 +303,7 @@ public class MainMenu extends Application {
 	    exitButtonImageView.setOnMouseEntered(event -> {
 		    Image newImage = new Image(new File("assets/icons/on/QuitButton.png").toURI().toString(), BUTTON_SIZE, BUTTON_SIZE, true, true);
 		    exitButtonImageView.setImage(newImage);
+		    SoundBox.playSound(RESOURCES_PATH + "/audio/5-d.wav");
 		});
 	    exitButtonImageView.setOnMouseExited(event -> {
 	    	exitButtonImageView.setImage(exitButtonImage);
