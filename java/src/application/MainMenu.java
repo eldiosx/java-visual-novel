@@ -24,12 +24,16 @@ import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.concurrent.Task;
 import javafx.stage.Popup;
 import javafx.scene.Group;
 import javafx.scene.control.ComboBox;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import application.SoundBox;
 //import javafx.scene.media.MediaView;
 //import javafx.util.Duration;
@@ -40,6 +44,7 @@ public class MainMenu extends Application {
     double fontSize = screenWidth * 0.05; // 5% del ancho de la pantalla
     private static final int BUTTON_SIZE = 100;
     private MediaPlayer backgroundPlayer;
+    private Font titleFont;
     private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
     private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/darkforest.gif";
     private static final String NEW_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/NewGameButton.png";
@@ -235,11 +240,17 @@ public class MainMenu extends Application {
         buttonsBox.getChildren().addAll(topButtonsBox, bottomButtonsBox);
         buttonsBox.setPadding(new Insets(0, 0, 30, 0)); // Agregar un padding
 
-        // Crear el título con sombra (utilizo el DropShadow)
+        // Crear el título con sombra (utilizo el DropShadow) + fuente personalizada y try catch x si peta
+		try {
+			titleFont = Font.loadFont(new FileInputStream(new File(RESOURCES_PATH + "/fonts/BloodyTerror.ttf")), 12);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         Label titleLabel = new Label("Tu videojuego favorito de serie B");
-        titleLabel.setStyle("-fx-font-size: " + fontSize + "px; -fx-text-fill: gray;");
+        titleLabel.setStyle("-fx-font-size: " + fontSize + "px; -fx-text-fill: #030304; -fx-font-family: '" + titleFont.getName() + "';");
         DropShadow dropShadow = new DropShadow();
-        dropShadow.setColor(Color.BLACK);
+        dropShadow.setColor(Color.WHITE);
         dropShadow.setRadius(10);
         dropShadow.setOffsetX(4);
         dropShadow.setOffsetY(4);
