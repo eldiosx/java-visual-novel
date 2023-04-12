@@ -3,10 +3,11 @@ package application;
 import java.io.File;
 
 import javafx.application.Application;
-import javafx.scene.control.Button;
 import javafx.beans.binding.DoubleBinding;
+import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,15 +23,25 @@ import javafx.stage.Stage;
 public class Transition extends Application {
     private Font titleFont;
     private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
-    private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/horror.gif";
+    private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/Prologo/Prologo/DirectorBienvenida.png";
     private static final double MARGIN_LEFT = 50.0;
     private static final double MARGIN_BOTTOM = 50.0;
+    @FXML
+    private Button miBoton;
+    @FXML
+    private void handleMiBotonClick() {
+        System.out.println("¡El botón fue clickeado!");
+    }
 
     @Override
     public void start(Stage primaryStage) {
+    	 
+    	
+    	
+    	
         primaryStage.setTitle("Episodio 1");
         // Configurar la ventana
-        primaryStage.setTitle("Tu videojuego favorito de serie B"); // Título de la ventana
+        
         primaryStage.setResizable(true); // Se puede redimensionar
         primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
         primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
@@ -38,12 +49,9 @@ public class Transition extends Application {
         primaryStage.show();
         
         BorderPane borderPane = new BorderPane();
-        //imagen de fondo a la escena
-        String ImagenFondo = (RESOURCES_PATH + "/images/fondo1.jpg");
-        addBackgroundImageToScene(borderPane, ImagenFondo);
         //imagen de la persona
-        String ImagenPersona = (RESOURCES_PATH + "");//para la imagen de la persona
-        
+        Image backgroundImage = new Image("file:" + RESOURCES_PATH + "/images/Prologo/Prologo/DirectorBienvenida.png");
+  
         
         
         //caja de texto
@@ -51,6 +59,7 @@ public class Transition extends Application {
         vBox.setAlignment(Pos.BOTTOM_LEFT); // Alinea los nodos al centro del VBox
         vBox.setSpacing(10); // Establece un espacio de 10 píxeles entre los nodos en el VBox
         //label de texto
+        
         Label labelBienvenida = new Label(
                 "Bienvenido al campamento \"The Otter\". Espero que estés preparado para dos semanas de diversión. Tus compañeros ya están ubicados en sus cabañas. La tuya es la cabaña número 7, puedes ir a acomodarte si quieres .");
         labelBienvenida.setWrapText(true);
@@ -76,13 +85,11 @@ public class Transition extends Application {
         vBox.getChildren().add(labelBienvenida); 
         vBox.getChildren().add(buttonOpcion1); 
 
-        Label otroLabel = new Label(""); // Crea otro Label
-        otroLabel.setFont(new Font(14));
-        vBox.getChildren().add(otroLabel); // Agrega el otro Label al VBox
+    // Agrega el otro Label al VBox
 
         borderPane.setCenter(vBox); // Agrega el VBox al centro del BorderPane
 
-        Image backgroundImage = new Image(BACKGROUND_URL);
+        //Image backgroundImage = new Image(BACKGROUND_URL);
         ImageView backgroundImageView = new ImageView(backgroundImage);
         borderPane.getChildren().add(0, backgroundImageView);
         borderPane.setMargin(vBox, new javafx.geometry.Insets(MARGIN_BOTTOM, 0, 0, MARGIN_LEFT));
@@ -91,7 +98,6 @@ public class Transition extends Application {
             {
                 super.bind(primaryStage.widthProperty());
             }
-
             @Override
             protected double computeValue() {
                 return primaryStage.getWidth() * 0.2;
