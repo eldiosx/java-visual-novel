@@ -11,12 +11,7 @@ public class CadaverEP1 {
 		//Botones
 		// Cuando se pincha un botón la variable cadáver cambia de estado y pasa automáticamente al switch
 		
-			//Boton de: Inspeccionar Cuerpo
-			//Boton de: Inspeccionar Sangre
-			//Boton de: Inspeccionar Suelo
-			//Boton de: Inspeccionar Sala
-			//Boton de: Inspeccionar Cuchillo
-			//Boton de: Inspeccionar Mano
+
 			
 			switch(cadaver) {
 			case 1: //Inspeccionar Cuerpo
