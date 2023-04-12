@@ -39,7 +39,7 @@ public class Transition extends Application {
 		label.setWrapText(true); // Activar ajuste de texto
 		label.setMaxWidth(LABEL_WIDTH); // Ancho máximo del cuadro de texto
 
-		// Configurar el fondo del Label con un color azul oscuro con opacidad
+		// Configurar el fondo del Label con un color negro con opacidad
 		BackgroundFill backgroundFill = new BackgroundFill(Color.rgb(0, 0, 139, 0.5), new CornerRadii(10), null);
 		label.setBackground(new Background(backgroundFill));
 
