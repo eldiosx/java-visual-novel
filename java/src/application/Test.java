@@ -1,39 +1,26 @@
 package application;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Test {
+public class Test extends Application {
 
-    @FXML
-    private ResourceBundle resources;
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Test.fxml"));
+        Parent root = loader.load();
 
-    @FXML
-    private URL location;
+        Scene scene = new Scene(root);
 
-    @FXML
-    private Font x1;
-
-    @FXML
-    private Color x2;
-
-    @FXML
-    private Font x3;
-
-    @FXML
-    private Color x4;
-
-    @FXML
-    void initialize() {
-        assert x1 != null : "fx:id=\"x1\" was not injected: check your FXML file 'Test.fxml'.";
-        assert x2 != null : "fx:id=\"x2\" was not injected: check your FXML file 'Test.fxml'.";
-        assert x3 != null : "fx:id=\"x3\" was not injected: check your FXML file 'Test.fxml'.";
-        assert x4 != null : "fx:id=\"x4\" was not injected: check your FXML file 'Test.fxml'.";
-
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Test");
+        primaryStage.show();
     }
 
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
-
