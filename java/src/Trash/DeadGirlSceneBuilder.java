@@ -1,4 +1,4 @@
-package applicationOldClases;
+package Trash;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

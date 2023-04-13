@@ -1,4 +1,4 @@
-package applicationOldClases;
+package Trash;
 
 import java.io.IOException;
 import java.io.File;

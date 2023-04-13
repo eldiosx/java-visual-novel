@@ -1,4 +1,4 @@
-package application;
+package Trash;
 
 import javafx.application.Application;
 import javafx.beans.binding.DoubleBinding;
@@ -23,12 +23,10 @@ public class Transition extends Application {
 	private static final double MARGIN_LEFT = 50.0; // Margen izquierdo
 	private static final double MARGIN_BOTTOM = 50.0; // Margen inferior
 
-<<<<<<< Updated upstream
 	@Override
 	public void start(Stage primaryStage) {
 		// Configuración de la ventana principal
 		primaryStage.setTitle("Mi Aplicación"); // Título de la ventana
-=======
     @Override
     public void start(Stage primaryStage) {
     	
@@ -77,7 +75,6 @@ public class Transition extends Application {
      // Agrega la Label al VBox
         vBox.getChildren().add(labelBienvenida); 
         vBox.getChildren().add(buttonOpcion1); 
->>>>>>> Stashed changes
 
 		// Panel principal con diseño de borde
 		BorderPane borderPane = new BorderPane();

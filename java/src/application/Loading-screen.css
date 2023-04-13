@@ -1,0 +1,15 @@
+
+#loadingIndicator {
+    -fx-background-color: blue;
+    -fx-border-color: white;
+    -fx-border-width: 2.0;
+    -fx-border-radius: 50.0%;
+    -fx-pref-width: 50.0;
+    -fx-pref-height: 50.0;
+    -fx-animation: spin 1.0s linear infinite;
+}
+
+@keyframes spin {
+    0.0% { -fx-rotate: 0.0; }
+    100% { -fx-rotate: 360; }
+}
