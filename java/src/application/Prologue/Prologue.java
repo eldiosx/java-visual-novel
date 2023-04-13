@@ -6,11 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Test extends Application {
+public class Prologue extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Test.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue_Scene_Builder1.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root);

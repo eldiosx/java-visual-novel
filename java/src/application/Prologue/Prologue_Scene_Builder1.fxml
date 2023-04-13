@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -41,18 +42,28 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="1083.0" prefWidth="1920.0">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fitHeight="1089.0" fitWidth="1922.0">
+            <ImageView fitHeight="1101.0" fitWidth="1930.0" layoutX="-10.0" layoutY="-7.0">
                <image>
-                  <Image url="@../../assets/images/Prologo/Prologo/JohnCabana.png" />
+                  <Image url="@../../../assets/images/Prologo/Prologo/DirectorBienvenida.png" />
                </image>
             </ImageView>
-            <Label layoutX="142.0" layoutY="534.0" prefHeight="443.0" prefWidth="1290.0" text="He hablado con Marleene para hacer una fogata esta noche y contar historias. &#10;Nos vemos esta noche&#10;" textFill="#64ff4d">
+            <Label layoutX="542.0" layoutY="688.0" prefHeight="181.0" prefWidth="830.0" text="Bienvenido al campamento The Otter. Espero que &#10;estés preparado para dos semanas de diversión. &#10;Tus compañeros ya están ubicados en sus cabañas. &#10;" textAlignment="RIGHT" textFill="#1fff13">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
+            <Label layoutX="807.0" layoutY="754.0" prefHeight="315.0" prefWidth="691.0" text="La tuya es la cabaña número 7, &#10;puedes ir a acomodarte si quieres." textAlignment="RIGHT" textFill="#00ff26">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button layoutX="986.0" layoutY="574.0" mnemonicParsing="false" prefHeight="109.0" prefWidth="383.0" style="-fx-background-color: Transparent;" text="Ver el campamento" textFill="#1eff30">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

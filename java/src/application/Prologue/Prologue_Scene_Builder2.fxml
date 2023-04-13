@@ -47,7 +47,7 @@
          <children>
             <ImageView fitHeight="1081.0" fitWidth="1922.0">
                <image>
-                  <Image url="@../../assets/images/Prologo/Prologo/JohnCabana.png" />
+                  <Image url="@../../../assets/images/Prologo/Prologo/JohnCabana.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="460.0" layoutY="806.0" prefHeight="175.0" prefWidth="902.0" style="-fx-background-color: BLUE;" text="Hey, pensé que ya no llegabas. ¿Qué tal el viaje?" textAlignment="CENTER" textFill="#60f013">
