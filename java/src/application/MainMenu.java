@@ -33,11 +33,11 @@ import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 import application.SoundBox;
 //import javafx.scene.media.MediaView;
 //import javafx.util.Duration;
 
+@SuppressWarnings("unused")//Me tocan los huevo estas alertas sin sentido
 public class MainMenu extends Application {
     ClassLoader classLoader = getClass().getClassLoader();
     double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
@@ -289,7 +289,7 @@ public class MainMenu extends Application {
         // Evento para cuando el ratón entra en el ImageView & Evento para cuando el
         // ratón sale del ImageView
         newGameButtonImageView.setOnMouseEntered(event -> {
-            Image newImage = new Image(new File("assets/icons/on/NewGameButton.png").toURI().toString(), BUTTON_SIZE,
+            Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/NewGameButton.png").toURI().toString(), BUTTON_SIZE,
                     BUTTON_SIZE, true, true);
             newGameButtonImageView.setImage(newImage);
             SoundBox.playSound(RESOURCES_PATH + "/audio/select.wav");
@@ -298,7 +298,7 @@ public class MainMenu extends Application {
             newGameButtonImageView.setImage(newGameButtonImage);
         });
         loadGameButtonImageView.setOnMouseEntered(event -> {
-            Image newImage = new Image(new File("assets/icons/on/LoadButton.png").toURI().toString(), BUTTON_SIZE,
+            Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/LoadButton.png").toURI().toString(), BUTTON_SIZE,
                     BUTTON_SIZE, true, true);
             loadGameButtonImageView.setImage(newImage);
             SoundBox.playSound(RESOURCES_PATH + "/audio/select.wav");
@@ -307,7 +307,7 @@ public class MainMenu extends Application {
             loadGameButtonImageView.setImage(loadGameButtonImage);
         });
         settingsButtonImageView.setOnMouseEntered(event -> {
-            Image newImage = new Image(new File("assets/icons/on/SettingsButton.png").toURI().toString(), BUTTON_SIZE,
+            Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/SettingsButton.png").toURI().toString(), BUTTON_SIZE,
                     BUTTON_SIZE, true, true);
             settingsButtonImageView.setImage(newImage);
             SoundBox.playSound(RESOURCES_PATH + "/audio/select.wav");
@@ -316,7 +316,7 @@ public class MainMenu extends Application {
             settingsButtonImageView.setImage(settingsButtonImage);
         });
         exitButtonImageView.setOnMouseEntered(event -> {
-            Image newImage = new Image(new File("assets/icons/on/QuitButton.png").toURI().toString(), BUTTON_SIZE,
+            Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/QuitButton.png").toURI().toString(), BUTTON_SIZE,
                     BUTTON_SIZE, true, true);
             exitButtonImageView.setImage(newImage);
             SoundBox.playSound(RESOURCES_PATH + "/audio/select.wav");
