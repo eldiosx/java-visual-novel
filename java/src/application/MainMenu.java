@@ -38,11 +38,9 @@ import java.io.FileNotFoundException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.mysql.cj.protocol.Resultset;
-
 import application.SoundBox;
-
-//import javafx.scene.media.MediaView;
-//import javafx.util.Duration;
+import javafx.scene.media.MediaView;
+import javafx.util.Duration;
 
 
 
@@ -139,14 +137,14 @@ public class MainMenu extends Application {
 					conexion.conectar();
 					// String insertarLinea = "INSERT INTO episodio (NUM_episodio,nombreEpisodio) VALUES ('3', 'Ep3')";
 					// conexion.ejecutarInsertDeleteUpdate(insertarLinea);
-					String selectPrueba = "SELECT * from episodio";
+					String selectPrueba = "SELECT dialogo from dialogos WHERE COD_dialogo = 1;";
 					ResultSet datos = conexion.ejecutarSelect(selectPrueba);
 					
 					while (datos.next()) {
-						int numEpisodio = datos.getInt("NUM_episodio");
-						String nombreEpisodio = datos.getString("nombreEpisodio");
-						System.out.println(numEpisodio);
-						System.out.println(nombreEpisodio);
+						//int numEpisodio = datos.getInt("NUM_episodio");
+						String dialogoPrueba = datos.getString("dialogo");
+						//System.out.println(numEpisodio);
+						System.out.println(dialogoPrueba);
 
 					}
 				} catch (SQLException e1) {
