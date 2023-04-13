@@ -46,7 +46,7 @@
          <children>
             <ImageView fitHeight="1080.0" fitWidth="1920.0">
                <image>
-                  <Image url="@../../assets/images/Episodio%201/Ep%201/murder-g1becb647e_1920.jpg" />
+                  <Image url="@../../../assets/images/Episodio%201/Ep%201/murder-g1becb647e_1920.jpg" />
                </image>
             </ImageView>
             <Button layoutX="1042.0" layoutY="210.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar mano&#10;">
