@@ -1,11 +1,12 @@
-package application;
+package applicationOldClases;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import application.CadaverEP1Principal;
+import application.SoundBox;
+
 
 public class DeadGirlSceneBuilder extends Application {
 

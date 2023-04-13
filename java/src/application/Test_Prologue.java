@@ -10,7 +10,7 @@ public class Test_Prologue extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue_Welcome_Secene_Builder.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue_Welcome_Scene_Builder.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root);
