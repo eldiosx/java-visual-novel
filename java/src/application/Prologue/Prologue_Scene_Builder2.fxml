@@ -40,31 +40,32 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-  <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="341.0" prefWidth="601.0" VBox.vgrow="ALWAYS">
-      <children>
-            <ImageView fitHeight="1080.0" fitWidth="1920.0">
+   <children>
+      <AnchorPane prefHeight="1086.0" prefWidth="1920.0">
+         <children>
+            <ImageView fitHeight="1081.0" fitWidth="1922.0">
                <image>
-                  <Image url="@DirectorBienvenida.png" />
+                  <Image url="@../../../assets/images/Prologo/Prologo/JohnCabana.png" />
                </image>
             </ImageView>
-            <Button layoutX="915.0" layoutY="540.0" mnemonicParsing="false" onMouseClicked="public final EventHandler&lt;? super MouseEvent&gt; getOnMouseClicked()" prefHeight="89.0" prefWidth="359.0" style="-fx-background-color: transparent;" text="Ver el campamento" textAlignment="CENTER" textFill="#55c33c" wrapText="true">
+            <Label alignment="CENTER" layoutX="460.0" layoutY="806.0" prefHeight="175.0" prefWidth="902.0" style="-fx-background-color: BLUE;" text="Hey, pensé que ya no llegabas. ¿Qué tal el viaje?" textAlignment="CENTER" textFill="#60f013">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button layoutX="755.0" layoutY="680.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="264.0" style="-fx-background-color: BLUE;" text="BIEN" textFill="#14ff18">
                <font>
                   <Font size="36.0" />
                </font>
             </Button>
-            <Label layoutX="145.0" layoutY="670.0" onMouseClicked="public final EventHandler&lt;? super MouseEvent&gt; getOnMouseClicked()" prefHeight="269.0" prefWidth="1164.0" style="-fx-background-color: transparent;" text="Bienvenido al campamento The Otter. Espero que &#10;estés preparado para dos semanas de diversión. &#10;Tus compañeros ya están ubicados en sus cabañas. &#10;" textAlignment="RIGHT" textFill="#55c33c">
+            <Button layoutX="1072.0" layoutY="681.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="264.0" style="-fx-background-color: BLUE;" text="MIEH" textFill="#14ff18">
                <font>
-                  <Font size="48.0" />
+                  <Font size="36.0" />
                </font>
-            </Label>
-            <Label layoutX="504.0" layoutY="901.0" prefHeight="153.0" prefWidth="805.0" text="La tuya es la cabaña número 7, &#10;puedes ir a acomodarte si quieres." textAlignment="RIGHT" textFill="#55c33c">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Label>
-      </children>
-    </AnchorPane>
-  </children>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
 </VBox>

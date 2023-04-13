@@ -137,7 +137,7 @@ public class MainMenu extends Application {
 					conexion.conectar();
 					// String insertarLinea = "INSERT INTO episodio (NUM_episodio,nombreEpisodio) VALUES ('3', 'Ep3')";
 					// conexion.ejecutarInsertDeleteUpdate(insertarLinea);
-					String selectPrueba = "SELECT dialogo from dialogos WHERE COD_dialogo = 1;";
+					String selectPrueba = "SELECT dialogo from dialogos WHERE COD_dialogo = 2;";
 					ResultSet datos = conexion.ejecutarSelect(selectPrueba);
 					
 					while (datos.next()) {
