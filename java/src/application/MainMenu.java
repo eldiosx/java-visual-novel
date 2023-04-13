@@ -1,5 +1,6 @@
 package application;
 
+import java.beans.EventHandler;
 import java.io.File;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -31,14 +32,24 @@ import javafx.scene.Group;
 import javafx.scene.control.ComboBox;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import com.mysql.cj.protocol.Resultset;
+
 import application.SoundBox;
 //import javafx.scene.media.MediaView;
 //import javafx.util.Duration;
 
-@SuppressWarnings("unused")//Me tocan los huevo estas alertas sin sentido
+
+
 public class MainMenu extends Application {
+	
+	//Crear instancia de la clase ConexionMySQL
+	ConexionMySQL conexion = new ConexionMySQL("root", "", "videojuego serie b");
+	
     ClassLoader classLoader = getClass().getClassLoader();
     double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
     double fontSize = screenWidth * 0.05; // 5% del ancho de la pantalla
@@ -120,6 +131,39 @@ public class MainMenu extends Application {
             Label slot1Label = new Label("Slot 1: ");
             Button slot1Button = new Button("0/00/0000 - Capitulo 0");
             slot1Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+            
+            // Este código que empieza aquí son pruebas para la conexión a la BD. No borrar.
+            slot1Button.setOnAction(event2 -> {
+            	try {
+					conexion.conectar();
+					// String insertarLinea = "INSERT INTO episodio (NUM_episodio,nombreEpisodio) VALUES ('3', 'Ep3')";
+					// conexion.ejecutarInsertDeleteUpdate(insertarLinea);
+					String selectPrueba = "SELECT * from episodio";
+					ResultSet datos = conexion.ejecutarSelect(selectPrueba);
+					
+					while (datos.next()) {
+						int numEpisodio = datos.getInt("NUM_episodio");
+						String nombreEpisodio = datos.getString("nombreEpisodio");
+						System.out.println(numEpisodio);
+						System.out.println(nombreEpisodio);
+
+					}
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            	finally {
+            		try {
+						conexion.desconectar();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+            	}
+            });
+            
+            // Hasta aquí el código de pruebas
+            
             Label slot2Label = new Label("Slot 2: ");
             Button slot2Button = new Button("Empty save...");
             slot2Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
@@ -327,7 +371,7 @@ public class MainMenu extends Application {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException{
         launch(args);
     }
 
