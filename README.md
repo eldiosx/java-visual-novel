@@ -25,3 +25,14 @@ Se trata de un proyecto que pretende ofrecer al jugador una experiencia narrativ
 Para hacer realidad este proyecto, nos hemos inspirado en el género de videojuegos denominados como aventuras gráficas, en los cuales se le presentan al jugador una serie de personajes que han de tomar decisiones, y serán dichas elecciones las que determinarán el rumbo de la aventura. En lo referente a la pura ambientación, queremos dar un ambiente tétrico, pues la trama se desarrollará en un campamento de verano ubicado en un bosque.
 <h3>Contextualización del videojuego: </h3>
 En este proyecto se presenta el conflicto de un recién llegado grupo adolescentes a un campamento de verano en Connecticut.
+
+<h2>How to edit: </h2>
+
+<h3>For Eclipse: </h3>
+
+Open Lib folder and import all .jar like this you need add your JavaFX libraries or a Full Java JDK:
+![image](https://user-images.githubusercontent.com/61506276/232151975-619cd85e-2d2d-4552-8bbd-0c1d8c67afd5.png)
+
+<h3>For VsCode/ VsCodium: </h3>
+
+You will need Redhat extension kit for Java and condigure similar like this:
