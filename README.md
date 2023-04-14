@@ -30,7 +30,7 @@ En este proyecto se presenta el conflicto de un recién llegado grupo adolescent
 
 <h3>For Eclipse: </h3>
 
-Open Lib folder and import all .jar like this you need add your JavaFX libraries or a Full Java JDK:
+Open Lib folder and import all .jar like this you need add your JavaFX libraries or a Full Java JDK in the jre installed:
 ![image](https://user-images.githubusercontent.com/61506276/232151975-619cd85e-2d2d-4552-8bbd-0c1d8c67afd5.png)
 
 <h3>For VsCode/ VsCodium: </h3>
