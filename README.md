@@ -37,3 +37,9 @@ Open Lib folder and import all .jar like this you need add your JavaFX libraries
 
 You will need Redhat extension kit for Java and condigure similar like this:
 ![SETTINGS visual code](https://user-images.githubusercontent.com/61506276/232152387-51e0f02a-eb6b-45e7-82e9-e9357638682d.png)
+
+
+<h3>For IntelliJ: </h3>
+
+You will need import module-info with eclipse compatibility mode:
+*comming soon*
