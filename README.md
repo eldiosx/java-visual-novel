@@ -41,5 +41,6 @@ You will need Redhat extension kit for Java and condigure similar like this:
 
 <h3>For IntelliJ: </h3>
 
-You will need import module-info with eclipse compatibility mode:
-*comming soon*
+Install a full JDK for javafx17 and you will need import module-info with eclipse compatibility mode:
+![image](https://user-images.githubusercontent.com/61506276/232152854-d24a8c15-7d24-42f3-9447-516f5fc93d51.png)
+
