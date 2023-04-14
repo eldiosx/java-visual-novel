@@ -28,18 +28,18 @@ En este proyecto se presenta el conflicto de un recién llegado grupo adolescent
 
 <h2>How to edit: </h2>
 
-<h3>For Eclipse (flatpack compatible): </h3>
+<h3>For Eclipse (flatpak compatible): </h3>
 
 Open Lib folder and import all .jar like this you need add your JavaFX libraries or a Full Java JDK in the jre installed:
 ![image](https://user-images.githubusercontent.com/61506276/232151975-619cd85e-2d2d-4552-8bbd-0c1d8c67afd5.png)
 
-<h3>For VsCode/ VsCodium (flatpack compatible): </h3>
+<h3>For VsCode/ VsCodium (flatpak compatible): </h3>
 
 You will need Redhat extension kit for Java and condigure similar like this:
 ![SETTINGS visual code](https://user-images.githubusercontent.com/61506276/232152387-51e0f02a-eb6b-45e7-82e9-e9357638682d.png)
 
 
-<h3>For IntelliJ (flatpack compatible): </h3>
+<h3>For IntelliJ (flatpak compatible): </h3>
 
 Install a full JDK for javafx17 and you will need import module-info with eclipse compatibility mode:
 ![image](https://user-images.githubusercontent.com/61506276/232152854-d24a8c15-7d24-42f3-9447-516f5fc93d51.png)
