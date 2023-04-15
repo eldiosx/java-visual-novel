@@ -58,7 +58,12 @@ public class MainMenu extends Application {
 	double fontSize = screenWidth * 0.05; // 5% del ancho de la pantalla
 	private static final int BUTTON_SIZE = 100;
 	private Font titleFont;
+	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
+	// "asincrona"
+	SoundBox soundBox = new SoundBox();
 	OggPlayer oggPlayer = new OggPlayer();
+	BackgroundMusic backgroundMusic = new BackgroundMusic();
+	// Media:
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/darkforest.gif";
 	private static final String NEW_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/NewGameButton.png";
@@ -69,15 +74,12 @@ public class MainMenu extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 
-		// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
-		// "asincrona"
-
-		// Crear un nuevo hilo para reproducir el audio
+		// Crear un nuevo hilo para reproducir el audio de fondo
 		Thread audioThread = new Thread(new Runnable() {
 			@Override
 			public void run() {
 				try {
-					oggPlayer.playAudio("assets/audio/lullabyX.ogg");
+					backgroundMusic.playAudio("assets/audio/lullabyX.ogg");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -101,7 +103,7 @@ public class MainMenu extends Application {
 		newGameButtonImageView.setPreserveRatio(true);
 		newGameButtonImageView.setFitHeight(80);
 		newGameButtonImageView.setOnMouseClicked(event -> {
-			SoundBox.playSound(RESOURCES_PATH + "/audio/click.wav");
+			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Lógica para iniciar una nueva partida
 		});
 		topButtonsBox.getChildren().add(newGameButtonImageView);
@@ -110,14 +112,17 @@ public class MainMenu extends Application {
 		loadGameButtonImageView.setPreserveRatio(true);
 		loadGameButtonImageView.setFitHeight(80);
 		loadGameButtonImageView.setOnMouseClicked(event -> {
-			SoundBox.playSound(RESOURCES_PATH + "/audio/click.wav");
+			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Bloquear que pueda abrir ventanas infinitas
 			loadGameButtonImageView.setDisable(true);
 			Popup loadPopup = new Popup();
 			// Crear un botón para cerrar la ventana de load
-			Button closeButton = new Button("X");
 			// closeButton.setOnAction(e -> loadGameButtonImageView.setDisable(false));
-			closeButton.setOnAction(e -> loadPopup.hide());
+			Button closeButton = new Button("X");
+			closeButton.setOnAction(closePopup -> {
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
+				loadPopup.hide();
+			});
 			// Reactivar el boton de load
 			loadPopup.setOnHidden(e -> loadGameButtonImageView.setDisable(false));
 
@@ -208,14 +213,17 @@ public class MainMenu extends Application {
 		settingsButtonImageView.setPreserveRatio(true);
 		settingsButtonImageView.setFitHeight(80);
 		settingsButtonImageView.setOnMouseClicked(event -> {
-			SoundBox.playSound(RESOURCES_PATH + "/audio/click.wav");
+			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Bloquear que pueda abrir ventanas infinitas
 			settingsButtonImageView.setDisable(true);
 			Popup settingsPopup = new Popup();
 
 			// Crear un botón para cerrar la ventana de settings
 			Button closeButton = new Button("X");
-			closeButton.setOnAction(e -> settingsPopup.hide());
+			closeButton.setOnAction(closePopup -> {
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
+				settingsPopup.hide();
+			});
 
 			// Reactivar el boton de settings
 			settingsPopup.setOnHidden(e -> settingsButtonImageView.setDisable(false));
@@ -272,9 +280,9 @@ public class MainMenu extends Application {
 		exitButtonImageView.setPreserveRatio(true);
 		exitButtonImageView.setFitHeight(80);
 		exitButtonImageView.setOnMouseClicked(event -> {
-			SoundBox.playSound(RESOURCES_PATH + "/audio/click.wav");
+			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Lógica para cerrar la aplicación
-			oggPlayer.stopAudio();
+			backgroundMusic.stopAudio();
 			primaryStage.close();
 		});
 		bottomButtonsBox.getChildren().add(exitButtonImageView);
@@ -340,7 +348,7 @@ public class MainMenu extends Application {
 			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/NewGameButton.png").toURI().toString(),
 					BUTTON_SIZE, BUTTON_SIZE, true, true);
 			newGameButtonImageView.setImage(newImage);
-			SoundBox.playSound(RESOURCES_PATH + "/audio/select.wav");
+			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
 		});
 		newGameButtonImageView.setOnMouseExited(event -> {
 			newGameButtonImageView.setImage(newGameButtonImage);
@@ -349,7 +357,7 @@ public class MainMenu extends Application {
 			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/LoadButton.png").toURI().toString(),
 					BUTTON_SIZE, BUTTON_SIZE, true, true);
 			loadGameButtonImageView.setImage(newImage);
-			SoundBox.playSound(RESOURCES_PATH + "/audio/select.wav");
+			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
 		});
 		loadGameButtonImageView.setOnMouseExited(event -> {
 			loadGameButtonImageView.setImage(loadGameButtonImage);
@@ -358,7 +366,7 @@ public class MainMenu extends Application {
 			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/SettingsButton.png").toURI().toString(),
 					BUTTON_SIZE, BUTTON_SIZE, true, true);
 			settingsButtonImageView.setImage(newImage);
-			SoundBox.playSound(RESOURCES_PATH + "/audio/select.wav");
+			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
 		});
 		settingsButtonImageView.setOnMouseExited(event -> {
 			settingsButtonImageView.setImage(settingsButtonImage);
@@ -367,7 +375,7 @@ public class MainMenu extends Application {
 			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/QuitButton.png").toURI().toString(),
 					BUTTON_SIZE, BUTTON_SIZE, true, true);
 			exitButtonImageView.setImage(newImage);
-			SoundBox.playSound(RESOURCES_PATH + "/audio/select.wav");
+			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
 		});
 		exitButtonImageView.setOnMouseExited(event -> {
 			exitButtonImageView.setImage(exitButtonImage);
