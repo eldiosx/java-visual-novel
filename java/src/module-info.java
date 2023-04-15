@@ -2,7 +2,7 @@ module java {
 	requires javafx.controls; //UI Controls
 	requires javafx.media; // APIs for audio
 	requires gdx; //API GDX for mediaplayer .ogg
-//	requires jorbis; //API for ogg
+	requires jorbis; //API for ogg
 	requires javafx.fxml; // FXML
 	requires javafx.graphics; //CSS
 	requires java.sql; //SQL

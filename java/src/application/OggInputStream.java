@@ -1,4 +1,4 @@
-package com.jcraft.jorbis;
+package application;
 
 /**
  * Copyright (c) 2007, Slick 2D
@@ -29,10 +29,8 @@ import java.nio.ByteOrder;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.StreamUtils;
-import com.jcraft.jogg.Packet;
-import com.jcraft.jogg.Page;
-import com.jcraft.jogg.StreamState;
-import com.jcraft.jogg.SyncState;
+import com.jcraft.jogg.*;
+import com.jcraft.jorbis.*;
 
 /** An input stream to read Ogg Vorbis.
  * @author kevin */

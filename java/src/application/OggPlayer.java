@@ -6,7 +6,6 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.SourceDataLine;
-import com.jcraft.jorbis.*;
 
 
 //Ejemplo para llamar a estas funciones:
@@ -33,7 +32,7 @@ public class OggPlayer {
             return;
         }
 
-        this.filePath = filePath;
+        this.setFilePath(filePath);
         isPlaying = true;
         audioThread = new Thread(() -> {
             try {
@@ -80,4 +79,12 @@ public class OggPlayer {
         isPlaying = false;
         audioThread = null;
     }
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
 }
