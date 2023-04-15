@@ -1,7 +1,13 @@
 package application;
 
+//Java
 import java.beans.EventHandler;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+//JavaFX
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -33,17 +39,17 @@ import javafx.scene.control.ComboBox;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import com.mysql.cj.protocol.Resultset;
-import application.SoundBox;
+import javafx.application.Platform;
 import javafx.scene.media.MediaView;
 import javafx.util.Duration;
+//Local .java
+import application.SoundBox;
+import application.OggPlayer;
+//MySql
+import com.mysql.cj.protocol.Resultset;
 
 public class MainMenu extends Application {
-
+//assets/audio/lullabyX.ogg
 	// Crear instancia de la clase ConexionMySQL
 	ConexionMySQL conexion = new ConexionMySQL("root", "", "videojuego serie b");
 
@@ -53,6 +59,7 @@ public class MainMenu extends Application {
 	private static final int BUTTON_SIZE = 100;
 	private MediaPlayer backgroundPlayer;
 	private Font titleFont;
+	OggPlayer oggPlayer = new OggPlayer();
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/darkforest.gif";
 	private static final String NEW_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/NewGameButton.png";
@@ -66,19 +73,20 @@ public class MainMenu extends Application {
 		// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
 		// "asincrona"
 
-		Task<Void> loadMusicTask = new Task<Void>() {
+		String filePath = "assets/audio/lullabyX.ogg";
+
+		// Crear un nuevo hilo para reproducir el audio
+		Thread audioThread = new Thread(new Runnable() {
 			@Override
-			protected Void call() throws Exception {
-				Media background = new Media(
-						new File(RESOURCES_PATH + "/audio/BayuBayushkiBayu-RussianLullaby.mp3").toURI().toString());
-				backgroundPlayer = new MediaPlayer(background);
-				return null;
+			public void run() {
+				try {
+					oggPlayer.playAudio("assets/audio/lullabyX.ogg");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
-		};
-		new Thread(loadMusicTask).start();
-		loadMusicTask.setOnSucceeded(event -> {
-			backgroundPlayer.play();
 		});
+		audioThread.start();
 
 		// Cargar las imágenes
 		Image newGameButtonImage = new Image(NEW_GAME_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
@@ -271,6 +279,7 @@ public class MainMenu extends Application {
 		exitButtonImageView.setOnMouseClicked(event -> {
 			SoundBox.playSound(RESOURCES_PATH + "/audio/click.wav");
 			// Lógica para cerrar la aplicación
+			oggPlayer.stopAudio();
 			primaryStage.close();
 		});
 		bottomButtonsBox.getChildren().add(exitButtonImageView);
@@ -319,7 +328,8 @@ public class MainMenu extends Application {
 
 		// Crear la escena
 		Scene scene = new Scene(root, screenWidth, screenHeight);
-		//scene.getStylesheets().add("LoadingScreen.css"); // Un extras para añadir un css de manera externa
+		// scene.getStylesheets().add("LoadingScreen.css"); // Un extras para añadir un
+		// css de manera externa
 
 		// Configurar la ventana
 		primaryStage.setScene(scene);
@@ -373,6 +383,8 @@ public class MainMenu extends Application {
 
 	public static void main(String[] args) throws SQLException {
 		launch(args);
+		Platform.exit(); // El cierratodo de JavaFX
+		System.exit(0); // El cierratodo clasico
 	}
 
 }
