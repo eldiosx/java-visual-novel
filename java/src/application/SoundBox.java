@@ -8,16 +8,17 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.SourceDataLine;
 
 
-//Ejemplo para llamar a estas funciones:
+//Ejemplo para llamar a estas funciones IMPORTANTE HAY NO!! QUE USAR EL stop PARA REPRODUCIR UN NUEVO AUDIO:
+
 /*
 package application;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        OggPlayer oggPlayer = new OggPlayer();
-        oggPlayer.playAudio("assets/audio/lullabyX.ogg");
+        SoundBox soundBox = new SoundBox();
+        soundBox.playAudio("assets/audio/lullabyX.ogg");
         Thread.sleep(5000); // Esperar 5 segundos
-        oggPlayer.stopAudio();
+        soundBox.stopAudio();
     }
 }
 */

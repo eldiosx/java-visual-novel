@@ -46,7 +46,7 @@ import javafx.application.Platform;
 //import application.SoundBox;
 //import application.OggPlayer;
 //MySql
-//import com.mysql.cj.protocol.Resultset;
+import com.mysql.cj.protocol.Resultset;
 
 public class MainMenu extends Application {
 //assets/audio/lullabyX.ogg
@@ -61,7 +61,7 @@ public class MainMenu extends Application {
 	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
 	// "asincrona"
 	SoundBox soundBox = new SoundBox();
-	OggPlayer oggPlayer = new OggPlayer();
+	VoiceBox voiceBox = new VoiceBox();
 	BackgroundMusic backgroundMusic = new BackgroundMusic();
 	// Media:
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
@@ -240,9 +240,12 @@ public class MainMenu extends Application {
 			Label musicLabel = new Label("Música:");
 			musicLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 			Slider musicSlider = new Slider(0, 100, 50);
-			Label soundLabel = new Label("Sonido:");
+			Label soundLabel = new Label("SFX:");
 			soundLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 			Slider soundSlider = new Slider(0, 100, 50);
+			Label voiceVLabel = new Label("Voces:");
+			voiceVLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+			Slider voiceVSlider = new Slider(0, 100, 50);
 			Label languageLabel = new Label("Idioma (Textos):");
 			// COnfiguraciones del idioma mediante listas:
 			languageLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
@@ -258,8 +261,8 @@ public class MainMenu extends Application {
 			header.setStyle("-fx-background-color: #111111; -fx-padding: 20px;");
 			header.setPrefHeight(50);
 			header.setSpacing(5);
-			settingsLayout.getChildren().addAll(header, musicLabel, musicSlider, soundLabel, soundSlider, languageLabel,
-					languageBox, voiceLabel, languageVoiceBox);
+			settingsLayout.getChildren().addAll(header, musicLabel, musicSlider, soundLabel, soundSlider, voiceVLabel,
+					voiceVSlider, languageLabel, languageBox, voiceLabel, languageVoiceBox);
 			Scene settingsScene = new Scene(settingsLayout, 400, 400);
 			// Root group con toditoo
 			Group root = new Group();
