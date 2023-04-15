@@ -33,10 +33,6 @@ import com.jcraft.jogg.Packet;
 import com.jcraft.jogg.Page;
 import com.jcraft.jogg.StreamState;
 import com.jcraft.jogg.SyncState;
-import com.jcraft.jorbis.Block;
-import com.jcraft.jorbis.Comment;
-import com.jcraft.jorbis.DspState;
-import com.jcraft.jorbis.Info;
 
 /** An input stream to read Ogg Vorbis.
  * @author kevin */

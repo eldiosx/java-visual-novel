@@ -1,7 +1,7 @@
 package application;
 
 //Java
-import java.beans.EventHandler;
+//import java.beans.EventHandler;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,25 +28,25 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.concurrent.Task;
 import javafx.stage.Popup;
 import javafx.scene.Group;
 import javafx.scene.control.ComboBox;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
 import javafx.application.Platform;
-import javafx.scene.media.MediaView;
-import javafx.util.Duration;
+//import javafx.scene.media.Media;
+//import javafx.scene.media.MediaPlayer;s
+//import javafx.concurrent.Task;
+//import javafx.scene.media.MediaView;
+//import javafx.event.ActionEvent;
+//import javafx.util.Duration;
 //Local .java
-import application.SoundBox;
-import application.OggPlayer;
+//import application.SoundBox;
+//import application.OggPlayer;
 //MySql
-import com.mysql.cj.protocol.Resultset;
+//import com.mysql.cj.protocol.Resultset;
 
 public class MainMenu extends Application {
 //assets/audio/lullabyX.ogg
@@ -57,7 +57,6 @@ public class MainMenu extends Application {
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double fontSize = screenWidth * 0.05; // 5% del ancho de la pantalla
 	private static final int BUTTON_SIZE = 100;
-	private MediaPlayer backgroundPlayer;
 	private Font titleFont;
 	OggPlayer oggPlayer = new OggPlayer();
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
@@ -72,8 +71,6 @@ public class MainMenu extends Application {
 
 		// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
 		// "asincrona"
-
-		String filePath = "assets/audio/lullabyX.ogg";
 
 		// Crear un nuevo hilo para reproducir el audio
 		Thread audioThread = new Thread(new Runnable() {
@@ -155,13 +152,11 @@ public class MainMenu extends Application {
 
 					}
 				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} finally {
 					try {
 						conexion.desconectar();
 					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
@@ -295,7 +290,6 @@ public class MainMenu extends Application {
 		try {
 			titleFont = Font.loadFont(new FileInputStream(new File(RESOURCES_PATH + "/fonts/BloodyTerror.ttf")), 12);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Label titleLabel = new Label("Tu videojuego favorito de serie B");
