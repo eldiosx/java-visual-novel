@@ -56,7 +56,6 @@ public class MainMenu extends Application {
 	ClassLoader classLoader = getClass().getClassLoader();
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
-	private static final int BUTTON_SIZE = 100;
 	private Font titleFont;
 	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
 	// "asincrona"
@@ -87,11 +86,12 @@ public class MainMenu extends Application {
 		});
 		audioThread.start();
 
-		// Cargar las imágenes
-		Image newGameButtonImage = new Image(NEW_GAME_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
-		Image loadGameButtonImage = new Image(LOAD_GAME_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
-		Image settingsButtonImage = new Image(SETTINGS_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
-		Image exitButtonImage = new Image(EXIT_BUTTON_URL, BUTTON_SIZE, BUTTON_SIZE, true, true);
+		// Cargar las imágenes (El primer true es para suavizar y el segundo mantener
+		// relacion aspecto)
+		Image newGameButtonImage = new Image(NEW_GAME_BUTTON_URL, responsive, responsive / 3, true, true);
+		Image loadGameButtonImage = new Image(LOAD_GAME_BUTTON_URL, responsive, responsive / 3, true, true);
+		Image settingsButtonImage = new Image(SETTINGS_BUTTON_URL, responsive, responsive / 3, true, true);
+		Image exitButtonImage = new Image(EXIT_BUTTON_URL, responsive, responsive / 3, true, true);
 
 		// Crear los contenedores de los botones
 		HBox topButtonsBox = new HBox();
@@ -100,9 +100,9 @@ public class MainMenu extends Application {
 		topButtonsBox.setPadding(new Insets(0, 50, 0, 50)); // Agregar un padding
 
 		ImageView newGameButtonImageView = new ImageView(newGameButtonImage);
-		newGameButtonImageView.setPreserveRatio(true);//Mentiene la relacion de aspecto
-		newGameButtonImageView.setSmooth(true); //Suvizar el escalado
-		newGameButtonImageView.setFitHeight(responsive/1.2); //Escalado responsive
+		newGameButtonImageView.setPreserveRatio(true);// Mentiene la relacion de aspecto
+		newGameButtonImageView.setSmooth(true); // Suvizar el escalado
+		newGameButtonImageView.setFitHeight(responsive / 1.5); // Escalado responsive
 		newGameButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Lógica para iniciar una nueva partida
@@ -110,9 +110,9 @@ public class MainMenu extends Application {
 		topButtonsBox.getChildren().add(newGameButtonImageView);
 
 		ImageView loadGameButtonImageView = new ImageView(loadGameButtonImage);
-		loadGameButtonImageView.setPreserveRatio(true);//Mentiene la relacion de aspecto
-		loadGameButtonImageView.setSmooth(true); //Suvizar el escalado
-		loadGameButtonImageView.setFitHeight(responsive/1.2); //Escalado responsive
+		loadGameButtonImageView.setPreserveRatio(true);// Mentiene la relacion de aspecto
+		loadGameButtonImageView.setSmooth(true); // Suvizar el escalado
+		loadGameButtonImageView.setFitHeight(responsive / 1.5); // Escalado responsive
 		loadGameButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Bloquear que pueda abrir ventanas infinitas
@@ -212,9 +212,9 @@ public class MainMenu extends Application {
 		bottomButtonsBox.setPadding(new Insets(0, 50, 0, 50)); // Agregar un padding
 
 		ImageView settingsButtonImageView = new ImageView(settingsButtonImage);
-		settingsButtonImageView.setPreserveRatio(true);//Mentiene la relacion de aspecto
-		settingsButtonImageView.setSmooth(true); //Suvizar el escalado
-		settingsButtonImageView.setFitHeight(responsive/1.2); //Escalado responsive
+		settingsButtonImageView.setPreserveRatio(true);// Mentiene la relacion de aspecto
+		settingsButtonImageView.setSmooth(true); // Suvizar el escalado
+		settingsButtonImageView.setFitHeight(responsive / 1.5); // Escalado responsive
 		settingsButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Bloquear que pueda abrir ventanas infinitas
@@ -283,9 +283,9 @@ public class MainMenu extends Application {
 		bottomButtonsBox.getChildren().add(settingsButtonImageView);
 
 		ImageView exitButtonImageView = new ImageView(exitButtonImage);
-		exitButtonImageView.setPreserveRatio(true);//Mentiene la relacion de aspecto
-		exitButtonImageView.setSmooth(true); //Suvizar el escalado
-		exitButtonImageView.setFitHeight(responsive/1.2); //Escalado responsive
+		exitButtonImageView.setPreserveRatio(true);// Mentiene la relacion de aspecto
+		exitButtonImageView.setSmooth(true); // Suvizar el escalado
+		exitButtonImageView.setFitHeight(responsive / 1.5); // Escalado responsive
 		exitButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Lógica para cerrar la aplicación
@@ -361,7 +361,7 @@ public class MainMenu extends Application {
 		// ratón sale del ImageView
 		newGameButtonImageView.setOnMouseEntered(event -> {
 			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/NewGameButton.png").toURI().toString(),
-					BUTTON_SIZE, BUTTON_SIZE, true, true);
+					responsive, responsive / 3, true, true);
 			newGameButtonImageView.setImage(newImage);
 			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
 		});
@@ -370,7 +370,7 @@ public class MainMenu extends Application {
 		});
 		loadGameButtonImageView.setOnMouseEntered(event -> {
 			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/LoadButton.png").toURI().toString(),
-					BUTTON_SIZE, BUTTON_SIZE, true, true);
+					responsive, responsive / 3, true, true);
 			loadGameButtonImageView.setImage(newImage);
 			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
 		});
@@ -379,7 +379,7 @@ public class MainMenu extends Application {
 		});
 		settingsButtonImageView.setOnMouseEntered(event -> {
 			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/SettingsButton.png").toURI().toString(),
-					BUTTON_SIZE, BUTTON_SIZE, true, true);
+					responsive, responsive / 3, true, true);
 			settingsButtonImageView.setImage(newImage);
 			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
 		});
@@ -388,7 +388,7 @@ public class MainMenu extends Application {
 		});
 		exitButtonImageView.setOnMouseEntered(event -> {
 			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/QuitButton.png").toURI().toString(),
-					BUTTON_SIZE, BUTTON_SIZE, true, true);
+					responsive, responsive / 3, true, true);
 			exitButtonImageView.setImage(newImage);
 			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
 		});
