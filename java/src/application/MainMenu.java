@@ -5,14 +5,23 @@ package application;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 //JavaFX
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.effect.DropShadow;
@@ -26,27 +35,11 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Popup;
-import javafx.scene.Group;
-import javafx.scene.control.ComboBox;
-import javafx.collections.ObservableList;
-import javafx.collections.FXCollections;
-import javafx.application.Platform;
-//import javafx.scene.media.Media;
-//import javafx.scene.media.MediaPlayer;s
-//import javafx.concurrent.Task;
-//import javafx.scene.media.MediaView;
-//import javafx.event.ActionEvent;
-//import javafx.util.Duration;
-//Local .java
-//import application.SoundBox;
-//import application.OggPlayer;
-//MySql
-import com.mysql.cj.protocol.Resultset;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 public class MainMenu extends Application {
 //assets/audio/lullabyX.ogg
@@ -106,6 +99,22 @@ public class MainMenu extends Application {
 		newGameButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Lógica para iniciar una nueva partida
+			// Cerrar la escena actual
+			Stage stage = (Stage) newGameButtonImageView.getScene().getWindow();
+			stage.close();
+
+			// Abrir otra escena
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue/Prologue_Scene_Builder1.fxml"));
+			Parent root = null;
+			try {
+				root = loader.load();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			Scene scene = new Scene(root);
+			Stage newStage = new Stage();
+			newStage.setScene(scene);
+			newStage.show();
 		});
 		topButtonsBox.getChildren().add(newGameButtonImageView);
 
