@@ -55,7 +55,7 @@ public class MainMenu extends Application {
 
 	ClassLoader classLoader = getClass().getClassLoader();
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
-	double fontSize = screenWidth * 0.05; // 5% del ancho de la pantalla
+	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private static final int BUTTON_SIZE = 100;
 	private Font titleFont;
 	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
@@ -294,17 +294,21 @@ public class MainMenu extends Application {
 		buttonsBox.setAlignment(Pos.BOTTOM_CENTER);
 		buttonsBox.setSpacing(20);
 		buttonsBox.getChildren().addAll(topButtonsBox, bottomButtonsBox);
-		buttonsBox.setPadding(new Insets(0, 0, 30, 0)); // Agregar un padding
+		buttonsBox.setPadding(new Insets(0, 0, responsive / 2, 0)); // Agregar un padding
 
 		// Crear el título con sombra (utilizo el DropShadow) + fuente personalizada y
 		// try catch x si peta
 		try {
-			titleFont = Font.loadFont(new FileInputStream(new File(RESOURCES_PATH + "/fonts/BloodyTerror.ttf")), 12);
+			titleFont = Font.loadFont(new FileInputStream(new File(RESOURCES_PATH + "/fonts/PaintDropsRegular.ttf")),
+					12);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		Label titleLabel = new Label("Tu videojuego favorito de serie B");
-		titleLabel.setStyle("-fx-font-size: " + fontSize + "px; -fx-text-fill: #030304; -fx-font-family: '"
+		Label titleLabel = new Label("Tu videojuego favorito");
+		Label subtitleLabel = new Label("de serie B");
+		titleLabel.setStyle("-fx-font-size: " + responsive + "px; -fx-text-fill: #030304; -fx-font-family: '"
+				+ titleFont.getName() + "';");
+		subtitleLabel.setStyle("-fx-font-size: " + responsive + "px; -fx-text-fill: #030304; -fx-font-family: '"
 				+ titleFont.getName() + "';");
 		DropShadow dropShadow = new DropShadow();
 		dropShadow.setColor(Color.WHITE);
@@ -312,7 +316,11 @@ public class MainMenu extends Application {
 		dropShadow.setOffsetX(4);
 		dropShadow.setOffsetY(4);
 		titleLabel.setEffect(dropShadow);
+		subtitleLabel.setEffect(dropShadow);
 		titleLabel.setPadding(new Insets(30, 50, 0, 50)); // Agregar un padding en la parte inferior
+		VBox title = new VBox();
+		title.getChildren().addAll(titleLabel, subtitleLabel);
+		title.setStyle("-fx-alignment: center; -fx-padding: " + responsive * 1.2 + "px;");
 
 		// Crear el contenedor principal
 		BorderPane root = new BorderPane();
@@ -325,8 +333,8 @@ public class MainMenu extends Application {
 				BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, true, true, true, true))));
 		// Titulo
-		root.setTop(titleLabel);
-		BorderPane.setAlignment(titleLabel, Pos.CENTER);
+		root.setTop(title);
+		BorderPane.setAlignment(title, Pos.CENTER);
 
 		// Agregar los botones al contenedor principal
 		root.setCenter(buttonsBox);
