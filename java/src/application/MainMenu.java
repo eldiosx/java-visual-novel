@@ -100,8 +100,9 @@ public class MainMenu extends Application {
 		topButtonsBox.setPadding(new Insets(0, 50, 0, 50)); // Agregar un padding
 
 		ImageView newGameButtonImageView = new ImageView(newGameButtonImage);
-		newGameButtonImageView.setPreserveRatio(true);
-		newGameButtonImageView.setFitHeight(80);
+		newGameButtonImageView.setPreserveRatio(true);//Mentiene la relacion de aspecto
+		newGameButtonImageView.setSmooth(true); //Suvizar el escalado
+		newGameButtonImageView.setFitHeight(responsive/1.2); //Escalado responsive
 		newGameButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Lógica para iniciar una nueva partida
@@ -109,8 +110,9 @@ public class MainMenu extends Application {
 		topButtonsBox.getChildren().add(newGameButtonImageView);
 
 		ImageView loadGameButtonImageView = new ImageView(loadGameButtonImage);
-		loadGameButtonImageView.setPreserveRatio(true);
-		loadGameButtonImageView.setFitHeight(80);
+		loadGameButtonImageView.setPreserveRatio(true);//Mentiene la relacion de aspecto
+		loadGameButtonImageView.setSmooth(true); //Suvizar el escalado
+		loadGameButtonImageView.setFitHeight(responsive/1.2); //Escalado responsive
 		loadGameButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Bloquear que pueda abrir ventanas infinitas
@@ -210,8 +212,9 @@ public class MainMenu extends Application {
 		bottomButtonsBox.setPadding(new Insets(0, 50, 0, 50)); // Agregar un padding
 
 		ImageView settingsButtonImageView = new ImageView(settingsButtonImage);
-		settingsButtonImageView.setPreserveRatio(true);
-		settingsButtonImageView.setFitHeight(80);
+		settingsButtonImageView.setPreserveRatio(true);//Mentiene la relacion de aspecto
+		settingsButtonImageView.setSmooth(true); //Suvizar el escalado
+		settingsButtonImageView.setFitHeight(responsive/1.2); //Escalado responsive
 		settingsButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Bloquear que pueda abrir ventanas infinitas
@@ -280,8 +283,9 @@ public class MainMenu extends Application {
 		bottomButtonsBox.getChildren().add(settingsButtonImageView);
 
 		ImageView exitButtonImageView = new ImageView(exitButtonImage);
-		exitButtonImageView.setPreserveRatio(true);
-		exitButtonImageView.setFitHeight(80);
+		exitButtonImageView.setPreserveRatio(true);//Mentiene la relacion de aspecto
+		exitButtonImageView.setSmooth(true); //Suvizar el escalado
+		exitButtonImageView.setFitHeight(responsive/1.2); //Escalado responsive
 		exitButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Lógica para cerrar la aplicación
