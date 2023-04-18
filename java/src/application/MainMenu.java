@@ -64,6 +64,7 @@ public class MainMenu extends Application {
 	private static final String LOAD_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/LoadButton.png";
 	private static final String SETTINGS_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/SettingsButton.png";
 	private static final String EXIT_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/QuitButton.png";
+	private static final String CLOSE_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/X.png";
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -87,6 +88,7 @@ public class MainMenu extends Application {
 		Image loadGameButtonImage = new Image(LOAD_GAME_BUTTON_URL, responsive, responsive / 3, true, true);
 		Image settingsButtonImage = new Image(SETTINGS_BUTTON_URL, responsive, responsive / 3, true, true);
 		Image exitButtonImage = new Image(EXIT_BUTTON_URL, responsive, responsive / 3, true, true);
+		Image closeButtonImage = new Image(CLOSE_BUTTON_URL, responsive / 3, responsive / 3, true, true);
 
 		// Crear los contenedores de los botones
 		HBox topButtonsBox = new HBox();
@@ -94,6 +96,13 @@ public class MainMenu extends Application {
 		topButtonsBox.setSpacing(20);
 		topButtonsBox.setPadding(new Insets(0, 50, 0, 50)); // Agregar un padding
 
+		// Crear un closeButtonImageView con la imagen cargada
+		ImageView closeButtonImageView = new ImageView(closeButtonImage);
+
+		// Establecer el tamaño deseado para la closeButtonImageView
+		closeButtonImageView.setFitWidth(40);
+		closeButtonImageView.setFitHeight(40);
+		
 		ImageView newGameButtonImageView = new ImageView(newGameButtonImage);
 		newGameButtonImageView.setPreserveRatio(true);// Mentiene la relacion de aspecto
 		newGameButtonImageView.setSmooth(true); // Suvizar el escalado
@@ -129,13 +138,13 @@ public class MainMenu extends Application {
 			// Bloquear que pueda abrir ventanas infinitas
 			loadGameButtonImageView.setDisable(true);
 			Popup loadPopup = new Popup();
-			// Crear un botón para cerrar la ventana de load
-			// closeButton.setOnAction(e -> loadGameButtonImageView.setDisable(false));
-			Button closeButton = new Button("X");
-			closeButton.setOnAction(closePopup -> {
+			
+			// Establecer la acción del botón cerrar
+			closeButtonImageView.setOnMouseClicked(e -> {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
-				loadPopup.hide();
+				loadPopup.hide();			
 			});
+
 			// Reactivar el boton de load
 			loadPopup.setOnHidden(e -> loadGameButtonImageView.setDisable(false));
 
@@ -195,7 +204,7 @@ public class MainMenu extends Application {
 			HBox saveData3 = new HBox(slot3Label, slot3Button);
 			saveData3.setStyle("-fx-padding: 20px;");
 			// Agregar los controles a la escena de load
-			HBox header = new HBox(closeButton, label);
+			HBox header = new HBox(closeButtonImageView, label);
 			header.setStyle("-fx-background-color: #111111; -fx-padding: 20px;");
 			header.setPrefHeight(50);
 			header.setSpacing(5);
@@ -221,7 +230,7 @@ public class MainMenu extends Application {
 		bottomButtonsBox.setAlignment(Pos.CENTER);
 		bottomButtonsBox.setSpacing(20);
 		bottomButtonsBox.setPadding(new Insets(0, 50, 0, 50)); // Agregar un padding
-
+		
 		ImageView settingsButtonImageView = new ImageView(settingsButtonImage);
 		settingsButtonImageView.setPreserveRatio(true);// Mentiene la relacion de aspecto
 		settingsButtonImageView.setSmooth(true); // Suvizar el escalado
@@ -231,12 +240,11 @@ public class MainMenu extends Application {
 			// Bloquear que pueda abrir ventanas infinitas
 			settingsButtonImageView.setDisable(true);
 			Popup settingsPopup = new Popup();
-
-			// Crear un botón para cerrar la ventana de settings
-			Button closeButton = new Button("X");
-			closeButton.setOnAction(closePopup -> {
+			
+			// Establecer la acción del botón cerrar
+			closeButtonImageView.setOnMouseClicked(e -> {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
-				settingsPopup.hide();
+				settingsPopup.hide();				
 			});
 
 			// Reactivar el boton de settings
@@ -271,7 +279,7 @@ public class MainMenu extends Application {
 			ComboBox<String> languageVoiceBox = new ComboBox<>(listVoice);
 
 			// Agregar los controles a la escena de settings
-			HBox header = new HBox(closeButton, label);
+			HBox header = new HBox(closeButtonImageView, label);
 			header.setStyle("-fx-background-color: #111111; -fx-padding: 20px;");
 			header.setPrefHeight(50);
 			header.setSpacing(5);
@@ -405,6 +413,16 @@ public class MainMenu extends Application {
 		});
 		exitButtonImageView.setOnMouseExited(event -> {
 			exitButtonImageView.setImage(exitButtonImage);
+		});
+
+		closeButtonImageView.setOnMouseEntered(event -> {
+			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/X.png").toURI().toString(), responsive,
+					responsive / 3, true, true);
+			closeButtonImageView.setImage(newImage);
+			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
+		});
+		closeButtonImageView.setOnMouseExited(event -> {
+			closeButtonImageView.setImage(closeButtonImage);
 		});
 
 	}
