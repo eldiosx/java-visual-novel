@@ -1,17 +1,79 @@
 package application;
 
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.SourceDataLine;
 
-public class SoundBox {
-    public static void playSound(String filePath) {
-        try {
-            Media sound = new Media(new File(filePath).toURI().toString());
-            MediaPlayer mediaPlayer = new MediaPlayer(sound);
-            mediaPlayer.play();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+//Ejemplo para llamar a estas funciones IMPORTANTE HAY NO!! QUE USAR EL stop PARA REPRODUCIR UN NUEVO AUDIO:
+
+/*
+package application;
+
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+        SoundBox soundBox = new SoundBox();
+        soundBox.playAudio("assets/audio/lullabyX.ogg");
+        Thread.sleep(5000); // Esperar 5 segundos
+        soundBox.stopAudio();
     }
+}
+*/
+public class SoundBox {
+    private volatile boolean isPlaying = false;
+    private Thread audioThread;
+    private String filePath;
+
+    public void playAudio(String filePath) {
+        this.setFilePath(filePath);
+
+        Thread audioThread = new Thread(() -> {
+            try {
+                // Cargar archivo de audio Ogg
+                InputStream in = new FileInputStream(filePath);
+                try (OggInputStream oggIn = new OggInputStream(in)) {
+                    int channels = 2; // número de canales (estéreo)
+                    int rate = 44100; // frecuencia de muestreo (44100 Hz)
+                    int bufferSize = 4096; // tamaño del búfer de audio
+
+                    // Crear objeto de formato de audio
+                    AudioFormat audioFormat = new AudioFormat((float) rate, 16, channels, true, false);
+
+                    // Crear objeto de línea de datos de origen
+                    DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, audioFormat);
+                    SourceDataLine sourceDataLine = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
+
+                    // Abrir línea de datos de origen
+                    sourceDataLine.open(audioFormat);
+                    sourceDataLine.start();
+
+                    // Reproducir audio
+                    byte[] buffer = new byte[bufferSize];
+                    while (true) {
+                        int bytesRead = oggIn.read(buffer, 0, bufferSize);
+                        if (bytesRead == -1) {
+                            break;
+                        }
+                        sourceDataLine.write(buffer, 0, bytesRead);
+                    }
+
+                    // Cerrar línea de datos de origen
+                    sourceDataLine.drain();
+                    sourceDataLine.stop();
+                    sourceDataLine.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        audioThread.start();
+    }
+
+	private void setFilePath(String filePath2) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -10,14 +10,17 @@
 </div>
 
 # Proyecto en grupo MEDAC-1DAM
-<h3>Integrantes: </h3>
+- <h2>Integrantes y creditos: </h2>
 
 Adrian Márquez Ruiz<br>
 Aida Fernández Hormigo<br>
 Daniel Delgado Jiménez<br>
 Nicolas Cano de Celis<br>
 
-<h3>Información: </h3>
+**GNU License**
+Copyright (c) 2023 [LICENSE](https://github.com/eldiosx/novelaGraficaJava/blob/main/LICENSE).
+
+- <h2>Información: </h2>
 Tu “videojuego” favorito de serie B es una demo para el desarrollo de un videojuego <b>Novela Grafica hecha con Java</b> enmarcado en la ambientación de los slasher de terror americanos, sobre todo de la década de los ‘90 y los 2000, que pretende seguir la estela de películas como “Proyecto de las brujas de Blair” o la saga “Silent Hill”.
 <h3>Introducción al proyecto: </h3>
 Se trata de un proyecto que pretende ofrecer al jugador una experiencia narrativa como la que ofrecen otros videojuegos como “Detroit Become Human”, pero con un toque de humor. Lleno de clichés, pretende ofrecer al jugador una experiencia en primera persona de una película de terror de serie B. Consta de una  alta rejugabilidad debido a la gran cantidad de toma de decisiones y posibles trágicos finales. 
@@ -25,3 +28,22 @@ Se trata de un proyecto que pretende ofrecer al jugador una experiencia narrativ
 Para hacer realidad este proyecto, nos hemos inspirado en el género de videojuegos denominados como aventuras gráficas, en los cuales se le presentan al jugador una serie de personajes que han de tomar decisiones, y serán dichas elecciones las que determinarán el rumbo de la aventura. En lo referente a la pura ambientación, queremos dar un ambiente tétrico, pues la trama se desarrollará en un campamento de verano ubicado en un bosque.
 <h3>Contextualización del videojuego: </h3>
 En este proyecto se presenta el conflicto de un recién llegado grupo adolescentes a un campamento de verano en Connecticut.
+
+- <h2>How to edit: </h2>
+
+<h3>For Eclipse (flatpak compatible): </h3>
+
+Open Lib folder and import all .jar like this you need add your JavaFX libraries or a Full Java JDK in the jre installed:
+![image](https://user-images.githubusercontent.com/61506276/232151975-619cd85e-2d2d-4552-8bbd-0c1d8c67afd5.png)
+
+<h3>For VsCode/ VsCodium (flatpak compatible): </h3>
+
+You will need Redhat extension kit for Java and condigure similar like this:
+![SETTINGS visual code](https://user-images.githubusercontent.com/61506276/232152387-51e0f02a-eb6b-45e7-82e9-e9357638682d.png)
+
+
+<h3>For IntelliJ (flatpak compatible): </h3>
+
+Install a full JDK for javafx17 and you will need import module-info with eclipse compatibility mode:
+![image](https://user-images.githubusercontent.com/61506276/232152854-d24a8c15-7d24-42f3-9447-516f5fc93d51.png)
+
