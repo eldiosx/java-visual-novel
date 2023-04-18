@@ -9,9 +9,6 @@ import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.SourceDataLine;
 
 public class VoiceBox {
-    private volatile boolean isPlaying = false;
-    private Thread audioThread;
-    private String filePath;
     private float volume = 0.5f; // Valor de volumen por defecto
 
     public void playAudio(String filePath) {
@@ -65,7 +62,6 @@ public class VoiceBox {
     }
 
     private void setFilePath(String filePath) {
-        this.filePath = filePath;
     }
 
     public void setVolume(float volume) {

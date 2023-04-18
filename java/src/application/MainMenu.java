@@ -72,18 +72,18 @@ public class MainMenu extends Application {
 	public void start(Stage primaryStage) {
 
 		// Crear un nuevo hilo para reproducir el audio de fondo
-		Thread audioThread = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					backgroundMusic.playAudio("assets/audio/lullabyX.ogg", 1);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		audioThread.start();
-
+//		Thread audioThread = new Thread(new Runnable() {
+//			@Override
+//			public void run() {
+//				try {
+//					backgroundMusic.playAudio(RESOURCES_PATH + "/audio/lullabyX.ogg");
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//		audioThread.start();
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/lullabyX.ogg");
 		// Cargar las imágenes (El primer true es para suavizar y el segundo mantener
 		// relacion aspecto)
 		Image newGameButtonImage = new Image(NEW_GAME_BUTTON_URL, responsive, responsive / 3, true, true);
@@ -246,7 +246,8 @@ public class MainMenu extends Application {
 			// Establecer la acción del botón cerrar
 			closeButtonImageView.setOnMouseClicked(e -> {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
-				settingsPopup.hide();				
+				settingsPopup.hide();
+				
 			});
 
 			// Reactivar el boton de settings
@@ -264,12 +265,12 @@ public class MainMenu extends Application {
 			Label musicLabel = new Label("Música:");
 			musicLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 	        Slider musicSlider = new Slider(0, 100, 50); // creación del Slider
-	        musicSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-	            if (backgroundMusic != null) {
-	                backgroundMusic.setVolume(newValue.floatValue());
+	        musicSlider.valueProperty().addListener(new ChangeListener<Number>() {
+	            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+	                // Modificar volumen del archivo de audio
+	            	backgroundMusic.setVolume((float) musicSlider.getValue() / 100);
 	            }
 	        });
-
 			Label soundLabel = new Label("SFX:");
 			soundLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 			Slider soundSlider = new Slider(0, 100, 50);
@@ -328,7 +329,6 @@ public class MainMenu extends Application {
 		exitButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Lógica para cerrar la aplicación
-			backgroundMusic.stopAudio();
 			primaryStage.close();
 		});
 		bottomButtonsBox.getChildren().add(exitButtonImageView);
