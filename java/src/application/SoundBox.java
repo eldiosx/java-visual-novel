@@ -1,31 +1,18 @@
 package application;
-
 import java.io.FileInputStream;
 import java.io.InputStream;
+
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;
+import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.SourceDataLine;
 
-
-//Ejemplo para llamar a estas funciones IMPORTANTE HAY NO!! QUE USAR EL stop PARA REPRODUCIR UN NUEVO AUDIO:
-
-/*
-package application;
-
-public class Main {
-    public static void main(String[] args) throws InterruptedException {
-        SoundBox soundBox = new SoundBox();
-        soundBox.playAudio("assets/audio/lullabyX.ogg");
-        Thread.sleep(5000); // Esperar 5 segundos
-        soundBox.stopAudio();
-    }
-}
-*/
 public class SoundBox {
     private volatile boolean isPlaying = false;
     private Thread audioThread;
     private String filePath;
+    private float volume = 0.5f; // Valor de volumen por defecto
 
     public void playAudio(String filePath) {
         this.setFilePath(filePath);
@@ -50,6 +37,11 @@ public class SoundBox {
                     sourceDataLine.open(audioFormat);
                     sourceDataLine.start();
 
+                    // Configurar el volumen de la línea de datos de origen
+                    FloatControl gainControl = (FloatControl) sourceDataLine.getControl(FloatControl.Type.MASTER_GAIN);
+                    float dB = (float) (Math.log(volume) / Math.log(10.0) * 20.0);
+                    gainControl.setValue(dB);
+
                     // Reproducir audio
                     byte[] buffer = new byte[bufferSize];
                     while (true) {
@@ -72,8 +64,11 @@ public class SoundBox {
         audioThread.start();
     }
 
-	private void setFilePath(String filePath2) {
-		// TODO Auto-generated method stub
-		
-	}
+    private void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public void setVolume(float volume) {
+        this.volume = volume;
+    }
 }

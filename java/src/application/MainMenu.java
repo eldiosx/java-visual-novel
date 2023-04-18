@@ -12,6 +12,8 @@ import java.sql.SQLException;
 //JavaFX
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -54,9 +56,9 @@ public class MainMenu extends Application {
 	private Font titleFont;
 	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
 	// "asincrona"
-	SoundBox soundBox = new SoundBox();
-	VoiceBox voiceBox = new VoiceBox();
-	BackgroundMusic backgroundMusic = new BackgroundMusic();
+	private SoundBox soundBox = new SoundBox();
+	private VoiceBox voiceBox = new VoiceBox();
+	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	// Media:
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/darkforest.gif";
@@ -74,7 +76,7 @@ public class MainMenu extends Application {
 			@Override
 			public void run() {
 				try {
-					backgroundMusic.playAudio("assets/audio/lullabyX.ogg");
+					backgroundMusic.playAudio("assets/audio/lullabyX.ogg", 1);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -100,8 +102,8 @@ public class MainMenu extends Application {
 		ImageView closeButtonImageView = new ImageView(closeButtonImage);
 
 		// Establecer el tamaño deseado para la closeButtonImageView
-		closeButtonImageView.setFitWidth(40);
-		closeButtonImageView.setFitHeight(40);
+		closeButtonImageView.setFitWidth(60);
+		closeButtonImageView.setFitHeight(60);
 		
 		ImageView newGameButtonImageView = new ImageView(newGameButtonImage);
 		newGameButtonImageView.setPreserveRatio(true);// Mentiene la relacion de aspecto
@@ -261,13 +263,31 @@ public class MainMenu extends Application {
 			label.setStyle("-fx-font-size: 50px; -fx-text-fill: white;");
 			Label musicLabel = new Label("Música:");
 			musicLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
-			Slider musicSlider = new Slider(0, 100, 50);
+	        Slider musicSlider = new Slider(0, 100, 50); // creación del Slider
+	        musicSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+	            if (backgroundMusic != null) {
+	                backgroundMusic.setVolume(newValue.floatValue());
+	            }
+	        });
+
 			Label soundLabel = new Label("SFX:");
 			soundLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 			Slider soundSlider = new Slider(0, 100, 50);
+			soundSlider.valueProperty().addListener(new ChangeListener<Number>() {
+	            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+	                // Modificar volumen del archivo de audio
+	            	soundBox.setVolume((float) soundSlider.getValue() / 100);
+	            }
+	        });
 			Label voiceVLabel = new Label("Voces:");
 			voiceVLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 			Slider voiceVSlider = new Slider(0, 100, 50);
+			voiceVSlider.valueProperty().addListener(new ChangeListener<Number>() {
+	            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+	                // Modificar volumen del archivo de audio
+	            	voiceBox.setVolume((float) voiceVSlider.getValue() / 100);
+	            }
+	        });
 			Label languageLabel = new Label("Idioma (Textos):");
 			// COnfiguraciones del idioma mediante listas:
 			languageLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
