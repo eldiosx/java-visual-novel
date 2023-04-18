@@ -43,7 +43,6 @@ import javafx.stage.Stage;
 //MySql
 import com.mysql.cj.protocol.Resultset;
 
-
 public class MainMenu extends Application {
 //assets/audio/lullabyX.ogg
 	// Crear instancia de la clase ConexionMySQL
