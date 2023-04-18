@@ -1,14 +1,17 @@
-package application.Ep1;
+package application.EP1NinaMuerta;
 
+
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class EP1NinaMuerta extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -27,6 +30,15 @@ public class Main extends Application {
         primaryStage.setTitle("Episodio 1");
         primaryStage.setScene(new Scene(root, 1920, 1080));
         primaryStage.show();
+        
+        //Vamos añadiendo los botones y las acciones de los mismos
+        
+        //Boton de investigar suelo
+        
+        
+        //Boton de investigar sala
+        
+        
     }
 
     public static void main(String[] args) {
