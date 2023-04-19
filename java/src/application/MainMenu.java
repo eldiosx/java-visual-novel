@@ -127,6 +127,7 @@ public class MainMenu extends Application {
 		newGameButtonImageView.setFitHeight(responsive / 1.5); // Escalado responsive
 		newGameButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
+			backgroundMusic.stopAudio();
 			// Lógica para iniciar una nueva partida
 			// Cerrar la escena actual
 			Stage stage = (Stage) newGameButtonImageView.getScene().getWindow();
