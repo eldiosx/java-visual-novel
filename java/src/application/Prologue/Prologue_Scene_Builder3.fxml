@@ -1,39 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
-  All rights reserved. Use is subject to license terms.
-
-  This file is available and licensed under the following license:
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions
-  are met:
-
-  - Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-  - Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in
-    the documentation and/or other materials provided with the distribution.
-  - Neither the name of Oracle Corporation nor the names of its
-    contributors may be used to endorse or promote products derived
-    from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -49,12 +18,20 @@
                   <Image url="@../../../assets/images/Prologo/Prologo/JohnCabana.png" />
                </image>
             </ImageView>
-            <Label layoutX="182.0" layoutY="694.0" prefHeight="149.0" prefWidth="1266.0" style="-fx-background-color: blue;" text="He hablado con Marleene para hacer una fogata esta noche y contar historias. &#10;Nos vemos esta noche&#10;" textAlignment="RIGHT" textFill="#64ff4d">
+            <Label layoutX="182.0" layoutY="694.0" opacity="0.75" prefHeight="149.0" prefWidth="1266.0" style="-fx-background-color: black;" text="He hablado con Marleene para hacer una fogata esta noche y contar historias. &#10;Nos vemos esta noche&#10;" textAlignment="RIGHT">
                <font>
                   <Font size="36.0" />
                </font>
+               <effect>
+                  <SepiaTone />
+               </effect>
             </Label>
-            <Button layoutX="996.0" layoutY="564.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="450.0" text="Explorar el campamento">
+            <Button layoutX="878.0" layoutY="582.0" mnemonicParsing="false" opacity="0.65" prefHeight="89.0" prefWidth="450.0" text="Explorar el campamento">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Button layoutX="875.0" layoutY="466.0" mnemonicParsing="false" opacity="0.65" prefHeight="89.0" prefWidth="450.0" text="Esperar a la noche" textFill="#030303">
                <font>
                   <Font size="36.0" />
                </font>

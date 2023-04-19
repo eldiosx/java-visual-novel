@@ -4,5 +4,6 @@ java/.classpath
 java/classes
 java/.idea
 java/java.iml
+java/assets/extra
 .idea
 out
