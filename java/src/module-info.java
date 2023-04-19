@@ -7,7 +7,8 @@ module java {
 	requires javafx.graphics; //CSS
 	requires java.sql; //SQL
 	requires java.desktop; // AWT and Swing
-	requires mysql.connector.j; //MySQL
+	requires mysql.connector.j;
+	requires javafx.base; //MySQL
 	
 	opens application to javafx.graphics, javafx.fxml;
 	exports application.Ep1 to javafx.graphics, javafx.fxml;
