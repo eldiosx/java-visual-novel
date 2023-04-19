@@ -37,12 +37,14 @@ First we need a JavaFX, the easiest way is: https://bell-sw.com/pages/downloads/
 
 Open Lib folder and import all .jar like this, you need add your JavaFX libraries or a Full Java JDK in the jre installed and module-path:
 ![image](https://user-images.githubusercontent.com/61506276/233185217-d8b17a4c-79ce-4f57-8b03-67e014377e9b.png)
+
 The WorkSpace is "java-visual-novel" and the folder proyect is "java"
 
 <h3>For VsCode/ VsCodium (flatpak compatible): </h3>
 
 You will need Extension Pack for Java and condigure settings.json similar like this:
 ![VsCodium](https://user-images.githubusercontent.com/61506276/233184141-a231bf24-8dda-4076-92b9-d806ca6dc5de.png)
+
 The folder to open is "java" and it will take all routes and libs automatic.
 
 
