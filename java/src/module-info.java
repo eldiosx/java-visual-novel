@@ -12,5 +12,7 @@ module java {
 	
 	opens application to javafx.graphics, javafx.fxml;
 	exports application.Ep1 to javafx.graphics, javafx.fxml;
+	//Pendiente de comprobar
+	exports application.Ep1NinaMuerta to javafx.graphics, javafx.fxml;
 	exports application.Prologue to javafx.graphics, javafx.fxml;
 }
