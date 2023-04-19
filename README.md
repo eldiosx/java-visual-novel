@@ -51,7 +51,7 @@ The folder to open is "java" and it will take all routes and libs automatic.
 
 <h3>For IntelliJ (flatpak compatible): </h3>
 
-Install a full JDK for javafx17 and you will need import module-info with eclipse compatibility mode:
-
+You can use the easy method, importing from github u will need install git on terminal and setup JavaFx JDK:
+![image](https://user-images.githubusercontent.com/61506276/233188156-69755a74-511c-4514-b552-116c43e555e7.png)
 ![image](https://user-images.githubusercontent.com/61506276/232152854-d24a8c15-7d24-42f3-9447-516f5fc93d51.png)
 
