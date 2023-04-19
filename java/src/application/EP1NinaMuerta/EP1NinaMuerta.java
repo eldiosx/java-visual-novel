@@ -1,19 +1,12 @@
 package application.EP1NinaMuerta;
 
 
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.scene.control.DialogPane;
 
 public class EP1NinaMuerta extends Application {
 
@@ -29,7 +22,7 @@ public class EP1NinaMuerta extends Application {
 		ClassLoader classLoader = getClass().getClassLoader();
 		double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 		double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
-        Parent root = FXMLLoader.load(getClass().getResource("EP1NinaMuerta"));
+        Parent root = FXMLLoader.load(getClass().getResource("EP1NinaMuerta.fxml"));
         
         primaryStage.setTitle("Episodio 1");
         primaryStage.setScene(new Scene(root, 1920, 1080));
