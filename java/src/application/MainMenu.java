@@ -16,6 +16,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -59,6 +60,7 @@ public class MainMenu extends Application {
 	private SoundBox soundBox = new SoundBox();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
+	private Loader loader;
 	// Media:
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/darkforest.gif";
@@ -70,20 +72,34 @@ public class MainMenu extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
+//PANTALLA DE CARGA para que todo carge primero y a la misma vez y luego lanzarlo
+		loader = new Loader();
+		loader.show();
 
-		// Crear un nuevo hilo para reproducir el audio de fondo
-//		Thread audioThread = new Thread(new Runnable() {
-//			@Override
-//			public void run() {
-//				try {
-//					backgroundMusic.playAudio(RESOURCES_PATH + "/audio/lullabyX.ogg");
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//		audioThread.start();
-		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/lullabyX.ogg");
+		Task<Void> task = new Task<Void>() {
+			@Override
+			protected Void call() throws Exception {
+				// CARGAR TODOH AQUI
+
+				for (int i = 0; i < 100; i++) {
+					updateProgress(i, 99);
+					Thread.sleep(50);
+				}
+
+				return null;
+			}
+		};
+
+		task.setOnSucceeded(event -> {
+			loader.hide();
+			backgroundMusic.playAudio(RESOURCES_PATH + "/audio/lullabyX.ogg");
+			primaryStage.show();
+
+		});
+
+		loader.getProgressBar().progressProperty().bind(task.progressProperty());
+		new Thread(task).start();
+
 		// Cargar las imágenes (El primer true es para suavizar y el segundo mantener
 		// relacion aspecto)
 		Image newGameButtonImage = new Image(NEW_GAME_BUTTON_URL, responsive, responsive / 3, true, true);
@@ -104,7 +120,7 @@ public class MainMenu extends Application {
 		// Establecer el tamaño deseado para la closeButtonImageView
 		closeButtonImageView.setFitWidth(60);
 		closeButtonImageView.setFitHeight(60);
-		
+
 		ImageView newGameButtonImageView = new ImageView(newGameButtonImage);
 		newGameButtonImageView.setPreserveRatio(true);// Mentiene la relacion de aspecto
 		newGameButtonImageView.setSmooth(true); // Suvizar el escalado
@@ -140,11 +156,11 @@ public class MainMenu extends Application {
 			// Bloquear que pueda abrir ventanas infinitas
 			loadGameButtonImageView.setDisable(true);
 			Popup loadPopup = new Popup();
-			
+
 			// Establecer la acción del botón cerrar
 			closeButtonImageView.setOnMouseClicked(e -> {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
-				loadPopup.hide();			
+				loadPopup.hide();
 			});
 
 			// Reactivar el boton de load
@@ -165,7 +181,7 @@ public class MainMenu extends Application {
 
 			// Este código que empieza aquí son pruebas para la conexión a la BD. NO BORRAR.
 			// Código para guardar partida (meter info en la base de datos)
-			
+
 			slot1Button.setOnAction(event2 -> {
 				try {
 					conexion.conectar();
@@ -176,9 +192,9 @@ public class MainMenu extends Application {
 
 					while (datos.next()) {
 						String partidaGuardada = datos.getString("slot1");
-						//String dialogoPrueba = datos.getString("dialogo");
+						// String dialogoPrueba = datos.getString("dialogo");
 						System.out.println(partidaGuardada);
-						//System.out.println(dialogoPrueba);
+						// System.out.println(dialogoPrueba);
 
 					}
 				} catch (SQLException e1) {
@@ -192,17 +208,17 @@ public class MainMenu extends Application {
 				}
 			});
 
-
 			// Código para cargar partida (pedir info a la base de datos)
 
 			Label slot2Label = new Label("Slot 2: ");
 			Button slot2Button = new Button("Empty save...");
 			slot2Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
-			
+
 			slot2Button.setOnAction(event2 -> {
 				try {
 					conexion.conectar();
-					//String cargarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2) VALUES ('Prologue', 'Ep1')";
+					// String cargarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2) VALUES
+					// ('Prologue', 'Ep1')";
 					String selectPartidas = "SELECT * FROM partidas_guardadas;";
 					conexion.ejecutarSelect(selectPartidas);
 					ResultSet datos = conexion.ejecutarSelect(selectPartidas);
@@ -226,7 +242,7 @@ public class MainMenu extends Application {
 					}
 				}
 			});
-			
+
 			Label slot3Label = new Label("Slot 3: ");
 			Button slot3Button = new Button("Empty save...");
 			slot3Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
@@ -263,7 +279,7 @@ public class MainMenu extends Application {
 		bottomButtonsBox.setAlignment(Pos.CENTER);
 		bottomButtonsBox.setSpacing(20);
 		bottomButtonsBox.setPadding(new Insets(0, 50, 0, 50)); // Agregar un padding
-		
+
 		ImageView settingsButtonImageView = new ImageView(settingsButtonImage);
 		settingsButtonImageView.setPreserveRatio(true);// Mentiene la relacion de aspecto
 		settingsButtonImageView.setSmooth(true); // Suvizar el escalado
@@ -273,12 +289,12 @@ public class MainMenu extends Application {
 			// Bloquear que pueda abrir ventanas infinitas
 			settingsButtonImageView.setDisable(true);
 			Popup settingsPopup = new Popup();
-			
+
 			// Establecer la acción del botón cerrar
 			closeButtonImageView.setOnMouseClicked(e -> {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				settingsPopup.hide();
-				
+
 			});
 
 			// Reactivar el boton de settings
@@ -295,31 +311,31 @@ public class MainMenu extends Application {
 			label.setStyle("-fx-font-size: 50px; -fx-text-fill: white;");
 			Label musicLabel = new Label("Música:");
 			musicLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
-	        Slider musicSlider = new Slider(0, 100, 50); // creación del Slider
-	        musicSlider.valueProperty().addListener(new ChangeListener<Number>() {
-	            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-	                // Modificar volumen del archivo de audio
-	            	backgroundMusic.setVolume((float) musicSlider.getValue() / 100);
-	            }
-	        });
+			Slider musicSlider = new Slider(0, 100, 50); // creación del Slider
+			musicSlider.valueProperty().addListener(new ChangeListener<Number>() {
+				public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+					// Modificar volumen del archivo de audio
+					backgroundMusic.setVolume((float) musicSlider.getValue() / 100);
+				}
+			});
 			Label soundLabel = new Label("SFX:");
 			soundLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 			Slider soundSlider = new Slider(0, 100, 50);
 			soundSlider.valueProperty().addListener(new ChangeListener<Number>() {
-	            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-	                // Modificar volumen del archivo de audio
-	            	soundBox.setVolume((float) soundSlider.getValue() / 100);
-	            }
-	        });
+				public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+					// Modificar volumen del archivo de audio
+					soundBox.setVolume((float) soundSlider.getValue() / 100);
+				}
+			});
 			Label voiceVLabel = new Label("Voces:");
 			voiceVLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 			Slider voiceVSlider = new Slider(0, 100, 50);
 			voiceVSlider.valueProperty().addListener(new ChangeListener<Number>() {
-	            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-	                // Modificar volumen del archivo de audio
-	            	voiceBox.setVolume((float) voiceVSlider.getValue() / 100);
-	            }
-	        });
+				public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+					// Modificar volumen del archivo de audio
+					voiceBox.setVolume((float) voiceVSlider.getValue() / 100);
+				}
+			});
 			Label languageLabel = new Label("Idioma (Textos):");
 			// COnfiguraciones del idioma mediante listas:
 			languageLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
@@ -361,6 +377,8 @@ public class MainMenu extends Application {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Lógica para cerrar la aplicación
 			primaryStage.close();
+			Platform.exit(); // El cierratodo de JavaFX
+			System.exit(0); // El cierratodo clasico
 		});
 		bottomButtonsBox.getChildren().add(exitButtonImageView);
 
@@ -425,7 +443,6 @@ public class MainMenu extends Application {
 		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
 		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
-		primaryStage.show();
 
 		// Evento para cuando el ratón entra en el ImageView & Evento para cuando el
 		// ratón sale del ImageView
