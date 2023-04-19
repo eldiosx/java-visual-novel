@@ -1,5 +1,4 @@
-package Trash;
-
+package application;
 import javafx.application.Application;
 import javafx.beans.binding.DoubleBinding;
 import javafx.geometry.Pos;
@@ -15,6 +14,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+//lo que faltaba
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import java.io.File;
+
+
+
+
+
 
 public class Transition extends Application {
 	private static final String RESOURCES_PATH = "assets";
@@ -22,12 +30,8 @@ public class Transition extends Application {
 	private static final double LABEL_WIDTH = 200.0; // Ancho del cuadro de texto
 	private static final double MARGIN_LEFT = 50.0; // Margen izquierdo
 	private static final double MARGIN_BOTTOM = 50.0; // Margen inferior
-
-	@Override
-	public void start(Stage primaryStage) {
-		// Configuración de la ventana principal
-		primaryStage.setTitle("Mi Aplicación"); // Título de la ventana
-
+	private SoundBox soundBox = new SoundBox();
+	
 	@Override
 	public void start(Stage primaryStage) {
 
@@ -45,7 +49,7 @@ public class Transition extends Application {
 		Image backgroundImage = new Image("file:" + RESOURCES_PATH + "/images/Prologo/Prologo/DirectorBienvenida.png");
 
 		// caja de texto
-		VBox vBox = new VBox(); // Crea un VBox para organizar los nodos verticalmente
+		VBox vBox = new VBox (); // Crea un VBox para organizar los nodos verticalmente
 		vBox.setAlignment(Pos.BOTTOM_LEFT); // Alinea los nodos al centro del VBox
 		vBox.setSpacing(10); // Establece un espacio de 10 píxeles entre los nodos en el VBox
 		// label de texto
@@ -67,7 +71,7 @@ public class Transition extends Application {
 		buttonOpcion1.setTextFill(Color.YELLOW);
 		buttonOpcion1.setStyle("-fx-padding: 20px;");
 		buttonOpcion1.setOnMouseClicked(event -> {
-			SoundBox.playSound(RESOURCES_PATH + "/audio/click.wav");
+			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			// Agrega aquí el código que deseas ejecutar cuando se haga clic en el botón
 			// "Opción1"
 		});
@@ -77,7 +81,7 @@ public class Transition extends Application {
 		vBox.getChildren().add(buttonOpcion1);
 
 		// Panel principal con diseño de borde
-		BorderPane borderPane = new BorderPane();
+		BorderPane borderPane1 = new BorderPane();
 
 		// Cuadro de texto estilo mensaje
 		Label label = new Label(
@@ -88,8 +92,8 @@ public class Transition extends Application {
 		label.setMaxWidth(LABEL_WIDTH); // Ancho máximo del cuadro de texto
 
 		// Configurar el fondo del Label con un color negro con opacidad
-		BackgroundFill backgroundFill = new BackgroundFill(Color.rgb(0, 0, 139, 0.5), new CornerRadii(10), null);
-		label.setBackground(new Background(backgroundFill));
+		BackgroundFill backgroundFill1 = new BackgroundFill(Color.rgb(0, 0, 139, 0.5), new CornerRadii(10), null);
+		label.setBackground(new Background(backgroundFill1));
 
 		// Configurar el color de la fuente a amarillo
 		label.setTextFill(Color.YELLOW);
@@ -101,32 +105,32 @@ public class Transition extends Application {
 		BorderPane labelsBox = new BorderPane();
 		labelsBox.setPrefHeight(80); // Altura del cuadro de texto
 		labelsBox.setLeft(label);
-		borderPane.setLeft(labelsBox);
+		borderPane1.setLeft(labelsBox);
 
 		// Imagen de fondo
-		Image backgroundImage = new Image(BACKGROUND_URL);
-		ImageView backgroundImageView = new ImageView(backgroundImage);
-		borderPane.getChildren().add(0, backgroundImageView);
+		Image backgroundImage1 = new Image(BACKGROUND_URL);
+		ImageView backgroundImageView = new ImageView(backgroundImage1);
+		borderPane1.getChildren().add(0, backgroundImageView);
 
 		// Ajustar el margen del cuadro de texto
-		borderPane.setMargin(labelsBox, new javafx.geometry.Insets(0, 0, MARGIN_BOTTOM, MARGIN_LEFT));
+		borderPane1.setMargin(labelsBox, new javafx.geometry.Insets(0, 0, MARGIN_BOTTOM, MARGIN_LEFT));
 
 		// Ajustar el ancho del cuadro de texto usando DoubleBinding
 		DoubleBinding labelWidthBinding = new DoubleBinding() {
 			{
-				super.bind(borderPane.widthProperty());
+				super.bind(borderPane1.widthProperty());
 			}
 
 			@Override
 			protected double computeValue() {
-				return borderPane.getWidth() * 0.2; // para poner el ancho al 20%
+				return borderPane1.getWidth() * 0.2; // para poner el ancho al 20%
 			}
 		};
 
 		label.maxWidthProperty().bind(labelWidthBinding);
 
 		// para crear la ventana
-		Scene scene = new Scene(borderPane);
+		Scene scene = new Scene(borderPane1);
 		primaryStage.setScene(scene);
 
 	}
