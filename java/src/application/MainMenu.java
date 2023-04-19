@@ -163,21 +163,22 @@ public class MainMenu extends Application {
 			Button slot1Button = new Button("0/00/0000 - Capitulo 0");
 			slot1Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 
-			// Este código que empieza aquí son pruebas para la conexión a la BD. No borrar.
+			// Este código que empieza aquí son pruebas para la conexión a la BD. NO BORRAR.
+			// Código para guardar partida (meter info en la base de datos)
+			
 			slot1Button.setOnAction(event2 -> {
 				try {
 					conexion.conectar();
-					// String insertarLinea = "INSERT INTO episodio (NUM_episodio,nombreEpisodio)
-					// VALUES ('3', 'Ep3')";
-					// conexion.ejecutarInsertDeleteUpdate(insertarLinea);
-					String selectPrueba = "SELECT dialogo from dialogos WHERE COD_dialogo = 2;";
-					ResultSet datos = conexion.ejecutarSelect(selectPrueba);
+					String insertarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2) VALUES ('Prologue', 'Ep1')";
+					conexion.ejecutarInsertDeleteUpdate(insertarPartidas);
+					String selectPartidas = "SELECT slot1 from partidas_guardadas;";
+					ResultSet datos = conexion.ejecutarSelect(selectPartidas);
 
 					while (datos.next()) {
-						// int numEpisodio = datos.getInt("NUM_episodio");
-						String dialogoPrueba = datos.getString("dialogo");
-						// System.out.println(numEpisodio);
-						System.out.println(dialogoPrueba);
+						String partidaGuardada = datos.getString("slot1");
+						//String dialogoPrueba = datos.getString("dialogo");
+						System.out.println(partidaGuardada);
+						//System.out.println(dialogoPrueba);
 
 					}
 				} catch (SQLException e1) {
@@ -191,11 +192,41 @@ public class MainMenu extends Application {
 				}
 			});
 
-			// Hasta aquí el código de pruebas
+
+			// Código para cargar partida (pedir info a la base de datos)
 
 			Label slot2Label = new Label("Slot 2: ");
 			Button slot2Button = new Button("Empty save...");
 			slot2Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
+			
+			slot2Button.setOnAction(event2 -> {
+				try {
+					conexion.conectar();
+					//String cargarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2) VALUES ('Prologue', 'Ep1')";
+					String selectPartidas = "SELECT * FROM partidas_guardadas;";
+					conexion.ejecutarSelect(selectPartidas);
+					ResultSet datos = conexion.ejecutarSelect(selectPartidas);
+
+					while (datos.next()) {
+						String partidaGuardada1 = datos.getString("slot1");
+						String partidaGuardada2 = datos.getString("slot2");
+						String partidaGuardada3 = datos.getString("slot3");
+						System.out.println(partidaGuardada1);
+						System.out.println(partidaGuardada2);
+						System.out.println(partidaGuardada3);
+
+					}
+				} catch (SQLException e2) {
+					e2.printStackTrace();
+				} finally {
+					try {
+						conexion.desconectar();
+					} catch (SQLException e2) {
+						e2.printStackTrace();
+					}
+				}
+			});
+			
 			Label slot3Label = new Label("Slot 3: ");
 			Button slot3Button = new Button("Empty save...");
 			slot3Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
