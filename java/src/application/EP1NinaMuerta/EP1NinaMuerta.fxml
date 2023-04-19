@@ -29,10 +29,17 @@
                	
                </fx:script>
             </Button>
+<<<<<<< Updated upstream
             
             
             
             <Button fx:id="investigarsuelo"  layoutX="280.0" layoutY="263.0" mnemonicParsing="false" onMouseClicked="//Poner visible el botón de dialogo" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar suelo&#10;">
+=======
+            <DialogPane fx:id="textmano" disable="true" headerText="Investigar mano" layoutX="882.0" layoutY="279.0" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
+            
+            
+            <Button fx:id="investigarsuelo" layoutX="280.0" layoutY="263.0" mnemonicParsing="false" onMouseClicked="investigarsuelo.setVisible(true);" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar suelo&#10;">
+>>>>>>> Stashed changes
                <font>
                   <Font size="18.0" />
                </font>
@@ -41,16 +48,25 @@
                		
                </fx:script>
             </Button>
+<<<<<<< Updated upstream
             <DialogPane fx:id="textsuelo" visible="false" disable="true" headerText="Investigar suelo" layoutX="250.0" layoutY="122.0" onMouseClicked="//Hacer llamada a el dialogo" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
             
+=======
+            <DialogPane fx:id="textsuelo" disable="true" headerText="Investigar suelo" layoutX="250.0" layoutY="122.0" onMouseClicked="Hay mucha sangre AAAAAAAH" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
+>>>>>>> Stashed changes
             
             
             <Button fx:id="investigarcuerpo" layoutX="262.0" layoutY="952.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar cuerpo&#10;">
                <font>
                   <Font size="18.0" />
                </font>
+<<<<<<< Updated upstream
             </Button>
             
+=======
+            </Button> 
+            <DialogPane fx:id="textcuerpo" disable="true" headerText="Investigar cuerpo" layoutX="458.0" layoutY="896.0" onMouseClicked="Hay mucha sangre AAAAAAAH" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
+>>>>>>> Stashed changes
             
             
             <Button fx:id="investigarcuchillo" layoutX="1292.0" layoutY="470.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar cuchillo">
@@ -58,7 +74,11 @@
                   <Font size="18.0" />
                </font>
             </Button>
+<<<<<<< Updated upstream
             
+=======
+            <DialogPane fx:id="textcuchilo" disable="true" headerText="Investigar Cuchillo" layoutX="1294.0" layoutY="535.0" onMouseClicked="Hay mucha sangre AAAAAAAH" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
+>>>>>>> Stashed changes
             
             
             <Button fx:id="investigarsangre" layoutX="498.0" layoutY="471.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar sangre&#10;">
@@ -66,7 +86,11 @@
                   <Font size="18.0" />
                </font>
             </Button>
+<<<<<<< Updated upstream
             
+=======
+            <DialogPane fx:id="textsangre" disable="true" headerText="Investigar sangre" layoutX="368.0" layoutY="535.0" onMouseClicked="Hay mucha sangre AAAAAAAH" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
+>>>>>>> Stashed changes
             
             
             <Button fx:id="investigarsala" layoutX="1504.0" layoutY="138.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar sala&#10;">
@@ -74,7 +98,11 @@
                   <Font size="18.0" />
                </font>
             </Button>
+<<<<<<< Updated upstream
             
+=======
+            <DialogPane fx:id="testsala" disable="true" headerText="Investigar sala" layoutX="1448.0" layoutY="208.0" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
+>>>>>>> Stashed changes
             
             
          </children>
