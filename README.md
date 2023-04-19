@@ -33,13 +33,15 @@ En este proyecto se presenta el conflicto de un recién llegado grupo adolescent
 
 <h3>For Eclipse (flatpak compatible): </h3>
 
-Open Lib folder and import all .jar like this you need add your JavaFX libraries or a Full Java JDK in the jre installed:
-![image](https://user-images.githubusercontent.com/61506276/232151975-619cd85e-2d2d-4552-8bbd-0c1d8c67afd5.png)
+Open Lib folder and import all .jar like this, you need add your JavaFX libraries or a Full Java JDK in the jre installed and module-path:
+![image](https://user-images.githubusercontent.com/61506276/233185217-d8b17a4c-79ce-4f57-8b03-67e014377e9b.png)
+The WorkSpace is "java-visual-novel" and the folder proyect is "java"
 
 <h3>For VsCode/ VsCodium (flatpak compatible): </h3>
 
-You will need Redhat extension kit for Java and condigure similar like this:
-![SETTINGS visual code](https://user-images.githubusercontent.com/61506276/232152387-51e0f02a-eb6b-45e7-82e9-e9357638682d.png)
+You will need Extension Pack for Java and condigure settings.json similar like this:
+![VsCodium](https://user-images.githubusercontent.com/61506276/233184141-a231bf24-8dda-4076-92b9-d806ca6dc5de.png)
+The folder to open is "java" and it will take all routes and libs automatic.
 
 
 <h3>For IntelliJ (flatpak compatible): </h3>
