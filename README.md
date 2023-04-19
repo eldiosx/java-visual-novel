@@ -31,6 +31,8 @@ En este proyecto se presenta el conflicto de un recién llegado grupo adolescent
 
 - <h2>How to edit: </h2>
 
+First we need a JavaFX, the easiest way is: https://bell-sw.com/pages/downloads/ Download the FUll JDK version.
+
 <h3>For Eclipse (flatpak compatible): </h3>
 
 Open Lib folder and import all .jar like this, you need add your JavaFX libraries or a Full Java JDK in the jre installed and module-path:
