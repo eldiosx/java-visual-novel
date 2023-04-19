@@ -18,21 +18,13 @@
                   <Image url="@../../../assets/images/Episodio%201/Ep%201/murder-g1becb647e_1920.jpg" />
                </image>
             </ImageView>
-            
-            
-            
             <Button fx:id="investigarmano" layoutX="1042.0" layoutY="210.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar mano&#10;">
                <font>
                   <Font size="18.0" />
                </font>
-               <fx:script>
-               	
-               </fx:script>
+               
+               
             </Button>
-            
-            
-            
-            <Button fx:id="investigarsuelo"  layoutX="280.0" layoutY="263.0" mnemonicParsing="false" onMouseClicked="//Poner visible el botón de dialogo" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar suelo&#10;">
             <DialogPane fx:id="textmano" disable="true" headerText="Investigar mano" layoutX="882.0" layoutY="279.0" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
             
             
@@ -40,13 +32,9 @@
                <font>
                   <Font size="18.0" />
                </font>
-               <fx:script>
-               		<!-- Ponemos el disable del Dialog Pane del texto del suelo en True -->
-               		
-               </fx:script>
+               
+               
             </Button>
-            <DialogPane fx:id="textsuelo" visible="false" disable="true" headerText="Investigar suelo" layoutX="250.0" layoutY="122.0" onMouseClicked="//Hacer llamada a el dialogo" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-            
             <DialogPane fx:id="textsuelo" disable="true" headerText="Investigar suelo" layoutX="250.0" layoutY="122.0" onMouseClicked="Hay mucha sangre AAAAAAAH" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
             
             
@@ -54,20 +42,15 @@
                <font>
                   <Font size="18.0" />
                </font>
-            </Button>
-            
             </Button> 
             <DialogPane fx:id="textcuerpo" disable="true" headerText="Investigar cuerpo" layoutX="458.0" layoutY="896.0" onMouseClicked="Hay mucha sangre AAAAAAAH" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-
+            
             
             <Button fx:id="investigarcuchillo" layoutX="1292.0" layoutY="470.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar cuchillo">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-
-            
-
             <DialogPane fx:id="textcuchilo" disable="true" headerText="Investigar Cuchillo" layoutX="1294.0" layoutY="535.0" onMouseClicked="Hay mucha sangre AAAAAAAH" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
             
             
@@ -76,21 +59,15 @@
                   <Font size="18.0" />
                </font>
             </Button>
-
-            
-
             <DialogPane fx:id="textsangre" disable="true" headerText="Investigar sangre" layoutX="368.0" layoutY="535.0" onMouseClicked="Hay mucha sangre AAAAAAAH" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-
+            
             
             <Button fx:id="investigarsala" layoutX="1504.0" layoutY="138.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar sala&#10;">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-
-
             <DialogPane fx:id="testsala" disable="true" headerText="Investigar sala" layoutX="1448.0" layoutY="208.0" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-
             
             
          </children>
