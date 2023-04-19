@@ -36,6 +36,7 @@ First we need a JavaFX, the easiest way is: https://bell-sw.com/pages/downloads/
 <h3>For Eclipse (flatpak compatible): </h3>
 
 Open Lib folder and import all .jar like this, you need add your JavaFX libraries or a Full Java JDK in the jre installed and module-path:
+
 ![image](https://user-images.githubusercontent.com/61506276/233185217-d8b17a4c-79ce-4f57-8b03-67e014377e9b.png)
 
 The WorkSpace is "java-visual-novel" and the folder proyect is "java"
@@ -51,5 +52,6 @@ The folder to open is "java" and it will take all routes and libs automatic.
 <h3>For IntelliJ (flatpak compatible): </h3>
 
 Install a full JDK for javafx17 and you will need import module-info with eclipse compatibility mode:
+
 ![image](https://user-images.githubusercontent.com/61506276/232152854-d24a8c15-7d24-42f3-9447-516f5fc93d51.png)
 
