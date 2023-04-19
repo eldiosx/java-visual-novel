@@ -44,7 +44,7 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fitHeight="1101.0" fitWidth="1930.0" layoutX="-10.0" layoutY="-7.0">
+            <ImageView id="Fondo1" fitHeight="1101.0" fitWidth="1930.0" layoutX="-10.0" layoutY="-7.0" nodeOrientation="INHERIT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-7.0">
                <image>
                   <Image url="@../../../assets/images/Prologo/Prologo/DirectorBienvenida.png" />
                </image>

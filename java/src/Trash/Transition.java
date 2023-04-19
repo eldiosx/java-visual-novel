@@ -27,54 +27,54 @@ public class Transition extends Application {
 	public void start(Stage primaryStage) {
 		// Configuración de la ventana principal
 		primaryStage.setTitle("Mi Aplicación"); // Título de la ventana
-    @Override
-    public void start(Stage primaryStage) {
-    	
-        primaryStage.setTitle("Episodio 1");
-        // Configurar la ventana
-        
-        primaryStage.setResizable(true); // Se puede redimensionar
-        primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
-        primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
-        primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
-        primaryStage.show();
-        
-        BorderPane borderPane = new BorderPane();
-        //imagen de la persona
-        Image backgroundImage = new Image("file:" + RESOURCES_PATH + "/images/Prologo/Prologo/DirectorBienvenida.png");
-  
-        
-        
-        //caja de texto
-        VBox vBox = new VBox(); // Crea un VBox para organizar los nodos verticalmente
-        vBox.setAlignment(Pos.BOTTOM_LEFT); // Alinea los nodos al centro del VBox
-        vBox.setSpacing(10); // Establece un espacio de 10 píxeles entre los nodos en el VBox
-        //label de texto
-        
-        Label labelBienvenida = new Label(
-                "Bienvenido al campamento \"The Otter\". Espero que estés preparado para dos semanas de diversión. Tus compañeros ya están ubicados en sus cabañas. La tuya es la cabaña número 7, puedes ir a acomodarte si quieres .");
-        labelBienvenida.setWrapText(true);
-        labelBienvenida.setFont(new Font(12));
-        BackgroundFill backgroundFill = new BackgroundFill(Color.rgb(0, 0, 139, 0.5), new CornerRadii(10), null);
-        labelBienvenida.setBackground(new Background(backgroundFill));
-        labelBienvenida.setTextFill(Color.YELLOW);
-        labelBienvenida.setStyle("-fx-padding: 20px;");
-        //label de opciones
-        Button buttonOpcion1 = new Button ("Ir a la cabaña");
-        buttonOpcion1.setWrapText(true);
-        buttonOpcion1.setFont(new Font(12));
-        BackgroundFill FillOpcion1 = new BackgroundFill(Color.rgb(0, 0, 139, 0.5), new CornerRadii(10), null);
-        buttonOpcion1.setBackground(new Background(FillOpcion1));
-        buttonOpcion1.setTextFill(Color.YELLOW);
-        buttonOpcion1.setStyle("-fx-padding: 20px;");
-        buttonOpcion1.setOnMouseClicked(event -> {
-            SoundBox.playSound(RESOURCES_PATH + "/audio/click.wav");
-            // Agrega aquí el código que deseas ejecutar cuando se haga clic en el botón "Opción1"
-        });
-        
-     // Agrega la Label al VBox
-        vBox.getChildren().add(labelBienvenida); 
-        vBox.getChildren().add(buttonOpcion1); 
+
+	@Override
+	public void start(Stage primaryStage) {
+
+		primaryStage.setTitle("Episodio 1");
+		// Configurar la ventana
+
+		primaryStage.setResizable(true); // Se puede redimensionar
+		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
+		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
+		primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
+		primaryStage.show();
+
+		BorderPane borderPane = new BorderPane();
+		// imagen de la persona
+		Image backgroundImage = new Image("file:" + RESOURCES_PATH + "/images/Prologo/Prologo/DirectorBienvenida.png");
+
+		// caja de texto
+		VBox vBox = new VBox(); // Crea un VBox para organizar los nodos verticalmente
+		vBox.setAlignment(Pos.BOTTOM_LEFT); // Alinea los nodos al centro del VBox
+		vBox.setSpacing(10); // Establece un espacio de 10 píxeles entre los nodos en el VBox
+		// label de texto
+
+		Label labelBienvenida = new Label(
+				"Bienvenido al campamento \"The Otter\". Espero que estés preparado para dos semanas de diversión. Tus compañeros ya están ubicados en sus cabañas. La tuya es la cabaña número 7, puedes ir a acomodarte si quieres .");
+		labelBienvenida.setWrapText(true);
+		labelBienvenida.setFont(new Font(12));
+		BackgroundFill backgroundFill = new BackgroundFill(Color.rgb(0, 0, 139, 0.5), new CornerRadii(10), null);
+		labelBienvenida.setBackground(new Background(backgroundFill));
+		labelBienvenida.setTextFill(Color.YELLOW);
+		labelBienvenida.setStyle("-fx-padding: 20px;");
+		// label de opciones
+		Button buttonOpcion1 = new Button("Ir a la cabaña");
+		buttonOpcion1.setWrapText(true);
+		buttonOpcion1.setFont(new Font(12));
+		BackgroundFill FillOpcion1 = new BackgroundFill(Color.rgb(0, 0, 139, 0.5), new CornerRadii(10), null);
+		buttonOpcion1.setBackground(new Background(FillOpcion1));
+		buttonOpcion1.setTextFill(Color.YELLOW);
+		buttonOpcion1.setStyle("-fx-padding: 20px;");
+		buttonOpcion1.setOnMouseClicked(event -> {
+			SoundBox.playSound(RESOURCES_PATH + "/audio/click.wav");
+			// Agrega aquí el código que deseas ejecutar cuando se haga clic en el botón
+			// "Opción1"
+		});
+
+		// Agrega la Label al VBox
+		vBox.getChildren().add(labelBienvenida);
+		vBox.getChildren().add(buttonOpcion1);
 
 		// Panel principal con diseño de borde
 		BorderPane borderPane = new BorderPane();
