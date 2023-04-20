@@ -7,13 +7,12 @@ module java {
 	requires javafx.graphics; //CSS
 	requires java.sql; //SQL
 	requires java.desktop; // AWT and Swing
-	requires mysql.connector.j;
-	requires javafx.base; //MySQL
+	requires mysql.connector.j; //MySQL
 	
-	opens application to javafx.graphics, javafx.fxml;
-	exports application.Ep1 to javafx.graphics, javafx.fxml;
-	exports application.Prologue to javafx.graphics, javafx.fxml;
-	exports application.Ep1Murder to javafx.graphics, javafx.fxml;
-	opens application.Ep1 to javafx.fxml; // Agregar esta línea para abrir el paquete al módulo javafx.fxml
+	opens application to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
+	opens application.Prologue to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
+	opens application.Ep1 to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
+	exports application.Prologue to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
+	exports application.Ep1 to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
     exports application;
 }

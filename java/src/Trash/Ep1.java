@@ -1,4 +1,4 @@
-package application.Ep1;
+package Trash;
 
 import java.util.*;
 import application.SoundBox;

@@ -1,4 +1,4 @@
-package application.Ep1Murder;
+package Trash;
 
 import java.net.URL;
 import java.util.ResourceBundle;
