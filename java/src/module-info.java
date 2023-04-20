@@ -14,4 +14,6 @@ module java {
 	exports application.Ep1 to javafx.graphics, javafx.fxml;
 	exports application.Prologue to javafx.graphics, javafx.fxml;
 	exports application.Ep1Murder to javafx.graphics, javafx.fxml;
+	opens application.Ep1 to javafx.fxml; // Agregar esta línea para abrir el paquete al módulo javafx.fxml
+    exports application;
 }
