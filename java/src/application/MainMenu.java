@@ -434,7 +434,7 @@ public class MainMenu extends Application {
 
 		// Crear la escena
 		Scene scene = new Scene(root, screenWidth, screenHeight);
-		// scene.getStylesheets().add("LoadingScreen.css"); // Un extras para añadir un
+		// scene.getStylesheets().add("archivocss.css"); // Un extras para añadir un
 		// css de manera externa
 
 		// Configurar la ventana
