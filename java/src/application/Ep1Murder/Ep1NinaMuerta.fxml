@@ -2,7 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DisplacementMap?>
 <?import javafx.scene.effect.FloatMap?>
 <?import javafx.scene.image.Image?>
@@ -11,52 +11,46 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fitHeight="1080.0" fitWidth="1920.0">
+            <ImageView blendMode="SRC_ATOP" fitHeight="1080.0" fitWidth="1920.0">
                <image>
                   <Image url="@../../../assets/images/Episodio1/Ep1/murder.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="investigarmano" layoutX="1042.0" layoutY="210.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar mano&#10;">
+            <Button id="investigarmano" fx:id="investigarmano" layoutX="1042.0" layoutY="210.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar mano&#10;">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <DialogPane fx:id="textmano" headerText="Investigar mano" layoutX="882.0" layoutY="279.0" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-            <Button fx:id="investigarsuelo" layoutX="280.0" layoutY="263.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar suelo&#10;">
+            <Button id="investigarsuelo" fx:id="investigarsuelo" layoutX="280.0" layoutY="263.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar suelo&#10;">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <DialogPane fx:id="textsuelo" headerText="Investigar suelo" layoutX="250.0" layoutY="122.0" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-            <Button fx:id="investigarcuerpo" layoutX="262.0" layoutY="952.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar cuerpo&#10;">
+            <Button id="investigarcuerpo" fx:id="investigarcuerpo" layoutX="262.0" layoutY="952.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar cuerpo&#10;">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <DialogPane fx:id="textcuerpo" headerText="Investigar cuerpo" layoutX="458.0" layoutY="896.0" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-            <Button fx:id="investigarcuchillo" layoutX="1292.0" layoutY="470.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar cuchillo">
+            <Button id="investigarcuchillo" fx:id="investigarcuchillo" layoutX="1292.0" layoutY="470.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar cuchillo">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <DialogPane fx:id="textcuchilo" headerText="Investigar Cuchillo" layoutX="1294.0" layoutY="535.0" mouseTransparent="true" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-            <Button fx:id="investigarsangre" layoutX="498.0" layoutY="471.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar sangre&#10;">
+            <Button id="investigarsangre" fx:id="investigarsangre" layoutX="498.0" layoutY="471.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar sangre&#10;">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <DialogPane fx:id="textsangre" headerText="Investigar sangre" layoutX="368.0" layoutY="535.0" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-            <Button fx:id="investigarsala" layoutX="1504.0" layoutY="138.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar sala&#10;">
+            <Button id="investigarsala" fx:id="investigarsala" layoutX="1504.0" layoutY="138.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar sala&#10;">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <DialogPane fx:id="testsala" headerText="Investigar sala" layoutX="1448.0" layoutY="208.0" opacity="0.75" prefHeight="120.0" prefWidth="350.0" />
-            <Button fx:id="investigarsuelo1" disable="true" layoutX="704.0" layoutY="19.0" mnemonicParsing="false" opacity="0.9" prefHeight="50.0" prefWidth="510.0" style="-fx-background-color: black;" text="Investiga la sala para ver qué ha pasado&#10;">
+            <Button fx:id="General" disable="true" layoutX="704.0" layoutY="19.0" mnemonicParsing="false" opacity="0.9" prefHeight="50.0" prefWidth="510.0" style="-fx-background-color: black;" text="Investiga la sala para ver qué ha pasado&#10;">
                <font>
                   <Font size="18.0" />
                </font>
@@ -71,6 +65,11 @@
                   </DisplacementMap>
                </effect>
             </Button>
+            <Label id="labelSuelo" fx:id="labelSuelo" layoutX="238.0" layoutY="81.0" opacity="0.8" prefHeight="165.0" prefWidth="264.0" style="-fx-background-color: grey;" text="No se ven pisadas, y está &#10;completamente manchado &#10;de sangre, quien lo hizo ha &#10;sido bastante cuidadoso con &#10;no dejar rastro" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
