@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.Desktop;
 //Java
 //import java.beans.EventHandler;
 import java.io.File;
@@ -43,6 +44,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Popup;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import application.Ep1.Main;
 //MySql
 import com.mysql.cj.protocol.Resultset;
 
@@ -55,6 +57,7 @@ public class MainMenu extends Application {
 	// Obtener el tamaño de la pantalla
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+	Main Ep1 = new Main(); // Crea una instancia de la clase Main
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private Font titleFont;
 	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
@@ -135,18 +138,26 @@ public class MainMenu extends Application {
 			Stage stage = (Stage) newGameButtonImageView.getScene().getWindow();
 			stage.close();
 
-			// Abrir otra escena
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue/Prologue_Scene_Builder1.fxml"));
-			Parent root = null;
-			try {
-				root = loader.load();
-			} catch (IOException e) {
+//			// Abrir otra escena
+//			FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue/Prologue_Scene_Builder1.fxml"));
+//			Parent root = null;
+//			try {
+//				root = loader.load();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//			Scene scene = new Scene(root);
+//			Stage newStage = new Stage();
+//			newStage.setScene(scene);
+//			newStage.show();
+			
+		    
+		    try {
+				Ep1.start(primaryStage);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			Scene scene = new Scene(root);
-			Stage newStage = new Stage();
-			newStage.setScene(scene);
-			newStage.show();
 		});
 		topButtonsBox.getChildren().add(newGameButtonImageView);
 

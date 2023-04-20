@@ -14,7 +14,7 @@ public class Stage1 {
 		myButton.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
-				Stage stage = Main.createStage("Stage2.fxml", "SecondStage", 400, 300);
+				Stage stage = Main.createStage("Stage2.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
 				Main.showStage(stage);

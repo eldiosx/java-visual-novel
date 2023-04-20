@@ -9,8 +9,8 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-	double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
-	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+	static double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+	static double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private static Stage primaryStage;
 	private static Stage currentStage;
@@ -18,11 +18,11 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// Cargar el archivo FXML para el primer Stage
-		Parent root1 = FXMLLoader.load(getClass().getResource("Stage1.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("Stage1.fxml"));
 		Main.primaryStage = primaryStage;
 		Main.currentStage = primaryStage;
 		primaryStage.setTitle("Primer Stage");
-		primaryStage.setScene(new Scene(root1, screenWidth, screenHeight));
+		primaryStage.setScene(new Scene(root, screenWidth, screenHeight));
 		primaryStage.setResizable(false); // Se puede redimensionar
 		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
 		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
@@ -47,11 +47,11 @@ public class Main extends Application {
 		Main.currentStage = stage;
 	}
 
-	public static Stage createStage(String fxmlFile, String title, int width, int height) throws Exception {
+	public static Stage createStage(String fxmlFile, String title) throws Exception {
 		Stage stage = new Stage();
 		Parent root = FXMLLoader.load(Main.class.getResource(fxmlFile));
 		stage.setTitle(title);
-		stage.setScene(new Scene(root, width, height));
+		stage.setScene(new Scene(root, screenWidth, screenHeight));
 		stage.setResizable(false); // Se puede redimensionar
 		stage.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
