@@ -52,7 +52,9 @@ public class MainMenu extends Application {
 	ConexionMySQL conexion = new ConexionMySQL("root", "", "videojuego serie b");
 
 	ClassLoader classLoader = getClass().getClassLoader();
+	// Obtener el tamaño de la pantalla
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+	double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private Font titleFont;
 	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
@@ -417,10 +419,6 @@ public class MainMenu extends Application {
 
 		// Crear el contenedor principal
 		BorderPane root = new BorderPane();
-		// Obtener el tamaño de la pantalla
-		double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
-		double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
-
 		// Crear el fondo con tamaño de pantalla
 		root.setBackground(new Background(new BackgroundImage(new Image(BACKGROUND_URL), BackgroundRepeat.NO_REPEAT,
 				BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
@@ -440,7 +438,7 @@ public class MainMenu extends Application {
 		// Configurar la ventana
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Tu videojuego favorito de serie B"); // Título de la ventana
-		primaryStage.setResizable(true); // Se puede redimensionar
+		primaryStage.setResizable(false); // Se puede redimensionar
 		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
 		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px

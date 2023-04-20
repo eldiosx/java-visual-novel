@@ -4,10 +4,14 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
+	double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private static Stage primaryStage;
 	private static Stage currentStage;
 
@@ -18,7 +22,11 @@ public class Main extends Application {
 		Main.primaryStage = primaryStage;
 		Main.currentStage = primaryStage;
 		primaryStage.setTitle("Primer Stage");
-		primaryStage.setScene(new Scene(root1, 400, 300));
+		primaryStage.setScene(new Scene(root1, screenWidth, screenHeight));
+		primaryStage.setResizable(false); // Se puede redimensionar
+		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
+		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
+		primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
 		primaryStage.show();
 	}
 
@@ -31,6 +39,10 @@ public class Main extends Application {
 	}
 
 	public static void showStage(Stage stage) {
+		stage.setResizable(false); // Se puede redimensionar
+		stage.setFullScreen(true); // Abre la ventana en pantalla completa
+		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
+		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
 		stage.show();
 		Main.currentStage = stage;
 	}
@@ -40,6 +52,10 @@ public class Main extends Application {
 		Parent root = FXMLLoader.load(Main.class.getResource(fxmlFile));
 		stage.setTitle(title);
 		stage.setScene(new Scene(root, width, height));
+		stage.setResizable(false); // Se puede redimensionar
+		stage.setFullScreen(true); // Abre la ventana en pantalla completa
+		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
+		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
 		return stage;
 	}
 
