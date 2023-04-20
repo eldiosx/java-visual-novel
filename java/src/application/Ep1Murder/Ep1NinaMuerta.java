@@ -45,14 +45,7 @@ public class Ep1NinaMuerta {
 
 	    @FXML // This method is called by the FXMLLoader when initialization is complete
 	    void initialize() {
-	        assert investigarcuchillo != null : "fx:id=\"investigarcuchillo\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
-	        assert investigarcuerpo != null : "fx:id=\"investigarcuerpo\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
-	        assert investigarmano != null : "fx:id=\"investigarmano\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
-	        assert investigarsala != null : "fx:id=\"investigarsala\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
-	        assert investigarsangre != null : "fx:id=\"investigarsangre\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
-	        assert investigarsuelo != null : "fx:id=\"investigarsuelo\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
-	        assert investigarsuelo1 != null : "fx:id=\"investigarsuelo1\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
-	        assert labelSuelo != null : "fx:id=\"labelSuelo\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
+
 
 	    }
 

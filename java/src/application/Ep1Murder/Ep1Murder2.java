@@ -13,6 +13,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import application.SoundBox;
+import javafx.scene.layout.VBox ;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -52,13 +53,20 @@ public class Ep1Murder2 extends Application{
   	    private Button investigarsangre; // Value injected by FXMLLoader
 
   	    @FXML // fx:id="investigarsuelo"
-  	    private Button investigarsuelo; // Value injected by FXMLLoader
+  	    //private static Button investigarsuelo; // Value injected by FXMLLoader
 
   	    @FXML // fx:id="investigarsuelo1"
-  	    private Button investigarsuelo1; // Value injected by FXMLLoader
+  	    //private Button investigarsuelo1; // Value injected by FXMLLoader
 
   	    @FXML // fx:id="labelSuelo"
-  	    private Label labelSuelo= new Label (); // Value injected by FXMLLoader
+  	   // private static Label labelSuelo= new Label (); // Value injected by FXMLLoader
+  	    
+    //Prueba
+    	Button investigarsuelo = new Button ();
+    	Label labelSuelo= new Label ();
+    	labelSuelo.setVisible (false);
+    	investigarsuelo.setOnAction (event -> { labelSuelo.setVisible (true);});
+    	VBox rootu = new VBox (investigarsuelo, labelSuelo);
   	    
   	    
 //________________________________________________________________________________________________________________________________________________________________________________________________________ 
@@ -101,30 +109,18 @@ public class Ep1Murder2 extends Application{
         assert investigarsala != null : "fx:id=\"investigarsala\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
         assert investigarsangre != null : "fx:id=\"investigarsangre\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
         assert investigarsuelo != null : "fx:id=\"investigarsuelo\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
-        assert investigarsuelo1 != null : "fx:id=\"investigarsuelo1\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
+       // assert investigarsuelo1 != null : "fx:id=\"investigarsuelo1\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
         assert labelSuelo != null : "fx:id=\"labelSuelo\" was not injected: check your FXML file 'Ep1NinaMuerta.fxml'.";
 
   	    // Hace visible la etiqueta al hacer clic en el botón "investigarsuelo"
-        investigarsuelo.setOnAction (event -> { labelSuelo.setVisible (true);});
+        
 
     }	
 	
 //________________________________________________________________________________________________________________________________________________________________________________________________________
     public static void main(String[] args) {
         launch(args);
-    	// Obtener el tamaño de la pantalla
-        BorderPane root = new BorderPane();
-		double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
-		double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
-        Scene scene = new Scene(root, screenWidth, screenHeight);
-     // Crear el fondo con tamaño de pantalla
-     		root.setBackground(new Background(new BackgroundImage(new Image("@../../../assets/images/Episodio1/Ep1/murder.jpg"), BackgroundRepeat.NO_REPEAT,
-     				BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-     				new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, true, true, true, true))));
-     //inicializamos la escena
-    	Scene murderscene = new Scene(root, screenWidth, screenHeight);
-      //inicializamos los botones y las hisotrias
-       	initialize ();
+
     }    
 
 }
