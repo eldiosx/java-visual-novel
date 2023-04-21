@@ -14,7 +14,7 @@ module java {
 	opens application.Ep1 to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
 	exports application.Prologue to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
 	exports application.Ep1 to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
-    exports application;
+    exports application to javafx.graphics, javafx.fxml, jdx;
     
     //TEST
 	opens Trash to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
