@@ -3,3 +3,20 @@
         -fx-background-size: 100% 100%; //Usar cover si no quereis que se distorsione pero se recortará.
         -fx-background-position: center;
     }
+    .text {
+		-fx-text-fill: white;
+		-fx-control-inner-background: transparent;  //rgba(0, 0, 0, 1); #0000001A
+		-fx-pref-width: 80%;
+  		-fx-pref-height: 100%;
+  		-fx-height: 100%;
+ 		-fx-box-sizing: border-box;
+ 		-fx-wrap-text: true;
+		-fx-background-color: #0000009A;
+	    -fx-font-size: 14px;
+	    -fx-padding: 20px 20px 20px 20px;
+	    -fx-border-width: 1px;
+	    -fx-border-color: #CCCCCC;
+	    -fx-overflow-y: hidden;
+	    -fx-overflow-x: hidden;
+	    
+    }
