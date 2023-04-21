@@ -1,0 +1,5 @@
+    .background {
+        -fx-background-image: url("../../../assets/images/Episodio1/Ep1/ChanHoguera.png");
+        -fx-background-size: cover;
+        -fx-background-position: center;
+    }
