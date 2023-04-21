@@ -15,4 +15,8 @@ module java {
 	exports application.Prologue to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
 	exports application.Ep1 to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
     exports application;
+    
+    //TEST
+	opens Trash to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
+	exports Trash to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
 }
