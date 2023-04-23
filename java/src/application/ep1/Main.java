@@ -13,22 +13,22 @@ public class Main extends Application {
 	static double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
 	static double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
-	private static Stage primaryStage;
+	private static Stage stage1;
 	private static Stage currentStage;
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage stage1) throws Exception {
 		// Cargar el archivo FXML para el primer Stage
 		Parent root = FXMLLoader.load(getClass().getResource("Stage1.fxml"));
-		Main.primaryStage = primaryStage;
-		Main.currentStage = primaryStage;
-		primaryStage.setTitle("Primer Stage");
-		primaryStage.setScene(new Scene(root, screenWidth, screenHeight));
-		primaryStage.setResizable(true); // Se puede redimensionar
-		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
-		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
-		primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
-		primaryStage.show();
+		Main.stage1 = stage1;
+		Main.currentStage = stage1;
+		stage1.setTitle("Primer Stage");
+		stage1.setScene(new Scene(root, screenWidth, screenHeight));
+		stage1.setResizable(true); // Se puede redimensionar
+		stage1.setFullScreen(true); // Abre la ventana en pantalla completa
+		stage1.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
+		stage1.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
+		stage1.show();
 	}
 
 	public static void main(String[] args) {
@@ -63,7 +63,7 @@ public class Main extends Application {
 	}
 
 	public static Stage getPrimaryStage() {
-		return primaryStage;
+		return stage1;
 	}
 
 	public static Stage getCurrentStage() {

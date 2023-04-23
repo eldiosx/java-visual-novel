@@ -40,7 +40,6 @@ public class Stage1 {
 				// Ocultar el Stage principal
 				Main.hideStage(Main.getPrimaryStage());
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});

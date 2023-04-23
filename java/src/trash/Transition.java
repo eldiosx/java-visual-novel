@@ -1,4 +1,5 @@
-package application;
+package trash;
+
 import javafx.application.Application;
 import javafx.beans.binding.DoubleBinding;
 import javafx.geometry.Pos;
@@ -19,10 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import java.io.File;
 
-
-
-
-
+import application.SoundBox;
 
 public class Transition extends Application {
 	private static final String RESOURCES_PATH = "assets";
@@ -31,7 +29,7 @@ public class Transition extends Application {
 	private static final double MARGIN_LEFT = 50.0; // Margen izquierdo
 	private static final double MARGIN_BOTTOM = 50.0; // Margen inferior
 	private SoundBox soundBox = new SoundBox();
-	
+
 	@Override
 	public void start(Stage primaryStage) {
 
@@ -49,7 +47,7 @@ public class Transition extends Application {
 		Image backgroundImage = new Image("file:" + RESOURCES_PATH + "/images/Prologo/Prologo/DirectorBienvenida.png");
 
 		// caja de texto
-		VBox vBox = new VBox (); // Crea un VBox para organizar los nodos verticalmente
+		VBox vBox = new VBox(); // Crea un VBox para organizar los nodos verticalmente
 		vBox.setAlignment(Pos.BOTTOM_LEFT); // Alinea los nodos al centro del VBox
 		vBox.setSpacing(10); // Establece un espacio de 10 píxeles entre los nodos en el VBox
 		// label de texto

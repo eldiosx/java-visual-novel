@@ -1,12 +1,12 @@
 package application;
 
-import java.awt.Desktop;
+//import java.awt.Desktop;
 //Java
 //import java.beans.EventHandler;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+//import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -18,11 +18,11 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
-import javafx.fxml.FXMLLoader;
+//import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
-import javafx.scene.Parent;
+//import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -46,7 +46,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 //MySql
-import com.mysql.cj.protocol.Resultset;
+//import com.mysql.cj.protocol.Resultset;
 
 import application.ep1.Main;
 
@@ -79,7 +79,8 @@ public class MainMenu extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		//PANTALLA DE CARGA para que todo carge primero y a la misma vez y luego lanzarlo
+		// PANTALLA DE CARGA para que todo carge primero y a la misma vez y luego
+		// lanzarlo
 		loader = new Loader();
 		loader.setTitle("Loading... :D");
 		loader.show();
@@ -136,12 +137,21 @@ public class MainMenu extends Application {
 		newGameButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			backgroundMusic.stopAudio();
-			// Lógica para iniciar una nueva partida
-			// Cerrar la escena actual
-			Stage stage = (Stage) newGameButtonImageView.getScene().getWindow();
-			stage.close();
+			// Asi podemos crear escenas que nos de la gana, util sobre todo para el LOAD
+			try {
+				// Crear un nuevo Stage
+				Stage stage = Main.createStage("Stage1.fxml", "Ep1");
 
-//			// Abrir otra escena
+				// Mostrar el nuevo Stage
+				Main.showStage(stage);
+
+				// Ocultar el Stage principal
+				primaryStage.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+//			// Abrir otra escena .XFML
 //			FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue/Prologue_Scene_Builder1.fxml"));
 //			Parent root = null;
 //			try {
@@ -153,12 +163,6 @@ public class MainMenu extends Application {
 //			Stage newStage = new Stage();
 //			newStage.setScene(scene);
 //			newStage.show();
-
-			try {
-				Ep1.start(primaryStage);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		});
 		topButtonsBox.getChildren().add(newGameButtonImageView);
 
