@@ -19,7 +19,7 @@ public class VoiceBox {
                 // Cargar archivo de audio Ogg
                 InputStream in = new FileInputStream(filePath);
                 try (OggInputStream oggIn = new OggInputStream(in)) {
-                    int channels = 2; // número de canales (estéreo)
+                    int channels = 1; // número de canales (estéreo)
                     int rate = 44100; // frecuencia de muestreo (44100 Hz)
                     int bufferSize = 4096; // tamaño del búfer de audio
 
