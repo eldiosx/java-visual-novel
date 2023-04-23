@@ -1,4 +1,4 @@
-package application.Ep1;
+package application.ep1;
 import java.io.FileInputStream;
 import java.io.InputStream;
 

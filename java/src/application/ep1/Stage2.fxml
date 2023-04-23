@@ -6,7 +6,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0"
 	xmlns="http://javafx.com/javafx/17.0.0"
 	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="application.Ep1.Stage2">
+	fx:controller="application.ep1.Stage2">
 	<children>
 		<Button fx:id="myButton2" layoutX="267.0" layoutY="170.0"
 			mnemonicParsing="false" text="My Button" />

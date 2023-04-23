@@ -1,24 +1,22 @@
-package Trash;
+package application.prologue;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import application.SoundBox;
 
-
-public class DeadGirlSceneBuilder extends Application {
+public class Prologue extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("DeadGirlSceneBuilder.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue_Scene_Builder1.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("DeadGirl");
+        primaryStage.setTitle("Test");
         primaryStage.show();
     }
 

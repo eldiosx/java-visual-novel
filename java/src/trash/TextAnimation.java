@@ -1,4 +1,4 @@
-package Trash;
+package trash;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

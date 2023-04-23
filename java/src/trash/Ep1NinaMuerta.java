@@ -1,4 +1,4 @@
-package Trash;
+package trash;
 
 import java.net.URL;
 import java.util.ResourceBundle;

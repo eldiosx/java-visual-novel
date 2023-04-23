@@ -1,4 +1,4 @@
-package Trash;
+package trash;
 
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;

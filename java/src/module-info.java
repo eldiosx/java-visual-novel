@@ -10,13 +10,13 @@ module java {
 	requires mysql.connector.j; //MySQL
 	
 	opens application to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
-	opens application.Prologue to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
-	opens application.Ep1 to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
-	exports application.Prologue to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
-	exports application.Ep1 to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
+	opens application.prologue to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
+	opens application.ep1 to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
+	exports application.prologue to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
+	exports application.ep1 to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
     exports application to javafx.graphics, javafx.fxml, jdx;
     
     //TEST
-	opens Trash to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
-	exports Trash to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
+	opens trash to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos
+	exports trash to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos
 }

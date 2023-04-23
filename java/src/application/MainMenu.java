@@ -44,9 +44,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Popup;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import application.Ep1.Main;
+
 //MySql
 import com.mysql.cj.protocol.Resultset;
+
+import application.ep1.Main;
 
 public class MainMenu extends Application {
 //assets/audio/lullabyX.ogg
@@ -77,8 +79,9 @@ public class MainMenu extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-//PANTALLA DE CARGA para que todo carge primero y a la misma vez y luego lanzarlo
+		//PANTALLA DE CARGA para que todo carge primero y a la misma vez y luego lanzarlo
 		loader = new Loader();
+		loader.setTitle("Loading... :D");
 		loader.show();
 
 		Task<Void> task = new Task<Void>() {
@@ -150,12 +153,10 @@ public class MainMenu extends Application {
 //			Stage newStage = new Stage();
 //			newStage.setScene(scene);
 //			newStage.show();
-			
-		    
-		    try {
+
+			try {
 				Ep1.start(primaryStage);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});
