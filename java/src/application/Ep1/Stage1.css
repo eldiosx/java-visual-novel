@@ -4,14 +4,11 @@
         -fx-background-position: center;
     }
 
-    .text {
-		-fx-text-fill: white;
+    .textPanel {
 		-fx-background-radius: 10px;
 		-fx-control-inner-background: transparent;  //rgba(0, 0, 0, 1); #0000001A
  		-fx-box-sizing: border-box;
- 		-fx-wrap-text: true;
 		-fx-background-color: #0000009A;
-	    -fx-font-size: 14px;
 	    -fx-padding: 10px 10px 10px 10px;
 	    -fx-border-width: 3px;
 	    -fx-border-color: #5555555A;
@@ -20,11 +17,24 @@
 	    -fx-overflow-x: hidden;
 	    
     }
+    
+        .text {
+		-fx-text-fill: white;
+		-fx-background-radius: 10px;
+ 		-fx-box-sizing: border-box;
+ 		-fx-wrap-text: true;
+	    //-fx-font-size: 20px;
+	    -fx-padding: 10px 10px 10px 10px;
+	    -fx-overflow-y: hidden;
+	    -fx-overflow-x: hidden;
+	    
+    }
+    
+    
     .button {
     	-fx-text-fill: white;
     	-fx-background-color: #0000009A;
     }
-    
 //    
 //.button
 //{
