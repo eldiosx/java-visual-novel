@@ -16,7 +16,7 @@ public class Stage1 {
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
     private int currentIndex = 0;
-    private String text = "JOHN: Vale, pues os voy a contar mi historia: Había un anciano señor en una vieja casa no muy lejos de aquí. El reloj de cucú de aquel hombre marcó las 10:00 de la noche, mientras este apagaba las lámparas de aceite alrededor de su casa para ir a dormir, había sido un día muy pesado. Poco después de que el reloj diera las 10:00 de la noche, cuando ya había ido a dormir, se escuchó tocar la puerta.- TOC, TOC, TOC - Algo extrañado, encendió la lámpara de la mesa de noche, y fue destinado a abrir la puerta. Y al abrirla, alcanzó a ver por el brillo que emanaba su lámpara, a una niña de no más de 7 años, totalmente quemada.";
+    private String text = "Vale, pues os voy a contar mi historia: Había un anciano señor en una vieja casa no muy lejos de aquí. El reloj de cucú de aquel hombre marcó las 10:00 de la noche, mientras este apagaba las lámparas de aceite alrededor de su casa para ir a dormir, había sido un día muy pesado. Poco después de que el reloj diera las 10:00 de la noche, cuando ya había ido a dormir, se escuchó tocar la puerta.- TOC, TOC, TOC - Algo extrañado, encendió la lámpara de la mesa de noche, y fue destinado a abrir la puerta. Y al abrirla, alcanzó a ver por el brillo que emanaba su lámpara, a una niña de no más de 7 años, totalmente quemada.";
     private Timeline timeline;
 
 	@FXML

@@ -15,19 +15,39 @@
           <ColumnConstraints hgrow="NEVER" percentWidth="10.0" />
         </columnConstraints>
         <rowConstraints>
-			<RowConstraints percentHeight="30.0" vgrow="NEVER" />
-			<RowConstraints percentHeight="30.0" vgrow="NEVER" />
-			<RowConstraints percentHeight="20.0" vgrow="NEVER" />
+			<RowConstraints percentHeight="10.0" vgrow="NEVER" />
+			<RowConstraints percentHeight="10.0" vgrow="NEVER" />
+			<RowConstraints percentHeight="60.0" vgrow="NEVER" />
 			<RowConstraints percentHeight="20.0" vgrow="ALWAYS" />
         </rowConstraints>
+         <GridPane GridPane.rowIndex="2">
+           <columnConstraints>
+             <ColumnConstraints hgrow="NEVER" percentWidth="40.0" />
+             <ColumnConstraints hgrow="NEVER" percentWidth="40.0" />
+               <ColumnConstraints hgrow="NEVER" percentWidth="20.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints percentHeight="30.0" vgrow="NEVER" />
+             <RowConstraints percentHeight="50.0" vgrow="ALWAYS" />
+             <RowConstraints percentHeight="20.0" vgrow="NEVER" />
+           </rowConstraints>
+            <children>
+               <Label alignment="BOTTOM_LEFT" styleClass="name" stylesheets="@Stage1.css" text="JHON:" GridPane.rowIndex="2" />
+            </children>
+         </GridPane>
       		<Button fx:id="myButton" mnemonicParsing="false" styleClass="button" stylesheets="@Stage1.css" text="Continuar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-         <GridPane GridPane.rowIndex="3" styleClass="textPanel" stylesheets="@Stage1.css">
+         <GridPane styleClass="textPanel" stylesheets="@Stage1.css" GridPane.rowIndex="3">
            <columnConstraints>
              <ColumnConstraints hgrow="ALWAYS" percentWidth="100.0" />
            </columnConstraints>
             <children>
                   <Label fx:id="dialogue" styleClass="text" stylesheets="@Stage1.css" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             </children>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
          </GridPane>
       </GridPane>
 	</children>
