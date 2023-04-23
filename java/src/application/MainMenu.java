@@ -454,7 +454,7 @@ public class MainMenu extends Application {
 		// Configurar la ventana
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Tu videojuego favorito de serie B"); // Título de la ventana
-		primaryStage.setResizable(false); // Se puede redimensionar
+		primaryStage.setResizable(true); // Se puede redimensionar
 		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
 		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px

@@ -22,7 +22,7 @@ public class Main extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("Stage1.fxml"));
 		Main.stage1 = stage1;
 		Main.currentStage = stage1;
-		stage1.setTitle("Primer Stage");
+		stage1.setTitle("Tu videojuego favorito de serie B");
 		stage1.setScene(new Scene(root, screenWidth, screenHeight));
 		stage1.setResizable(true); // Se puede redimensionar
 		stage1.setFullScreen(true); // Abre la ventana en pantalla completa
@@ -42,6 +42,7 @@ public class Main extends Application {
 	}
 
 	public static void showStage(Stage stage) {
+		stage.setTitle("Tu videojuego favorito de serie B");
 		stage.setResizable(true); // Se puede redimensionar
 		stage.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
