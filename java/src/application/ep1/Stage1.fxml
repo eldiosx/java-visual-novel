@@ -15,10 +15,10 @@
           <ColumnConstraints hgrow="NEVER" percentWidth="10.0" />
         </columnConstraints>
         <rowConstraints>
-			<RowConstraints percentHeight="10.0" vgrow="NEVER" />
-			<RowConstraints percentHeight="10.0" vgrow="NEVER" />
-			<RowConstraints percentHeight="60.0" vgrow="NEVER" />
-			<RowConstraints percentHeight="20.0" vgrow="ALWAYS" />
+			<RowConstraints vgrow="NEVER" percentHeight="10.0" />
+			<RowConstraints vgrow="NEVER" percentHeight="10.0" />
+			<RowConstraints vgrow="NEVER" percentHeight="60.0" />
+			<RowConstraints vgrow="ALWAYS" percentHeight="20.0" />
         </rowConstraints>
          <GridPane GridPane.rowIndex="2">
            <columnConstraints>
@@ -27,9 +27,9 @@
                <ColumnConstraints hgrow="NEVER" percentWidth="20.0" />
            </columnConstraints>
            <rowConstraints>
-             <RowConstraints percentHeight="30.0" vgrow="NEVER" />
-             <RowConstraints percentHeight="50.0" vgrow="ALWAYS" />
-             <RowConstraints percentHeight="20.0" vgrow="NEVER" />
+             <RowConstraints vgrow="NEVER" percentHeight="30.0" />
+             <RowConstraints vgrow="ALWAYS" percentHeight="50.0" />
+             <RowConstraints vgrow="NEVER" percentHeight="20.0" />
            </rowConstraints>
             <children>
                <Label alignment="BOTTOM_LEFT" styleClass="name" stylesheets="@Stage1.css" text="JHON:" GridPane.rowIndex="2" />
