@@ -29,8 +29,14 @@ import java.nio.ByteOrder;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.StreamUtils;
-import com.jcraft.jogg.*;
-import com.jcraft.jorbis.*;
+import com.jcraft.jogg.Packet;
+import com.jcraft.jogg.Page;
+import com.jcraft.jogg.StreamState;
+import com.jcraft.jogg.SyncState;
+import com.jcraft.jorbis.Block;
+import com.jcraft.jorbis.Comment;
+import com.jcraft.jorbis.DspState;
+import com.jcraft.jorbis.Info;
 
 /**
  * An input stream to read Ogg Vorbis.
