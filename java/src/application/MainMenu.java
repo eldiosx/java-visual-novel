@@ -59,7 +59,8 @@ public class MainMenu extends Application {
 	// Obtener el tamaño de la pantalla
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
-	Main Ep1 = new Main(); // Crea una instancia de la clase Main
+	Main main = new Main(); // Crea una instancia de la clase Main
+	Stage stage = new Stage();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private Font titleFont;
 	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
@@ -140,10 +141,7 @@ public class MainMenu extends Application {
 			// Asi podemos crear escenas que nos de la gana, util sobre todo para el LOAD
 			try {
 				// Crear un nuevo Stage
-				Stage stage = Main.createStage("Stage1.fxml", "Ep1");
-
-				// Mostrar el nuevo Stage
-				Main.showStage(stage);
+				main.start(stage);
 
 				// Ocultar el Stage principal
 				primaryStage.close();
