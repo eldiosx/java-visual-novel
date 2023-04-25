@@ -1,19 +1,10 @@
 package application.ep1;
+import application.end.Credits;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import application.end.Credits;
-import application.BackgroundMusic;
-import application.VoiceBox;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 public class Stage2 {
 	
@@ -77,7 +68,7 @@ public class Stage2 {
 					credits.start(stage);
 
 					// Ocultar el Stage principal
-					Main.hideStage(Main.getPrimaryStage());
+					MainEp1.hideStage(MainEp1.getPrimaryStage());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

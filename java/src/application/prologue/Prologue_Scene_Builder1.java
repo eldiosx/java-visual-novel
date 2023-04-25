@@ -1,10 +1,7 @@
 package application.prologue;
 
-import java.io.File;
-
 import application.BackgroundMusic;
 import application.VoiceBox;
-import application.prologue.Main;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -39,13 +36,13 @@ public class Prologue_Scene_Builder1 {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = Main.createStage("Prologue_Scene_Builder2.fxml", "SecondStage");
+				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder2.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
-				Main.showStage(stage);
+				MainPrologue.showStage(stage);
 
 				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
+				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -55,12 +52,12 @@ public class Prologue_Scene_Builder1 {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = Main.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
+				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
 				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
+				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
 				
 				// Mostrar el nuevo Stage
-				Main.showStage(stage);
+				MainPrologue.showStage(stage);
 				
 			} catch (Exception e) {
 				e.printStackTrace();

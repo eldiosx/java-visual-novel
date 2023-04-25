@@ -48,7 +48,9 @@ import javafx.stage.Stage;
 //MySql
 //import com.mysql.cj.protocol.Resultset;
 
-import application.ep1.Main;
+//Local
+import application.prologue.MainPrologue;
+//import application.ep1.MainEp1;
 
 public class MainMenu extends Application {
 //assets/audio/lullabyX.ogg
@@ -59,7 +61,7 @@ public class MainMenu extends Application {
 	// Obtener el tamaño de la pantalla
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
-	Main main = new Main(); // Crea una instancia de la clase Main
+	MainPrologue mainPrologue = new MainPrologue(); // Crea una instancia de la clase Main
 	Stage stage = new Stage();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private Font titleFont;
@@ -141,7 +143,7 @@ public class MainMenu extends Application {
 			// Asi podemos crear escenas que nos de la gana, util sobre todo para el LOAD
 			try {
 				// Crear un nuevo Stage
-				main.start(stage);
+				mainPrologue.start(stage);
 
 				// Ocultar el Stage principal
 				primaryStage.close();

@@ -1,6 +1,6 @@
 package application.prologue;
 
-import application.prologue.Main;
+import application.prologue.MainPrologue;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class MainPrologue extends Application {
 
 	static double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
 	static double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
@@ -21,8 +21,8 @@ public class Main extends Application {
 	public void start(Stage stage1) throws Exception {
 		// Cargar el archivo FXML para el primer Stage
 		Parent root = FXMLLoader.load(getClass().getResource("Prologue_Scene_Builder1.fxml"));
-		Main.stage1 = stage1;
-		Main.currentStage = stage1;
+		MainPrologue.stage1 = stage1;
+		MainPrologue.currentStage = stage1;
 		stage1.setTitle("Tu videojuego favorito de serie B");
 		stage1.setScene(new Scene(root, screenWidth, screenHeight));
 		stage1.setResizable(true); // Se puede redimensionar
@@ -49,12 +49,12 @@ public class Main extends Application {
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
 		stage.show();
-		Main.currentStage = stage;
+		MainPrologue.currentStage = stage;
 	}
 
 	public static Stage createStage(String fxmlFile, String title) throws Exception {
 		Stage stage = new Stage();
-		Parent root = FXMLLoader.load(Main.class.getResource(fxmlFile));
+		Parent root = FXMLLoader.load(MainPrologue.class.getResource(fxmlFile));
 		stage.setTitle(title);
 		stage.setScene(new Scene(root, screenWidth, screenHeight));
 		stage.setResizable(true); // Se puede redimensionar

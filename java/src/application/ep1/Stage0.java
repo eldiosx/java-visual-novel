@@ -4,14 +4,9 @@ import java.io.File;
 
 import application.BackgroundMusic;
 import application.VoiceBox;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 public class Stage0 {
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
@@ -43,12 +38,12 @@ public class Stage0 {
 				// llamada a la escena de John
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = Main.createStage("Stage1.fxml", "SecondStage");
+				Stage stage = MainEp1.createStage("Stage1.fxml", "SecondStage");
 				// Mostrar el nuevo Stage, que es el de John
-				Main.showStage(stage);
+				MainEp1.showStage(stage);
 
 				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
+				MainEp1.hideStage(MainEp1.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -62,7 +57,7 @@ public class Stage0 {
 				//Main.showStage(stage);
 
 				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
+				MainEp1.hideStage(MainEp1.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -76,7 +71,7 @@ public class Stage0 {
 				//Main.showStage(stage);
 
 				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
+				MainEp1.hideStage(MainEp1.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -90,7 +85,7 @@ public class Stage0 {
 				//Main.showStage(stage);
 
 				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
+				MainEp1.hideStage(MainEp1.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -104,7 +99,7 @@ public class Stage0 {
 				//Main.showStage(stage);
 
 				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
+				MainEp1.hideStage(MainEp1.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

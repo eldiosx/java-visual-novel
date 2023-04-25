@@ -1,10 +1,8 @@
 package application.prologue;
 
-import java.io.File;
-
 import application.BackgroundMusic;
 import application.VoiceBox;
-import application.ep1.Main;
+import application.ep1.MainEp1;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -19,7 +17,7 @@ public class Prologue_Scene_Builder3 {
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	Main main = new Main(); // Crea una instancia de la clase Main
+	MainEp1 mainEp1 = new MainEp1(); // Crea una instancia de la clase Main
 	Stage stage = new Stage();
 	private String text = "He hablado con Marleene para hacer una fogata esta noche y contar historias. Nos vemos esta noche";
 	private Timeline timeline;
@@ -39,11 +37,11 @@ public class Prologue_Scene_Builder3 {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				main.start(stage);
+				mainEp1.start(stage);
 
 
 				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
+				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -36,13 +36,13 @@ public class Stage1 {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = Main.createStage("Stage2.fxml", "SecondStage");
+				Stage stage = MainEp1.createStage("Stage2.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
-				Main.showStage(stage);
+				MainEp1.showStage(stage);
 
 				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
+				MainEp1.hideStage(MainEp1.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

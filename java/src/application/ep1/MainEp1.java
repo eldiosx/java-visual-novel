@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class MainEp1 extends Application {
 
 	static double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
 	static double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
@@ -20,8 +20,8 @@ public class Main extends Application {
 	public void start(Stage stage1) throws Exception {
 		// Cargar el archivo FXML para el primer Stage
 		Parent root = FXMLLoader.load(getClass().getResource("Stage0.fxml"));
-		Main.stage1 = stage1;
-		Main.currentStage = stage1;
+		MainEp1.stage1 = stage1;
+		MainEp1.currentStage = stage1;
 		stage1.setTitle("Tu videojuego favorito de serie B");
 		stage1.setScene(new Scene(root, screenWidth, screenHeight));
 		stage1.setResizable(true); // Se puede redimensionar
@@ -48,12 +48,12 @@ public class Main extends Application {
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
 		stage.show();
-		Main.currentStage = stage;
+		MainEp1.currentStage = stage;
 	}
 
 	public static Stage createStage(String fxmlFile, String title) throws Exception {
 		Stage stage = new Stage();
-		Parent root = FXMLLoader.load(Main.class.getResource(fxmlFile));
+		Parent root = FXMLLoader.load(MainEp1.class.getResource(fxmlFile));
 		stage.setTitle(title);
 		stage.setScene(new Scene(root, screenWidth, screenHeight));
 		stage.setResizable(true); // Se puede redimensionar
