@@ -4,8 +4,7 @@ import java.io.File;
 
 import application.BackgroundMusic;
 import application.VoiceBox;
-import application.prologue.Main;
-import application.ep1.Stage1;
+import application.ep1.Main;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -20,6 +19,8 @@ public class Prologue_Scene_Builder3 {
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
+	Main main = new Main(); // Crea una instancia de la clase Main
+	Stage stage = new Stage();
 	private String text = "He hablado con Marleene para hacer una fogata esta noche y contar historias. Nos vemos esta noche";
 	private Timeline timeline;
 
@@ -32,15 +33,14 @@ public class Prologue_Scene_Builder3 {
 	public void initialize() {
 	//	backgroundMusic.playAudio(RESOURCES_PATH + "");//insertar pista de audio inicio prologo
 		//voiceBox.playAudio(RESOURCES_PATH + "");
+		
 		Continue.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = Main.createStage("Stage1.fxml", "SecondStage");
+				main.start(stage);
 
-				// Mostrar el nuevo Stage
-				Main.showStage(stage);
 
 				// Ocultar el Stage principal
 				Main.hideStage(Main.getPrimaryStage());
