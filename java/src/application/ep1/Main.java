@@ -19,7 +19,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage1) throws Exception {
 		// Cargar el archivo FXML para el primer Stage
-		Parent root = FXMLLoader.load(getClass().getResource("Stage1.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("Stage0.fxml"));
 		Main.stage1 = stage1;
 		Main.currentStage = stage1;
 		stage1.setTitle("Tu videojuego favorito de serie B");

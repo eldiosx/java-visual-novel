@@ -41,9 +41,11 @@ public class Stage0 {
 		John.setOnAction(event -> {
 			try {
 				// llamada a la escena de John
-
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage stage = Main.createStage("Stage1.fxml", "SecondStage");
 				// Mostrar el nuevo Stage, que es el de John
-				//Main.showStage(stage);
+				Main.showStage(stage);
 
 				// Ocultar el Stage principal
 				Main.hideStage(Main.getPrimaryStage());
