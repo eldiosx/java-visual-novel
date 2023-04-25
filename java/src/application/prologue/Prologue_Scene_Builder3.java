@@ -5,6 +5,7 @@ import java.io.File;
 import application.BackgroundMusic;
 import application.VoiceBox;
 import application.prologue.Main;
+import application.ep1.Stage1;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -14,52 +15,33 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Prologue_Scene_Builder2 {
+public class Prologue_Scene_Builder3 {
 	//private static final String RESOURCES_PATH = new File("").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Hey, pensé que ya no llegabas. ¿Qué tal el viaje?";
+	private String text = "He hablado con Marleene para hacer una fogata esta noche y contar historias. Nos vemos esta noche";
 	private Timeline timeline;
 
 	@FXML
 	private Label dialogue;
 
 	@FXML
-	private Button Bien;
-	@FXML
-	private Button Mieh;
-
+	private Button Continue;
 	@FXML
 	public void initialize() {
 	//	backgroundMusic.playAudio(RESOURCES_PATH + "");//insertar pista de audio inicio prologo
 		//voiceBox.playAudio(RESOURCES_PATH + "");
-		Bien.setOnAction(event -> {
+		Continue.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = Main.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
+				Stage stage = Main.createStage("Stage1.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
 				Main.showStage(stage);
 
-				// Ocultar el Stage principal
-				Main.hideStage(Main.getPrimaryStage());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		});
-		Mieh.setOnAction(event -> {
-			try {
-				// Crear un nuevo Stage
-				voiceBox.stopAudio();
-				backgroundMusic.stopAudio();
-				Stage stage = Main.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
-				
-				// Mostrar el nuevo Stage
-				Main.showStage(stage);
-				
 				// Ocultar el Stage principal
 				Main.hideStage(Main.getPrimaryStage());
 			} catch (Exception e) {
