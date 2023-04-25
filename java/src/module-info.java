@@ -12,10 +12,12 @@ module java {
 	opens application to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos a la raiz
 	opens application.prologue to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos a prologue
 	opens application.ep1 to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos a ep1
+	opens application.ep1muerta to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos a end
 	opens application.end to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos a end
     exports application to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos a la raiz
 	exports application.prologue to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos a prologue
 	exports application.ep1 to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos a ep1
+	exports application.ep1muerta to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos a ep1
 	exports application.end to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos a end
 
     
