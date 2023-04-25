@@ -30,7 +30,7 @@ public class Credits extends Application {
     public void start(Stage stage) {
     	backgroundMusic.playAudio(RESOURCES_PATH + "/audio/horrorBellaciao.ogg");
         // Crear el texto que se mostrará en los créditos
-        Text creditsText = new Text("Desarrollado por eldiosx porque soy el puto amo superior a ti\n\n"
+        Text creditsText = new Text("Desarrollado por Nico Cano, Daniel Delgado, Aida Fernández y Adrián Márquez\n\n"
         		+ "ESTE AÑO VOX MAS FUERTE QUE NUNCA\n\n"
         		+ "LINUX > TODO\n"
         		+ "GNUUUU LINUUUUSSSS\n"

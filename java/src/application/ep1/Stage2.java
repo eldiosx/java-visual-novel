@@ -3,8 +3,24 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import application.end.Credits;
+import application.BackgroundMusic;
+import application.VoiceBox;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class Stage2 {
+	
+		//Instanciamos la pantalla de creditos
+		Credits credits = new Credits(); // Crea una instancia de la clase Main
+		Stage stage = new Stage();
+		
 	   @FXML // fx:id="cuchillo"
 	    private Button cuchillo; // Value injected by FXMLLoader
 
@@ -53,7 +69,20 @@ public class Stage2 {
 
 	    @FXML
 	    public void initialize() {
+	        //Evento boton  continuar
+	    	myButton2.setOnAction(event -> {
+				// Asi podemos crear escenas que nos de la gana, util sobre todo para el LOAD
+				try {
+					// Crear un nuevo Stage
+					credits.start(stage);
 
+					// Ocultar el Stage principal
+					Main.hideStage(Main.getPrimaryStage());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+	        });
 			
 	        //Evento boton de sangre
 			suelo.setOnAction(event -> {
@@ -76,7 +105,7 @@ public class Stage2 {
 	                e.printStackTrace();
 	            }
 	            count++; //incrementamos el contador
-	            if (count >= 3) { //si ya se pulsaron 4 botones
+	            if (count >= 4) { //si ya se pulsaron 4 botones
 	                disableRemainingButtons(); //desactivamos los botones restantes
 	            }
 	        });
@@ -136,7 +165,7 @@ public class Stage2 {
 	    }
 
 	    private void disableRemainingButtons() {
-	        for (Node node : myButton2.getParent().getChildrenUnmodifiable()) {
+	        for (Node node : cuerpo.getParent().getChildrenUnmodifiable()) {
 	            if (node instanceof Button && !node.isDisabled()) { //si es un botón habilitado
 	                ((Button) node).setDisable(true); //lo desactivamos
 	            }
