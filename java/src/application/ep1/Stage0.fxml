@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="background" stylesheets="@Stage0.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ep1.Stage1">
+	<children>
+      <GridPane styleClass="grid" stylesheets="@Stage0.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="NEVER" percentWidth="90.0" />
+          <ColumnConstraints hgrow="NEVER" percentWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+			<RowConstraints percentHeight="10.0" vgrow="NEVER" />
+			<RowConstraints percentHeight="10.0" vgrow="NEVER" />
+			<RowConstraints percentHeight="60.0" vgrow="NEVER" />
+			<RowConstraints percentHeight="20.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <GridPane prefHeight="355.0" prefWidth="1049.0" GridPane.rowIndex="2">
+           <columnConstraints>
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="0.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="12.0" prefWidth="100.0" />
+             <ColumnConstraints hgrow="NEVER" percentWidth="31.0" />
+             <ColumnConstraints hgrow="NEVER" percentWidth="29.0" />
+               <ColumnConstraints hgrow="NEVER" percentWidth="43.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="29.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="36.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints percentHeight="30.0" vgrow="NEVER" />
+             <RowConstraints percentHeight="50.0" vgrow="ALWAYS" />
+             <RowConstraints percentHeight="20.0" vgrow="NEVER" />
+               <RowConstraints minHeight="10.0" percentHeight="20.0" prefHeight="30.0" vgrow="NEVER" />
+           </rowConstraints>
+            <children>
+               <Label fx:id="John" alignment="CENTER" prefHeight="71.0" prefWidth="141.0" styleClass="name" stylesheets="@Stage0.css" text="Jhon" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               <Label fx:id="Chan" alignment="CENTER" prefHeight="71.0" prefWidth="137.0" styleClass="name" stylesheets="@Stage0.css" text="Chan" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+               <Label fx:id="Marleene" alignment="BOTTOM_LEFT" styleClass="name" stylesheets="@Stage1.css" text="Marleene" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+               <Label fx:id="Travis" alignment="CENTER" prefHeight="71.0" prefWidth="155.0" styleClass="name" stylesheets="@Stage0.css" text="Travis" textAlignment="CENTER" GridPane.columnIndex="5" />
+               <Label fx:id="Helen" alignment="CENTER" contentDisplay="CENTER" prefHeight="71.0" prefWidth="142.0" styleClass="name" stylesheets="@Stage1.css" text="Helen" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            </children>
+         </GridPane>
+      </GridPane>
+      <Label alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" styleClass="name" stylesheets="@Stage1.css" text="Escucha las historias en la hoguera" textAlignment="CENTER" />
+	</children>
+   <cursor>
+      <Cursor fx:constant="OPEN_HAND" />
+   </cursor>
+</AnchorPane>
