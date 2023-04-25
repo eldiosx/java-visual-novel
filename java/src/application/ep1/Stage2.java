@@ -1,31 +1,16 @@
 package application.ep1;
-
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class Stage2 {
+	   @FXML // fx:id="cuchillo"
+	    private Button cuchillo; // Value injected by FXMLLoader
 
-	@FXML
-	private Button myButton2;
+	    @FXML // fx:id="cuerpo"
+	    private Button cuerpo; // Value injected by FXMLLoader
 
-<<<<<<< Updated upstream
-	@FXML
-	public void initialize() {
-		myButton2.setOnAction(event -> {
-			try {
-				// Volver a mostrar el Stage principal
-				Main.hideStage(Main.getCurrentStage());
-				// Volver a mostrar el Stage principal
-				Main.showStage(Main.getPrimaryStage());
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		});
-	}
-}
-=======
 	    @FXML // fx:id="mano"
 	    private Button mano; // Value injected by FXMLLoader
 
@@ -161,4 +146,3 @@ public class Stage2 {
 	
 
 
->>>>>>> Stashed changes
