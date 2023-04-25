@@ -8,104 +8,67 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" fx:controller="application.ep1.Stage2">
-<VBox maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0"
-	prefWidth="1920.0" xmlns="http://javafx.com/javafx/19"
-	xmlns:fx="http://javafx.com/fxml/1">
-	<children>
-		
-			<children>
-				<ImageView blendMode="SRC_ATOP" fitHeight="1080.0"
-					fitWidth="1920.0">
-					<image>
-						<Image url="@../../../assets/images/ep1/murder.jpg" />
-					</image>
-				</ImageView>
-				<Button fx:id="investigarmano" layoutX="1042.0"
-					layoutY="210.0" mnemonicParsing="false" opacity="0.75"
-					prefHeight="50.0" prefWidth="180.0"
-					style="-fx-background-color: black;" text="Investigar mano&#10;">
-					<font>
-						<Font size="18.0" />
-					</font>
-				</Button>
-				<Button fx:id="investigarsuelo" layoutX="280.0"
-					layoutY="263.0" mnemonicParsing="false" opacity="0.75"
-					prefHeight="50.0" prefWidth="180.0"
-					style="-fx-background-color: black;" text="Investigar suelo&#10;">
-					<font>
-						<Font size="18.0" />
-					</font>
-				</Button>
-				<Button fx:id="investigarcuerpo" layoutX="262.0"
-					layoutY="952.0" mnemonicParsing="false" opacity="0.75"
-					prefHeight="50.0" prefWidth="180.0"
-					style="-fx-background-color: black;" text="Investigar cuerpo&#10;">
-					<font>
-						<Font size="18.0" />
-					</font>
-				</Button>
-				<Button fx:id="investigarcuchillo" layoutX="1292.0"
-					layoutY="470.0" mnemonicParsing="false" opacity="0.75"
-					prefHeight="50.0" prefWidth="180.0"
-					style="-fx-background-color: black;" text="Investigar cuchillo">
-					<font>
-						<Font size="18.0" />
-					</font>
-				</Button>
-				<Button fx:id="investigarsangre" layoutX="498.0"
-					layoutY="471.0" mnemonicParsing="false" opacity="0.75"
-					prefHeight="50.0" prefWidth="180.0"
-					style="-fx-background-color: black;" text="Investigar sangre&#10;">
-					<font>
-						<Font size="18.0" />
-					</font>
-				</Button>
-				<Button fx:id="investigarsala" layoutX="1504.0"
-					layoutY="138.0" mnemonicParsing="false" opacity="0.75"
-					prefHeight="50.0" prefWidth="180.0"
-					style="-fx-background-color: black;" text="Investigar sala&#10;">
-					<font>
-						<Font size="18.0" />
-					</font>
-				</Button>
-				<Button fx:id="General" disable="true" layoutX="704.0"
-					layoutY="19.0" mnemonicParsing="false" opacity="0.9"
-					prefHeight="50.0" prefWidth="510.0"
-					style="-fx-background-color: black;"
-					text="Investiga la sala para ver qué ha pasado&#10;">
-					<font>
-						<Font size="18.0" />
-					</font>
-					<cursor>
-						<Cursor fx:constant="DEFAULT" />
-					</cursor>
-					<effect>
-						<DisplacementMap>
-							<mapData>
-								<FloatMap />
-							</mapData>
-						</DisplacementMap>
-					</effect>
-				</Button>
-				<Label fx:id="labelSuelo" layoutX="238.0" layoutY="81.0"
-					opacity="0.8" prefHeight="165.0" prefWidth="264.0"
-					style="-fx-background-color: grey;"
-					text="No se ven pisadas, y está &#10;completamente manchado &#10;de sangre, quien lo hizo ha &#10;sido bastante cuidadoso con &#10;no dejar rastro"
-					textFill="WHITE" visible="false">
-					<font>
-						<Font name="System Bold Italic" size="18.0" />
-					</font>
-				</Label>
-			</children>
-			<cursor>
-				<Cursor fx:constant="OPEN_HAND" />
-			</cursor>
-
-	</children>
-</VBox>
-		</AnchorPane>
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ep1.Stage2">
+   <children>
+      <ImageView blendMode="SRC_ATOP" fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../../../assets/images/ep1/murder.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="investigarmano" layoutX="1042.0" layoutY="210.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar mano&#10;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="investigarsuelo" layoutX="280.0" layoutY="263.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar suelo&#10;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="investigarcuerpo" layoutX="262.0" layoutY="952.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar cuerpo&#10;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="investigarcuchillo" layoutX="1292.0" layoutY="470.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar cuchillo">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="investigarsangre" layoutX="498.0" layoutY="471.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar sangre&#10;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="investigarsala" layoutX="1504.0" layoutY="138.0" mnemonicParsing="false" opacity="0.75" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: black;" text="Investigar sala&#10;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="General" disable="true" layoutX="704.0" layoutY="19.0" mnemonicParsing="false" opacity="0.9" prefHeight="50.0" prefWidth="510.0" style="-fx-background-color: black;" text="Investiga la sala para ver qué ha pasado&#10;">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <DisplacementMap>
+               <mapData>
+                  <FloatMap />
+               </mapData>
+            </DisplacementMap>
+         </effect>
+      </Button>
+      <Label fx:id="labelSuelo" layoutX="238.0" layoutY="81.0" opacity="0.8" prefHeight="165.0" prefWidth="264.0" style="-fx-background-color: grey;" text="No se ven pisadas, y está &#10;completamente manchado &#10;de sangre, quien lo hizo ha &#10;sido bastante cuidadoso con &#10;no dejar rastro" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="OPEN_HAND" />
+   </cursor>
+</AnchorPane>

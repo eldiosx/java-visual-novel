@@ -61,8 +61,12 @@ public class Stage2 {
 			voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon.ogg");
 			investigarsuelo.setOnAction(event -> {
 				try {
-					labelSuelo.setVisible(true);
+					// Volver a mostrar el Stage principal
+					Main.hideStage(Main.getCurrentStage());
+					// Volver a mostrar el Stage principal
+					Main.showStage(Main.getPrimaryStage());
 				} catch (Exception e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			});
