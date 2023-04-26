@@ -1,4 +1,4 @@
-package application.Prologue;
+package application.prologue;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

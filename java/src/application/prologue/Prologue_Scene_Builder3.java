@@ -1,4 +1,4 @@
-package application.Prologue;
+package application.prologue;
 
 import application.BackgroundMusic;
 import application.VoiceBox;
