@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 
 import application.ConexionMySQL;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,7 +14,10 @@ import javafx.event.*;
 import javafx.scene.control.*;
 import java.beans.*;
 import java.io.*;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
+
 import com.mysql.cj.protocol.Resultset;
 
 public class Stage2 {
@@ -22,39 +26,49 @@ public class Stage2 {
 		Credits credits = new Credits(); // Crea una instancia de la clase Main
 		Stage stage = new Stage();
 		
-		//Instanciamos la clase ConexionMySQL
-		ConexionMySQL conexion = new ConexionMySQL("root", "", "videojuego serie b");
-		
-	   @FXML // fx:id="cuchillo"
-	    private Button cuchillo; // Value injected by FXMLLoader
-	   
+		// A partir de aquí son pruebas de SQL, no borrar
+		public class Controlador implements Initializable {
 
-	    cuchillo = new Button("cuchillo");
-	    textocuchillo = new Label();
-	    	
-    
-		cuchillo.setOnAction(event2 -> {
-	        
-			try {
-	            conexion.conectar();
-	            String texto = "SELECT dialogo FROM dialogos WHERE COD_dialogo=3";
-	            conexion.ejecutarInsertDeleteUpdate(texto);
-	            ResultSet datos = conexion.ejecutarSelect(texto);
+		    // Instanciamos la clase ConexionMySQL
+		    ConexionMySQL conexion = new ConexionMySQL("root", "", "videojuego serie b");
 
-	            while (datos.next()) {
-	                String textoDialogo = datos.getString("dialogo");
-	                textocuchillo.setText(textoDialogo);
-	            }
-	        } catch (SQLException e1) {
-	            e1.printStackTrace();
-	        } finally {
-	            try {
-	                conexion.desconectar();
-	            } catch (SQLException e1) {
-	                e1.printStackTrace();
-	            }
-	        }
-	    });
+		    @FXML
+		    private Button cuchillo;
+
+		    @FXML
+		    private Label textocuchillo;
+
+		    public void initialize1(URL url, ResourceBundle rb) {
+		        cuchillo.setOnAction(event -> {
+		            try {
+		                conexion.conectar();
+		                String texto = "SELECT dialogo FROM dialogos WHERE COD_dialogo=3";
+		                conexion.ejecutarInsertDeleteUpdate(texto);
+		                ResultSet datos = conexion.ejecutarSelect(texto);
+
+		                while (datos.next()) {
+		                    String textoDialogo = datos.getString("dialogo");
+		                    textocuchillo.setText(textoDialogo);
+		                }
+		            } catch (SQLException e1) {
+		                e1.printStackTrace();
+		            } finally {
+		                try {
+		                    conexion.desconectar();
+		                } catch (SQLException e1) {
+		                    e1.printStackTrace();
+		                }
+		            }
+		        });
+		    }
+
+			@Override
+			public void initialize(URL location, ResourceBundle resources) {
+				// TODO Auto-generated method stub
+				
+			}
+		}
+
 
 
 	    @FXML // fx:id="cuerpo"
@@ -78,8 +92,7 @@ public class Stage2 {
 	    @FXML // fx:id="suelo"
 	    private Button suelo; // Value injected by FXMLLoader
 	    
-		@FXML // fx:id="textocuchillo"
-		private Label textocuchillo; // Value injected by FXMLLoader
+
 
 	    @FXML // fx:id="textocuerpo"
 	    private Label textocuerpo; // Value injected by FXMLLoader
