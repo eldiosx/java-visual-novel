@@ -1,6 +1,6 @@
-package application.prologue;
+package application.Prologue;
 
-import application.prologue.MainPrologue;
+import application.Prologue.MainPrologue;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
