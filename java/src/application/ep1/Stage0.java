@@ -31,7 +31,7 @@ public class Stage0 {
 
 	@FXML
 	public void initialize() {
-		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/horrorHeartbeat.ogg");
 		//voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon.ogg");
 		John.setOnAction(event -> {
 			try {
