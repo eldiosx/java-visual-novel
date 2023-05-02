@@ -83,14 +83,11 @@ public class Stage2 {
 	    private Button blood; // Value injected by FXMLLoader
 
 	    @FXML // fx:id="suelo"
-<<<<<<< Updated upstream
 	    private Button floor; // Value injected by FXMLLoader
 	    
 
-=======
 	    private Button suelo; // Value injected by FXMLLoader
 	   
->>>>>>> Stashed changes
 
 	    @FXML // fx:id="textocuerpo"
 	    private Label textocuerpo; // Value injected by FXMLLoader
@@ -107,8 +104,6 @@ public class Stage2 {
 	    @FXML // fx:id="textosuelo"
 	    private Label textosuelo; // Value injected by FXMLLoader
 	    
-	    @FXML // fx:id="textocuchillo"
-	    private Label textocuchillo; // Value injected by FXMLLoader
 	    
 	    int count = 0;
 	    boolean isRunning = true;
