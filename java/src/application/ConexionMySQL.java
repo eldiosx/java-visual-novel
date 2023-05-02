@@ -36,7 +36,7 @@ public class ConexionMySQL {
 	 * @param bd      Base de datos a la que nos conectamos
 	 */
 	public ConexionMySQL(String usuario, String pass, String bd) {
-		HOST = "localhost";
+		HOST = "10.192.112.193";
 		USUARIO = "root";
 		PASS = "";
 		BD = bd;
