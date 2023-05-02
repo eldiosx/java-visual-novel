@@ -13,14 +13,14 @@ public class MainEp1 extends Application {
 	static double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
 	static double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
-	private static Stage stage1;
+	private static Stage stage2;
 	private static Stage currentStage;
 
 	@Override
 	public void start(Stage stage1) throws Exception {
 		// Cargar el archivo FXML para el primer Stage
-		Parent root = FXMLLoader.load(getClass().getResource("Stage0.fxml"));
-		MainEp1.stage1 = stage1;
+		Parent root = FXMLLoader.load(getClass().getResource("Stage2.fxml"));
+		MainEp1.stage2 = stage2;
 		MainEp1.currentStage = stage1;
 		stage1.setTitle("Tu videojuego favorito de serie B");
 		stage1.setScene(new Scene(root, screenWidth, screenHeight));
@@ -64,7 +64,7 @@ public class MainEp1 extends Application {
 	}
 
 	public static Stage getPrimaryStage() {
-		return stage1;
+		return stage2;
 	}
 
 	public static Stage getCurrentStage() {

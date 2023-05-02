@@ -48,33 +48,33 @@
                <RowConstraints minHeight="10.0" percentHeight="20.0" prefHeight="30.0" vgrow="NEVER" />
            </rowConstraints>
             <children>
-               <Button id="cuerpo" fx:id="cuerpo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="24.0" prefWidth="187.0" styleClass="button" stylesheets="@Stage2.css" text="Investigar Cuerpo" GridPane.rowIndex="8">
+               <Button id="body" fx:id="body" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="24.0" prefWidth="187.0" styleClass="button" stylesheets="@Stage2.css" text="Investigar Cuerpo" GridPane.rowIndex="8">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Button>
-               <Button id="sangre" fx:id="sangre" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Investigar sangre" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <Button id="blood" fx:id="blood" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Investigar sangre" GridPane.columnIndex="2" GridPane.rowIndex="3">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Button>
                <Label id="textocuerpo" fx:id="textocuerpo" prefHeight="17.0" prefWidth="235.0" style="-fx-background-color: grey;" text="llamada texto cuerpo" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-               <Button id="suelo" fx:id="suelo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Investigar suelo" GridPane.columnIndex="1">
+               <Button id="floor" fx:id="floor" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Investigar suelo" GridPane.columnIndex="1">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Button>
-               <Button id="mano" fx:id="mano" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Investigar mano" GridPane.columnIndex="5">
+               <Button id="hand" fx:id="hand" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Investigar mano" GridPane.columnIndex="5">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Button>
-               <Button id="cuchillo" fx:id="cuchillo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Investigar cuchillo" GridPane.columnIndex="7" GridPane.rowIndex="3">
+               <Button id="knife" fx:id="knife" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Investigar cuchillo" GridPane.columnIndex="7" GridPane.rowIndex="3">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Button>
-               <Button id="sala" fx:id="sala" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="44.0" prefWidth="163.0" styleClass="button" stylesheets="@Stage2.css" text="Investigar sala" GridPane.columnIndex="9">
+               <Button id="room" fx:id="room" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="44.0" prefWidth="163.0" styleClass="button" stylesheets="@Stage2.css" text="Investigar sala" GridPane.columnIndex="9">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
