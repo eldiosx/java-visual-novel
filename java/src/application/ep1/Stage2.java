@@ -72,25 +72,25 @@ public class Stage2 {
 
 
 	    @FXML // fx:id="cuerpo"
-	    private Button cuerpo; // Value injected by FXMLLoader
+	    private Button body; // Value injected by FXMLLoader
 
 	    @FXML // fx:id="mano"
-	    private Button mano; // Value injected by FXMLLoader
+	    private Button hand; // Value injected by FXMLLoader
 
 	    @FXML // fx:id="myButton2"
 	    private Button myButton2; // Value injected by FXMLLoader
 
 	    @FXML // fx:id="myButton21111"
-	    private Button myButton21111; // Value injected by FXMLLoader
+	    private Button knife; // Value injected by FXMLLoader
 
 	    @FXML // fx:id="sala"
-	    private Button sala; // Value injected by FXMLLoader
+	    private Button room; // Value injected by FXMLLoader
 
 	    @FXML // fx:id="sangre"
-	    private Button sangre; // Value injected by FXMLLoader
+	    private Button blood; // Value injected by FXMLLoader
 
 	    @FXML // fx:id="suelo"
-	    private Button suelo; // Value injected by FXMLLoader
+	    private Button floor; // Value injected by FXMLLoader
 	    
 
 
@@ -109,6 +109,8 @@ public class Stage2 {
 	    @FXML // fx:id="textosuelo"
 	    private Label textosuelo; // Value injected by FXMLLoader
 	    
+	    @FXML // fx:id="textocuchillo"
+	    private Label textocuchillo; // Value injected by FXMLLoader
 	    
 	    int count = 0;
 	    boolean isRunning = true;
@@ -130,8 +132,8 @@ public class Stage2 {
 
 	        });
 			
-	        //Evento boton de sangre
-			suelo.setOnAction(event -> {
+	        //Evento boton de suelo
+			floor.setOnAction(event -> {
 	            try {
 	            	textosuelo.setVisible(true);
 	            } catch (Exception e) {
@@ -143,8 +145,8 @@ public class Stage2 {
 	            }
 	        });
 			
-	        //Evento boton de sangre
-			sala.setOnAction(event -> {
+	        //Evento boton de sala
+			room.setOnAction(event -> {
 	            try {
 	            	textosala.setVisible(true);
 	            } catch (Exception e) {
@@ -156,8 +158,8 @@ public class Stage2 {
 	            }
 	        });
 
-	        //Evento boton de sangre
-			mano.setOnAction(event -> {
+	        //Evento boton de mano
+			hand.setOnAction(event -> {
 	            try {
 	            	textomano.setVisible(true);
 	            } catch (Exception e) {
@@ -169,8 +171,8 @@ public class Stage2 {
 	            }
 	        });
 			
-	        //Evento boton de sangre
-			cuchillo.setOnAction(event -> {
+	        //Evento boton de cuchillo
+			knife.setOnAction(event -> {
 	            try {
 	            	textocuchillo.setVisible(true);
 	            } catch (Exception e) {
@@ -183,7 +185,7 @@ public class Stage2 {
 	        });
 
 	        //Evento boton de sangre
-	        sangre.setOnAction(event -> {
+	        blood.setOnAction(event -> {
 	            try {
 	                textosangre.setVisible(true);
 	            } catch (Exception e) {
@@ -195,8 +197,8 @@ public class Stage2 {
 	            }
 	        });
 	        
-	        //Evento boton de sangre
-	        cuerpo.setOnAction(event -> {
+	        //Evento boton de cadaver
+	        body.setOnAction(event -> {
 	            try {
 	            	textocuerpo.setVisible(true);
 	            } catch (Exception e) {
@@ -211,7 +213,7 @@ public class Stage2 {
 	    }
 
 	    private void disableRemainingButtons() {
-	        for (Node node : cuerpo.getParent().getChildrenUnmodifiable()) {
+	        for (Node node : body.getParent().getChildrenUnmodifiable()) {
 	            if (node instanceof Button && !node.isDisabled()) { //si es un botón habilitado
 	                ((Button) node).setDisable(true); //lo desactivamos
 	            }
