@@ -38,7 +38,7 @@ public class ConexionMySQL {
 	public ConexionMySQL(String usuario, String pass, String bd) {
 		HOST = "10.192.112.193";
 		USUARIO = "root";
-		PASS = "";
+		PASS = "Medac1234";
 		BD = bd;
 		connection = null;
 	}

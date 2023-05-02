@@ -1,24 +1,17 @@
 package application.ep1;
-import application.end.Credits;
-
-import java.awt.event.ActionEvent;
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 import application.ConexionMySQL;
+import application.end.Credits;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import javafx.event.*;
-import javafx.scene.control.*;
-import java.beans.*;
-import java.io.*;
-import java.net.URL;
-import java.sql.*;
-import java.util.ResourceBundle;
-
-import com.mysql.cj.protocol.Resultset;
 
 public class Stage2 {
 	
@@ -30,13 +23,9 @@ public class Stage2 {
 		public class Controlador implements Initializable {
 
 		    // Instanciamos la clase ConexionMySQL
-		    ConexionMySQL conexion = new ConexionMySQL("root", "", "videojuego serie b");
+		    ConexionMySQL conexion = new ConexionMySQL("root", "Medac1234", "videojuego serie b");
 
-		    @FXML
-		    private Button cuchillo;
 
-		    @FXML
-		    private Label textocuchillo;
 
 		    public void initialize1(URL url, ResourceBundle rb) {
 		        cuchillo.setOnAction(event -> {
@@ -68,7 +57,11 @@ public class Stage2 {
 				
 			}
 		}
+	    @FXML
+	    private Button cuchillo;
 
+	    @FXML
+	    private Label textocuchillo;
 
 
 	    @FXML // fx:id="cuerpo"
@@ -90,9 +83,14 @@ public class Stage2 {
 	    private Button blood; // Value injected by FXMLLoader
 
 	    @FXML // fx:id="suelo"
+<<<<<<< Updated upstream
 	    private Button floor; // Value injected by FXMLLoader
 	    
 
+=======
+	    private Button suelo; // Value injected by FXMLLoader
+	   
+>>>>>>> Stashed changes
 
 	    @FXML // fx:id="textocuerpo"
 	    private Label textocuerpo; // Value injected by FXMLLoader

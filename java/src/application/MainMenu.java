@@ -55,7 +55,7 @@ import application.prologue.MainPrologue;
 public class MainMenu extends Application {
 //assets/audio/lullabyX.ogg
 	// Crear instancia de la clase ConexionMySQL
-	ConexionMySQL conexion = new ConexionMySQL("root", "", "videojuego serie b");
+	ConexionMySQL conexion = new ConexionMySQL("root", "Medac1234", "videojuego serie b");
 
 	ClassLoader classLoader = getClass().getClassLoader();
 	// Obtener el tamaño de la pantalla
@@ -204,16 +204,16 @@ public class MainMenu extends Application {
 			slot1Button.setOnAction(event2 -> {
 				try {
 					conexion.conectar();
-					String insertarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2) VALUES ('Prologue', 'Ep1')";
-					conexion.ejecutarInsertDeleteUpdate(insertarPartidas);
-					String selectPartidas = "SELECT slot1 from partidas_guardadas;";
-					ResultSet datos = conexion.ejecutarSelect(selectPartidas);
+					String cargarPartida = "SELECT * FROM partidas_guardadas";
+					conexion.ejecutarInsertDeleteUpdate(cargarPartida);
+					//String selectPartidas = "SELECT slot1 from partidas_guardadas;";
+					ResultSet datos = conexion.ejecutarSelect(cargarPartida);
 
 					while (datos.next()) {
-						String partidaGuardada = datos.getString("slot1");
-						// String dialogoPrueba = datos.getString("dialogo");
-						System.out.println(partidaGuardada);
-						// System.out.println(dialogoPrueba);
+						String partidaCargada1 = datos.getString("slot1");
+						String partidaCargada2 = datos.getString("slot2");
+						System.out.println(partidaCargada1);
+						System.out.println(partidaCargada2);
 
 					}
 				} catch (SQLException e1) {
