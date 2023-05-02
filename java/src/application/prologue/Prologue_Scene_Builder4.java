@@ -2,7 +2,6 @@ package application.prologue;
 
 import application.BackgroundMusic;
 import application.VoiceBox;
-import application.ep1.MainEp1;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -12,36 +11,54 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Prologue_Scene_Builder3 {
+public class Prologue_Scene_Builder4 {
 	//private static final String RESOURCES_PATH = new File("").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	MainEp1 mainEp1 = new MainEp1(); // Crea una instancia de la clase Main
-	Stage stage = new Stage();
-	private String text = "He hablado con Marleene para hacer una fogata esta noche y contar historias. Nos vemos esta noche";
+	private String text = "Bienvenido al campamento The Otter. Espero que estés preparado para dos semanas de diversión.Tus compañeros ya están ubicados en sus cabañas. ";
 	private Timeline timeline;
 
 	@FXML
 	private Label dialogue;
 
 	@FXML
-	private Button Continue;
+	private Button mirarDerecha;
+	@FXML
+	private Button mirarIzquierda;
+
 	@FXML
 	public void initialize() {
 	//	backgroundMusic.playAudio(RESOURCES_PATH + "");//insertar pista de audio inicio prologo
 		//voiceBox.playAudio(RESOURCES_PATH + "");
-		
-		Continue.setOnAction(event -> {
+		mirarDerecha.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				mainEp1.start(stage);//tiene que llevar al episodio 1
+				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder5.fxml", "SecondStage");
 
+				// Mostrar el nuevo Stage
+				MainPrologue.showStage(stage);
 
 				// Ocultar el Stage principal
 				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+		mirarIzquierda.setOnAction(event -> {
+			try {
+				// Crear un nuevo Stage
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder6.fxml", "SecondStage");
+				// Ocultar el Stage principal
+				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
+				
+				// Mostrar el nuevo Stage
+				MainPrologue.showStage(stage);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
