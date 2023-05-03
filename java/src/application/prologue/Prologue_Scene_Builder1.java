@@ -52,13 +52,15 @@ public class Prologue_Scene_Builder1 {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
-				// Ocultar el Stage principal
-				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
-				
+				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder4.fxml", "SecondStage");
+				int i=0;
+				System.out.println(i);
+				i++;
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
 				
+				// Ocultar el Stage principal
+				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
