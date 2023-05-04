@@ -13,30 +13,50 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage12 {
+public class Stage64 {//Travis responde a chang
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Que horor";
+	private String text = "Espera, he visto una sombra"
+			;
 	private Timeline timeline;
 
 	@FXML
 	private Label dialogue;
-
+	
 	@FXML
-	private Button myButton;
+	private Button Didnt_see;
+	
+	@FXML
+	private Button Rlly_letsgo_ahead;
 
 	@FXML
 	public void initialize() {
 //		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
 //		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
-		myButton.setOnAction(event -> {
+		Didnt_see.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
+				Stage stage = MainEp1.createStage("Stage0.fxml", "SecondStage");
+
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
+
+				// Ocultar el Stage principal
+				MainEp1.hideStage(MainEp1.getPrimaryStage());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+		Rlly_letsgo_ahead.setOnAction(event -> {
+			try {
+				// Crear un nuevo Stage
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage stage = MainEp1.createStage("Stage71.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);

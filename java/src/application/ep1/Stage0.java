@@ -52,9 +52,11 @@ public class Stage0 {
 		Marleene.setOnAction(event -> {
 			try {
 				// llamada a la escena de Marleene
-
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage stage = MainEp1.createStage("Stage31.fxml", "SecondStage");
 				// Mostrar el nuevo Stage, que es el de Marleene
-				//Main.showStage(stage);
+				MainEp1.showStage(stage);
 
 				// Ocultar el Stage principal
 				MainEp1.hideStage(MainEp1.getPrimaryStage());
@@ -66,9 +68,11 @@ public class Stage0 {
 		Helen.setOnAction(event -> {
 			try {
 				// llamada a la escena de Helen
-
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage stage = MainEp1.createStage("Stage51.fxml", "SecondStage");
 				// Mostrar el nuevo Stage, que es el de Helen
-				//Main.showStage(stage);
+				MainEp1.showStage(stage);
 
 				// Ocultar el Stage principal
 				MainEp1.hideStage(MainEp1.getPrimaryStage());
@@ -80,9 +84,11 @@ public class Stage0 {
 		Chan.setOnAction(event -> {
 			try {
 				// llamada a la escena de Chan
-
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage stage = MainEp1.createStage("Stage61.fxml", "SecondStage");
 				// Mostrar el nuevo Stage, que es el de Chan
-				//Main.showStage(stage);
+				MainEp1.showStage(stage);
 
 				// Ocultar el Stage principal
 				MainEp1.hideStage(MainEp1.getPrimaryStage());
@@ -94,9 +100,11 @@ public class Stage0 {
 		Travis.setOnAction(event -> {
 			try {
 				// llamada a la escena de Travis
-
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage stage = MainEp1.createStage("Stage41.fxml", "SecondStage");
 				// Mostrar el nuevo Stage, que es el de Travis
-				//Main.showStage(stage);
+				MainEp1.showStage(stage);
 
 				// Ocultar el Stage principal
 				MainEp1.hideStage(MainEp1.getPrimaryStage());

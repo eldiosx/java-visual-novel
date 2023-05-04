@@ -13,12 +13,13 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage12 {
+public class Stage63 {//Travis responde a chang
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Que horor";
+	private String text = "No lo es, te lo juro, estaba allí y aquello dio muy mal rollo\r\n"
+			;
 	private Timeline timeline;
 
 	@FXML
@@ -36,7 +37,7 @@ public class Stage12 {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
+				Stage stage = MainEp1.createStage("Stage64.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
