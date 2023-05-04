@@ -202,29 +202,7 @@ public class MainMenu extends Application {
 			// Código para guardar partida (meter info en la base de datos)
 
 			slot1Button.setOnAction(event2 -> {
-				try {
-					conexion.conectar();
-					String cargarPartida = "SELECT * FROM partidas_guardadas";
-					conexion.ejecutarInsertDeleteUpdate(cargarPartida);
-					//String selectPartidas = "SELECT slot1 from partidas_guardadas;";
-					ResultSet datos = conexion.ejecutarSelect(cargarPartida);
-
-					while (datos.next()) {
-						String partidaCargada1 = datos.getString("slot1");
-						String partidaCargada2 = datos.getString("slot2");
-						System.out.println(partidaCargada1);
-						System.out.println(partidaCargada2);
-
-					}
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				} finally {
-					try {
-						conexion.desconectar();
-					} catch (SQLException e1) {
-						e1.printStackTrace();
-					}
-				}
+				
 			});
 
 			// Código para cargar partida (pedir info a la base de datos)
