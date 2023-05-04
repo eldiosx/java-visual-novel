@@ -23,6 +23,9 @@ public class Ep2 extends Application {
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 
+	
+	private static Stage stageep2;
+	private static Stage currentStage;
     
     @Override
     public void start(Stage stage) {
@@ -42,7 +45,7 @@ public class Ep2 extends Application {
         		+ "el Sr Watson sale junto a el equipo de monitores del campamento.\n\n"
         		+ "\n\n"
         		+ " SR. WATSON: Compañeros, necesito un poco de vuestro silencio. \n\n"
-        		+ "Esta noche ha aparecido muerta una de las compañeras. Esta fatal noticia aún no tiene explicación\n\n"
+        		+ "Esta noche ha aparecido muerta una de las compañeras. Esta fatal noticia aún no tiene explicación. \n\n"
         		+ "Se la ha trasladado al hospital tan rápido como se nos ha notificado, pero no hemos podido salvar su vida. \n\n"
         		+ "Entiendo vuestro malestar, y quien desee irse puede abandonar el campamento, se avisará a vuestros padres.\n\n"
         		+ "Por parte del equipo directivo del campamento, vamos a seguir adelante lo mejor posible,\n\n"
@@ -51,30 +54,15 @@ public class Ep2 extends Application {
         		+ "\n\n"
         		+ "El silencio se rompe por los cuchicheos de los miembros del campamento.\n\n"
         		+ "El ambiente es tenso, el aire parece más denso incluso de lo normal\n\n"
-        		+ "Java FX \n\n"
-        		+ "Scene Builder \n\n"
-        		+ "SQL \n\n"
-        		+ "\n\n"
-        		+ "\n\n"
-        		+ "Desarrollo: \n\n"
-        		+ "Database Manager: Nico Cano\n\n "
-        		+ "Diseño: Aida Fernández\n\n"
-        		+ "Frontend Manager: Adrián Marquez\n\n"
-        		+ "Backend Manager: Daniel Delgado\n\n"
-        		+ "\n\n"
-        		+ "\n\n"
-        		+ "Actores de voz: \n\n"
-        		+ "John: Nico Cano \n\n"
-        		+ "Marleene: Esther Argüelles\n\n"
-        		+ "Travis: Javier Naranjo\n\n"
-        		+ "Helen: Aida Fernández\n\n"
-        		+ "Chan: Adri Marquez \n\n"
-        		+ "Sr Watson: Daniel Delgado \n\n"
-        		+ "\n\n"
-        		+ "\n\n"
-        		+ "Agradecimientos especiales \n\n"
-        		+ "Javier naranjo y Esther Argüelles por trabajar a cambio de un vinito \n\n"
-        		+ "Juan García y Antonio Ruiz por sus consejos y paciencia \n\n");
+        		+ "No sabes si irte o quedarte, saber qué ha pasado exactamente, te puede la curiosidad\n\n"
+        		+ ".\n\n"
+        		+ ".\n\n"
+        		+ ".\n\n"
+        		+ ". \n\n"
+        		+ "Miras a tu lado y John te hace un gesto cómplice para que te acerques. \n\n"
+        		+ "Te reunes con todos los que estaban anoche en la fogata en una esquina del campamento.\n\n "
+        		+ "Aquí está pasando algo muy extraño y ninguno de vosotros va a dejar que quede impune\n\n"
+        		+ "\n\n");
         creditsText.setFont(new Font("Arial", responsive/4));
         creditsText.setFill(Color.WHITE);
         creditsText.setX(500);
@@ -109,6 +97,18 @@ public class Ep2 extends Application {
         // Iniciar la animación
         creditsAnimation.play();
     }
+    
+	public static Stage getPrimaryStage() {
+		return stageep2;
+	}
+
+	public static Stage getCurrentStage() {
+		return currentStage;
+	}
+	
+	public static void hideStage(Stage stage) {
+		stage.hide();
+	}
 
     public static void main(String[] args) {
         launch();
