@@ -37,17 +37,17 @@
               </rowConstraints>
                <children>
                   <Label alignment="BASELINE_LEFT" styleClass="name" stylesheets="@Prologue_Scene_Builder7.css" text="Marlene" textAlignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="Bien" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="143.0" stylesheets="@Prologue_Scene_Builder7.css" text="Por supuesto" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="porSupuesto" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="143.0" stylesheets="@Prologue_Scene_Builder7.css" text="Por supuesto" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Button>
-                  <Button fx:id="Cansado" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" stylesheets="@Prologue_Scene_Builder7.css" text="No me gustan" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button fx:id="noMeGustan" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" stylesheets="@Prologue_Scene_Builder7.css" text="No me gustan" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Button>
-                  <Button fx:id="Cansado1" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="129.0" stylesheets="@Prologue_Scene_Builder7.css" text="Uff, pereza" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <Button fx:id="uffPereza" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="129.0" stylesheets="@Prologue_Scene_Builder7.css" text="Uff, pereza" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <font>
                         <Font size="10.0" />
                      </font>
