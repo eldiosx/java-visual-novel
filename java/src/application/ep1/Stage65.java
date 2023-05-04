@@ -13,12 +13,12 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage71 {//Travis responde a chang
+public class Stage65 {//Travis responde a chang
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Espera, he visto una sombra"
+	private String text = "Esa puerta no deberia estar abierta"
 			;
 	private Timeline timeline;
 
@@ -37,7 +37,7 @@ public class Stage71 {//Travis responde a chang
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = MainEp1.createStage("Stage72.fxml", "SecondStage");
+				Stage stage = MainEp1.createStage("Stage2.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
