@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import application.ConexionMySQL;
 import application.end.Credits;
+import application.ep2.Ep2;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -16,7 +17,8 @@ import javafx.stage.Stage;
 public class Stage2 {
 	
 		//Instanciamos la pantalla de creditos
-		Credits credits = new Credits(); // Crea una instancia de la clase Main
+		Credits credits = new Credits(); // Crea una instancia de la clase Credits
+		Ep2 ep2= new Ep2(); // Crea una instancia de la clase Ep2
 		Stage stage = new Stage();
 		
 		// A partir de aquí son pruebas de SQL, no borrar
@@ -114,11 +116,18 @@ public class Stage2 {
 	    	myButton2.setOnAction(event -> {
 				// Asi podemos crear escenas que nos de la gana, util sobre todo para el LOAD
 				try {
-					// Crear un nuevo Stage
-					credits.start(stage);
-
-					// Ocultar el Stage principal
+					// Crear un nuevo Stage del episodio 2
+					ep2.start (stage);
+					
+					// Ocultar el Stage principal (EP1)
 					MainEp1.hideStage(MainEp1.getPrimaryStage());
+					
+					// Ocultar el Stage del EP2
+					ep2.hideStage(ep2.getPrimaryStage());
+					
+					//Inicia los Créditos
+					credits.start(stage);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
