@@ -49,20 +49,19 @@ public class Prologue_Scene_Builder1 {
 		});
 		myButton2.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
-				voiceBox.stopAudio();
-				backgroundMusic.stopAudio();
+//				// Crear un nuevo Stage
+//				voiceBox.stopAudio();
+//				backgroundMusic.stopAudio();
 				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder4.fxml", "SecondStage");
-				int i=0;
-				System.out.println(i);
-				i++;
+				
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
 				
-				// Ocultar el Stage principal
-				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
+//				// Ocultar el Stage principal
+//				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
+				System.out.println("aqui no entra");
 			}
 		});
 		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
