@@ -13,30 +13,50 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage11 {
+public class Stage52 {//interacctua john
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Vale, pues os voy a contar mi historia: Había un anciano señor en una vieja casa no muy lejos de aquí. El reloj de cucú de aquel hombre marcó las 10:00 de la noche, mientras este apagaba las lámparas de aceite alrededor de su casa para ir a dormir, había sido un día muy pesado. Poco después de que el reloj diera las 10:00 de la noche, cuando ya había ido a dormir, se escuchó tocar la puerta.- TOC, TOC, TOC - Algo extrañado, encendió la lámpara de la mesa de noche, y fue destinado a abrir la puerta. Y al abrirla, alcanzó a ver por el brillo que emanaba su lámpara, a una niña de no más de 7 años, totalmente quemada.";
+	private String text = "Pues yo creo que era una aparición de alguien que se habría muerto en la carretera y nunca pudo llegar a casa… En fin… Deberíamos ir yéndonos a dormir, que se está haciendo tarde.";
 	private Timeline timeline;
 
 	@FXML
 	private Label dialogue;
 
 	@FXML
-	private Button myButton;
+	private Button go;
+	
+	@FXML
+	private Button stay;
+	
 
 	@FXML
 	public void initialize() {
-		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
-		myButton.setOnAction(event -> {
+//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
+		go.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = MainEp1.createStage("Stage12.fxml", "SecondStage");
+				Stage stage = MainEp1.createStage("Stage72.fxml", "SecondStage");
+
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
+
+				// Ocultar el Stage principal
+				MainEp1.hideStage(MainEp1.getPrimaryStage());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+		stay.setOnAction(event -> {
+			try {
+				// Crear un nuevo Stage
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage stage = MainEp1.createStage("Stage0.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
