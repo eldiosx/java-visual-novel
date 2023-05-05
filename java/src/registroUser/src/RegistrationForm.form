@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="RegistrationForm">
+  <grid id="27dc6" binding="registerPanel" layout-manager="GridLayoutManager" row-count="10" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="564" height="477"/>
+    </constraints>
+    <properties>
+      <background color="-1250068"/>
+      <font name="Tahoma" size="18" style="1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="1a5f9" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="196" height="38"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Copperplate Gothic Light" size="18" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Confirmar contraseña"/>
+        </properties>
+      </component>
+      <component id="9b194" class="javax.swing.JTextField" binding="tfName">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Tahoma" size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="85ed5" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Copperplate Gothic Light" size="18" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Nombre"/>
+        </properties>
+      </component>
+      <component id="20f2e" class="javax.swing.JTextField" binding="tfUser">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Tahoma" size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="aec79" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Copperplate Gothic Light" size="18" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Usuario"/>
+        </properties>
+      </component>
+      <component id="ff14a" class="javax.swing.JPasswordField" binding="pfPassword">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Tahoma" size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="e100c" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Copperplate Gothic Light" size="18" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Contraseña"/>
+        </properties>
+      </component>
+      <component id="390f7" class="javax.swing.JPasswordField" binding="pfConfirmPassword">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="38"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Tahoma" size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="ff712" class="javax.swing.JButton" binding="btnRegister">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Copperplate Gothic Light" size="18" style="1"/>
+          <text value="Register"/>
+        </properties>
+      </component>
+      <component id="40c25" class="javax.swing.JButton" binding="btnCancel">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Copperplate Gothic Light" size="18" style="1"/>
+          <text value="Cancel"/>
+        </properties>
+      </component>
+      <component id="96ab5" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Copperplate Gothic Bold" size="26" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Registro"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
