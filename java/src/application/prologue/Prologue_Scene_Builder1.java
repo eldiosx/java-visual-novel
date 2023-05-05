@@ -1,5 +1,6 @@
 package application.prologue;
 
+import java.io.File;
 import application.BackgroundMusic;
 import application.VoiceBox;
 import javafx.animation.KeyFrame;
@@ -12,11 +13,11 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Prologue_Scene_Builder1 {
-	//private static final String RESOURCES_PATH = new File("").getAbsolutePath();
+	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Bienvenido al campamento The Otter. Espero que estés preparado para dos semanas de diversión.Tus compañeros ya están ubicados en sus cabañas. ";
+	private String text = "Hola soy Javier. Bienvenido al campamento, The Otter. Espero que estés preparado para dos semanas de diversión. Tus compañeros ya están ubicados en sus cabañas, la tuya es la número 7 puedes ir acomodandote si quieres...";
 	private Timeline timeline;
 
 	@FXML
@@ -30,7 +31,7 @@ public class Prologue_Scene_Builder1 {
 	@FXML
 	public void initialize() {
 	//	backgroundMusic.playAudio(RESOURCES_PATH + "");//insertar pista de audio inicio prologo
-		//voiceBox.playAudio(RESOURCES_PATH + "");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/staff.ogg");
 		myButton.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
