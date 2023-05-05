@@ -1,5 +1,5 @@
     .background {
-        -fx-background-image: url("../../../assets/images/ep1/murder.jpg"); //recordar modificar en el runable 
+        -fx-background-image: url("../../../assets/images/ep1/Murder.jpg"); //recordar modificar en el runable 
         -fx-background-size: 100% 100%; //Usar cover si no quereis que se distorsione pero se recortará.
         -fx-background-position: center;
     }
