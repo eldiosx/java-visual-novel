@@ -33,16 +33,28 @@ public class Stage12 {
 		//voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
 		myButton.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
-				voiceBox.stopAudio();
-				backgroundMusic.stopAudio();
-				Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
+//				// Crear un nuevo Stage
+//				voiceBox.stopAudio();
+//				backgroundMusic.stopAudio();
+//				Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
+//
+//				// Mostrar el nuevo Stage
+//				MainEp1.showStage(stage);
+//
+//				// Ocultar el Stage principal
+//				MainEp1.hideStage(MainEp1.getCurrentStage());
+		        // Crear un nuevo Stage
+		        voiceBox.stopAudio();
+		        backgroundMusic.stopAudio();
+		        Stage currentStage = (Stage) myButton.getScene().getWindow();
 
-				// Mostrar el nuevo Stage
-				MainEp1.showStage(stage);
+		        Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
 
-				// Ocultar el Stage principal
-				MainEp1.hideStage(MainEp1.getCurrentStage());
+		        // Mostrar el nuevo Stage
+		        MainEp1.showStage(stage);
+
+		        // Ocultar el Stage actual
+		        currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

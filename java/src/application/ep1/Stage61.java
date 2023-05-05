@@ -39,13 +39,19 @@ public class Stage61 {//Chang
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
+				Stage currentStage = (Stage) myButton.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage62.fxml", "SecondStage");
 
-				// Mostrar el nuevo Stage
-				MainEp1.showStage(stage);
+//				// Mostrar el nuevo Stage
+//				MainEp1.showStage(stage);
+//
+//				// Ocultar el Stage principal
+//				MainEp1.hideStage(MainEp1.getPrimaryStage());
+			        // Mostrar el nuevo Stage
+			        MainEp1.showStage(stage);
 
-				// Ocultar el Stage principal
-				MainEp1.hideStage(MainEp1.getPrimaryStage());
+			        // Ocultar el Stage actual
+			        currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

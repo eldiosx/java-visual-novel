@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -39,13 +40,18 @@
                <RowConstraints minHeight="10.0" percentHeight="20.0" prefHeight="30.0" vgrow="NEVER" />
            </rowConstraints>
             <children>
-               <Button fx:id="Chan" mnemonicParsing="false" prefHeight="45.0" prefWidth="130.0" text="Chan" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-               <Button fx:id="Marleene" mnemonicParsing="false" prefHeight="45.0" prefWidth="130.0" text="Marleene" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-               <Button fx:id="Helen" mnemonicParsing="false" prefHeight="45.0" prefWidth="130.0" text="Helen" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-               <Button fx:id="Travis" mnemonicParsing="false" prefHeight="45.0" prefWidth="130.0" text="Travis" GridPane.columnIndex="5" />
-               <Button fx:id="John" mnemonicParsing="false" prefHeight="45.0" prefWidth="130.0" text="John" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               <Button fx:id="Chan" mnemonicParsing="false" onAction="#initialize" prefHeight="45.0" prefWidth="130.0" text="Chan" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+               <Button fx:id="Marleene" mnemonicParsing="false" onAction="#initialize" prefHeight="45.0" prefWidth="130.0" text="Marleene" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+               <Button fx:id="Helen" mnemonicParsing="false" onAction="#initialize" prefHeight="45.0" prefWidth="130.0" text="Helen" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+               <Button fx:id="Travis" mnemonicParsing="false" onAction="#initialize" prefHeight="45.0" prefWidth="130.0" text="Travis" GridPane.columnIndex="5" />
+               <Button fx:id="John" mnemonicParsing="false" onAction="#initialize" prefHeight="45.0" prefWidth="130.0" text="John" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             </children>
          </GridPane>
+         <Button fx:id="Abandonar" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#initialize" prefHeight="44.0" prefWidth="232.0" stylesheets="@Stage0.css" text="Abandonar la hoguera" GridPane.rowIndex="3">
+            <GridPane.margin>
+               <Insets left="800.0" />
+            </GridPane.margin>
+         </Button>
       </GridPane>
       <Label alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" styleClass="name" stylesheets="@Stage1.css" text="Escucha las historias en la hoguera" textAlignment="CENTER" />
 	</children>

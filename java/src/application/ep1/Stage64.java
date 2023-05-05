@@ -40,13 +40,19 @@ public class Stage64 {//Travis responde a chang
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
+				Stage currentStage = (Stage) Didnt_see.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage71.fxml", "SecondStage");
 
-				// Mostrar el nuevo Stage
-				MainEp1.showStage(stage);
+//				// Mostrar el nuevo Stage
+//				MainEp1.showStage(stage);
+//
+//				// Ocultar el Stage principal
+//				MainEp1.hideStage(MainEp1.getPrimaryStage());
+			        // Mostrar el nuevo Stage
+			        MainEp1.showStage(stage);
 
-				// Ocultar el Stage principal
-				MainEp1.hideStage(MainEp1.getPrimaryStage());
+			        // Ocultar el Stage actual
+			        currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -56,13 +62,19 @@ public class Stage64 {//Travis responde a chang
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
+				Stage currentStage = (Stage) Rlly_letsgo_ahead.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage65.fxml", "SecondStage");
 
-				// Mostrar el nuevo Stage
-				MainEp1.showStage(stage);
+//				// Mostrar el nuevo Stage
+//				MainEp1.showStage(stage);
+//
+//				// Ocultar el Stage principal
+//				MainEp1.hideStage(MainEp1.getPrimaryStage());
+		        // Mostrar el nuevo Stage
+		        MainEp1.showStage(stage);
 
-				// Ocultar el Stage principal
-				MainEp1.hideStage(MainEp1.getPrimaryStage());
+		        // Ocultar el Stage actual
+		        currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
