@@ -68,6 +68,7 @@ public class Prologue_Scene_Builder4 {
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private Timeline timeline = new Timeline(); // initialize the timeline variable
+	
 
 	@FXML
 	private Button mirarDerecha;

@@ -97,7 +97,8 @@ import javafx.util.Duration;
 		Stage stage = new Stage();
 		private BackgroundMusic backgroundMusic = new BackgroundMusic();
 		private int currentIndex = 0;
-		private String text = "";
+		private String text = "¿Descansar? Eso es para los viejos, esta noche hay hoguera y vamos a contar historias, hasta Helen se ha animado a venir	"
+				+ "Te veo esta noche entonces";
 		private Timeline timeline = new Timeline();
 
 		@FXML
@@ -154,9 +155,16 @@ import javafx.util.Duration;
 					e.printStackTrace();
 				}
 			});
-			// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
-			// vaya al ritmo de las voces y ajustar dependiendo el idioma
-
+			dialogue.setFont(Font.font("Arial", 24));
+			timeline = new Timeline(new KeyFrame(Duration.seconds(0.05), event -> {
+				if (currentIndex > text.length()) {
+					timeline.stop();
+				} else {
+					String currentText = text.substring(0, currentIndex);
+					dialogue.setText(currentText);
+					currentIndex++;
+				}
+			}));
 			timeline.setCycleCount(Timeline.INDEFINITE);
 			timeline.play();
 

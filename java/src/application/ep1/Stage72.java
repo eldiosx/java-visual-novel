@@ -18,8 +18,7 @@ public class Stage72 {//Chang habla antes de ver el cuerpo
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Esta puerta no deberia estar abierta"
-			;
+	private String text = "Esta puerta no deberia estar abierta";
 	private Timeline timeline;
 
 	@FXML

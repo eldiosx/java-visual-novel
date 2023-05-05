@@ -36,7 +36,7 @@
                <Label alignment="BOTTOM_LEFT" styleClass="name" stylesheets="@Stage72.css" text="Chang" textAlignment="CENTER" GridPane.rowIndex="2" />
             </children>
          </GridPane>
-      		<Button fx:id="myButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage72.css" text="Continuar" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      		<Button fx:id="Continue" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage72.css" text="Continuar" GridPane.columnIndex="1" GridPane.rowIndex="3">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor></Button>

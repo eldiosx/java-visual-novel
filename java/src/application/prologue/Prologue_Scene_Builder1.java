@@ -58,7 +58,7 @@ public class Prologue_Scene_Builder1 {
 				MainPrologue.showStage(stage);
 				
 //				// Ocultar el Stage principal
-//				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
+				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("aqui no entra");

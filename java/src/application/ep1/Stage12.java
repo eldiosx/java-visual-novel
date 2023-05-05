@@ -42,7 +42,7 @@ public class Stage12 {
 				MainEp1.showStage(stage);
 
 				// Ocultar el Stage principal
-				MainEp1.hideStage(MainEp1.getPrimaryStage());
+				MainEp1.hideStage(MainEp1.getCurrentStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

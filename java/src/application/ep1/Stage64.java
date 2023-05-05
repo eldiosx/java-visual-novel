@@ -40,7 +40,7 @@ public class Stage64 {//Travis responde a chang
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage stage = MainEp1.createStage("Stage0.fxml", "SecondStage");
+				Stage stage = MainEp1.createStage("Stage71.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
