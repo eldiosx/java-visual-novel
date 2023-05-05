@@ -1,5 +1,5 @@
 .background {
-    -fx-background-image: url("../../../assets/images/ep1/ChanCampfire.jpg.png"); //recordar modificar en el runable
+    -fx-background-image: url("../../../assets/images/ep1/ChanCampfire.png"); //recordar modificar en el runable
     -fx-background-size: 100% 100%; //Usar cover si no quereis que se distorsione pero se recortará.
     -fx-background-position: center;
 }
@@ -53,13 +53,3 @@
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-border-radius: 0px;
 }
-
-.button:focused
-{
-    -fx-background-insets: 0 0 0 0, 0, 1, 2;
-    -fx-border-radius: 0px;
-}
-
-#eventLogsButton
-{
-     -fx-background-insets: 0 0 -1 0, 0, 1, 2;

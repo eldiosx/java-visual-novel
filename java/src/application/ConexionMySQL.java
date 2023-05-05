@@ -1,12 +1,12 @@
 package application;
 
-import java.util.Calendar;
-import java.util.TimeZone;
-import java.sql.*;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 /**
  * Clase para la conexión con una base de datos MySQL
@@ -35,10 +35,12 @@ public class ConexionMySQL {
 	 * @param pass    Contraseña del usuario
 	 * @param bd      Base de datos a la que nos conectamos
 	 */
+	
+	//Conectar con el Servidor local de Daniel
 	public ConexionMySQL(String usuario, String pass, String bd) {
-		HOST = "localhost";
+		HOST = "10.192.112.193"; 
 		USUARIO = "root";
-		PASS = "";
+		PASS = "Medac1234 .";
 		BD = bd;
 		connection = null;
 	}

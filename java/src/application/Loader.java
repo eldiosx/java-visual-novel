@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 public class Loader extends Stage {
 	private ProgressBar progressBar;
+
 //Esto pues es un loader basico que funciona de verdad :D recogiendo el estado del Main
 	public Loader() {
 		progressBar = new ProgressBar();

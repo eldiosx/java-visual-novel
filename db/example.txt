@@ -1,0 +1,67 @@
+ 
+	// A partir de aquí son pruebas de SQL, no borrar
+	public class Controlador implements Initializable {
+
+		// Instanciamos la clase ConexionMySQL
+		ConexionMySQL conexion = new ConexionMySQL("root", "Medac1234", "videojuego serie b");
+
+		public void initialize1(URL url, ResourceBundle rb) {
+			cuchillo.setOnAction(event -> {
+				try {
+					conexion.conectar();
+					String texto = "SELECT dialogo FROM dialogos WHERE COD_dialogo=3";
+					conexion.ejecutarInsertDeleteUpdate(texto);
+					ResultSet datos = conexion.ejecutarSelect(texto);
+
+					while (datos.next()) {
+						String textoDialogo = datos.getString("dialogo");
+						textocuchillo.setText(textoDialogo);
+					}
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				} finally {
+					try {
+						conexion.desconectar();
+					} catch (SQLException e1) {
+						e1.printStackTrace();
+					}
+				}
+			});
+		}
+
+		@Override
+		public void initialize(URL location, ResourceBundle resources) {
+			// TODO Auto-generated method stub
+
+		}
+	}
+
+
+				slot2Button.setOnAction(event2 -> {
+				try {
+					conexion.conectar();
+					// String cargarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2) VALUES
+					// ('Prologue', 'Ep1')";
+					String selectPartidas = "SELECT * FROM partidas_guardadas;";
+					conexion.ejecutarSelect(selectPartidas);
+					ResultSet datos = conexion.ejecutarSelect(selectPartidas);
+
+					while (datos.next()) {
+						String partidaGuardada1 = datos.getString("slot1");
+						String partidaGuardada2 = datos.getString("slot2");
+						String partidaGuardada3 = datos.getString("slot3");
+						System.out.println(partidaGuardada1);
+						System.out.println(partidaGuardada2);
+						System.out.println(partidaGuardada3);
+
+					}
+				} catch (SQLException e2) {
+					e2.printStackTrace();
+				} finally {
+					try {
+						conexion.desconectar();
+					} catch (SQLException e2) {
+						e2.printStackTrace();
+					}
+				}
+			});

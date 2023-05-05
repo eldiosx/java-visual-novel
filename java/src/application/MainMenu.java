@@ -7,8 +7,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 //import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 //JavaFX
 import javafx.application.Application;
@@ -47,9 +45,12 @@ import javafx.stage.Stage;
 
 //MySql
 //import com.mysql.cj.protocol.Resultset;
+//import java.sql.ResultSet;
+import java.sql.SQLException;
 
 //Local
 import application.prologue.MainPrologue;
+import application.ep1.MainEp1;
 //import application.ep1.MainEp1;
 
 public class MainMenu extends Application {
@@ -61,7 +62,8 @@ public class MainMenu extends Application {
 	// Obtener el tamaño de la pantalla
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
-	MainPrologue mainPrologue = new MainPrologue(); // Crea una instancia de la clase Main
+	MainPrologue mainPrologue = new MainPrologue(); // Crea una instancia de la clase Main Prologue
+	MainEp1 mainEp1 = new MainEp1(); // Crea una instancia de la clase Main Ep1
 	Stage stage = new Stage();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private Font titleFont;
@@ -195,14 +197,25 @@ public class MainMenu extends Application {
 			Label label = new Label(" Cargar partida ");
 			label.setStyle("-fx-font-size: 50px; -fx-text-fill: white;");
 			Label slot1Label = new Label("Slot 1: ");
-			Button slot1Button = new Button("0/00/0000 - Capitulo 0");
+			Button slot1Button = new Button("0/00/0000 - Capitulo 1");
 			slot1Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 
 			// Este código que empieza aquí son pruebas para la conexión a la BD. NO BORRAR.
 			// Código para guardar partida (meter info en la base de datos)
 
 			slot1Button.setOnAction(event2 -> {
-				
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
+				backgroundMusic.stopAudio();
+				// Asi podemos crear escenas que nos de la gana, util sobre todo para el LOAD
+				try {
+					// Crear un nuevo Stage
+					mainEp1.start(stage);
+
+					// Ocultar el Stage principal
+					primaryStage.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			});
 
 			// Código para cargar partida (pedir info a la base de datos)
@@ -212,32 +225,34 @@ public class MainMenu extends Application {
 			slot2Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 
 			slot2Button.setOnAction(event2 -> {
-				try {
-					conexion.conectar();
-					// String cargarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2) VALUES
-					// ('Prologue', 'Ep1')";
-					String selectPartidas = "SELECT * FROM partidas_guardadas;";
-					conexion.ejecutarSelect(selectPartidas);
-					ResultSet datos = conexion.ejecutarSelect(selectPartidas);
 
-					while (datos.next()) {
-						String partidaGuardada1 = datos.getString("slot1");
-						String partidaGuardada2 = datos.getString("slot2");
-						String partidaGuardada3 = datos.getString("slot3");
-						System.out.println(partidaGuardada1);
-						System.out.println(partidaGuardada2);
-						System.out.println(partidaGuardada3);
-
-					}
-				} catch (SQLException e2) {
-					e2.printStackTrace();
-				} finally {
-					try {
-						conexion.desconectar();
-					} catch (SQLException e2) {
-						e2.printStackTrace();
-					}
-				}
+				// Por ahora desactivado
+//				try {
+//					conexion.conectar();
+//					// String cargarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2) VALUES
+//					// ('Prologue', 'Ep1')";
+//					String selectPartidas = "SELECT * FROM partidas_guardadas;";
+//					conexion.ejecutarSelect(selectPartidas);
+//					ResultSet datos = conexion.ejecutarSelect(selectPartidas);
+//
+//					while (datos.next()) {
+//						String partidaGuardada1 = datos.getString("slot1");
+//						String partidaGuardada2 = datos.getString("slot2");
+//						String partidaGuardada3 = datos.getString("slot3");
+//						System.out.println(partidaGuardada1);
+//						System.out.println(partidaGuardada2);
+//						System.out.println(partidaGuardada3);
+//
+//					}
+//				} catch (SQLException e2) {
+//					e2.printStackTrace();
+//				} finally {
+//					try {
+//						conexion.desconectar();
+//					} catch (SQLException e2) {
+//						e2.printStackTrace();
+//					}
+//				}
 			});
 
 			Label slot3Label = new Label("Slot 3: ");

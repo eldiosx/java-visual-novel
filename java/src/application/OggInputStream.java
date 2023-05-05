@@ -1,6 +1,9 @@
 package application;
 
+//LIBRERIA OPEN SOURCE COGIDA Y ADAOTADA A 2023
+
 /**
+
  * Copyright (c) 2007, Slick 2D
  * 
  * All rights reserved.

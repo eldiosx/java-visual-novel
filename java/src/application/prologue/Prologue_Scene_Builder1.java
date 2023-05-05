@@ -30,7 +30,7 @@ public class Prologue_Scene_Builder1 {
 
 	@FXML
 	public void initialize() {
-	//	backgroundMusic.playAudio(RESOURCES_PATH + "");//insertar pista de audio inicio prologo
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/happyForest.ogg");
 		voiceBox.playAudio(RESOURCES_PATH + "/audio/staff.ogg");
 		myButton.setOnAction(event -> {
 			try {
