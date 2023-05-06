@@ -43,11 +43,11 @@ public class Credits extends Application {
 					System.exit(0); // El cierratodo clasico
 				});
 			}
-		}, 40000); // 40 segundos en milisegundos
+		}, 35000); // 35 segundos en milisegundos
 
 		// Crear el texto que se mostrará en los créditos y su estilo
 		Text creditsText = new Text("Hace muchos tiempo, en un MEDAC casi en Córdoba, un equipo de desarrolladores \n\n"
-				+ "empezaron un ambicioso proyecto. \n\n " + "Los disturbios rodean el MEDAC \n\n"
+				+ "empezaron un ambicioso proyecto. \n\n" + "Los disturbios rodean el MEDAC \n\n"
 				+ "Se esta planteando el cobro de impuestos al temario desactualizado \n\n"
 				+ "por parte de los miembros descontentos de la comunidad \n\n"
 				+ "y emigrar a sistemas solares con mejores prestaciones. \n\n" + "\n\n"
@@ -57,15 +57,15 @@ public class Credits extends Application {
 				+ "Nico Cano, Daniel Delgado, Aida Fernández y Adri Márquez\n\n" + "\n\n" + "\n\n"
 				+ "Proyecto realizado usando:\n\n" + "Java \n\n" + "Java FX \n\n" + "Scene Builder \n\n" + "SQL \n\n"
 				+ "Audacity \n\n" + "Gimp \n\n" + "\n\n" + "\n\n" + "Desarrollo: \n\n"
-				+ "Database Manager: Nico Cano\n\n " + "Diseño: Aida Fernández\n\n"
+				+ "Database Manager: Nico Cano\n\n" + "Diseño: Aida Fernández\n\n"
 				+ "Frontend Manager: Adrián Marquez\n\n" + "Backend Manager: Daniel Delgado\n\n" + "\n\n" + "\n\n"
 				+ "Actores de voz: \n\n" + "John: Nico Cano \n\n" + "Marleene: Esther Argüelles\n\n"
 				+ "Travis: Javier Naranjo\n\n" + "Helen: Aida Fernández\n\n" + "Chan: Adri Marquez \n\n"
 				+ "Sr Watson: Daniel Delgado \n\n" + "\n\n" + "\n\n" + "Agradecimientos especiales \n\n"
 				+ "Javier naranjo y Esther Argüelles por trabajar a cambio de un vinito \n\n"
-				+ "Juan García y Antonio Ruiz por sus consejos y paciencia \n\n" + "\n\n" + "\n\n" + "\n\n"
+				+ "Juan García y Antonio Ruiz por sus consejos y paciencia \n\n" + "\n\n" + "\n\n" + "\n\n "
 				+ "Repositorio de Github: \n\n" + "https://github.com/eldiosx/java-visual-novel \n\n \n\n"
-				+ "FIN <3 \n\n \n\n");
+				+ "         FIN <3\n\n\n\n");
 		creditsText.setFont(new Font("Arial", responsive / 4));
 		creditsText.setFill(Color.WHITE);
 		creditsText.setX(500);
