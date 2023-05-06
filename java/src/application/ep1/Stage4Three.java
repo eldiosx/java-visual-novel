@@ -13,12 +13,12 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage42 {//travis --> interviene marlene y se va
+public class Stage4Three {// travis se despide
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Lo siento chicos, no me encuentro bien, me voy a ir a la cama" ;
+	private String text = "Descansa, ya habrá más noches para contar historias.";
 	private Timeline timeline;
 
 	@FXML
@@ -37,18 +37,18 @@ public class Stage42 {//travis --> interviene marlene y se va
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) myButton.getScene().getWindow();
-				Stage stage = MainEp1.createStage("Stage43.fxml", "SecondStage");
+				Stage stage = MainEp1.createStage("Stage44.fxml", "SecondStage");
 
 //				// Mostrar el nuevo Stage
 //				MainEp1.showStage(stage);
 //
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
-			        // Mostrar el nuevo Stage
-			        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-			        // Ocultar el Stage actual
-			        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

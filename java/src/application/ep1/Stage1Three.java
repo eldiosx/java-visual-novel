@@ -13,7 +13,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage13 {
+public class Stage1Three {
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();

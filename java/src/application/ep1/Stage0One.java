@@ -9,36 +9,35 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class Stage0 {
+public class Stage0One {
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 
-
 	@FXML
 	private Button John;
-	
+
 	@FXML
 	private Button Abandonar;
-	
+
 	@FXML
 	private Button Marleene;
-	
+
 	@FXML
 	private Button Helen;
-	
+
 	@FXML
 	private Button Chan;
-	
+
 	@FXML
 	private Button Travis;
-	
-	int count =0;
+
+	int count = 0;
 
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/horrorHeartbeat.ogg");
-		//voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon.ogg");
+		// voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon.ogg");
 		John.setOnAction(event -> {
 			try {
 				// llamada a la escena de John
@@ -51,20 +50,20 @@ public class Stage0 {
 //
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
-		        // Mostrar el nuevo Stage
-		        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-		        // Ocultar el Stage actual
-		        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-            count++; //incrementamos el contador
-            if (count >= 3) { //si ya se pulsaron 4 botones
-                disableRemainingButtons(); //desactivamos los botones restantes
-            }
+			count++; // incrementamos el contador
+			if (count >= 3) { // si ya se pulsaron 4 botones
+				disableRemainingButtons(); // desactivamos los botones restantes
+			}
 		});
-		
+
 		Marleene.setOnAction(event -> {
 			try {
 				// llamada a la escena de Marleene
@@ -77,20 +76,20 @@ public class Stage0 {
 //
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
-		        // Mostrar el nuevo Stage
-		        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-		        // Ocultar el Stage actual
-		        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			count++; //incrementamos el contador
-            if (count >= 3) { //si ya se pulsaron 4 botones
-                disableRemainingButtons(); //desactivamos los botones restantes
-            }
+			count++; // incrementamos el contador
+			if (count >= 3) { // si ya se pulsaron 4 botones
+				disableRemainingButtons(); // desactivamos los botones restantes
+			}
 		});
-		
+
 		Helen.setOnAction(event -> {
 			try {
 				// llamada a la escena de Helen
@@ -103,20 +102,20 @@ public class Stage0 {
 //
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
-		        // Mostrar el nuevo Stage
-		        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-		        // Ocultar el Stage actual
-		        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			count++; //incrementamos el contador
-            if (count >= 3) { //si ya se pulsaron 4 botones
-                disableRemainingButtons(); //desactivamos los botones restantes
-            }
+			count++; // incrementamos el contador
+			if (count >= 3) { // si ya se pulsaron 4 botones
+				disableRemainingButtons(); // desactivamos los botones restantes
+			}
 		});
-		
+
 		Chan.setOnAction(event -> {
 			try {
 				// llamada a la escena de Chan
@@ -129,20 +128,20 @@ public class Stage0 {
 //
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
-		        // Mostrar el nuevo Stage
-		        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-		        // Ocultar el Stage actual
-		        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			count++; //incrementamos el contador
-            if (count >= 3) { //si ya se pulsaron 4 botones
-                disableRemainingButtons(); //desactivamos los botones restantes
-            }
+			count++; // incrementamos el contador
+			if (count >= 3) { // si ya se pulsaron 4 botones
+				disableRemainingButtons(); // desactivamos los botones restantes
+			}
 		});
-		
+
 		Travis.setOnAction(event -> {
 			try {
 				// llamada a la escena de Travis
@@ -155,18 +154,18 @@ public class Stage0 {
 //
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
-		        // Mostrar el nuevo Stage
-		        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-		        // Ocultar el Stage actual
-		        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			count++; //incrementamos el contador
-            if (count >= 3) { //si ya se pulsaron 4 botones
-                disableRemainingButtons(); //desactivamos los botones restantes
-            }
+			count++; // incrementamos el contador
+			if (count >= 3) { // si ya se pulsaron 4 botones
+				disableRemainingButtons(); // desactivamos los botones restantes
+			}
 		});
 		Abandonar.setOnAction(event -> {
 			try {
@@ -180,11 +179,11 @@ public class Stage0 {
 //
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
-		        // Mostrar el nuevo Stage
-		        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-		        // Ocultar el Stage actual
-		        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -192,11 +191,12 @@ public class Stage0 {
 		;
 
 	}
+
 	private void disableRemainingButtons() {
-        for (Node node : Travis.getParent().getChildrenUnmodifiable()) {
-            if (node instanceof Button && !node.isDisabled()) { //si es un botón habilitado
-                ((Button) node).setDisable(true); //lo desactivamos
-            }
-        }
-    }
+		for (Node node : Travis.getParent().getChildrenUnmodifiable()) {
+			if (node instanceof Button && !node.isDisabled()) { // si es un botón habilitado
+				((Button) node).setDisable(true); // lo desactivamos
+			}
+		}
+	}
 }

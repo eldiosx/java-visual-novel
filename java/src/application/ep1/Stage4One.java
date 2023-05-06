@@ -13,12 +13,12 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage12 {
+public class Stage4One {// travis comienzo
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Que horor";
+	private String text = "Al parecer una noche de 1951, una de las prostitutas que ejercían su labor en un prostíbulo no muy lejos de aquí, apareció muerta en su cama con una puñalada en el vientre. El FBI, después de realizar sus investigaciones concluyeron en que se trataba de algo súper raro.\r\n";
 	private Timeline timeline;
 
 	@FXML
@@ -29,32 +29,26 @@ public class Stage12 {
 
 	@FXML
 	public void initialize() {
-		//backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		//voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
+//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
 		myButton.setOnAction(event -> {
 			try {
-//				// Crear un nuevo Stage
-//				voiceBox.stopAudio();
-//				backgroundMusic.stopAudio();
-//				Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
-//
+				// Crear un nuevo Stage
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage currentStage = (Stage) myButton.getScene().getWindow();
+				Stage stage = MainEp1.createStage("Stage42.fxml", "SecondStage");
+
 //				// Mostrar el nuevo Stage
 //				MainEp1.showStage(stage);
 //
 //				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getCurrentStage());
-		        // Crear un nuevo Stage
-		        voiceBox.stopAudio();
-		        backgroundMusic.stopAudio();
-		        Stage currentStage = (Stage) myButton.getScene().getWindow();
+//				MainEp1.hideStage(MainEp1.getPrimaryStage());
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-		        Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
-
-		        // Mostrar el nuevo Stage
-		        MainEp1.showStage(stage);
-
-		        // Ocultar el Stage actual
-		        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

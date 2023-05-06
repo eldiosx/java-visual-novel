@@ -25,7 +25,7 @@ public class MainPrologue extends Application {
 		MainPrologue.currentStage = stage1;
 		stage1.setTitle("Tu videojuego favorito de serie B");
 		stage1.setScene(new Scene(root, screenWidth, screenHeight));
-		stage1.setResizable(true); // Se puede redimensionar
+		stage1.setResizable(false); // Se puede redimensionar
 		stage1.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage1.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage1.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
@@ -44,7 +44,7 @@ public class MainPrologue extends Application {
 
 	public static void showStage(Stage stage) {
 		stage.setTitle("Tu videojuego favorito de serie B");
-		stage.setResizable(true); // Se puede redimensionar
+		stage.setResizable(false); // Se puede redimensionar
 		stage.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
@@ -57,10 +57,11 @@ public class MainPrologue extends Application {
 		Parent root = FXMLLoader.load(MainPrologue.class.getResource(fxmlFile));
 		stage.setTitle(title);
 		stage.setScene(new Scene(root, screenWidth, screenHeight));
-		stage.setResizable(true); // Se puede redimensionar
+		stage.setResizable(false); // Se puede redimensionar
 		stage.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
+		MainPrologue.currentStage = stage;
 		return stage;
 	}
 

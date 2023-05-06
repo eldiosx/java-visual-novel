@@ -1,7 +1,6 @@
-package application.ep1;
+package application.prologue;
 
 import java.io.File;
-
 import application.BackgroundMusic;
 import application.VoiceBox;
 import javafx.animation.KeyFrame;
@@ -13,70 +12,58 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage64 {//Travis responde a chang
+public class Stage1 {
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Espera, he visto una sombra"
-			;
+	private String text = "Hola soy Javier. Bienvenido al campamento, The Otter. Espero que estés preparado para dos semanas de diversión. Tus compañeros ya están ubicados en sus cabañas, la tuya es la número 7 puedes ir acomodandote si quieres...";
 	private Timeline timeline;
 
 	@FXML
 	private Label dialogue;
-	
+
 	@FXML
-	private Button Didnt_see;
-	
+	private Button myButton;
 	@FXML
-	private Button Rlly_letsgo_ahead;
+	private Button myButton2;
 
 	@FXML
 	public void initialize() {
-//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
-		Didnt_see.setOnAction(event -> {
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/happyForest.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/staff.ogg");
+		myButton.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage currentStage = (Stage) Didnt_see.getScene().getWindow();
-				Stage stage = MainEp1.createStage("Stage71.fxml", "SecondStage");
+				// Crear un nuevo Stage
 
-//				// Mostrar el nuevo Stage
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
-			        // Mostrar el nuevo Stage
-			        MainEp1.showStage(stage);
+				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder2.fxml", "SecondStage");
 
-			        // Ocultar el Stage actual
-			        currentStage.hide(); // Agregar esta línea
+				// Mostrar el nuevo Stage
+				MainPrologue.showStage(stage);
+
+				// Ocultar el Stage principal
+				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		});
-		Rlly_letsgo_ahead.setOnAction(event -> {
+		myButton2.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage currentStage = (Stage) Rlly_letsgo_ahead.getScene().getWindow();
-				Stage stage = MainEp1.createStage("Stage65.fxml", "SecondStage");
+//				// Crear un nuevo Stage
+				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder4.fxml", "SecondStage");
 
-//				// Mostrar el nuevo Stage
-//				MainEp1.showStage(stage);
-//
+				// Mostrar el nuevo Stage
+				MainPrologue.showStage(stage);
+
 //				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
-		        // Mostrar el nuevo Stage
-		        MainEp1.showStage(stage);
-
-		        // Ocultar el Stage actual
-		        currentStage.hide(); // Agregar esta línea
+				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
+				System.out.println("aqui no entra");
 			}
 		});
 		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que

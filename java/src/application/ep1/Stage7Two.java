@@ -13,17 +13,17 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage65 {//Travis responde a chang
+public class Stage7Two {// Chang habla antes de ver el cuerpo
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Esa puerta no deberia estar abierta";
+	private String text = "Esta puerta no deberia estar abierta";
 	private Timeline timeline;
 
 	@FXML
 	private Label dialogue;
-	
+
 	@FXML
 	private Button Continue;
 
@@ -44,11 +44,11 @@ public class Stage65 {//Travis responde a chang
 //
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
-		        // Mostrar el nuevo Stage
-		        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-		        // Ocultar el Stage actual
-		        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

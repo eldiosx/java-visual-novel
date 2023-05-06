@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class Stage2 {
+public class Stage2One {
 
 	// Instanciamos la pantalla de creditos
 	Credits credits = new Credits(); // Crea una instancia de la clase Credits

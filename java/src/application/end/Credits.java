@@ -1,4 +1,5 @@
 package application.end;
+
 //Java
 import java.io.File;
 import java.util.Timer;
@@ -17,7 +18,6 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 //Local
 import application.BackgroundMusic;
-
 
 public class Credits extends Application {
 

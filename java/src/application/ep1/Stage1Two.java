@@ -13,12 +13,12 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage62 {//Travis responde a chang
+public class Stage1Two {
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Eso es mentira seguro";
+	private String text = "Que horroooor!";
 	private Timeline timeline;
 
 	@FXML
@@ -29,26 +29,32 @@ public class Stage62 {//Travis responde a chang
 
 	@FXML
 	public void initialize() {
-//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
+		// backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+		// voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
 		myButton.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
-				voiceBox.stopAudio();
-				backgroundMusic.stopAudio();
-				Stage currentStage = (Stage) myButton.getScene().getWindow();
-				Stage stage = MainEp1.createStage("Stage63.fxml", "SecondStage");
-
+//				// Crear un nuevo Stage
+//				voiceBox.stopAudio();
+//				backgroundMusic.stopAudio();
+//				Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
+//
 //				// Mostrar el nuevo Stage
 //				MainEp1.showStage(stage);
 //
 //				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
-			        // Mostrar el nuevo Stage
-			        MainEp1.showStage(stage);
+//				MainEp1.hideStage(MainEp1.getCurrentStage());
+				// Crear un nuevo Stage
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage currentStage = (Stage) myButton.getScene().getWindow();
 
-			        // Ocultar el Stage actual
-			        currentStage.hide(); // Agregar esta línea
+				Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
+
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
+
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

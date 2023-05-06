@@ -35,10 +35,10 @@ public class ConexionMySQL {
 	 * @param pass    Contraseña del usuario
 	 * @param bd      Base de datos a la que nos conectamos
 	 */
-	
-	//Conectar con el Servidor local de Daniel
+
+	// Conectar con el Servidor local de Daniel
 	public ConexionMySQL(String usuario, String pass, String bd) {
-		HOST = "10.192.112.193"; 
+		HOST = "10.192.112.193";
 		USUARIO = "root";
 		PASS = "Medac1234 .";
 		BD = bd;

@@ -13,15 +13,15 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage61 {//Chang 
+public class Stage3Two {// marlene fin
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Todo empezó una tarde de agosto, hace un par de años, yo acababa de cumplir catorce años y estaba de picnic con los amigos de mi pueblo de la sierra. Éramos cinco o así, y a eso de las ocho y media de la tarde, cuando empieza a oscurecer, a uno de mis compañeros se le ocurrió la idea de hacer una ouija.\r\n"
-			+ "Yo me quería largar de allí cuanto antes y me fui con otro de los colegas un poco más lejos de dónde estaban ellos con la ouija. Al volver los dos hacia el lugar donde se produjo la supuesta invocación, el resto de mis compañeros nos advirtieron que habían contactado con un espíritu de una mujer, que les había dicho que tendríamos problemas para volver de vuelta a casa.\r\n"
-			+ "Dos de mis amigos bajaron en la moto y avisaron a mi primo para que viniera a recogernos al resto. Cuando vino mi primo con su coche nos montamos y prácticamente nada más arrancar, el motor se paró. Los que íbamos con él, nos miramos, mi primo volvió a arrancar el coche… y se para de nuevo… y así hasta cuatro veces. Conseguimos arrancar y salir de allí con muy mal cuerpo, y cuando íbamos camino al pueblo notamos que ganábamos velocidad con demasiada facilidad y de repente el coche se frenó de nuevo en seco y quedó atravesado en la carretera.\r\n"
-			;
+	private String text = "Estuvieron así un buen rato sin conseguir ver nada, pero oyendo los ruidos que cada vez eran más frecuentes, y al final desistieron y bajaron. La historia quedó ahí y pasaron varios días, uno de ellos le dijo mi abuelo a mi padre que tenía que bajar al pozo a por agua porque no había.\r\n"
+			+ "Estaba bastante oscuro y mi padre un poco asustado me dijo que bajó de todos modos. Así que bajó, y empezó a subirle cubos de agua a mi abuelo, hasta que sintió cómo una presencia detrás de él le respiraba cerca. Mi padre se giró rápidamente para ver si veía algo y oyó cómo unas voces suplicaban que se fueran de allí, que no pretendían hacerles daño, pero que ésa era su casa y habían muerto allí y no se iban a ir. Mi padre empezó a gritarle a mi abuelo que por favor le subiese mientras comenzó a ver dos personas que se aparecían mientras le suplicaban que se alejaran de allí.\r\n"
+			+ "En cuanto ahorraron un poco se marcharon y la dejaron vacía como ellos pidieron. Mi padre me contó esta historia hace ya muchos años, yo al principio no creía que estas cosas pudieran ser ciertas, pero creo que mi padre no me mentiría en algo así… la verdad…\r\n"
+			+ ".";
 	private Timeline timeline;
 
 	@FXML
@@ -40,18 +40,18 @@ public class Stage61 {//Chang
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) myButton.getScene().getWindow();
-				Stage stage = MainEp1.createStage("Stage62.fxml", "SecondStage");
+				Stage stage = MainEp1.createStage("Stage0.fxml", "SecondStage");
 
 //				// Mostrar el nuevo Stage
 //				MainEp1.showStage(stage);
 //
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
-			        // Mostrar el nuevo Stage
-			        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-			        // Ocultar el Stage actual
-			        currentStage.hide(); // Agregar esta línea
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

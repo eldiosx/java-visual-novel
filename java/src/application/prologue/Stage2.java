@@ -1,6 +1,4 @@
-package application.ep1;
-
-import java.io.File;
+package application.prologue;
 
 import application.BackgroundMusic;
 import application.VoiceBox;
@@ -13,42 +11,55 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Stage43 {//travis se despide
-	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
+public class Stage2 {
+	// private static final String RESOURCES_PATH = new File("").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Descansa, ya habrá más noches para contar historias.";
+	private String text = "Hey, pensé que ya no llegabas. ¿Qué tal el viaje?";
 	private Timeline timeline;
 
 	@FXML
 	private Label dialogue;
 
 	@FXML
-	private Button myButton;
+	private Button Bien;
+	@FXML
+	private Button Mieh;
 
 	@FXML
 	public void initialize() {
-//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
-		myButton.setOnAction(event -> {
+		// backgroundMusic.playAudio(RESOURCES_PATH + "");//insertar pista de audio
+		// inicio prologo
+		// voiceBox.playAudio(RESOURCES_PATH + "");
+		Bien.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage currentStage = (Stage) myButton.getScene().getWindow();
-				Stage stage = MainEp1.createStage("Stage44.fxml", "SecondStage");
+				// Ocultar el Stage principal
+				MainPrologue.hideStage(MainPrologue.getCurrentStage());
+				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
 
-//				// Mostrar el nuevo Stage
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
-			        // Mostrar el nuevo Stage
-			        MainEp1.showStage(stage);
+				// Mostrar el nuevo Stage
+				MainPrologue.showStage(stage);
 
-			        // Ocultar el Stage actual
-			        currentStage.hide(); // Agregar esta línea
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+		Mieh.setOnAction(event -> {
+			try {
+				// Crear un nuevo Stage
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				// Ocultar el Stage principal
+				MainPrologue.hideStage(MainPrologue.getCurrentStage());
+				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
+
+				// Mostrar el nuevo Stage
+				MainPrologue.showStage(stage);
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
