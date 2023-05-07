@@ -51,7 +51,6 @@ import java.sql.SQLException;
 //Local
 import application.prologue.MainPrologue;
 import application.ep1.MainEp1;
-//import application.ep1.MainEp1;
 
 public class MainMenu extends Application {
 //assets/audio/lullabyX.ogg

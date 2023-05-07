@@ -29,21 +29,10 @@ public class Stage1Two {
 
 	@FXML
 	public void initialize() {
-		 backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		 voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage1Two.aup3");
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/marlene03.ogg");
 		myButton.setOnAction(event -> {
 			try {
-//				// Crear un nuevo Stage
-//				voiceBox.stopAudio();
-//				backgroundMusic.stopAudio();
-//				Stage stage = MainEp1.createStage("Stage13.fxml", "SecondStage");
-//
-//				// Mostrar el nuevo Stage
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getCurrentStage());
-				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) myButton.getScene().getWindow();

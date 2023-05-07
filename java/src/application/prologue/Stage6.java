@@ -31,7 +31,7 @@ public class Stage6 {
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/nightForest.ogg");
-		// voiceBox.playAudio(RESOURCES_PATH + "");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/marlene01.ogg");
 		Bien.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
@@ -39,7 +39,6 @@ public class Stage6 {
 				backgroundMusic.stopAudio();
 				Stage currentStage = MainPrologue.getCurrentStage();
 				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder7.fxml", "SecondStage");
-
 
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
@@ -57,7 +56,6 @@ public class Stage6 {
 				backgroundMusic.stopAudio();
 				Stage currentStage = MainPrologue.getCurrentStage();
 				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder7.fxml", "SecondStage");
-
 
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);

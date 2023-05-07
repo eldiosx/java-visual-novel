@@ -38,7 +38,7 @@ public class Stage7 {
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/nightForest.ogg");
-		// voiceBox.playAudio(RESOURCES_PATH + "");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/marlene02.ogg");
 		porSupuesto.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage

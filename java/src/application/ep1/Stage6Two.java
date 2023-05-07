@@ -30,7 +30,7 @@ public class Stage6Two {// Travis responde a chang
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage6Two.aup3");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/travis04.ogg");
 		myButton.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
@@ -38,12 +38,6 @@ public class Stage6Two {// Travis responde a chang
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) myButton.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage63.fxml", "SecondStage");
-
-//				// Mostrar el nuevo Stage
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
 

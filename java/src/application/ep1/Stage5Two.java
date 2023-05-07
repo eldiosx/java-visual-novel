@@ -32,8 +32,8 @@ public class Stage5Two {// interacctua john
 
 	@FXML
 	public void initialize() {
-//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon05.ogg");
 		go.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
@@ -42,11 +42,6 @@ public class Stage5Two {// interacctua john
 				Stage currentStage = (Stage) go.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage72.fxml", "SecondStage");
 
-//				// Mostrar el nuevo Stage
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
 

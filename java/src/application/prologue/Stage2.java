@@ -41,7 +41,6 @@ public class Stage2 {
 				// Ocultar el Stage principal
 				MainPrologue.hideStage(MainPrologue.getCurrentStage());
 				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
-				
 
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);

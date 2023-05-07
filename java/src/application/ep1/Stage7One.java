@@ -16,15 +16,14 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Stage7One {// Chang habla antes de ver el cuerpo
-	// private static final String RESOURCES_PATH = new
-	// File("assets").getAbsolutePath();
-	// private VoiceBox voiceBox = new VoiceBox();
+	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
+	private VoiceBox voiceBox = new VoiceBox();
 	Credits credits = new Credits(); // Crea una instancia de la clase Credits
 	Ep2 ep2 = new Ep2(); // Crea una instancia de la clase Ep2
 	Stage stage = new Stage();
-	// private BackgroundMusic backgroundMusic = new BackgroundMusic();
+	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Esta puerta no deberia estar abierta";
+	private String text = "Esta puerta no deberia estar abierta...";
 	private Timeline timeline;
 
 	@FXML
@@ -36,21 +35,39 @@ public class Stage7One {// Chang habla antes de ver el cuerpo
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage7One.aup3");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/chan03.ogg");
 		Continue.setOnAction(event -> {
+			//Arreglar final alternativo
+//			try {
+//				voiceBox.stopAudio();
+//				backgroundMusic.stopAudio();
+//				// Crear un nuevo Stage del episodio 2
+//				ep2.start(stage);
+//
+//				// Ocultar el Stage principal (EP1)
+//				MainEp1.hideStage(MainEp1.getPrimaryStage());
+//
+//				// Ocultar el Stage del EP2
+//				ep2.hideStage(ep2.getPrimaryStage());
+//
+//				// Inicia los Créditos
+//				credits.start(stage);
+//
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
 			try {
-				// Crear un nuevo Stage del episodio 2
-				ep2.start(stage);
+				// Crear un nuevo Stage
+				voiceBox.stopAudio();
+				backgroundMusic.stopAudio();
+				Stage currentStage = (Stage) Continue.getScene().getWindow();
+				Stage stage = MainEp1.createStage("Stage2.fxml", "SecondStage");
 
-				// Ocultar el Stage principal (EP1)
-				MainEp1.hideStage(MainEp1.getPrimaryStage());
+				// Mostrar el nuevo Stage
+				MainEp1.showStage(stage);
 
-				// Ocultar el Stage del EP2
-				ep2.hideStage(ep2.getPrimaryStage());
-
-				// Inicia los Créditos
-				credits.start(stage);
-
+				// Ocultar el Stage actual
+				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -1,15 +1,8 @@
 package application.ep1;
 
-import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-
-import application.ConexionMySQL;
 import application.end.Credits;
 import application.ep2.Ep2;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

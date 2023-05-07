@@ -4,6 +4,7 @@ import java.io.File;
 
 import application.BackgroundMusic;
 import application.VoiceBox;
+import application.SoundBox;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -13,6 +14,7 @@ public class Stage0One {
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
+	private SoundBox soundBox = new SoundBox();
 
 	@FXML
 	private Button John;
@@ -37,19 +39,14 @@ public class Stage0One {
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/horrorHeartbeat.ogg");
-		// voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon.ogg");
 		John.setOnAction(event -> {
 			try {
 				// llamada a la escena de John
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) John.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage1.fxml", "SecondStage");
-//				// Mostrar el nuevo Stage, que es el de John
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
 
@@ -67,6 +64,7 @@ public class Stage0One {
 		Marleene.setOnAction(event -> {
 			try {
 				// llamada a la escena de Marleene
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Marleene.getScene().getWindow();
@@ -93,6 +91,7 @@ public class Stage0One {
 		Helen.setOnAction(event -> {
 			try {
 				// llamada a la escena de Helen
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Helen.getScene().getWindow();
@@ -119,6 +118,7 @@ public class Stage0One {
 		Chan.setOnAction(event -> {
 			try {
 				// llamada a la escena de Chan
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Chan.getScene().getWindow();
@@ -145,6 +145,7 @@ public class Stage0One {
 		Travis.setOnAction(event -> {
 			try {
 				// llamada a la escena de Travis
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Travis.getScene().getWindow();
@@ -170,6 +171,7 @@ public class Stage0One {
 		Abandonar.setOnAction(event -> {
 			try {
 				// llamada a la escena de Helen
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Helen.getScene().getWindow();

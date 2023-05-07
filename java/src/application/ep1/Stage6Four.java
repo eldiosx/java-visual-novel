@@ -33,7 +33,7 @@ public class Stage6Four {// Travis responde a chang
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage6Four.aup3");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/travis05.ogg");
 		Didnt_see.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
@@ -42,11 +42,6 @@ public class Stage6Four {// Travis responde a chang
 				Stage currentStage = (Stage) Didnt_see.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage71.fxml", "SecondStage");
 
-//				// Mostrar el nuevo Stage
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
 
@@ -64,11 +59,6 @@ public class Stage6Four {// Travis responde a chang
 				Stage currentStage = (Stage) Rlly_letsgo_ahead.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage65.fxml", "SecondStage");
 
-//				// Mostrar el nuevo Stage
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
 

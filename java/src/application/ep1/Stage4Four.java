@@ -33,7 +33,7 @@ public class Stage4Four {// travis continua su historia
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage4Four.aup3");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/travis03.ogg");
 		myButton.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
