@@ -35,8 +35,8 @@ public class Stage7One {// Chang habla antes de ver el cuerpo
 
 	@FXML
 	public void initialize() {
-//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage7One.aup3");
 		Continue.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage del episodio 2
