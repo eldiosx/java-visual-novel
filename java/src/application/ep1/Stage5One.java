@@ -31,7 +31,7 @@ public class Stage5One {// Helen
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage5One.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage5One.aup3");
 		myButton.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage

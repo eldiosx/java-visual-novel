@@ -30,7 +30,7 @@ public class Stage6Three {// Chang contesta a travis
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage6Three.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage6Three.aup3");
 		myButton.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
