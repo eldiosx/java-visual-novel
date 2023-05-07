@@ -29,8 +29,8 @@ public class Stage1Two {
 
 	@FXML
 	public void initialize() {
-		// backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		// voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
+		 backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+		 voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage1Two.aup3");
 		myButton.setOnAction(event -> {
 			try {
 //				// Crear un nuevo Stage

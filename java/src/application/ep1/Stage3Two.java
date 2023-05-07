@@ -32,8 +32,8 @@ public class Stage3Two {// marlene fin
 
 	@FXML
 	public void initialize() {
-//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage3Two.aup3");
 		myButton.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage

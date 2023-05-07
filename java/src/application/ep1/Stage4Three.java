@@ -29,8 +29,8 @@ public class Stage4Three {// travis se despide
 
 	@FXML
 	public void initialize() {
-//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/Stage4Three.aup3");
 		myButton.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
