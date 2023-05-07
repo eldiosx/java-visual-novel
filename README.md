@@ -12,8 +12,8 @@
 # MEDAC-1DAM group project
 - <h2>Members and credits: </h2>
 
-Adrian Márquez Ruiz - Designer<br>
-Aida Fernández Hormigo - Frontend<br>
+Adrian Márquez Ruiz - Frontend<br>
+Aida Fernández Hormigo - Designer<br>
 Daniel Delgado Jiménez - Backend & Sound<br>
 Nicolas Cano de Celis - Database<br>
 
