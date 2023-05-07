@@ -20,11 +20,12 @@ import javafx.util.Duration;
 import application.BackgroundMusic;
 
 public class Credits extends Application {
-
+	// Responsive (le queda algo)
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	static double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
 	static double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
+	int wait = 60000;
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 
 	@Override
@@ -43,46 +44,58 @@ public class Credits extends Application {
 					System.exit(0); // El cierratodo clasico
 				});
 			}
-		}, 35000); // 35 segundos en milisegundos
+		}, wait); // 60 segundos en milisegundos (1min) + lo que surja
 
 		// Crear el texto que se mostrará en los créditos y su estilo
-		Text creditsText = new Text("Hace muchos tiempo, en un MEDAC casi en Córdoba, un equipo de desarrolladores \n\n"
-				+ "empezaron un ambicioso proyecto. \n\n" + "Los disturbios rodean el MEDAC \n\n"
-				+ "Se esta planteando el cobro de impuestos al temario desactualizado \n\n"
-				+ "por parte de los miembros descontentos de la comunidad \n\n"
-				+ "y emigrar a sistemas solares con mejores prestaciones. \n\n" + "\n\n"
+		Text creditsText = new Text("Hace muchos tiempo, en un MEDAC casi en Córdoba, un equipo de desarrolladores\n\n"
+				+ "empezaron un ambicioso proyecto.\n\n\n" + "Los disturbios rodean el MEDAC\n\n"
+				+ "Se esta planteando el cobro de impuestos al temario desactualizado\n\n"
+				+ "por parte de los miembros descontentos de la comunidad\n\n"
+				+ "y emigrar a sistemas solares con mejores prestaciones.\n\n" + "\n\n"
 				+ "Esperando resolver el problema con un bloqueo \n\n" + "táctico a Yessi, la codiciosa, \n\n"
-				+ "la alianza rebelde se enfrenta a nuevos retos. \n\n" + "\n\n" + "\n\n" + "\n\n" + "\n\n"
+				+ "la alianza rebelde se enfrenta a nuevos retos. \n\n\n\n\n\n"
 				+ "Desarrollado por Kawaii Developers \n\n"
-				+ "Nico Cano, Daniel Delgado, Aida Fernández y Adri Márquez\n\n" + "\n\n" + "\n\n"
-				+ "Proyecto realizado usando:\n\n" + "Java \n\n" + "Java FX \n\n" + "Scene Builder \n\n" + "SQL \n\n"
-				+ "Audacity \n\n" + "Gimp \n\n" + "\n\n" + "\n\n" + "Desarrollo: \n\n"
-				+ "Database Manager: Nico Cano\n\n" + "Diseño: Aida Fernández\n\n"
-				+ "Frontend Manager: Adrián Marquez\n\n" + "Backend Manager: Daniel Delgado\n\n" + "\n\n" + "\n\n"
-				+ "Actores de voz: \n\n" + "John: Nico Cano \n\n" + "Marleene: Esther Argüelles\n\n"
+				+ "Nico Cano, Daniel Delgado, Aida Fernández y Adri Márquez\n\n\n\n\n\n"
+				+ "Proyecto realizado usando:\n\n" + "Java 17 + FX, jdx, jorbis (ogg), Sql y sql connector\n\n"
+				+ "Bellsoft Linux JDK\n\n" + "GLUON Scene Builder\n\n" + "DB Browser\n\n" + "Audacity\n\n" + "Gimp\n\n"
+				+ "Linux 6.1 (Workstation & Server)\n\n" + "XAMPP\n\n" + "Oracle Database & Workbench\n\n" + "\n\n"
+				+ "\n\n" + "Desarrollo: \n\n" + "Database Manager: Nico Cano\n\n" + "Diseño: Aida Fernández\n\n"
+				+ "Frontend Manager: Adrián Marquez\n\n" + "Backend & Sound Manager: Daniel Delgado\n\n" + "\n\n"
+				+ "\n\n" + "Actores de voz: \n\n" + "John: Nico Cano \n\n" + "Marleene: Esther Argüelles\n\n"
 				+ "Travis: Javier Naranjo\n\n" + "Helen: Aida Fernández\n\n" + "Chan: Adri Marquez \n\n"
 				+ "Sr Watson: Daniel Delgado \n\n" + "\n\n" + "\n\n" + "Agradecimientos especiales \n\n"
 				+ "Javier naranjo y Esther Argüelles por trabajar a cambio de un vinito \n\n"
-				+ "Juan García y Antonio Ruiz por sus consejos y paciencia \n\n" + "\n\n" + "\n\n" + "\n\n "
-				+ "Repositorio de Github: \n\n" + "https://github.com/eldiosx/java-visual-novel \n\n \n\n"
-				+ "         FIN <3\n\n\n\n");
-		creditsText.setFont(new Font("Arial", responsive / 4));
+				+ "Juan García y Antonio Ruiz por sus consejos y paciencia <3\n\n" + "\n\n" + "\n\n" + "\n\n "
+				+ "Repositorio de Github: \n\n" + "https://github.com/eldiosx/java-visual-novel \n\n\n\n\n\n"
+				+ "FIN :D\n\n\n\n");
+		creditsText.setFont(new Font("Arial", responsive / 3));
 		creditsText.setFill(Color.WHITE);
-		creditsText.setX(500);
+		creditsText.setStyle("-fx-text-alignment: center;"); // Centrar
 		creditsText.setY(1000);
+		// Obtener el ancho del texto
+		double textWidth = creditsText.getLayoutBounds().getWidth();
+
+		// Calcular la posición x del texto en función del ancho del texto y del ancho
+		// de la escena
+		double textX = (screenWidth - textWidth) / 2;
+
+		// Establecer la posición x del texto
+		creditsText.setX(textX);
 
 		// Crear el grupo de nodos que contendrá el texto
 		Group creditsGroup = new Group(creditsText);
 
 		// Crear la animación de movimiento para los créditos
 		TranslateTransition creditsAnimation = new TranslateTransition();
-		creditsAnimation.setDuration(Duration.seconds(30));
+		creditsAnimation.setDuration(Duration.seconds(55));
 		creditsAnimation.setNode(creditsGroup);
 		creditsAnimation.setToY(-10000);
 
 		// Crear la escena
 		Scene scene = new Scene(creditsGroup, 1000, 1000, Color.BLACK);
+		// Esto hará que se pause un poco bastante al clickar con el ratón
 		scene.setOnMouseClicked(event -> {
+			wait = wait + 5000; // esto añadira un ratilloh más cada vez que se pause
 			creditsAnimation.stop();
 			creditsAnimation.setToY(-10000);
 			creditsAnimation.play();

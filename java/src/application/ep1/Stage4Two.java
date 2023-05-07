@@ -30,7 +30,7 @@ public class Stage4Two {// travis --> interviene marlene y se va
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-		voiceBox.playAudio(RESOURCES_PATH + "/audio/marlene.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/marlene04.ogg");
 		myButton.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
