@@ -33,7 +33,7 @@ public class Stage3 {
 	@FXML
 	public void initialize() {
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/happyForest.ogg");
-		// voiceBox.playAudio(RESOURCES_PATH + "");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon02.ogg");
 
 		Continue.setOnAction(event -> {
 			try {
