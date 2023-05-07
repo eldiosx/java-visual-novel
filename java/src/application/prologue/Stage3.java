@@ -1,5 +1,7 @@
 package application.prologue;
 
+import java.io.File;
+
 import application.BackgroundMusic;
 import application.VoiceBox;
 import application.ep1.MainEp1;
@@ -13,7 +15,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Stage3 {
-	// private static final String RESOURCES_PATH = new File("").getAbsolutePath();
+	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
@@ -30,8 +32,7 @@ public class Stage3 {
 
 	@FXML
 	public void initialize() {
-		// backgroundMusic.playAudio(RESOURCES_PATH + "");//insertar pista de audio
-		// inicio prologo
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/happyForest.ogg");
 		// voiceBox.playAudio(RESOURCES_PATH + "");
 
 		Continue.setOnAction(event -> {
