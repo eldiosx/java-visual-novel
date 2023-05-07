@@ -37,6 +37,28 @@ The implementation of the project has been carried out in Java and Java FX with 
 We started the project with the tools taught in class, and given their limitations, we decided to carry out the project integrating Java FX. Also at first we designed a class diagram, which in the end has been discarded due to the specific needs of the project, that each Stage needs to be its own class, plus the Main of cd package, which integrates these different classes.
 <h3>Database: </h3>
 In the initial project, a database is proposed that stores the saved games, the images generated for each scene and, finally, the sound tables, a table for the dialogues in which the recorded dialogues and the generic tracks of Audio.
+<h3>Sound: </h3>
+
+Support for .ogg audio at the best quality and fluidity without making the files too heavy.
+
+<b>Hardware:</b>
+
+RØDE NT1-A
+
+Focusrite Scarlett 2i2 3rd Gen
+
+HyperX HX-HSCF-BK Cloud Flight
+
+Steam Deck
+
+<b>Software:</b>
+
+Linux 6.1
+
+Audacity
+
+![hardware](https://user-images.githubusercontent.com/61506276/236693338-47edaa11-e0a7-4614-b388-fde32836452d.png)
+
 
 - <h2>How to edit: </h2>
 
