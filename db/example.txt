@@ -1,5 +1,5 @@
  
-	// A partir de aquí son pruebas de SQL, no borrar
+	// Como incorporar la base de datos al juego
 	public class Controlador implements Initializable {
 
 		// Instanciamos la clase ConexionMySQL
