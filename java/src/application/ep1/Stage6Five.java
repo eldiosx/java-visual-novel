@@ -18,7 +18,7 @@ public class Stage6Five {// Travis responde a chang
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	private String text = "Esa puerta no deberia estar abierta";
+	private String text = "Esa puerta no deberia estar abierta...";
 	private Timeline timeline;
 
 	@FXML
@@ -29,8 +29,8 @@ public class Stage6Five {// Travis responde a chang
 
 	@FXML
 	public void initialize() {
-//		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
-//		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon03.ogg");
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/chan03.ogg");
 		Continue.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
