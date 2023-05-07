@@ -1,5 +1,7 @@
 package application.prologue;
 
+import java.io.File;
+
 import application.BackgroundMusic;
 import application.VoiceBox;
 import javafx.animation.KeyFrame;
@@ -12,7 +14,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Stage6 {
-	// private static final String RESOURCES_PATH = new File("").getAbsolutePath();
+	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
@@ -28,21 +30,22 @@ public class Stage6 {
 
 	@FXML
 	public void initialize() {
-		// backgroundMusic.playAudio(RESOURCES_PATH + "");//insertar pista de audio
-		// inicio prologo
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/nightForest.ogg");
 		// voiceBox.playAudio(RESOURCES_PATH + "");
 		Bien.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
+				Stage currentStage = MainPrologue.getCurrentStage();
 				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder7.fxml", "SecondStage");
+
 
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
 
 				// Ocultar el Stage principal
-				MainPrologue.hideStage(MainPrologue.getCurrentStage());
+				currentStage.hide();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -52,12 +55,14 @@ public class Stage6 {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
+				Stage currentStage = MainPrologue.getCurrentStage();
 				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder7.fxml", "SecondStage");
-				// Ocultar el Stage principal
-				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
+
 
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
+				// Ocultar el Stage principal
+				currentStage.hide();
 
 			} catch (Exception e) {
 				e.printStackTrace();

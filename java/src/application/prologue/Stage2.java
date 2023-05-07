@@ -1,5 +1,7 @@
 package application.prologue;
 
+import java.io.File;
+
 import application.BackgroundMusic;
 import application.VoiceBox;
 import javafx.animation.KeyFrame;
@@ -12,7 +14,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Stage2 {
-	// private static final String RESOURCES_PATH = new File("").getAbsolutePath();
+	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
@@ -29,9 +31,8 @@ public class Stage2 {
 
 	@FXML
 	public void initialize() {
-		// backgroundMusic.playAudio(RESOURCES_PATH + "");//insertar pista de audio
-		// inicio prologo
-		// voiceBox.playAudio(RESOURCES_PATH + "");
+		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon01.ogg");
+		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/happyForest.ogg");
 		Bien.setOnAction(event -> {
 			try {
 				// Crear un nuevo Stage
@@ -40,6 +41,7 @@ public class Stage2 {
 				// Ocultar el Stage principal
 				MainPrologue.hideStage(MainPrologue.getCurrentStage());
 				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
+				
 
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
