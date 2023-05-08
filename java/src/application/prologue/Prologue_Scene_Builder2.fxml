@@ -47,6 +47,11 @@
                         <Font size="10.0" />
                      </font>
                   </Button>
+                  <Button fx:id="continueButton" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="143.0" stylesheets="@Prologue_Scene_Builder2.css" text="Continuar" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>                  
                </children>
             </GridPane>
             <GridPane styleClass="textPanel" stylesheets="@Prologue_Scene_Builder2.css" GridPane.rowIndex="3">

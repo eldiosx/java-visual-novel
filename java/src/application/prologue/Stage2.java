@@ -4,8 +4,11 @@ import java.io.File;
 
 import application.BackgroundMusic;
 import application.VoiceBox;
+import application.ep1.MainEp1;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -18,11 +21,16 @@ public class Stage2 {
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
+	MainEp1 mainEp1 = new MainEp1(); // Crea una instancia de la clase Main
+	Stage stage = new Stage();
 	private String text = "Hey, pensé que ya no llegabas. ¿Qué tal el viaje?";
+	private String text2 = "He hablado con Marleene para hacer una fogata esta noche y contar historias. Nos vemos esta noche";
 	private Timeline timeline;
 
 	@FXML
 	private Label dialogue;
+	@FXML
+	private Button continueButton;
 
 	@FXML
 	private Button Bien;
@@ -31,40 +39,56 @@ public class Stage2 {
 
 	@FXML
 	public void initialize() {
+		continueButton.setVisible(false);
 		voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon01.ogg");
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/happyForest.ogg");
-		Bien.setOnAction(event -> {
+//Envento que se iniciara cuando se cumpla una condicion y asi queda menos simio (aplicar en el futuro)
+		EventHandler<ActionEvent> buttonHandler = event -> {
 			try {
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
-				backgroundMusic.stopAudio();
-				// Ocultar el Stage principal
-				MainPrologue.hideStage(MainPrologue.getCurrentStage());
-				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
+				timeline.stop();
+				Mieh.setVisible(false);
+				Bien.setVisible(false);
+				continueButton.setVisible(true);
+				currentIndex = 0;
+				dialogue.setText("");
+				voiceBox.playAudio(RESOURCES_PATH + "/audio/jhon02.ogg");
 
-				// Mostrar el nuevo Stage
-				MainPrologue.showStage(stage);
+				dialogue.setFont(Font.font("Arial", 24));
+				timeline = new Timeline(new KeyFrame(Duration.seconds(0.05), event2 -> {
+					if (currentIndex > text2.length()) {
+						timeline.stop();
+					} else {
+						String currentText = text2.substring(0, currentIndex);
+						dialogue.setText(currentText);
+						currentIndex++;
+					}
+				}));
+				timeline.setCycleCount(Timeline.INDEFINITE);
+				timeline.play();
+
+				continueButton.setOnAction(event3 -> {
+					try {
+						// Crear un nuevo Stage
+						voiceBox.stopAudio();
+						backgroundMusic.stopAudio();
+						mainEp1.start(stage);// tiene que llevar al episodio 1
+
+						// Ocultar el Stage principal
+						MainPrologue.hideStage(MainPrologue.getCurrentStage());
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				});
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		});
-		Mieh.setOnAction(event -> {
-			try {
-				// Crear un nuevo Stage
-				voiceBox.stopAudio();
-				backgroundMusic.stopAudio();
-				// Ocultar el Stage principal
-				MainPrologue.hideStage(MainPrologue.getCurrentStage());
-				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder3.fxml", "SecondStage");
+		};
 
-				// Mostrar el nuevo Stage
-				MainPrologue.showStage(stage);
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		});
+		Bien.setOnAction(buttonHandler);
+		Mieh.setOnAction(buttonHandler);
 		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
 		// vaya al ritmo de las voces y ajustar dependiendo el idioma
 		dialogue.setFont(Font.font("Arial", 24));
