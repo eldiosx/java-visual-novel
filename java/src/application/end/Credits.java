@@ -44,6 +44,7 @@ public class Credits extends Application {
 			public void run() {
 				Platform.runLater(() -> {
 					// Cerrar la aplicación
+					//backgroundMusic.stopAudio();
 					Platform.exit(); // El cierratodo de JavaFX
 					System.exit(0); // El cierratodo clasico
 				});
