@@ -49,25 +49,27 @@ public class Stage2One {
 	@FXML // fx:id="suelo"
 	private Button floor; // Value injected by FXMLLoader
 	@FXML // fx:id="textocuerpo"
-	private Label textocuerpo; // Value injected by FXMLLoader
+	private Label bodytext; // Value injected by FXMLLoader
 
 	@FXML // fx:id="textomano"
-	private Label textomano; // Value injected by FXMLLoader
+	private Label handtext; // Value injected by FXMLLoader
 
 	@FXML // fx:id="textosala"
-	private Label textosala; // Value injected by FXMLLoader
+	private Label roomtext; // Value injected by FXMLLoader
 
 	@FXML // fx:id="textosangre"
-	private Label textosangre; // Value injected by FXMLLoader
+	private Label bloodtext; // Value injected by FXMLLoader
 
 	@FXML // fx:id="textosuelo"
-	private Label textosuelo; // Value injected by FXMLLoader
+	private Label floortext; // Value injected by FXMLLoader
 
 	int count = 0;
 	boolean isRunning = true;
 
 	@FXML
 	public void initialize() {
+		continueEnd.setDisable(true);
+
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/horrorHeartbeat.ogg");
 		// Evento boton continuar
 		continueEnd.setOnAction(event -> {
@@ -90,7 +92,7 @@ public class Stage2One {
 		floor.setOnAction(event -> {
 			try {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/rope.ogg");
-				textosuelo.setVisible(true);
+				floortext.setVisible(true);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -104,7 +106,7 @@ public class Stage2One {
 		room.setOnAction(event -> {
 			try {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/rope.ogg");
-				textosala.setVisible(true);
+				roomtext.setVisible(true);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -118,7 +120,7 @@ public class Stage2One {
 		hand.setOnAction(event -> {
 			try {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/rope.ogg");
-				textomano.setVisible(true);
+				handtext.setVisible(true);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -146,7 +148,7 @@ public class Stage2One {
 		blood.setOnAction(event -> {
 			try {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/rope.ogg");
-				textosangre.setVisible(true);
+				bloodtext.setVisible(true);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -160,7 +162,7 @@ public class Stage2One {
 		body.setOnAction(event -> {
 			try {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/rope.ogg");
-				textocuerpo.setVisible(true);
+				bodytext.setVisible(true);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -176,6 +178,8 @@ public class Stage2One {
 		for (Node node : body.getParent().getChildrenUnmodifiable()) {
 			if (node instanceof Button && !node.isDisabled()) { // si es un botón habilitado
 				((Button) node).setDisable(true); // lo desactivamos
+				continueEnd.setDisable(false); // Activamos el continueeee
+
 			}
 		}
 	}

@@ -58,7 +58,7 @@
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Button>
-               <Label id="textocuerpo" fx:id="textocuerpo" prefHeight="109.0" prefWidth="235.0" style="-fx-background-color: grey;" text="Se trata de Nancy. Es compañera de clase&#10;de Helen y Marleene. Se ha mudado desde &#10;Colorado este septiembre y ha causado un &#10;gran revuelo entre los chicos del instituto. " visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+               <Label id="bodytext" fx:id="bodytext" prefHeight="109.0" prefWidth="235.0" style="-fx-background-color: grey;" text="Se trata de Nancy. Es compañera de clase&#10;de Helen y Marleene. Se ha mudado desde &#10;Colorado este septiembre y ha causado un &#10;gran revuelo entre los chicos del instituto. " visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                <Button id="floor" fx:id="floor" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Investigar suelo" GridPane.columnIndex="1">
                   <cursor>
                      <Cursor fx:constant="HAND" />
@@ -79,11 +79,11 @@
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Button>
-               <Label id="textosuelo" fx:id="textosuelo" opacity="0.8" prefHeight="144.0" prefWidth="284.0" style="-fx-background-color: grey;" text="No se ven pisadas, y está completamente &#10;manchado de sangre, quien lo hizo ha sido &#10;bastante cuidadoso con no dejar rastro" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-               <Label id="textomano" fx:id="textomano" prefHeight="80.0" prefWidth="180.0" style="-fx-background-color: grey;" text="Hay muestras de forcejeo, &#10;tiene una de las uñas rotas, &#10;probablemente haya conseguido &#10;arañar a su agresor. " visible="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-               <Label id="textosangre" fx:id="textosangre" opacity="0.8" prefHeight="83.0" prefWidth="229.0" style="-fx-background-color: grey;" text="Hay mucha sangre, y el vestido &#10;está completamente manchado debido &#10;a las múltiples puñaladas que ha &#10;recibido la chica" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+               <Label id="floortext" fx:id="floortext" opacity="0.8" prefHeight="144.0" prefWidth="284.0" style="-fx-background-color: grey;" text="No se ven pisadas, y está completamente &#10;manchado de sangre, quien lo hizo ha sido &#10;bastante cuidadoso con no dejar rastro" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <Label id="handtext" fx:id="handtext" prefHeight="80.0" prefWidth="180.0" style="-fx-background-color: grey;" text="Hay muestras de forcejeo, &#10;tiene una de las uñas rotas, &#10;probablemente haya conseguido &#10;arañar a su agresor. " visible="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+               <Label id="bloodtext" fx:id="bloodtext" opacity="0.8" prefHeight="83.0" prefWidth="229.0" style="-fx-background-color: grey;" text="Hay mucha sangre, y el vestido &#10;está completamente manchado debido &#10;a las múltiples puñaladas que ha &#10;recibido la chica" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                <Label id="knifeText" fx:id="knifeText" opacity="0.8" prefHeight="57.0" prefWidth="200.0" style="-fx-background-color: grey;" text="Parece el arma homicida. Es uno&#10;de los cuchillos de la cocina del&#10;campamento, de eso no hay duda. " visible="false" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-               <Label id="textosala" fx:id="textosala" opacity="0.8" prefHeight="94.0" prefWidth="194.0" style="-fx-background-color: grey;" text="Es la  cabaña de las chicas. En ella &#10;duermen también Helen y &#10;Marleene... El director va a &#10;tener que reubicarlas después &#10;de esto" visible="false" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+               <Label id="roomtext" fx:id="roomtext" opacity="0.8" prefHeight="94.0" prefWidth="194.0" style="-fx-background-color: grey;" text="Es la  cabaña de las chicas. En ella &#10;duermen también Helen y &#10;Marleene... El director va a &#10;tener que reubicarlas después &#10;de esto" visible="false" GridPane.columnIndex="9" GridPane.rowIndex="1" />
             </children>
          </GridPane>
       		<Button id="continueEnd" fx:id="continueEnd" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage2.css" text="Continuar" GridPane.columnIndex="1" GridPane.rowIndex="3">

@@ -47,7 +47,7 @@
                <Button fx:id="John" mnemonicParsing="false" onAction="#initialize" prefHeight="45.0" prefWidth="130.0" text="John" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             </children>
          </GridPane>
-         <Button fx:id="Abandonar" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#initialize" prefHeight="44.0" prefWidth="232.0" stylesheets="@Stage0.css" text="Abandonar la hoguera" GridPane.rowIndex="3">
+         <Button fx:id="leaveButton" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#initialize" prefHeight="44.0" prefWidth="232.0" stylesheets="@Stage0.css" text="Abandonar la hoguera" GridPane.rowIndex="3">
             <GridPane.margin>
                <Insets left="800.0" />
             </GridPane.margin>

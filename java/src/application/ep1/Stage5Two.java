@@ -3,6 +3,7 @@ package application.ep1;
 import java.io.File;
 
 import application.BackgroundMusic;
+import application.SoundBox;
 import application.VoiceBox;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -16,7 +17,10 @@ import javafx.util.Duration;
 public class Stage5Two {// interacctua john
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	private VoiceBox voiceBox = new VoiceBox();
+	private SoundBox soundBox = new SoundBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
+	MainEp1 mainEp1 = new MainEp1(); // Crea una instancia de la clase Main Ep1
+	Stage stage = new Stage();
 	private int currentIndex = 0;
 	private String text = "Pues yo creo que era una aparición de alguien que se habría muerto en la carretera y nunca pudo llegar a casa… En fin… Deberíamos ir yéndonos a dormir, que se está haciendo tarde.";
 	private Timeline timeline;
@@ -56,19 +60,12 @@ public class Stage5Two {// interacctua john
 				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				Stage currentStage = (Stage) stay.getScene().getWindow();
-				Stage stage = MainEp1.createStage("Stage0.fxml", "SecondStage");
-
-//				// Mostrar el nuevo Stage
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
-				// Mostrar el nuevo Stage
-				MainEp1.showStage(stage);
-
-				// Ocultar el Stage actual
-				currentStage.hide(); // Agregar esta línea
+				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
+				backgroundMusic.stopAudio();
+				// Ocultar el Stage principal (EP1)
+				MainEp1.hideStage(MainEp1.getCurrentStage());
+				// Inicia los Créditos
+				mainEp1.start(stage);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
