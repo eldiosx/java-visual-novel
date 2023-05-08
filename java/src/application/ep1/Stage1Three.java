@@ -47,10 +47,10 @@ public class Stage1Three {
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) myButton.getScene().getWindow();
-				//Stage stage = MainEp1.createStage("Stage0.fxml", "SecondStage");
+				// Stage stage = MainEp1.createStage("Stage0.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
-				//MainEp1.showStage(stage);
+				// MainEp1.showStage(stage);
 
 				// Ocultar el Stage actual
 				currentStage.hide(); // Agregar esta línea

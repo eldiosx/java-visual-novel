@@ -168,7 +168,7 @@ public class Stage0One {
 		;
 
 	}
-	
+
 	private void disableRemainingButtons() {
 		for (Node node : Travis.getParent().getChildrenUnmodifiable()) {
 			if (node instanceof Button && !node.isDisabled()) { // si es un botón habilitado

@@ -46,11 +46,11 @@ public class Stage3Two {// marlene fin
 //				// Ocultar el Stage principal
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
 				// Mostrar el nuevo Stage
-				//MainEp1.showStage(stage);
+				// MainEp1.showStage(stage);
 
 				// Ocultar el Stage actual
 				currentStage.hide(); // Agregar esta línea
-				//Stage0One.fullscreen();
+				// Stage0One.fullscreen();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
