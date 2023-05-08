@@ -52,11 +52,10 @@ public class Credits extends Application {
 
 		// Crear el texto que se mostrará en los créditos y su estilo
 		Text creditsText = new Text("Hace muchos tiempo, en un MEDAC casi en Córdoba, un equipo de desarrolladores\n\n"
-				+ "empezaron un ambicioso proyecto.\n\n\n" + "Los disturbios rodean el MEDAC\n\n"
-				+ "Se esta planteando el cobro de impuestos al temario desactualizado\n\n"
-				+ "por parte de los miembros descontentos de la comunidad\n\n"
+				+ "empezaron un ambicioso proyecto.\n\n\n\n\n" + "Los disturbios rodean el planeta\n\n"
+				+ "Se esta planteando el cobro de impuestos al consumo de oxigeno\n\n"
 				+ "y emigrar a sistemas solares con mejores prestaciones.\n\n" + "\n\n"
-				+ "Esperando resolver el problema con un bloqueo \n\n" + "táctico a Yessi, la codiciosa, \n\n"
+				+ "Esperando resolver el problema con un bloqueo \n\n" + "táctico a Sanchez, el codicioso, \n\n"
 				+ "la alianza rebelde se enfrenta a nuevos retos. \n\n\n\n\n\n"
 				+ "Desarrollado por Kawaii Developers \n\n"
 				+ "Nico Cano, Daniel Delgado, Aida Fernández y Adri Márquez\n\n\n\n\n\n"
