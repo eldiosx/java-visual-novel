@@ -157,7 +157,8 @@ public class Stage0One {
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Helen.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage51.fxml", "SecondStage");
-//				// Mostrar el nuevo Stage, que es el de Helen
+				// Mostrar el nuevo Stage, que es el de Helen
+				MainEp1.showStage(stage);
 				// Ocultar el Stage actual
 				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {
