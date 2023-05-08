@@ -4,20 +4,22 @@ package application.end;
 import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
+
+//Local
+import application.BackgroundMusic;
 //JavaFX
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-//Local
-import application.BackgroundMusic;
 
 public class Credits extends Application {
 	// Responsive (le queda algo)
@@ -30,6 +32,8 @@ public class Credits extends Application {
 
 	@Override
 	public void start(Stage stage) {
+		// Icon
+		Image icon = new Image(new File(RESOURCES_PATH + "/icons/icon.png").toURI().toString());
 		// Audio de fondo
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/horrorBellaciao.ogg");
 
@@ -100,7 +104,6 @@ public class Credits extends Application {
 			creditsAnimation.setToY(-10000);
 			creditsAnimation.play();
 		});
-
 		// Mostrar la escena
 		stage.setScene(scene);
 		stage.setTitle("Tu videojuego favorito de serie B");
@@ -108,6 +111,7 @@ public class Credits extends Application {
 		stage.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
+		stage.getIcons().add(icon);
 		stage.show();
 
 		// Iniciar la animación

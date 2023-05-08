@@ -1,21 +1,26 @@
 package application.prologue;
 
+import java.io.File;
+
 import application.prologue.MainPrologue;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class MainPrologue extends Application {
 
+	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
 	static double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
 	static double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private static Stage stage1;
 	private static Stage currentStage;
+	static Image icon = new Image(new File(RESOURCES_PATH + "/icons/icon.png").toURI().toString());
 
 	@Override
 	public void start(Stage stage1) throws Exception {
@@ -29,6 +34,7 @@ public class MainPrologue extends Application {
 		stage1.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage1.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage1.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
+		stage1.getIcons().add(icon);
 		stage1.show();
 	}
 
@@ -43,13 +49,9 @@ public class MainPrologue extends Application {
 	}
 
 	public static void showStage(Stage stage) {
-		stage.setTitle("Tu videojuego favorito de serie B");
-		stage.setResizable(false); // Se puede redimensionar
-		stage.setFullScreen(true); // Abre la ventana en pantalla completa
-		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
-		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
-		stage.show();
 		MainPrologue.currentStage = stage;
+		stage.setTitle("Tu videojuego favorito de serie B");
+		stage.show();
 	}
 
 	public static Stage createStage(String fxmlFile, String title) throws Exception {
@@ -61,6 +63,7 @@ public class MainPrologue extends Application {
 		stage.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
+		stage.getIcons().add(icon);
 		MainPrologue.currentStage = stage;
 		return stage;
 	}

@@ -66,6 +66,7 @@ public class MainMenu extends Application {
 	Stage stage = new Stage();
 	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
 	private Font titleFont;
+
 	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
 	// "asincrona"
 	private SoundBox soundBox = new SoundBox();
@@ -74,12 +75,14 @@ public class MainMenu extends Application {
 	private Loader loader;
 	// Media:
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
+	private static final String ICON_URL = "file:" + RESOURCES_PATH + "/icons/icon.png";
 	private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/darkforest.gif";
 	private static final String NEW_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/NewGameButton.png";
 	private static final String LOAD_GAME_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/LoadButton.png";
 	private static final String SETTINGS_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/SettingsButton.png";
 	private static final String EXIT_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/QuitButton.png";
 	private static final String CLOSE_BUTTON_URL = "file:" + RESOURCES_PATH + "/icons/off/X.png";
+	Image icon = new Image(ICON_URL);
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -87,6 +90,7 @@ public class MainMenu extends Application {
 		// lanzarlo
 		loader = new Loader();
 		loader.setTitle("Loading... :D");
+		loader.getIcons().add(icon);
 		loader.show();
 
 		Task<Void> task = new Task<Void>() {
@@ -450,6 +454,7 @@ public class MainMenu extends Application {
 		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
 		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
+		primaryStage.getIcons().add(icon); // Er iconoh
 
 		// Evento para cuando el ratón entra en el ImageView & Evento para cuando el
 		// ratón sale del ImageView

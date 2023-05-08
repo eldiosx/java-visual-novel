@@ -37,7 +37,7 @@ public class Stage7One {// Chang habla antes de ver el cuerpo
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/firecamp.ogg");
 		voiceBox.playAudio(RESOURCES_PATH + "/audio/chan03.ogg");
 		Continue.setOnAction(event -> {
-			//Arreglar final alternativo
+			// Arreglar final alternativo
 //			try {
 //				voiceBox.stopAudio();
 //				backgroundMusic.stopAudio();

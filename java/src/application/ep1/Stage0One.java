@@ -45,6 +45,7 @@ public class Stage0One {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
+
 				Stage currentStage = (Stage) John.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage1.fxml", "SecondStage");
 				// Mostrar el nuevo Stage
@@ -69,12 +70,7 @@ public class Stage0One {
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Marleene.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage31.fxml", "SecondStage");
-//				// Mostrar el nuevo Stage, que es el de Marleene
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
-				// Mostrar el nuevo Stage
+
 				MainEp1.showStage(stage);
 
 				// Ocultar el Stage actual
@@ -96,12 +92,6 @@ public class Stage0One {
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Helen.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage51.fxml", "SecondStage");
-//				// Mostrar el nuevo Stage, que es el de Helen
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
-				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
 
 				// Ocultar el Stage actual
@@ -123,11 +113,6 @@ public class Stage0One {
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Chan.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage61.fxml", "SecondStage");
-//				// Mostrar el nuevo Stage, que es el de Chan
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
 				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
 
@@ -150,12 +135,8 @@ public class Stage0One {
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Travis.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage41.fxml", "SecondStage");
-//				// Mostrar el nuevo Stage, que es el de Travis
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
-				// Mostrar el nuevo Stage
+				// Mostrar el nuevo Stage, que es el de Travis
+
 				MainEp1.showStage(stage);
 
 				// Ocultar el Stage actual
@@ -177,13 +158,6 @@ public class Stage0One {
 				Stage currentStage = (Stage) Helen.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage51.fxml", "SecondStage");
 //				// Mostrar el nuevo Stage, que es el de Helen
-//				MainEp1.showStage(stage);
-//
-//				// Ocultar el Stage principal
-//				MainEp1.hideStage(MainEp1.getPrimaryStage());
-				// Mostrar el nuevo Stage
-				MainEp1.showStage(stage);
-
 				// Ocultar el Stage actual
 				currentStage.hide(); // Agregar esta línea
 			} catch (Exception e) {

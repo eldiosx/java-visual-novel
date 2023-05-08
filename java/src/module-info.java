@@ -1,4 +1,4 @@
- module java {
+module java {
 	requires transitive javafx.controls; // UI Controls
 	requires transitive javafx.media; // APIs for audio
 	requires transitive gdx; // API GDX for mediaplayer .ogg

@@ -17,7 +17,7 @@ public class Stage2One {
 
 	// Instanciamos la pantalla de creditos
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
-	//private VoiceBox voiceBox = new VoiceBox();
+	// private VoiceBox voiceBox = new VoiceBox();
 	private SoundBox soundBox = new SoundBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	Credits credits = new Credits(); // Crea una instancia de la clase Credits
