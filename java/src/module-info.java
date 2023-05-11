@@ -22,8 +22,6 @@ module java {
 	exports application.end to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a los modulos a end
 
 	// TEST
-	// opens trash to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los
-	// modulos RAW
-	// exports trash to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a
-	// los modulos RAW
+	opens test to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos RAW
+	exports test to javafx.graphics, javafx.fxml, jdx; // Exportar el paquete a  los modulos RAW
 }
