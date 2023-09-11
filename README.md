@@ -9,7 +9,7 @@
 
 </div>
 
-# MEDAC-1DAM group project
+# Team project
 - <h2>Members and credits: </h2>
 
 Adrian Márquez Ruiz - Frontend<br>
