@@ -82,6 +82,7 @@ Import all .jar on "lib" folder, you need add your JavaFX libraries or a Full Ja
 
 You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configure settings.json similar like this:
 
+
     {
         "terminal.integrated.defaultProfile.linux": "bash",
         "terminal.integrated.profiles.linux": {
@@ -106,6 +107,7 @@ You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configu
         "redhat.telemetry.enabled": true,
         "vsintellicode.modelDownloadPath": ""
     }
+
 
 
 The folder to open is "java" and it will take all routes and libs automatic.
