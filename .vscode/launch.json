@@ -1,0 +1,63 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "MainMenu",
+            "request": "launch",
+            "mainClass": "java/application.MainMenu",
+            "projectName": "java"
+        },
+        {
+            "type": "java",
+            "name": "Credits",
+            "request": "launch",
+            "mainClass": "java/application.end.Credits",
+            "projectName": "java"
+        },
+        {
+            "type": "java",
+            "name": "MainEp1",
+            "request": "launch",
+            "mainClass": "java/application.ep1.MainEp1",
+            "projectName": "java"
+        },
+        {
+            "type": "java",
+            "name": "Ep2",
+            "request": "launch",
+            "mainClass": "java/application.ep2.Ep2",
+            "projectName": "java"
+        },
+        {
+            "type": "java",
+            "name": "MainPrologue",
+            "request": "launch",
+            "mainClass": "java/application.prologue.MainPrologue",
+            "projectName": "java"
+        },
+        {
+            "type": "java",
+            "name": "Laberinto",
+            "request": "launch",
+            "mainClass": "java/test.Laberinto",
+            "projectName": "java"
+        },
+        {
+            "type": "java",
+            "name": "MoveWithMouse",
+            "request": "launch",
+            "mainClass": "java/test.MoveWithMouse",
+            "projectName": "java"
+        }
+    ]
+}
