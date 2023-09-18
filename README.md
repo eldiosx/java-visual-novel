@@ -64,6 +64,10 @@ First we need a JavaFX, the easiest way is: https://bell-sw.com/pages/downloads/
 
 <h3>For Eclipse (flatpak compatible): </h3>
 
+This Step is only for FlatPpk Version to run sounds:
+
+![Alt text](img/onlyflatpak.png)
+
 The WorkSpace is "java-visual-novel" and the folder to import proyect is the folder "java"
 
 Choose Java 20 on Eclipse

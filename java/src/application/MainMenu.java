@@ -88,7 +88,7 @@ public class MainMenu extends Application {
 		// PANTALLA DE CARGA para que todo carge primero y a la misma vez y luego
 		// lanzarlo
 		loader = new Loader();
-		loader.setTitle("Loading... :D");
+		loader.setTitle("Loading...");
 		loader.getIcons().add(icon);
 		loader.show();
 
