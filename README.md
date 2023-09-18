@@ -64,7 +64,7 @@ First we need a JavaFX, the easiest way is: https://bell-sw.com/pages/downloads/
 
 <h3>For Eclipse (flatpak compatible): </h3>
 
-This Step is only for FlatPpk Version to run sounds:
+This Step is only for Flatpak Version to run sounds:
 
 ![Alt text](img/onlyflatpak.png)
 
