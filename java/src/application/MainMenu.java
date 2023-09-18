@@ -54,8 +54,7 @@ import application.ep1.MainEp1;
 
 public class MainMenu extends Application {
 //assets/audio/lullabyX.ogg
-	// Crear instancia de la clase ConexionMySQL
-	ConexionMySQL conexion = new ConexionMySQL("root", "Medac1234", "videojuego serie b");
+
 
 	ClassLoader classLoader = getClass().getClassLoader();
 	// Obtener el tamaño de la pantalla

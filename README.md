@@ -68,11 +68,11 @@ The WorkSpace is "java-visual-novel" and the folder to import proyect is the fol
 
 Choose Java 20 on Eclipse
 
-
+![Alt text](img/JAVA20.png)
 
 Import all .jar on "lib" folder, you need add your JavaFX libraries or a Full Java JDK in the jre installed and module-path:
 
-![image](https://user-images.githubusercontent.com/61506276/233185217-d8b17a4c-79ce-4f57-8b03-67e014377e9b.png)
+![Alt text](img/libs.png>)
 
 <h3>For VsCode/ VsCodium (flatpak compatible): </h3>
 
