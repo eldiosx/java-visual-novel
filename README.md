@@ -72,7 +72,7 @@ Choose Java 20 on Eclipse
 
 Import all .jar on "lib" folder, you need add your JavaFX libraries or a Full Java JDK in the jre installed and module-path:
 
-![Alt text](img/libs.png>)
+![Alt text](img/libs.png)
 
 <h3>For VsCode/ VsCodium (flatpak compatible): </h3>
 
