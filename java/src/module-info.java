@@ -7,7 +7,6 @@ module java {
 	requires transitive javafx.graphics; // CSS
 	requires transitive java.sql; // SQL
 	requires transitive java.desktop; // AWT and Swing
-	requires transitive mysql.connector.j; // MySQL
 
 	opens application to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos a la raiz
 	opens application.prologue to javafx.graphics, javafx.fxml, jdx; // Abrir el paquete a los modulos a prologue
