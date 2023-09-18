@@ -9,13 +9,11 @@
 
 </div>
 
-# Team project
 - <h2>Members and credits: </h2>
 
-Adrian Márquez Ruiz - Frontend<br>
-Aida Fernández Hormigo - Designer<br>
-Daniel Delgado Jiménez - Backend & Sound<br>
-Nicolas Cano de Celis - Database<br>
+Daniel Delgado Jiménez - Team Leader<br>
+Adrian Márquez Ruiz - Backend<br>
+Aida Fernández Hormigo - Frontend<br>
 
 **GNU License**
 Copyright (c) 2023 [LICENSE](https://github.com/eldiosx/novelaGraficaJava/blob/main/LICENSE).
