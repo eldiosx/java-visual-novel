@@ -64,11 +64,11 @@ First we need a JavaFX, the easiest way is: https://bell-sw.com/pages/downloads/
 
 <h3>For Eclipse (flatpak compatible): </h3>
 
-Open Lib folder and import all .jar like this, you need add your JavaFX libraries or a Full Java JDK in the jre installed and module-path:
+The WorkSpace is "java-visual-novel" and the folder to import proyect is the folder "java"
+
+Import all .jar on "lib" folder, you need add your JavaFX libraries or a Full Java JDK in the jre installed and module-path:
 
 ![image](https://user-images.githubusercontent.com/61506276/233185217-d8b17a4c-79ce-4f57-8b03-67e014377e9b.png)
-
-The WorkSpace is "java-visual-novel" and the folder proyect is "java"
 
 <h3>For VsCode/ VsCodium (flatpak compatible): </h3>
 
