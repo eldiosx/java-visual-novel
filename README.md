@@ -80,32 +80,8 @@ Import all .jar on "lib" folder, you need add your JavaFX libraries or a Full Ja
 
 <h3>For VsCode/ VsCodium (flatpak compatible): </h3>
 
-You will need Extension Pack for Java and condigure settings.json similar like this:
+You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configure settings.json similar like this:
 
-{
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "terminal.integrated.profiles.linux": {
-        "bash": {
-            "path": "/usr/bin/flatpak-spawn",
-            "args": [
-                "--host",
-                "--env=TERM=xterm-256color",
-                "bash"
-            ],
-            "icon": "terminal-bash",
-            "overrideName": true
-        }
-    },
-    "java.jdt.ls.java.home": "/var/home/eldiosx/jdk/jdk-20.0.2-full",
-    "java.compile.nullAnalysis.nonnull": [
-        "javax.annotation.Nonnull",
-        "org.eclipse.jdt.annotation.NonNull",
-        "org.springframework.lang.NonNull"
-    ],
-    "security.workspace.trust.untrustedFiles": "open",
-    "redhat.telemetry.enabled": true,
-    "vsintellicode.modelDownloadPath": ""
-}
 
 The folder to open is "java" and it will take all routes and libs automatic.
 
