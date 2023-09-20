@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="1140.0" styleClass="background" stylesheets="@Prologue_Scene_Builder1.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.prologue.Stage1">
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="1140.0" styleClass="background" stylesheets="@Prologue_Scene_Builder1.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.prologue.Stage1">
    <children>
       <GridPane prefHeight="400.0" prefWidth="600.0" styleClass="grid" stylesheets="@Prologue_Scene_Builder1.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>
@@ -37,12 +37,22 @@
               </rowConstraints>
                <children>
                   <Label alignment="BASELINE_LEFT" styleClass="name" stylesheets="@Prologue_Scene_Builder1.css" text="Sr Watson" textAlignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="myButton" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="143.0" stylesheets="@Prologue_Scene_Builder1.css" text="Ir a la cabaña" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="cabin" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="143.0" stylesheets="@Prologue_Scene_Builder1.css" text="Ir a la cabaña" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Button>
-                  <Button fx:id="myButton2" alignment="BASELINE_RIGHT" mnemonicParsing="false" stylesheets="@Prologue_Scene_Builder1.css" text="Explorar &#10;campamento" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button fx:id="mirarIzquierda" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="167.0" stylesheets="@Prologue_Scene_Builder4.css" text="Mirar Izquierda " GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="explore" alignment="BASELINE_RIGHT" mnemonicParsing="false" stylesheets="@Prologue_Scene_Builder1.css" text="Explorar &#10;campamento" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="mirarDerecha" alignment="CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="167.0" stylesheets="@Prologue_Scene_Builder4.css" text="Mirar Derecha " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="10.0" />
                      </font>

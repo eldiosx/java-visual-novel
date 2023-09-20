@@ -1,7 +1,14 @@
  .background {
-    	-fx-background-color: black;
-    -fx-background-image: url("../../../assets/images/prologue/StaffForest.png"); //recordar modificar en el runable
-    -fx-background-size: 100% 100%; //Usar cover si no quereis que se distorsione pero se recortará.
+    -fx-background-color: black;
+    -fx-background-image: url("../../../assets/images/prologue/StaffForest.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center;
+}
+
+. background2 {
+    -fx-background-color: black;
+    -fx-background-image: url("../../../assets/images/prologue/Cabins.jpg");
+    -fx-background-size: 100% 100%;
     -fx-background-position: center;
 }
 

@@ -5,12 +5,15 @@ import application.BackgroundMusic;
 import application.VoiceBox;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.layout.AnchorPane;
 
 public class Stage1 {
 	private static final String RESOURCES_PATH = new File("assets").getAbsolutePath();
@@ -19,20 +22,30 @@ public class Stage1 {
 	private int currentIndex = 0;
 	private String text = "Hola soy Watson. Bienvenido al campamento, The Otter. Espero que estés preparado para dos semanas de diversión. Tus compañeros ya están ubicados en sus cabañas, la tuya es la número 7 puedes ir acomodandote si quieres...";
 	private Timeline timeline;
-
+	
+	@FXML
+	private AnchorPane background;
 	@FXML
 	private Label dialogue;
 
 	@FXML
-	private Button myButton;
+	private Button cabin;
 	@FXML
-	private Button myButton2;
+	private Button explore;
+
+	@FXML
+	private Button mirarDerecha;
+	@FXML
+	private Button mirarIzquierda;
 
 	@FXML
 	public void initialize() {
+		mirarDerecha.setVisible(false);
+		mirarIzquierda.setVisible(false);
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/happyForest.ogg");
 		voiceBox.playAudio(RESOURCES_PATH + "/audio/staff.ogg");
-		myButton.setOnAction(event -> {
+
+		EventHandler<ActionEvent> buttonHandler1 = event -> {
 			try {
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
@@ -48,24 +61,55 @@ public class Stage1 {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		});
-		myButton2.setOnAction(event -> {
-			try {
-				voiceBox.stopAudio();
-				backgroundMusic.stopAudio();
-//				// Crear un nuevo Stage
-				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder4.fxml", "SecondStage");
+		};
+		EventHandler<ActionEvent> buttonHandler2 = event -> {
+			voiceBox.stopAudio();
+			timeline.stop();
+			background.getStyleClass().removeAll("background");
+			background.getStyleClass().add("background2");
+			cabin.setVisible(false);
+			explore.setVisible(false);
+			mirarDerecha.setVisible(true);
+			mirarIzquierda.setVisible(true);
+			currentIndex = 0;
+			dialogue.setText("");
+			mirarDerecha.setOnAction(event1 -> {
+				try {
+					// Crear un nuevo Stage
+					voiceBox.stopAudio();
+					backgroundMusic.stopAudio();
+					Stage currentStage = MainPrologue.getCurrentStage();
+					Stage stage = MainPrologue.createStage("Prologue_Scene_Builder5.fxml", "Stage5");
 
-				// Mostrar el nuevo Stage
-				MainPrologue.showStage(stage);
+					// Mostrar el nuevo Stage
+					MainPrologue.showStage(stage);
+					// Ocultar el Stage principal
+					currentStage.hide();
 
-//				// Ocultar el Stage principal
-				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("aqui no entra");
-			}
-		});
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			});
+			mirarIzquierda.setOnAction(event2 -> {
+				try {
+					// Crear un nuevo Stage
+					voiceBox.stopAudio();
+					backgroundMusic.stopAudio();
+					Stage currentStage = MainPrologue.getCurrentStage();
+					Stage stage = MainPrologue.createStage("Prologue_Scene_Builder6.fxml", "Stage6");
+
+					// Ocultar el Stage principal
+					currentStage.hide();
+					// Mostrar el nuevo Stage
+					MainPrologue.showStage(stage);
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			});
+		};
+		cabin.setOnAction(buttonHandler1);
+		explore.setOnAction(buttonHandler2);
 		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
 		// vaya al ritmo de las voces y ajustar dependiendo el idioma
 		dialogue.setFont(Font.font("Arial", 24));
