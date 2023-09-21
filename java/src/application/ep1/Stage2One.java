@@ -25,43 +25,43 @@ public class Stage2One {
 
 	Stage stage = new Stage();
 
-	@FXML // fx:id="cuerpo"
-	private Button body; // Value injected by FXMLLoader
-
-	@FXML // fx:id="mano"
-	private Button hand; // Value injected by FXMLLoader
+	@FXML
+	private Button body;
 
 	@FXML
-	private Button continueEnd; // Value injected by FXMLLoader
+	private Button hand; 
 
 	@FXML
-	private Button knife; // Value injected by FXMLLoader
+	private Button continueEnd; 
 
 	@FXML
-	private Label knifeText; // Value injected by FXMLLoader
+	private Button knife; 
 
-	@FXML // fx:id="sala"
-	private Button room; // Value injected by FXMLLoader
+	@FXML
+	private Label knifeText; 
 
-	@FXML // fx:id="sangre"
-	private Button blood; // Value injected by FXMLLoader
+	@FXML
+	private Button room; 
 
-	@FXML // fx:id="suelo"
-	private Button floor; // Value injected by FXMLLoader
-	@FXML // fx:id="textocuerpo"
-	private Label bodytext; // Value injected by FXMLLoader
+	@FXML
+	private Button blood; 
 
-	@FXML // fx:id="textomano"
-	private Label handtext; // Value injected by FXMLLoader
+	@FXML
+	private Button floor; 
+	@FXML
+	private Label bodytext; 
 
-	@FXML // fx:id="textosala"
-	private Label roomtext; // Value injected by FXMLLoader
+	@FXML
+	private Label handtext; 
 
-	@FXML // fx:id="textosangre"
-	private Label bloodtext; // Value injected by FXMLLoader
+	@FXML
+	private Label roomtext; 
 
-	@FXML // fx:id="textosuelo"
-	private Label floortext; // Value injected by FXMLLoader
+	@FXML
+	private Label bloodtext; 
+
+	@FXML
+	private Label floortext; 
 
 	int count = 0;
 	boolean isRunning = true;
@@ -71,15 +71,11 @@ public class Stage2One {
 		continueEnd.setDisable(true);
 
 		backgroundMusic.playAudio(RESOURCES_PATH + "/audio/horrorHeartbeat.ogg");
-		// Evento boton continuar
 		continueEnd.setOnAction(event -> {
-			// Asi podemos crear escenas que nos de la gana, util sobre todo para el LOAD
 			try {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				backgroundMusic.stopAudio();
-				// Ocultar el Stage principal (EP1)
 				MainEp1.hideStage(MainEp1.getCurrentStage());
-				// Inicia los Créditos
 				credits.start(stage);
 
 			} catch (Exception e) {

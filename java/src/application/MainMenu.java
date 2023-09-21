@@ -53,8 +53,7 @@ import application.prologue.MainPrologue;
 import application.ep1.MainEp1;
 
 public class MainMenu extends Application {
-//assets/audio/lullabyX.ogg
-
+	// assets/audio/lullabyX.ogg
 
 	ClassLoader classLoader = getClass().getClassLoader();
 	// Obtener el tamaño de la pantalla
@@ -149,24 +148,24 @@ public class MainMenu extends Application {
 				// Crear un nuevo Stage
 				mainPrologue.start(stage);
 
-				// Ocultar el Stage principal
 				primaryStage.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-//			// Abrir otra escena .XFML
-//			FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue/Prologue1.fxml"));
-//			Parent root = null;
-//			try {
-//				root = loader.load();
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//			Scene scene = new Scene(root);
-//			Stage newStage = new Stage();
-//			newStage.setScene(scene);
-//			newStage.show();
+			// // Abrir otra escena .XFML
+			// FXMLLoader loader = new
+			// FXMLLoader(getClass().getResource("Prologue/Prologue1.fxml"));
+			// Parent root = null;
+			// try {
+			// root = loader.load();
+			// } catch (IOException e) {
+			// e.printStackTrace();
+			// }
+			// Scene scene = new Scene(root);
+			// Stage newStage = new Stage();
+			// newStage.setScene(scene);
+			// newStage.show();
 		});
 		topButtonsBox.getChildren().add(newGameButtonImageView);
 
@@ -212,8 +211,6 @@ public class MainMenu extends Application {
 				try {
 					// Crear un nuevo Stage
 					mainEp1.start(stage);
-
-					// Ocultar el Stage principal
 					primaryStage.close();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -229,32 +226,33 @@ public class MainMenu extends Application {
 			slot2Button.setOnAction(event2 -> {
 
 				// Por ahora desactivado
-//				try {
-//					conexion.conectar();
-//					// String cargarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2) VALUES
-//					// ('Prologue', 'Ep1')";
-//					String selectPartidas = "SELECT * FROM partidas_guardadas;";
-//					conexion.ejecutarSelect(selectPartidas);
-//					ResultSet datos = conexion.ejecutarSelect(selectPartidas);
-//
-//					while (datos.next()) {
-//						String partidaGuardada1 = datos.getString("slot1");
-//						String partidaGuardada2 = datos.getString("slot2");
-//						String partidaGuardada3 = datos.getString("slot3");
-//						System.out.println(partidaGuardada1);
-//						System.out.println(partidaGuardada2);
-//						System.out.println(partidaGuardada3);
-//
-//					}
-//				} catch (SQLException e2) {
-//					e2.printStackTrace();
-//				} finally {
-//					try {
-//						conexion.desconectar();
-//					} catch (SQLException e2) {
-//						e2.printStackTrace();
-//					}
-//				}
+				// try {
+				// conexion.conectar();
+				// // String cargarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2)
+				// VALUES
+				// // ('Prologue', 'Ep1')";
+				// String selectPartidas = "SELECT * FROM partidas_guardadas;";
+				// conexion.ejecutarSelect(selectPartidas);
+				// ResultSet datos = conexion.ejecutarSelect(selectPartidas);
+				//
+				// while (datos.next()) {
+				// String partidaGuardada1 = datos.getString("slot1");
+				// String partidaGuardada2 = datos.getString("slot2");
+				// String partidaGuardada3 = datos.getString("slot3");
+				// System.out.println(partidaGuardada1);
+				// System.out.println(partidaGuardada2);
+				// System.out.println(partidaGuardada3);
+				//
+				// }
+				// } catch (SQLException e2) {
+				// e2.printStackTrace();
+				// } finally {
+				// try {
+				// conexion.desconectar();
+				// } catch (SQLException e2) {
+				// e2.printStackTrace();
+				// }
+				// }
 			});
 
 			Label slot3Label = new Label("Slot 3: ");

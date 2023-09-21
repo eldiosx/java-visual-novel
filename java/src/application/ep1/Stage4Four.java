@@ -51,8 +51,7 @@ public class Stage4Four {// travis continua su historia
 				e.printStackTrace();
 			}
 		});
-		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
-		// vaya al ritmo de las voces y ajustar dependiendo el idioma
+
 		dialogue.setFont(Font.font("Arial", 24));
 		timeline = new Timeline(new KeyFrame(Duration.seconds(0.05), event -> {
 			if (currentIndex > text.length()) {

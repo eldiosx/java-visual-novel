@@ -1,7 +1,7 @@
  .background {
     	-fx-background-color: black;
-    -fx-background-image: url("../../../assets/images/ep1/MarleeneCampfire.png"); //recordar modificar en el runable
-    -fx-background-size: 100% 100%; //Usar cover si no quereis que se distorsione pero se recortará.
+    -fx-background-image: url("../../../assets/images/ep1/MarleeneCampfire.png"); 
+    -fx-background-size: 100% 100%; 
     -fx-background-position: center;
 }
 
@@ -35,7 +35,7 @@
     -fx-text-fill: white;
      -fx-box-sizing: border-box;
      -fx-wrap-text: true;
-    //-fx-font-size: 20px;
+    
     -fx-padding: 10px 10px 10px 10px;
     -fx-overflow-y: hidden;
     -fx-overflow-x: hidden;

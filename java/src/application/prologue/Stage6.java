@@ -20,6 +20,8 @@ public class Stage6 {
 	private int currentIndex = 0;
 	private Timeline timeline = new Timeline(); // initialize the timeline variable
 	private String text = "¡Hey! Se me ha hecho eterno no verte, y eso que sólo ha pasado un mes desde que nos dieron las vacaciones de verano. ¿cómo estas?";
+	private String text2 = "¿Descansar? Eso es para los viejos, esta noche hay hoguera y vamos a contar historias, hasta Helen se ha animado a venir	"
+	+ "Te veo esta noche entonces";
 	@FXML
 	private Label dialogue;
 
@@ -34,16 +36,11 @@ public class Stage6 {
 		voiceBox.playAudio(RESOURCES_PATH + "/audio/marlene01.ogg");
 		Bien.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = MainPrologue.getCurrentStage();
 				Stage stage = MainPrologue.createStage("Prologue7.fxml", "SecondStage");
-
-				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
-
-				// Ocultar el Stage principal
 				currentStage.hide();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -51,23 +48,17 @@ public class Stage6 {
 		});
 		Cansado.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = MainPrologue.getCurrentStage();
 				Stage stage = MainPrologue.createStage("Prologue7.fxml", "SecondStage");
-
-				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
-				// Ocultar el Stage principal
 				currentStage.hide();
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		});
-		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
-		// vaya al ritmo de las voces y ajustar dependiendo el idioma
 		dialogue.setFont(Font.font("Arial", 24));
 		timeline = new Timeline(new KeyFrame(Duration.seconds(0.05), event -> {
 			if (currentIndex > text.length()) {

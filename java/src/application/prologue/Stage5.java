@@ -24,24 +24,16 @@ public class Stage5 {
 		// voiceBox.playAudio(RESOURCES_PATH + "");
 		Ir.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = MainPrologue.getCurrentStage();
 				Stage stage = MainPrologue.createStage("Prologue2.fxml", "SecondStage");
-
-				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
-
-				// Ocultar el Stage principal
 				currentStage.hide();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		});
-		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
-		// vaya al ritmo de las voces y ajustar dependiendo el idioma
-
 		timeline.setCycleCount(Timeline.INDEFINITE);
 		timeline.play();
 

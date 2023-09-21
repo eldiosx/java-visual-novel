@@ -75,7 +75,7 @@ public class Stage1 {
 
 					// Mostrar el nuevo Stage
 					MainPrologue.showStage(stage);
-					// Ocultar el Stage principal
+					
 					currentStage.hide();
 
 				} catch (Exception e) {
@@ -90,7 +90,7 @@ public class Stage1 {
 					Stage currentStage = MainPrologue.getCurrentStage();
 					Stage stage = MainPrologue.createStage("Prologue6.fxml", "Stage6");
 
-					// Ocultar el Stage principal
+					
 					currentStage.hide();
 					// Mostrar el nuevo Stage
 					MainPrologue.showStage(stage);

@@ -21,7 +21,7 @@ public class Stage2 {
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private int currentIndex = 0;
-	MainEp1 mainEp1 = new MainEp1(); // Crea una instancia de la clase Main
+	MainEp1 mainEp1 = new MainEp1(); 
 	Stage stage = new Stage();
 	private String text = "Hey, pensé que ya no llegabas. ¿Qué tal el viaje?";
 	private String text2 = "He hablado con Marleene para hacer una fogata esta noche y contar historias. Nos vemos esta noche";
@@ -75,7 +75,7 @@ public class Stage2 {
 						backgroundMusic.stopAudio();
 						mainEp1.start(stage);// tiene que llevar al episodio 1
 
-						// Ocultar el Stage principal
+						
 						MainPrologue.hideStage(MainPrologue.getCurrentStage());
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -89,8 +89,7 @@ public class Stage2 {
 
 		Bien.setOnAction(buttonHandler);
 		Mieh.setOnAction(buttonHandler);
-		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
-		// vaya al ritmo de las voces y ajustar dependiendo el idioma
+
 		dialogue.setFont(Font.font("Arial", 24));
 		timeline = new Timeline(new KeyFrame(Duration.seconds(0.05), event -> {
 			if (currentIndex > text.length()) {

@@ -44,7 +44,7 @@ public class Stage7One {// Chang habla antes de ver el cuerpo
 //				// Crear un nuevo Stage del episodio 2
 //				ep2.start(stage);
 //
-//				// Ocultar el Stage principal (EP1)
+//				 (EP1)
 //				MainEp1.hideStage(MainEp1.getPrimaryStage());
 //
 //				// Ocultar el Stage del EP2
@@ -73,8 +73,7 @@ public class Stage7One {// Chang habla antes de ver el cuerpo
 			}
 
 		});
-		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
-		// vaya al ritmo de las voces y ajustar dependiendo el idioma
+
 		dialogue.setFont(Font.font("Arial", 24));
 		timeline = new Timeline(new KeyFrame(Duration.seconds(0.05), event -> {
 			if (currentIndex > text.length()) {

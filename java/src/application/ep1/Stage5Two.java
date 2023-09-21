@@ -19,7 +19,7 @@ public class Stage5Two {// interacctua john
 	private VoiceBox voiceBox = new VoiceBox();
 	private SoundBox soundBox = new SoundBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
-	MainEp1 mainEp1 = new MainEp1(); // Crea una instancia de la clase Main Ep1
+	MainEp1 mainEp1 = new MainEp1();
 	Stage stage = new Stage();
 	private int currentIndex = 0;
 	private String text = "Pues yo creo que era una aparición de alguien que se habría muerto en la carretera y nunca pudo llegar a casa… En fin… Deberíamos ir yéndonos a dormir, que se está haciendo tarde.";
@@ -57,21 +57,17 @@ public class Stage5Two {// interacctua john
 		});
 		stay.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				backgroundMusic.stopAudio();
-				// Ocultar el Stage principal (EP1)
 				MainEp1.hideStage(MainEp1.getCurrentStage());
-				// Inicia los Créditos
 				mainEp1.start(stage);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		});
-		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
-		// vaya al ritmo de las voces y ajustar dependiendo el idioma
+
 		dialogue.setFont(Font.font("Arial", 24));
 		timeline = new Timeline(new KeyFrame(Duration.seconds(0.05), event -> {
 			if (currentIndex > text.length()) {
