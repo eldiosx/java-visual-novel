@@ -8,7 +8,7 @@
 
      .textPanel {
      	-fx-background-radius: 10px;
-     	-fx-control-inner-background: transparent; //rgba(0, 0, 0, 1); #0000001A
+     	-fx-control-inner-background: transparent; 
      	-fx-box-sizing: border-box;
      	-fx-background-color: #0000009A;
      	-fx-padding: 10px 10px 10px 10px;
@@ -20,7 +20,7 @@
 
      .name {
      	fx-background-radius: 10px;
-     	-fx-control-inner-background: transparent; //rgba(0, 0, 0, 1); #0000001A
+     	-fx-control-inner-background: transparent; 
      	-fx-box-sizing: border-box;
      	-fx-background-color: #0000009A;
      	-fx-padding: 10px 10px 10px 10px;

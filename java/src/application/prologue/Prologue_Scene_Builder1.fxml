@@ -42,7 +42,7 @@
                         <Font size="10.0" />
                      </font>
                   </Button>
-                  <Button fx:id="mirarIzquierda" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="167.0" stylesheets="@Prologue_Scene_Builder4.css" text="Mirar Izquierda " GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="mirarIzquierda" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="167.0" stylesheets="@Prologue_Scene_Builder1.css" text="Mirar Izquierda " GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -52,7 +52,7 @@
                         <Font size="10.0" />
                      </font>
                   </Button>
-                  <Button fx:id="mirarDerecha" alignment="CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="167.0" stylesheets="@Prologue_Scene_Builder4.css" text="Mirar Derecha " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button fx:id="mirarDerecha" alignment="CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="167.0" stylesheets="@Prologue_Scene_Builder1.css" text="Mirar Derecha " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="10.0" />
                      </font>
