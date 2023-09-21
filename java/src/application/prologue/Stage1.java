@@ -22,17 +22,15 @@ public class Stage1 {
 	private int currentIndex = 0;
 	private String text = "Hola soy Watson. Bienvenido al campamento, The Otter. Espero que estés preparado para dos semanas de diversión. Tus compañeros ya están ubicados en sus cabañas, la tuya es la número 7 puedes ir acomodandote si quieres...";
 	private Timeline timeline;
-	
+
 	@FXML
 	private AnchorPane background;
 	@FXML
 	private Label dialogue;
-
 	@FXML
 	private Button cabin;
 	@FXML
 	private Button explore;
-
 	@FXML
 	private Button mirarDerecha;
 	@FXML
@@ -108,6 +106,7 @@ public class Stage1 {
 				}
 			});
 		};
+
 		cabin.setOnAction(buttonHandler1);
 		explore.setOnAction(buttonHandler2);
 		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que

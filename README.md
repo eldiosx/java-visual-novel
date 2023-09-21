@@ -70,7 +70,7 @@ This Step is only for Flatpak Version to run sounds:
 
 The WorkSpace is "java-visual-novel" and the folder to import proyect is the folder "java"
 
-Choose Java 20 on Eclipse
+Choose Java 21 on Eclipse
 
 ![Alt text](img/JAVA20.png)
 
