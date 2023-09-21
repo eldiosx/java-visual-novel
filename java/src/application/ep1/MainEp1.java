@@ -25,7 +25,6 @@ public class MainEp1 extends Application {
 
 		// Cargar el archivo FXML para el primer Stage
 		Parent root = FXMLLoader.load(getClass().getResource("Stage0.fxml"));
-		// MainEp1.stage2 = stage2; Cositas
 		MainEp1.currentStage = stage1;
 		root.setStyle("-fx-background-color: #000000;"); // configurar el color de fondo
 		stage1.setTitle("Tu videojuego favorito de serie B");

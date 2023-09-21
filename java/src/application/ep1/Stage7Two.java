@@ -33,17 +33,12 @@ public class Stage7Two {// Chang habla antes de ver el cuerpo
 		voiceBox.playAudio(RESOURCES_PATH + "/audio/chan03.ogg");
 		Continue.setOnAction(event -> {
 			try {
-				// Crear un nuevo Stage
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = (Stage) Continue.getScene().getWindow();
 				Stage stage = MainEp1.createStage("Stage2.fxml", "SecondStage");
-
-				// Mostrar el nuevo Stage
 				MainEp1.showStage(stage);
-
-				// Ocultar el Stage actual
-				currentStage.hide(); // Agregar esta línea
+				currentStage.hide();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

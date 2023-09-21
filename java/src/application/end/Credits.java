@@ -107,7 +107,7 @@ public class Credits extends Application {
 		// Mostrar la escena
 		stage.setScene(scene);
 		stage.setTitle("Tu videojuego favorito de serie B");
-		stage.setResizable(false); // Se puede redimensionar
+		stage.setResizable(true); // Se puede redimensionar
 		stage.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
