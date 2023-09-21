@@ -60,7 +60,7 @@ public class MainEp1 extends Application {
 		stage.setTitle(title);
 		stage.setScene(new Scene(root, screenWidth, screenHeight));
 		root.setStyle("-fx-background-color: #000000;"); // configurar el color de fondo
-		stage.setResizable(false); // Se puede redimensionar
+		stage.setResizable(true); // Se puede redimensionar
 		stage.setFullScreen(true); // Abre la ventana en pantalla completa
 		stage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		stage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px

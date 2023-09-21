@@ -1,6 +1,27 @@
  .background {
      -fx-background-color: black;
+     -fx-background-image: url("../../../assets/images/prologue/StaffForest.png");
+     -fx-background-size: 100% 100%;
+     -fx-background-position: center;
+ }
+
+ .background2 {
+     -fx-background-color: black;
+     -fx-background-image: url("../../../assets/images/prologue/Cabins.jpg");
+     -fx-background-size: 100% 100%;
+     -fx-background-position: center;
+ }
+
+ .background3 {
+     -fx-background-color: black;
      -fx-background-image: url("../../../assets/images/prologue/JohnCabin.png");
+     -fx-background-size: 100% 100%;
+     -fx-background-position: center;
+ }
+
+ .background4 {
+     -fx-background-color: black;
+     -fx-background-image: url("../../../assets/images/prologue/MarleeneForest.png");
      -fx-background-size: 100% 100%;
      -fx-background-position: center;
  }

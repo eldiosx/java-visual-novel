@@ -25,7 +25,7 @@ public class MainPrologue extends Application {
 	@Override
 	public void start(Stage stage1) throws Exception {
 		// Cargar el archivo FXML para el primer Stage
-		Parent root = FXMLLoader.load(getClass().getResource("Prologue_Scene_Builder1.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("Prologue1.fxml"));
 		MainPrologue.stage1 = stage1;
 		MainPrologue.currentStage = stage1;
 		stage1.setTitle("Tu videojuego favorito de serie B");

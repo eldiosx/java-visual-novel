@@ -156,7 +156,7 @@ public class MainMenu extends Application {
 			}
 
 //			// Abrir otra escena .XFML
-//			FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue/Prologue_Scene_Builder1.fxml"));
+//			FXMLLoader loader = new FXMLLoader(getClass().getResource("Prologue/Prologue1.fxml"));
 //			Parent root = null;
 //			try {
 //				root = loader.load();
