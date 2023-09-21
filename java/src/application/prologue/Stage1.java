@@ -47,14 +47,8 @@ public class Stage1 {
 			try {
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
-				// Crear un nuevo Stage
-
 				Stage stage = MainPrologue.createStage("Prologue2.fxml", "SecondStage");
-
-				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
-
-				// Ocultar el Stage principal
 				MainPrologue.hideStage(MainPrologue.getPrimaryStage());
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -77,7 +71,7 @@ public class Stage1 {
 					voiceBox.stopAudio();
 					backgroundMusic.stopAudio();
 					Stage currentStage = MainPrologue.getCurrentStage();
-					Stage stage = MainPrologue.createStage("prologue.css.fxml", "Stage5");
+					Stage stage = MainPrologue.createStage("Prologue5.fxml", "Stage5");
 
 					// Mostrar el nuevo Stage
 					MainPrologue.showStage(stage);
@@ -94,7 +88,7 @@ public class Stage1 {
 					voiceBox.stopAudio();
 					backgroundMusic.stopAudio();
 					Stage currentStage = MainPrologue.getCurrentStage();
-					Stage stage = MainPrologue.createStage("prologue.css.fxml", "Stage6");
+					Stage stage = MainPrologue.createStage("Prologue6.fxml", "Stage6");
 
 					// Ocultar el Stage principal
 					currentStage.hide();
@@ -109,8 +103,6 @@ public class Stage1 {
 
 		cabin.setOnAction(buttonHandler1);
 		explore.setOnAction(buttonHandler2);
-		// Dialogo que se escribe a tiempo real, se puede modificar la duracion para que
-		// vaya al ritmo de las voces y ajustar dependiendo el idioma
 		dialogue.setFont(Font.font("Arial", 24));
 		timeline = new Timeline(new KeyFrame(Duration.seconds(0.05), event -> {
 			if (currentIndex > text.length()) {

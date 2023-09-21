@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="1140.0" styleClass="background4" stylesheets="@prologue.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.prologue.Stage7">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="1140.0" styleClass="background4" stylesheets="@prologue.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.prologue.Stage6">
    <children>
-      <GridPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@prologue.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <GridPane prefHeight="400.0" prefWidth="600.0" styleClass="grid" stylesheets="@prologue.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>
           <ColumnConstraints hgrow="NEVER" percentWidth="87.0" />
           <ColumnConstraints hgrow="NEVER" percentWidth="13.0" />
@@ -25,10 +25,10 @@
          <children>
             <GridPane GridPane.rowIndex="2">
               <columnConstraints>
-                <ColumnConstraints hgrow="NEVER" percentWidth="25.0" />
-                <ColumnConstraints hgrow="NEVER" percentWidth="19.0" />
-                  <ColumnConstraints hgrow="NEVER" percentWidth="21.0" />
-                  <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="58.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="NEVER" percentWidth="40.0" />
+                <ColumnConstraints hgrow="NEVER" percentWidth="37.0" />
+                  <ColumnConstraints hgrow="NEVER" percentWidth="23.0" />
+                  <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="23.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -37,17 +37,12 @@
               </rowConstraints>
                <children>
                   <Label alignment="BASELINE_LEFT" styleClass="name" stylesheets="@prologue.css" text="Marlene" textAlignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="porSupuesto" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="143.0" stylesheets="@prologue.css" text="Por supuesto" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="Bien" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="143.0" stylesheets="@prologue.css" text="Bien" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Button>
-                  <Button fx:id="noMeGustan" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" stylesheets="@prologue.css" text="No me gustan" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="uffPereza" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="129.0" stylesheets="@prologue.css" text="Uff, pereza" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <Button fx:id="Cansado" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="143.0" stylesheets="@prologue.css" text="Cansado" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="10.0" />
                      </font>

@@ -38,7 +38,7 @@ public class Stage6 {
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = MainPrologue.getCurrentStage();
-				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder7.fxml", "SecondStage");
+				Stage stage = MainPrologue.createStage("Prologue7.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
@@ -55,7 +55,7 @@ public class Stage6 {
 				voiceBox.stopAudio();
 				backgroundMusic.stopAudio();
 				Stage currentStage = MainPrologue.getCurrentStage();
-				Stage stage = MainPrologue.createStage("Prologue_Scene_Builder7.fxml", "SecondStage");
+				Stage stage = MainPrologue.createStage("Prologue7.fxml", "SecondStage");
 
 				// Mostrar el nuevo Stage
 				MainPrologue.showStage(stage);
