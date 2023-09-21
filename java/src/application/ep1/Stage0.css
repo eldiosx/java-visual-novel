@@ -37,7 +37,6 @@
 		-fx-text-fill: white;
  		-fx-box-sizing: border-box;
  		-fx-wrap-text: true;
-	    
 	    -fx-padding: 10px 10px 10px 10px;
 	    -fx-overflow-y: hidden;
 	    -fx-overflow-x: hidden;
@@ -49,21 +48,6 @@
     	-fx-text-fill: white;
     	-fx-font-size: 20px;
     	-fx-background-color: #0000009A;
+		-fx-background-insets: 0 0 0 0, 0, 1, 2;
+		-fx-border-radius: 0px;
     }
-//    
-//.button
-//{
-//    -fx-background-insets: 0 0 0 0, 0, 1, 2;
-//    -fx-border-radius: 0px;
-//}
-//
-//.button:focused
-//{
-//    -fx-background-insets: 0 0 0 0, 0, 1, 2;
-//    -fx-border-radius: 0px;
-//}
-//
-//#eventLogsButton
-//{
-//     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
-//}

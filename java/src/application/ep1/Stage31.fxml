@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="background" stylesheets="@Stage31.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ep1.Stage3One">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="background2" stylesheets="@stage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ep1.Stage3One">
 	<children>
-      <GridPane styleClass="grid" stylesheets="@Stage31.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <GridPane styleClass="grid" stylesheets="@stage.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>
           <ColumnConstraints hgrow="NEVER" percentWidth="90.0" />
           <ColumnConstraints hgrow="NEVER" percentWidth="10.0" />
@@ -33,19 +33,19 @@
              <RowConstraints percentHeight="20.0" vgrow="NEVER" />
            </rowConstraints>
             <children>
-               <Label alignment="BOTTOM_LEFT" styleClass="name" stylesheets="@Stage31.css" text="Marleene" textAlignment="CENTER" GridPane.rowIndex="2" />
+               <Label alignment="BOTTOM_LEFT" styleClass="name" stylesheets="@stage.css" text="Marleene" textAlignment="CENTER" GridPane.rowIndex="2" />
             </children>
          </GridPane>
-      		<Button fx:id="myButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@Stage31.css" text="Continuar" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      		<Button fx:id="myButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@stage.css" text="Continuar" GridPane.columnIndex="1" GridPane.rowIndex="3">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor></Button>
-         <GridPane styleClass="textPanel" stylesheets="@Stage31.css" GridPane.rowIndex="3">
+         <GridPane styleClass="textPanel" stylesheets="@stage.css" GridPane.rowIndex="3">
            <columnConstraints>
              <ColumnConstraints hgrow="ALWAYS" percentWidth="100.0" />
            </columnConstraints>
             <children>
-                  <Label fx:id="dialogue" styleClass="text" stylesheets="@Stage31.css" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <Label fx:id="dialogue" styleClass="text" stylesheets="@stage.css" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             </children>
             <rowConstraints>
                <RowConstraints />

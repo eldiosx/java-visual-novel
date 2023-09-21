@@ -53,7 +53,7 @@
             </GridPane.margin>
          </Button>
       </GridPane>
-      <Label alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" styleClass="name" stylesheets="@Stage1.css" text="Escucha las historias en la hoguera" textAlignment="CENTER" />
+      <Label alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" styleClass="name" stylesheets="@stage.css" text="Escucha las historias en la hoguera" textAlignment="CENTER" />
 	</children>
    <cursor>
       <Cursor fx:constant="OPEN_HAND" />
