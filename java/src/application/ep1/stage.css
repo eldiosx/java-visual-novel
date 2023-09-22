@@ -41,6 +41,29 @@
 		-fx-background-size: 100% 100%;
 		-fx-background-position: center;
 	}
+	
+	 .background7 {
+    	-fx-background-color: black;
+    	-fx-background-color: black;
+        -fx-background-image: url("../../../assets/images/ep1/Murder.jpg");  
+        -fx-background-size: 100% 100%; 
+        -fx-background-position: center;
+    }
+
+	.background8 {
+    	-fx-background-color: black;
+    	-fx-background-color: black;
+        -fx-background-image: url("../../../assets/images/ep1/Campfire.jpg");  
+        -fx-background-size: 100% 100%; 
+        -fx-background-position: center;
+        
+    }
+    
+     .label {
+    	-fx-text-fill: white;
+    	-fx-font-size: 12px;
+    	-fx-background-color: #0000009A;
+    }
 
      .textPanel {
      	-fx-background-radius: 10px;
