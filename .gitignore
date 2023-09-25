@@ -7,3 +7,5 @@ java/java.iml
 java/assets/extra
 .idea
 out
+/java/nbproject/private/
+/java/build/

@@ -60,7 +60,7 @@ Audacity
 
 - <h2>How to edit: </h2>
 
-First we need a JavaFX, the easiest way is: https://bell-sw.com/pages/downloads/ Download the FUll JDK version.
+First we need a JavaFX, the easiest way is: https://bell-sw.com/pages/downloads/ Download the lastest LTS Full JDK version.
 
 <h3>For Eclipse (flatpak compatible): </h3>
 
@@ -72,7 +72,7 @@ The WorkSpace is "java-visual-novel" and the folder to import proyect is the fol
 
 Choose Java 21 on Eclipse
 
-![Alt text](img/JAVA20.png)
+![Alt text](img/eclipse.png)
 
 Import all .jar on "lib" folder, you need add your JavaFX libraries or a Full Java JDK in the jre installed and module-path:
 
@@ -81,7 +81,6 @@ Import all .jar on "lib" folder, you need add your JavaFX libraries or a Full Ja
 <h3>For VsCode/ VsCodium (flatpak compatible): </h3>
 
 You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configure settings.json similar like this:
-
 
     {
         "terminal.integrated.defaultProfile.linux": "bash",
@@ -112,6 +111,11 @@ You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configu
 
 The folder to open is "java" and it will take all routes and libs automatic.
 
+<h3>For NetBeans (flatpak compatible): </h3>
+
+Import this libs and up to Modulepath:
+
+![NetBeans](img/netbeans.png)
 
 <h3>For IntelliJ (flatpak compatible): </h3>
 
