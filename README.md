@@ -55,7 +55,7 @@ Linux 6.1
 
 Audacity
 
-![hardware](https://user-images.githubusercontent.com/61506276/236693338-47edaa11-e0a7-4614-b388-fde32836452d.png)
+![hardware](img/hardware.webp)
 
 
 - <h2>How to edit: </h2>
