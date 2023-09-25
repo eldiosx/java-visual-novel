@@ -62,6 +62,8 @@ Audacity
 
 First we need a JavaFX, the easiest way is: https://bell-sw.com/pages/downloads/ Download the lastest LTS Full JDK version.
 
+Linux Direct Download: [JAVAFX 21 LTS FULL](https://download.bell-sw.com/java/21+37/bellsoft-jdk21+37-linux-amd64-full.tar.gz)
+
 <h3>For Eclipse (flatpak compatible): </h3>
 
 This Step is only for Flatpak Version to run sounds:
