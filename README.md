@@ -60,7 +60,7 @@ Audacity
 
 - <h2>How to edit: </h2>
 
-First we need a JavaFX, the easiest way is: [Download](https://bell-sw.com/pages/downloads/) Download the lastest LTS Full JDK version.
+First we need a JavaFX, the easiest way is [download](https://bell-sw.com/pages/downloads/) the lastest LTS Full JDK version.
 
 Linux Direct Download: [JAVAFX 21 LTS FULL](https://download.bell-sw.com/java/21+37/bellsoft-jdk21+37-linux-amd64-full.tar.gz)
 
