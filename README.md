@@ -98,21 +98,9 @@ You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configu
                 "overrideName": true
             }
         },
-        "java.jdt.ls.java.home": "/var/home/eldiosx/jdk/jdk-20.0.2-full",
-        "java.compile.nullAnalysis.nonnull": [
-            "javax.annotation.Nonnull",
-            "org.eclipse.jdt.annotation.NonNull",
-            "org.springframework.lang.NonNull"
-        ],
-        "security.workspace.trust.untrustedFiles": "open",
-        "redhat.telemetry.enabled": true,
-        "vsintellicode.modelDownloadPath": ""
-    }
-
-    only java:
 
         "java.jdt.ls.java.home": "/var/home/eldiosx/sdk/jdk-21-full",
-    "java.configuration.runtimes": [
+        "java.configuration.runtimes": [
         {
             "name": "JavaSE-21",
             "path": "/var/home/eldiosx/sdk/jdk-21-full",
