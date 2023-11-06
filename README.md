@@ -109,6 +109,17 @@ You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configu
         "vsintellicode.modelDownloadPath": ""
     }
 
+    only java:
+
+        "java.jdt.ls.java.home": "/var/home/eldiosx/sdk/jdk-21-full",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "/var/home/eldiosx/sdk/jdk-21-full",
+            "default": true
+        },
+    ],
+
 
 
 The folder to open is "java" and it will take all routes and libs automatic.
