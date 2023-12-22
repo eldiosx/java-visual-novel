@@ -1,12 +1,9 @@
 package application;
 
-//import java.awt.Desktop;
 //Java
-//import java.beans.EventHandler;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-//import java.io.IOException;
 
 //JavaFX
 import javafx.application.Application;
@@ -44,8 +41,6 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 //MySql
-//import com.mysql.cj.protocol.Resultset;
-//import java.sql.ResultSet;
 import java.sql.SQLException;
 
 //Local
