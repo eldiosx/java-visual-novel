@@ -60,9 +60,9 @@ Audacity
 
 - <h2>How to edit: </h2>
 
-First we need a JavaFX, the easiest way is [download](https://bell-sw.com/pages/downloads/) the lastest LTS Full JDK version.
+First we need a JavaFX, the easiest way is import it from lib folder.
 
-Linux Direct Download: [JAVAFX 21 LTS FULL](https://download.bell-sw.com/java/21+37/bellsoft-jdk21+37-linux-amd64-full.tar.gz)
+Download and use Java 21 LTS.
 
 <h3>For Eclipse (flatpak compatible): </h3>
 
@@ -106,16 +106,16 @@ You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configu
             "zsh"
             ]
         },
-        "java.jdt.ls.java.home": "/var/home/user/SDK/jdk-21.0.1-full",
+        "java.jdt.ls.java.home": "/var/home/user/SDK/jdk-21.0.1",
         "java.configuration.runtimes": [
             {
             "name": "JavaSE-21",
-            "path": "/var/home/user/SDK/jdk-21.0.1-full",
+            "path": "/var/home/user/SDK/jdk-21.0.1",
             "default": true
             },
             {
             "name": "JavaSE-17",
-            "path": "/var/home/user/SDK/jdk-17.0.9-full",
+            "path": "/var/home/user/SDK/jdk-17.0.9",
             "default": false
         },
         ]
