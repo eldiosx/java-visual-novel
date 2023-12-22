@@ -2,29 +2,39 @@ package application;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.ProgressIndicator;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class Loader extends Stage {
-	private ProgressBar progressBar;
+    private ProgressIndicator progressIndicator;
 
-//Esto pues es un loader basico que funciona de verdad :D recogiendo el estado del Main
-	public Loader() {
-		progressBar = new ProgressBar();
-		progressBar.setPrefWidth(300);
-		progressBar.setPrefHeight(30);
-		progressBar.setProgress(0);
+    public Loader() {
+        progressIndicator = new ProgressIndicator();
+        double responsiveSize = 0.4 * Math.min(Screen.getPrimary().getVisualBounds().getWidth(),
+                                                Screen.getPrimary().getVisualBounds().getHeight());
+        progressIndicator.setPrefSize(responsiveSize, responsiveSize);
 
-		VBox root = new VBox();
-		root.setAlignment(Pos.CENTER);
-		root.getChildren().add(progressBar);
+        StackPane root = new StackPane();
+        root.setAlignment(Pos.CENTER);
+        root.getChildren().add(progressIndicator);
 
-		Scene scene = new Scene(root, 300, 50);
-		setScene(scene);
-	}
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
 
-	public ProgressBar getProgressBar() {
-		return progressBar;
-	}
+        // Set the stage to full-screen mode
+        setFullScreen(true);
+
+        // Set the scene and ensure it covers the entire screen
+        setScene(scene);
+        setX(Screen.getPrimary().getVisualBounds().getMinX());
+        setY(Screen.getPrimary().getVisualBounds().getMinY());
+        setWidth(Screen.getPrimary().getVisualBounds().getWidth());
+        setHeight(Screen.getPrimary().getVisualBounds().getHeight());
+    }
+
+    public ProgressIndicator getProgressIndicator() {
+        return progressIndicator;
+    }
 }

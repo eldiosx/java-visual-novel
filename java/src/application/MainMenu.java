@@ -104,7 +104,7 @@ public class MainMenu extends Application {
 
 		});
 
-		loader.getProgressBar().progressProperty().bind(task.progressProperty());
+		loader.getProgressIndicator().progressProperty().bind(task.progressProperty());
 		new Thread(task).start();
 
 		// Load img (1true suavize 2true responsive)
