@@ -99,11 +99,11 @@ You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configu
             }
         },
 
-        "java.jdt.ls.java.home": "/var/home/eldiosx/sdk/jdk-21-full",
+        "java.jdt.ls.java.home": "/var/home/user/sdk/jdk-21-full",
         "java.configuration.runtimes": [
         {
             "name": "JavaSE-21",
-            "path": "/var/home/eldiosx/sdk/jdk-21-full",
+            "path": "/var/home/user/sdk/jdk-21-full",
             "default": true
         },
     ],
