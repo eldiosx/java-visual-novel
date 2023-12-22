@@ -51,7 +51,7 @@ Steam Deck
 
 <b>Software:</b>
 
-Linux 6.1
+Linux v6.1
 
 Audacity
 
@@ -88,25 +88,38 @@ You will need Extension Pack for Java (ID: vscjava.vscode-java-pack) and configu
         "terminal.integrated.defaultProfile.linux": "bash",
         "terminal.integrated.profiles.linux": {
             "bash": {
-                "path": "/usr/bin/flatpak-spawn",
-                "args": [
-                    "--host",
-                    "--env=TERM=xterm-256color",
-                    "bash"
-                ],
-                "icon": "terminal-bash",
-                "overrideName": true
+            "path": "/usr/bin/flatpak-spawn",
+            "args": [
+                "--host",
+                "--env=TERM=xterm-256color",
+                "bash"
+            ],
+            "icon": "terminal-bash",
+            "overrideName": true
             }
         },
-
-        "java.jdt.ls.java.home": "/var/home/user/sdk/jdk-21-full",
-        "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-21",
-            "path": "/var/home/user/sdk/jdk-21-full",
-            "default": true
+        "zsh": {
+            "path": "/usr/bin/flatpak-spawn",
+            "args": [
+            "--host",
+            "--env=TERM=xterm-256color",
+            "zsh"
+            ]
         },
-    ],
+        "java.jdt.ls.java.home": "/var/home/user/SDK/jdk-21.0.1-full",
+        "java.configuration.runtimes": [
+            {
+            "name": "JavaSE-21",
+            "path": "/var/home/user/SDK/jdk-21.0.1-full",
+            "default": true
+            },
+            {
+            "name": "JavaSE-17",
+            "path": "/var/home/user/SDK/jdk-17.0.9-full",
+            "default": false
+        },
+        ]
+    }
 
 
 
