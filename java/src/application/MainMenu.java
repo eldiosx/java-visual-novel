@@ -51,17 +51,16 @@ public class MainMenu extends Application {
 	// assets/audio/lullabyX.ogg
 
 	ClassLoader classLoader = getClass().getClassLoader();
-	// Obtener el tamaño de la pantalla
+	// Responsive
 	double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 	double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
-	MainPrologue mainPrologue = new MainPrologue(); // Crea una instancia de la clase Main Prologue
-	MainEp1 mainEp1 = new MainEp1(); // Crea una instancia de la clase Main Ep1
+	MainPrologue mainPrologue = new MainPrologue();
+	MainEp1 mainEp1 = new MainEp1();
 	Stage stage = new Stage();
-	double responsive = screenWidth * 0.07; // 7% del ancho de la pantalla RESPONSIVE++
+	double responsive = screenWidth * 0.07;
 	private Font titleFont;
 
-	// CAJITA DE MUSICA ASINCRONA Crear instancia de Media y hacer que la mÚsica sea
-	// "asincrona"
+	// MUSIC ASINCRONA
 	private SoundBox soundBox = new SoundBox();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
@@ -79,8 +78,7 @@ public class MainMenu extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		// PANTALLA DE CARGA para que todo carge primero y a la misma vez y luego
-		// lanzarlo
+		// Loader
 		loader = new Loader();
 		loader.setTitle("Loading...");
 		loader.getIcons().add(icon);
@@ -89,13 +87,12 @@ public class MainMenu extends Application {
 		Task<Void> task = new Task<Void>() {
 			@Override
 			protected Void call() throws Exception {
-				// CARGAR TODOH AQUI
+				// Load all
 
 				for (int i = 0; i < 100; i++) {
 					updateProgress(i, 99);
 					Thread.sleep(50);
 				}
-
 				return null;
 			}
 		};
@@ -110,15 +107,14 @@ public class MainMenu extends Application {
 		loader.getProgressBar().progressProperty().bind(task.progressProperty());
 		new Thread(task).start();
 
-		// Cargar las imágenes (El primer true es para suavizar y el segundo mantener
-		// relacion aspecto)
+		// Load img (1true suavize 2true responsive)
 		Image newGameButtonImage = new Image(NEW_GAME_BUTTON_URL, responsive, responsive / 3, true, true);
 		Image loadGameButtonImage = new Image(LOAD_GAME_BUTTON_URL, responsive, responsive / 3, true, true);
 		Image settingsButtonImage = new Image(SETTINGS_BUTTON_URL, responsive, responsive / 3, true, true);
 		Image exitButtonImage = new Image(EXIT_BUTTON_URL, responsive, responsive / 3, true, true);
 		Image closeButtonImage = new Image(CLOSE_BUTTON_URL, responsive / 3, responsive / 3, true, true);
 
-		// Crear los contenedores de los botones
+		// Button container
 		HBox topButtonsBox = new HBox();
 		topButtonsBox.setAlignment(Pos.CENTER);
 		topButtonsBox.setSpacing(20);
@@ -196,15 +192,12 @@ public class MainMenu extends Application {
 			Button slot1Button = new Button("0/00/0000 - Capitulo 1");
 			slot1Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 
-			// Este código que empieza aquí son pruebas para la conexión a la BD. NO BORRAR.
-			// Código para guardar partida (meter info en la base de datos)
+			// Load
 
 			slot1Button.setOnAction(event2 -> {
 				soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 				backgroundMusic.stopAudio();
-				// Asi podemos crear escenas que nos de la gana, util sobre todo para el LOAD
 				try {
-					// Crear un nuevo Stage
 					mainEp1.start(stage);
 					primaryStage.close();
 				} catch (Exception e) {
@@ -212,42 +205,11 @@ public class MainMenu extends Application {
 				}
 			});
 
-			// Código para cargar partida (pedir info a la base de datos)
-
 			Label slot2Label = new Label("Slot 2: ");
 			Button slot2Button = new Button("Empty save...");
 			slot2Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 
 			slot2Button.setOnAction(event2 -> {
-
-				// Por ahora desactivado
-				// try {
-				// conexion.conectar();
-				// // String cargarPartidas = "INSERT INTO partidas_guardadas (slot1,slot2)
-				// VALUES
-				// // ('Prologue', 'Ep1')";
-				// String selectPartidas = "SELECT * FROM partidas_guardadas;";
-				// conexion.ejecutarSelect(selectPartidas);
-				// ResultSet datos = conexion.ejecutarSelect(selectPartidas);
-				//
-				// while (datos.next()) {
-				// String partidaGuardada1 = datos.getString("slot1");
-				// String partidaGuardada2 = datos.getString("slot2");
-				// String partidaGuardada3 = datos.getString("slot3");
-				// System.out.println(partidaGuardada1);
-				// System.out.println(partidaGuardada2);
-				// System.out.println(partidaGuardada3);
-				//
-				// }
-				// } catch (SQLException e2) {
-				// e2.printStackTrace();
-				// } finally {
-				// try {
-				// conexion.desconectar();
-				// } catch (SQLException e2) {
-				// e2.printStackTrace();
-				// }
-				// }
 			});
 
 			Label slot3Label = new Label("Slot 3: ");
@@ -395,16 +357,15 @@ public class MainMenu extends Application {
 		buttonsBox.getChildren().addAll(topButtonsBox, bottomButtonsBox);
 		buttonsBox.setPadding(new Insets(0, 0, responsive / 2, 0)); // Agregar un padding
 
-		// Crear el título con sombra (utilizo el DropShadow) + fuente personalizada y
-		// try catch x si peta
+		// Title
 		try {
 			titleFont = Font.loadFont(new FileInputStream(new File(RESOURCES_PATH + "/fonts/PaintDropsRegular.ttf")),
 					12);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		Label titleLabel = new Label("Tu videojuego favorito");
-		Label subtitleLabel = new Label("de serie B");
+		Label titleLabel = new Label("Your favorite B series");
+		Label subtitleLabel = new Label("video game");
 		titleLabel.setStyle("-fx-font-size: " + responsive + "px; -fx-text-fill: #030304; -fx-font-family: '"
 				+ titleFont.getName() + "';");
 		subtitleLabel.setStyle("-fx-font-size: " + responsive + "px; -fx-text-fill: #030304; -fx-font-family: '"
@@ -441,62 +402,34 @@ public class MainMenu extends Application {
 
 		// Configurar la ventana
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Tu videojuego favorito de serie B"); // Título de la ventana
+		primaryStage.setTitle("Your favorite B series video game"); // Título de la ventana
 		primaryStage.setResizable(true); // Se puede redimensionar
 		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
 		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
 		primaryStage.setMinHeight(600); // Establece la altura mínima de la ventana en 600px
 		primaryStage.getIcons().add(icon); // Er iconoh
 
-		// Evento para cuando el ratón entra en el ImageView & Evento para cuando el
-		// ratón sale del ImageView
-		newGameButtonImageView.setOnMouseEntered(event -> {
-			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/NewGameButton.png").toURI().toString(),
-					responsive, responsive / 3, true, true);
-			newGameButtonImageView.setImage(newImage);
-			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
-		});
-		newGameButtonImageView.setOnMouseExited(event -> {
-			newGameButtonImageView.setImage(newGameButtonImage);
-		});
-		loadGameButtonImageView.setOnMouseEntered(event -> {
-			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/LoadButton.png").toURI().toString(),
-					responsive, responsive / 3, true, true);
-			loadGameButtonImageView.setImage(newImage);
-			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
-		});
-		loadGameButtonImageView.setOnMouseExited(event -> {
-			loadGameButtonImageView.setImage(loadGameButtonImage);
-		});
-		settingsButtonImageView.setOnMouseEntered(event -> {
-			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/SettingsButton.png").toURI().toString(),
-					responsive, responsive / 3, true, true);
-			settingsButtonImageView.setImage(newImage);
-			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
-		});
-		settingsButtonImageView.setOnMouseExited(event -> {
-			settingsButtonImageView.setImage(settingsButtonImage);
-		});
-		exitButtonImageView.setOnMouseEntered(event -> {
-			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/QuitButton.png").toURI().toString(),
-					responsive, responsive / 3, true, true);
-			exitButtonImageView.setImage(newImage);
-			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
-		});
-		exitButtonImageView.setOnMouseExited(event -> {
-			exitButtonImageView.setImage(exitButtonImage);
-		});
+		// ButtonOn
+		setButtonBehavior(newGameButtonImageView, "NewGameButton.png");
+		setButtonBehavior(loadGameButtonImageView, "LoadButton.png");
+		setButtonBehavior(settingsButtonImageView, "SettingsButton.png");
+		setButtonBehavior(exitButtonImageView, "QuitButton.png");
+		setButtonBehavior(closeButtonImageView, "X.png");
 
-		closeButtonImageView.setOnMouseEntered(event -> {
-			Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/X.png").toURI().toString(), responsive,
-					responsive / 3, true, true);
-			closeButtonImageView.setImage(newImage);
-			soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
-		});
-		closeButtonImageView.setOnMouseExited(event -> {
-			closeButtonImageView.setImage(closeButtonImage);
-		});
+	}
+	
+	private void setButtonBehavior(ImageView buttonImageView, String imagePath) {
+	    buttonImageView.setOnMouseEntered(event -> {
+	        Image newImage = new Image(new File(RESOURCES_PATH + "/icons/on/" + imagePath).toURI().toString(),
+	                responsive, responsive / 3, true, true);
+	        buttonImageView.setImage(newImage);
+	        soundBox.playAudio(RESOURCES_PATH + "/audio/select.ogg");
+	    });
 
+	    buttonImageView.setOnMouseExited(event -> {
+	        buttonImageView.setImage(new Image(new File(RESOURCES_PATH + "/icons/off/" + imagePath).toURI().toString(),
+	                responsive, responsive / 3, true, true));
+	    });
 	}
 
 	public static void main(String[] args) throws SQLException {
