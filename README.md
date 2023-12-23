@@ -1,4 +1,4 @@
-<h1 align="center">Tu “videojuego” favorito de serie B</h1>
+<h1 align="center">Your Favorite B-Movie Video Game</h1>
 
 <div align="center">
 
