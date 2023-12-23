@@ -1,7 +1,9 @@
 .root {
-    -fx-background-color: #000000;
+    -fx-background-color: black;
 }
 
-.progress-indicator .indicator {
-    -fx-progress-color: #3498db;
+.progress-indicator {
+    -fx-progress-color: white;
+    -fx-progress-color: black;
+    -fx-control-inner-background: black;
 }

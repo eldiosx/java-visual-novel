@@ -56,7 +56,6 @@ import org.ignisus.visual_novel.prologue.MainPrologue;
 import org.ignisus.visual_novel.ep1.MainEp1;
 
 public class App extends Application {
-	// assets/audio/lullabyX.ogg
 
 	ClassLoader classLoader = getClass().getClassLoader();
 	// Responsive
@@ -68,12 +67,12 @@ public class App extends Application {
 	double responsive = screenWidth * 0.07;
 	private Font titleFont;
 
-	// MUSIC ASINCRONA
+	// Music ASINCRONA
 	private SoundBox soundBox = new SoundBox();
 	private VoiceBox voiceBox = new VoiceBox();
 	private BackgroundMusic backgroundMusic = new BackgroundMusic();
 	private Loader loader;
-	// Media:
+	// Media
 	private static final String RESOURCES_PATH = new File("src/main/resources/assets").getAbsolutePath();
 	private static final String ICON_URL = "file:" + RESOURCES_PATH + "/icons/icon.png";
 	private static final String BACKGROUND_URL = "file:" + RESOURCES_PATH + "/images/darkforest.gif";
@@ -142,9 +141,8 @@ public class App extends Application {
 		newGameButtonImageView.setOnMouseClicked(event -> {
 			soundBox.playAudio(RESOURCES_PATH + "/audio/click.ogg");
 			backgroundMusic.stopAudio();
-			// Asi podemos crear escenas que nos de la gana, util sobre todo para el LOAD
 			try {
-				// Crear un nuevo Stage
+				// New Stage
 				mainPrologue.start(stage);
 
 				primaryStage.close();
@@ -189,15 +187,15 @@ public class App extends Application {
 
 			// Crear una nueva escena para la ventana de load
 			VBox loadLayout = new VBox();
-			loadLayout.setOpacity(0.65); // configurar la opacidad a 0.75
-			loadLayout.setStyle("-fx-background-color: #111111;"); // configurar el color de fondo
+			loadLayout.setOpacity(0.65);
+			loadLayout.setStyle("-fx-background-color: #111111;");
 			loadLayout.setPrefHeight(500);
 			loadLayout.setPrefWidth(500);
 
-			Label label = new Label(" Cargar partida ");
+			Label label = new Label(" Load Game ");
 			label.setStyle("-fx-font-size: 50px; -fx-text-fill: white;");
 			Label slot1Label = new Label("Slot 1: ");
-			Button slot1Button = new Button("0/00/0000 - Capitulo 1");
+			Button slot1Button = new Button("0/00/0000 - Chapter 1");
 			slot1Label.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 
 			// Load
@@ -313,12 +311,12 @@ public class App extends Application {
 					voiceBox.setVolume((float) voiceVSlider.getValue() / 100);
 				}
 			});
-			Label languageLabel = new Label("Idioma (Textos):");
+			Label languageLabel = new Label("Text language:");
 			// COnfiguraciones del idioma mediante listas:
 			languageLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
-			ObservableList<String> listLanguage = FXCollections.observableArrayList("Español", "Inglés", "Francés");
+			ObservableList<String> listLanguage = FXCollections.observableArrayList("Español", "English", "Francaise");
 			ComboBox<String> languageBox = new ComboBox<>(listLanguage);
-			Label voiceLabel = new Label("Idioma (Voces):");
+			Label voiceLabel = new Label("Voice language:");
 			voiceLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: white;");
 			ObservableList<String> listVoice = FXCollections.observableArrayList("Español");
 			ComboBox<String> languageVoiceBox = new ComboBox<>(listVoice);
@@ -372,8 +370,8 @@ public class App extends Application {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		Label titleLabel = new Label("Your favorite B series");
-		Label subtitleLabel = new Label("video game");
+		Label titleLabel = new Label("Your Favorite B-Movie");
+		Label subtitleLabel = new Label("Video Game");
 		titleLabel.setStyle("-fx-font-size: " + responsive + "px; -fx-text-fill: #030304; -fx-font-family: '"
 				+ titleFont.getName() + "';");
 		subtitleLabel.setStyle("-fx-font-size: " + responsive + "px; -fx-text-fill: #030304; -fx-font-family: '"
@@ -410,7 +408,7 @@ public class App extends Application {
 
 		// Configurar la ventana
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Your favorite B series video game"); // Título de la ventana
+		primaryStage.setTitle("Your Favorite B-Movie Video Game"); // Título de la ventana
 		primaryStage.setResizable(true); // Se puede redimensionar
 		primaryStage.setFullScreen(true); // Abre la ventana en pantalla completa
 		primaryStage.setMinWidth(800); // Establece el ancho mínimo de la ventana en 800px
@@ -442,8 +440,8 @@ public class App extends Application {
 
 	public static void main(String[] args) throws SQLException {
 		launch(args);
-		Platform.exit(); // El cierratodo de JavaFX
-		System.exit(0); // El cierratodo clasico
+		Platform.exit();
+		System.exit(0);
 	}
 
 }

@@ -15,6 +15,7 @@ public class Loader extends Stage {
         double responsiveSize = 0.4 * Math.min(Screen.getPrimary().getVisualBounds().getWidth(),
                                                 Screen.getPrimary().getVisualBounds().getHeight());
         progressIndicator.setPrefSize(responsiveSize, responsiveSize);
+        progressIndicator.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
 
         StackPane root = new StackPane();
         root.setAlignment(Pos.CENTER);
@@ -25,8 +26,6 @@ public class Loader extends Stage {
 
         // Set the stage to full-screen mode
         setFullScreen(true);
-
-        // Set the scene and ensure it covers the entire screen
         setScene(scene);
         setX(Screen.getPrimary().getVisualBounds().getMinX());
         setY(Screen.getPrimary().getVisualBounds().getMinY());
