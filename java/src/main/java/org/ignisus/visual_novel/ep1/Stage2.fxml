@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="background7" stylesheets="@stage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ep1.Stage2One">
+	<children>
+      <GridPane layoutX="8.0" layoutY="18.0" prefHeight="659.0" prefWidth="1698.0" styleClass="grid" stylesheets="@stage.css" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="18.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="NEVER" percentWidth="90.0" />
+          <ColumnConstraints hgrow="NEVER" percentWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+			<RowConstraints percentHeight="10.0" vgrow="NEVER" />
+			<RowConstraints percentHeight="10.0" vgrow="NEVER" />
+			<RowConstraints percentHeight="60.0" vgrow="NEVER" />
+			<RowConstraints percentHeight="20.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <GridPane id="knifetext" focusTraversable="true" opacity="0.8" prefHeight="395.0" prefWidth="1452.0" GridPane.rowIndex="2">
+           <columnConstraints>
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="31.0" prefWidth="100.0" />
+             <ColumnConstraints hgrow="NEVER" percentWidth="42.0" />
+             <ColumnConstraints hgrow="NEVER" percentWidth="39.0" />
+               <ColumnConstraints hgrow="NEVER" percentWidth="28.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="11.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="2.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" percentHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+             <RowConstraints minHeight="10.0" percentHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+             <RowConstraints percentHeight="30.0" vgrow="NEVER" />
+             <RowConstraints percentHeight="50.0" vgrow="ALWAYS" />
+               <RowConstraints percentHeight="57.0" vgrow="NEVER" />
+               <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" vgrow="NEVER" />
+               <RowConstraints minHeight="10.0" percentHeight="8.0" prefHeight="30.0" vgrow="NEVER" />
+               <RowConstraints minHeight="10.0" percentHeight="12.0" prefHeight="30.0" vgrow="NEVER" />
+               <RowConstraints minHeight="10.0" percentHeight="20.0" prefHeight="30.0" vgrow="NEVER" />
+               <RowConstraints minHeight="10.0" percentHeight="20.0" prefHeight="30.0" vgrow="NEVER" />
+           </rowConstraints>
+            <children>
+               <Button id="body" fx:id="body" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="24.0" prefWidth="187.0" styleClass="button" stylesheets="@stage.css" text="Investigar Cuerpo" GridPane.rowIndex="8">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button id="blood" fx:id="blood" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@stage.css" text="Investigar sangre" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Label id="bodytext" fx:id="bodytext" prefHeight="109.0" prefWidth="235.0" style="-fx-background-color: grey;" text="Se trata de Nancy. Es compañera de clase&#10;de Helen y Marleene. Se ha mudado desde &#10;Colorado este septiembre y ha causado un &#10;gran revuelo entre los chicos del instituto. " visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+               <Button id="floor" fx:id="floor" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@stage.css" text="Investigar suelo" GridPane.columnIndex="1">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button id="hand" fx:id="hand" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@stage.css" text="Investigar mano" GridPane.columnIndex="5">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button id="knife" fx:id="knife" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@stage.css" text="Investigar cuchillo" GridPane.columnIndex="7" GridPane.rowIndex="3">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button id="room" fx:id="room" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="44.0" prefWidth="163.0" styleClass="button" stylesheets="@stage.css" text="Investigar sala" GridPane.columnIndex="9">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Label id="floortext" fx:id="floortext" opacity="0.8" prefHeight="144.0" prefWidth="284.0" style="-fx-background-color: grey;" text="No se ven pisadas, y está completamente &#10;manchado de sangre, quien lo hizo ha sido &#10;bastante cuidadoso con no dejar rastro" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <Label id="handtext" fx:id="handtext" prefHeight="80.0" prefWidth="180.0" style="-fx-background-color: grey;" text="Hay muestras de forcejeo, &#10;tiene una de las uñas rotas, &#10;probablemente haya conseguido &#10;arañar a su agresor. " visible="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+               <Label id="bloodtext" fx:id="bloodtext" opacity="0.8" prefHeight="83.0" prefWidth="229.0" style="-fx-background-color: grey;" text="Hay mucha sangre, y el vestido &#10;está completamente manchado debido &#10;a las múltiples puñaladas que ha &#10;recibido la chica" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+               <Label id="knifeText" fx:id="knifeText" opacity="0.8" prefHeight="57.0" prefWidth="200.0" style="-fx-background-color: grey;" text="Parece el arma homicida. Es uno&#10;de los cuchillos de la cocina del&#10;campamento, de eso no hay duda. " visible="false" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+               <Label id="roomtext" fx:id="roomtext" opacity="0.8" prefHeight="94.0" prefWidth="194.0" style="-fx-background-color: grey;" text="Es la  cabaña de las chicas. En ella &#10;duermen también Helen y &#10;Marleene... El director va a &#10;tener que reubicarlas después &#10;de esto" visible="false" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            </children>
+         </GridPane>
+      		<Button id="continueEnd" fx:id="continueEnd" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button" stylesheets="@stage.css" text="Continuar" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
+         <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="58.0" prefWidth="450.0" styleClass="button" stylesheets="@stage.css" text="Investiga la sala para saber qué ha sucedido">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+      </GridPane>
+	</children>
+   <cursor>
+      <Cursor fx:constant="OPEN_HAND" />
+   </cursor>
+</AnchorPane>

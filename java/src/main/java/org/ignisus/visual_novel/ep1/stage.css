@@ -1,0 +1,113 @@
+     .background {
+     	-fx-background-color: black;
+     	-fx-background-color: black;
+     	-fx-background-image: url("../../../assets/images/ep1/JohnCampfire.png");
+     	-fx-background-size: 100% 100%;
+     	-fx-background-position: center;
+     }
+
+     .background2 {
+     	-fx-background-color: black;
+     	-fx-background-color: black;
+     	-fx-background-image: url("../../../assets/images/ep1/MarleeneCampfire.png");
+     	-fx-background-size: 100% 100%;
+     	-fx-background-position: center;
+     }
+
+     .background3 {
+     	-fx-background-color: black;
+     	-fx-background-image: url("../../../assets/images/ep1/TravisCampfire.png");
+     	-fx-background-size: 100% 100%;
+     	-fx-background-position: center;
+     }
+
+     .background4 {
+     	-fx-background-color: black;
+     	-fx-background-image: url("../../../assets/images/ep1/HelenCampfire.png");
+     	-fx-background-size: 100% 100%;
+     	-fx-background-position: center;
+     }
+
+     .background5 {
+     	-fx-background-color: black;
+     	-fx-background-image: url("../../../assets/images/ep1/ChanCampfire.png");
+     	-fx-background-size: 100% 100%;
+     	-fx-background-position: center;
+     }
+
+	 .background6 {
+		-fx-background-color: black;
+		-fx-background-image: url("../../../assets/images/prologue/Cabins.jpg");
+		-fx-background-size: 100% 100%;
+		-fx-background-position: center;
+	}
+	
+	 .background7 {
+    	-fx-background-color: black;
+    	-fx-background-color: black;
+        -fx-background-image: url("../../../assets/images/ep1/Murder.jpg");  
+        -fx-background-size: 100% 100%; 
+        -fx-background-position: center;
+    }
+
+	.background8 {
+    	-fx-background-color: black;
+    	-fx-background-color: black;
+        -fx-background-image: url("../../../assets/images/ep1/Campfire.jpg");  
+        -fx-background-size: 100% 100%; 
+        -fx-background-position: center;
+        
+    }
+    
+     .label {
+    	-fx-text-fill: white;
+    	-fx-font-size: 12px;
+    	-fx-background-color: #0000009A;
+    }
+
+     .textPanel {
+     	-fx-background-radius: 10px;
+     	-fx-control-inner-background: transparent;
+     	-fx-box-sizing: border-box;
+     	-fx-background-color: #0000009A;
+     	-fx-padding: 10px 10px 10px 10px;
+     	-fx-border-width: 3px;
+     	-fx-border-color: #5555555A;
+     	-fx-border-radius: 10px;
+
+     }
+
+     .name {
+     	fx-background-radius: 10px;
+     	-fx-control-inner-background: transparent;
+     	-fx-box-sizing: border-box;
+     	-fx-background-color: #0000009A;
+     	-fx-padding: 10px 10px 10px 10px;
+     	-fx-border-width: 3px;
+     	-fx-border-color: #5555555A;
+     	-fx-border-radius: 10px;
+     	-fx-overflow-y: hidden;
+     	-fx-overflow-x: hidden;
+     	-fx-text-fill: white;
+     	-fx-font-size: 30px;
+     }
+
+     .text {
+     	-fx-text-fill: white;
+     	-fx-box-sizing: border-box;
+     	-fx-wrap-text: true;
+
+     	-fx-padding: 10px 10px 10px 10px;
+     	-fx-overflow-y: hidden;
+     	-fx-overflow-x: hidden;
+
+     }
+
+
+     .button {
+     	-fx-text-fill: white;
+     	-fx-font-size: 20px;
+     	-fx-background-color: #0000009A;
+		 -fx-background-insets: 0 0 0 0, 0, 1, 2;
+		 -fx-border-radius: 0px;
+     }

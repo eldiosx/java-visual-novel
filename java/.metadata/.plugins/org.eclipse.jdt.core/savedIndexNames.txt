@@ -1,0 +1,10 @@
+INDEX VERSION 1.134+/var/home/eldiosx/Documents/GitHub/visual_novel/.metadata/.plugins/org.eclipse.jdt.core
+4227287841.index
+434428741.index
+1865797976.index
+3041753676.index
+3689772550.index
+3733630084.index
+1317693616.index
+2794981210.index
+666483647.index
