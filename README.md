@@ -12,5 +12,5 @@
 **GNU License**
 Copyright (c) 2023 [LICENSE](https://github.com/eldiosx/novelaGraficaJava/blob/main/LICENSE).
 
-Moved to => ![GitLab](https://gitlab.com/eldiosx/java-visual-novel)
+Moved to => [GitLab](https://gitlab.com/users/eldiosx/projects)
 
